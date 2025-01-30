@@ -4,6 +4,7 @@ class Plateau:
         self.lignes = lignes
         self.grille = self.construire_grille()
         self.colonnes_jouables = set(range(self.colonnes))
+        self.hauteurs_colonnes = [0] * self.colonnes
 
     def construire_grille(self):
         return [[] for _ in range(self.colonnes)]
@@ -15,7 +16,7 @@ class Plateau:
     def afficher(self):
         for ligne in range(self.lignes - 1, -1, -1):
             for colonne in range(self.colonnes):
-                if ligne < len(self.grille[colonne]):
+                if ligne < self.hauteurs_colonnes[colonne]:
                     print(self.grille[colonne][ligne], end=" ")
                 else:
                     print(".", end=" ")
@@ -29,7 +30,7 @@ class Plateau:
             return False
 
         self.grille[colonne].append(symbole)
-
+        self.hauteurs_colonnes[colonne] += 1
         if self.colonne_pleine(colonne):
             self.colonnes_jouables.remove(colonne)
 
@@ -38,59 +39,40 @@ class Plateau:
     def colonne_pleine(self, colonne):
         if not self.colonne_valide(colonne):
             raise IndexError("Colonne invalide")
-        return len(self.grille[colonne]) >= self.lignes
+        return self.hauteurs_colonnes[colonne] >= self.lignes
 
     def est_nul(self):
         return len(self.colonnes_jouables) == 0
 
     def est_victoire(self, colonne):
-        """
-        Checks if the newly placed token at the top of 'colonne'
-        creates a winning condition (4 in a row).
-        """
-        # Row of the newly placed token
-        row = len(self.grille[colonne]) - 1
-        if row < 0:
-            # No token in this column, can't be a win
-            return False
+        jeton = self.grille[colonne][-1]
+        jeton_ligne = self.hauteurs_colonnes[colonne] - 1
+        directions = [(1, 0), (-1, 0), (1, 1), (-1, 1), (1, -1), (-1, -1)]
+        directions_potentielles = []
+        if jeton_ligne > 2:
+            directions_potentielles.append((0, 1))
+        for direction in directions_potentielles:
+            c = colonne + direction[0]
+            l = jeton_ligne + direction[1]
+            if self.colonne_valide(c):
+                if 0 <= l < self.hauteurs_colonnes[c]:
+                    if self.grille[c][l] == jeton:
+                        directions_potentielles.append(direction)
 
-        jeton = self.grille[colonne][row]
-
-        # Only 4 directions to check because we expand both ways
-        directions = [
-            (1, 0),  # Horizontal
-            (0, 1),  # Vertical
-            (1, 1),  # Diagonal down-right / up-left
-            (1, -1),  # Diagonal up-right / down-left
-        ]
-
-        for dx, dy in directions:
-            # Start with count = 1 for the newly placed token
-            count = 1
-
-            # 1) Check "forward" direction
-            x, y = colonne + dx, row + dy
-            while (0 <= x < self.colonnes) and (0 <= y < len(self.grille[x])):
-                if self.grille[x][y] == jeton:
-                    count += 1
-                    x += dx
-                    y += dy
-                else:
-                    break
-
-            # 2) Check "backward" direction
-            x, y = colonne - dx, row - dy
-            while (0 <= x < self.colonnes) and (0 <= y < len(self.grille[x])):
-                if self.grille[x][y] == jeton:
-                    count += 1
-                    x -= dx
-                    y -= dy
-                else:
-                    break
-
-            # Win if 4 or more in a row
-            if count >= 4:
+        for direction_potentielle in directions_potentielles:
+            compte = 1
+            for i in [-1, 1]:
+                while True:
+                    c = colonne + i * direction_potentielle[0] * compte
+                    l = jeton_ligne + i * direction_potentielle[1] * compte
+                    if self.colonne_valide(c) and 0 <= l < self.hauteurs_colonnes[c]:
+                        if self.grille[c][l] == jeton:
+                            compte += 1
+                        else:
+                            break
+                    else:
+                        break
+            if compte >= 4:
                 return True
-
         return False
 
