@@ -8,7 +8,7 @@ pygame.init()
 
 partie = Partie()
 joueur1 = Joueur("Joueur 1", "X")
-joueur2 = bots.negamax.Negamax("Joueur 2", "O", profondeur=8)
+joueur2 = bots.negamax.Negamax("Joueur 2", "O", profondeur=9)
 # joueur2 = Joueur("Joueur 2", "O")
 partie.ajouter_joueur(joueur1)
 partie.ajouter_joueur(joueur2)
