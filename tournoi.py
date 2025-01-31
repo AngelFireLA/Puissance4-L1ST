@@ -1,7 +1,7 @@
 import time
 import concurrent.futures
 from moteur.partie import Partie
-from bots import bot, random_bot, negamax
+from bots import bot, random_bot, negamax, negamaxv2
 
 
 def une_partie(bot1, bot2, i):
@@ -50,8 +50,8 @@ if __name__ == '__main__':
     # This guard is essential on Windows for multiprocessing.
 
     # Instantiate bots
-    bot1 = negamax.Negamax("Joueur 1", "X", profondeur=5)
-    bot2 = random_bot.RandomBot("Joueur 2", "O")
+    bot1 = negamax.Negamax("Joueur 1", "X", profondeur=4)
+    bot2 = negamaxv2.Negamax2("Joueur 2", "O", profondeur=4)
 
     start_time = time.time()
     resultats = tournoi(bot1, bot2, 1000)

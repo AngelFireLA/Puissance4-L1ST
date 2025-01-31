@@ -3,12 +3,12 @@ import pygame
 import bots.random_bot
 from moteur.partie import Partie
 from moteur.joueur import Joueur
-from bots import bot, random_bot, negamax
+from bots import bot, random_bot, negamax, negamaxv2
 pygame.init()
 
 partie = Partie()
 joueur1 = Joueur("Joueur 1", "X")
-joueur2 = bots.negamax.Negamax("Joueur 2", "O", profondeur=9)
+joueur2 = bots.negamaxv2.Negamax2("Joueur 2", "O", profondeur=10)
 # joueur2 = Joueur("Joueur 2", "O")
 partie.ajouter_joueur(joueur1)
 partie.ajouter_joueur(joueur2)
