@@ -37,8 +37,6 @@ class Plateau:
         return True
 
     def colonne_pleine(self, colonne):
-        if not self.colonne_valide(colonne):
-            raise IndexError("Colonne invalide")
         return self.hauteurs_colonnes[colonne] >= self.lignes
 
     def est_nul(self):
@@ -51,7 +49,7 @@ class Plateau:
         directions_potentielles = []
         if jeton_ligne > 2:
             directions_potentielles.append((0, 1))
-        for direction in directions_potentielles:
+        for direction in directions:
             c = colonne + direction[0]
             l = jeton_ligne + direction[1]
             if self.colonne_valide(c):

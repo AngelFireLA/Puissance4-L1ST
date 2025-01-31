@@ -79,14 +79,14 @@ def coups_en_x_secondes_avec_victoire(PlateauClass, duration=0.1):
 #     print(f"Version Actuelle : {test_fill:.4f} sec")
 
 # Nombre de Coups en X secondes avec vérification de victoire
-durées = [0.1, 1, 10]
+durées = [0.1, 1, 5]
 for durée in durées:
     print(f"\nTest du nombre de coups en {durée} seconde :")
     coups_par_seconde = coups_en_x_secondes_avec_victoire(plateau.Plateau, duration=durée)
     print(f"Version Actuelle : {coups_par_seconde} coups/s")
 
 # Temps pour faire X coups avec vérification de victoire
-coups = [1000, 10000, 100000]
+coups = [1000, 10000, 50000]
 for coup in coups:
     print(f"\nTemps pour faire {coup} coups :")
     test_fill = temps_pour_x_coups_avec_victoire(plateau.Plateau, iterations=coup)
