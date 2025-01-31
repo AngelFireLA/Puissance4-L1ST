@@ -1,11 +1,15 @@
 import pygame
+
+import bots.random_bot
 from moteur.partie import Partie
 from moteur.joueur import Joueur
+from bots import bot, random_bot, negamax
 pygame.init()
 
 partie = Partie()
 joueur1 = Joueur("Joueur 1", "X")
-joueur2 = Joueur("Joueur 2", "O")
+joueur2 = bots.negamax.Negamax("Joueur 2", "O", profondeur=8)
+# joueur2 = Joueur("Joueur 2", "O")
 partie.ajouter_joueur(joueur1)
 partie.ajouter_joueur(joueur2)
 plateau_largeur = partie.plateau.colonnes
@@ -44,20 +48,24 @@ while partie_en_cours:
             pygame.quit()
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            colonne = (event.pos[0] - decalage) // taille_case
+            if partie.tour_joueur == 2 and isinstance(partie.joueur2, bot.Bot) :
+                colonne = partie.joueur2.trouver_coup(partie.plateau, partie.joueur1)
+                print(partie.joueur2.coups)
+            else:
+                colonne = (event.pos[0] - decalage) // taille_case
             if partie.jouer(colonne, partie.tour_joueur):
+
+                if partie.plateau.est_nul():
+                    print("Match nul")
+                    partie_en_cours = False
+                if partie.plateau.est_victoire(colonne):
+                    print(f"Le joueur {partie.tour_joueur} a gagné")
+                    partie_en_cours = False
+
                 if partie.tour_joueur == 1:
                     partie.tour_joueur = 2
                 else:
                     partie.tour_joueur = 1
-                if partie.plateau.est_nul():
-                    print("Match nul")
-                    break
-                partie.plateau.afficher()
-                print()
-                if partie.plateau.est_victoire(colonne):
-                    print(f"Le joueur {partie.tour_joueur} a gagné")
-                    partie_en_cours = False
 
     fenetre.fill((255, 255, 255))
     afficher_grille()
