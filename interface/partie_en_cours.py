@@ -1,65 +1,24 @@
 import pygame
-from moteur.partie import Partie
-from moteur.joueur import Joueur
+from moteur import partie, joueur
 pygame.init()
-
-partie = Partie()
-joueur1 = Joueur("Joueur 1", "X")
-joueur2 = Joueur("Joueur 2", "O")
-partie.ajouter_joueur(joueur1)
-partie.ajouter_joueur(joueur2)
-plateau_largeur = partie.plateau.colonnes
-plateau_hauteur = partie.plateau.lignes
-taille_case = 100
-decalage = 50
-fenetre = pygame.display.set_mode((plateau_largeur * taille_case + decalage*2, plateau_hauteur * taille_case + decalage*2))
-pygame.display.set_caption("Puissance 4")
-def afficher_grille():
-    for x in range(plateau_largeur+1):
-        pygame.draw.line(fenetre, (0, 0, 0), (x * taille_case + decalage, decalage), (x * taille_case + decalage, plateau_hauteur * taille_case + decalage), width=3)
-        for y in range(plateau_hauteur+1):
-            pygame.draw.line(fenetre, (0, 0, 0), (decalage, y * taille_case + decalage), (plateau_largeur * taille_case + decalage, y * taille_case + decalage), width=3)
-
-def p_x(colonne):
-    return colonne * taille_case + taille_case//2 + decalage
-
-def p_y(ligne):
-    return ((plateau_hauteur-1-ligne) * taille_case + taille_case//2) + decalage
-
-def afficher_pions():
-    for ligne in range(partie.plateau.lignes - 1, -1, -1):
-        for colonne in range(partie.plateau.colonnes):
-            if ligne < partie.plateau.hauteurs_colonnes[colonne]:
-                jeton = partie.plateau.grille[colonne][ligne]
-                if jeton == "X":
-                    joueur = 1
-                else:
-                    joueur = 2
-                pygame.draw.circle(fenetre, (50*joueur, 50*joueur, 50*joueur), (p_x(colonne), p_y(ligne)), taille_case//3)
-
-partie_en_cours = True
-while partie_en_cours:
+partie = partie.Partie(joueur1=joueur.Joueur("Joueur 1", 1), joueur2=joueur.Joueur("Joueur 2", 2))
+fenetre = pygame.display.set_mode((partie.plateau.colonnes * 100 + 50*2, partie.plateau.lignes * 100 + 50*2))
+while True:
     for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            exit()
+        if event.type == pygame.QUIT: exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            colonne = (event.pos[0] - decalage) // taille_case
-            if partie.jouer(colonne, partie.tour_joueur):
-                if partie.tour_joueur == 1:
-                    partie.tour_joueur = 2
-                else:
-                    partie.tour_joueur = 1
+            if partie.jouer((event.pos[0] - 50) // 100, partie.tour_joueur):
+                partie.tour_joueur = 1 if partie.tour_joueur == 2 else 2
                 if partie.plateau.est_nul():
                     print("Match nul")
-                    break
-                partie.plateau.afficher()
-                print()
-                if partie.plateau.est_victoire(colonne):
+                    exit()
+                if partie.plateau.est_victoire((event.pos[0] - 50) // 100):
                     print(f"Le joueur {partie.tour_joueur} a gagné")
-                    partie_en_cours = False
-
-    fenetre.fill((255, 255, 255))
-    afficher_grille()
-    afficher_pions()
+                    exit()
+    for x in range(partie.plateau.colonnes + 1):
+        pygame.draw.line(fenetre, (255, 255, 255), (x * 100 + 50, 50),(x * 100 + 50, partie.plateau.lignes * 100 + 50), width=3)
+        for y in range(partie.plateau.lignes + 1): pygame.draw.line(fenetre, (255, 255, 255), (50, y * 100 + 50), (partie.plateau.colonnes * 100 + 50, y * 100 + 50), width=3)
+    for ligne in range(partie.plateau.lignes - 1, -1, -1):
+        for colonne in range(partie.plateau.colonnes):
+            if ligne < partie.plateau.hauteurs_colonnes[colonne]: pygame.draw.circle(fenetre, (100 * partie.plateau.grille[colonne][ligne], 100 * partie.plateau.grille[colonne][ligne], 100 * partie.plateau.grille[colonne][ligne]), (colonne * 100 + 100 // 2 + 50,((partie.plateau.lignes - 1 - ligne) * 100 + 100 // 2) + 50), 100 // 3)
     pygame.display.flip()
