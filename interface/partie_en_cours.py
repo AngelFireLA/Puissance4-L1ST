@@ -8,7 +8,7 @@ pygame.init()
 
 partie = Partie()
 joueur1 = Joueur("Joueur 1", "X")
-joueur2 = bots.negamaxv2.Negamax2("Joueur 2", "O", profondeur=8)
+joueur2 = bots.negamaxv2.Negamax2("Joueur 2", "O", profondeur=6)
 # joueur2 = Joueur("Joueur 2", "O")
 partie.ajouter_joueur(joueur1)
 partie.ajouter_joueur(joueur2)
@@ -46,6 +46,34 @@ def afficher_pions():
                 symbole = partie.plateau.grille[colonne][ligne]
                 pygame.draw.circle(fenetre, couleurs_jetons[symbole], (p_x(colonne), p_y(ligne)), taille_case//3)
 
+def est_tour_bot(partie) -> bool:
+    return partie.tour_joueur == 2 and isinstance(partie.joueur2, bot.Bot)
+
+def animation_jeton(colonne, final_ligne, symbole):
+    x = p_x(colonne)
+    start_y = decalage // 2
+    target_y = p_y(final_ligne)
+    current_y = start_y
+    vitesse = 3
+    while current_y < target_y:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+        current_y += vitesse
+        if current_y > target_y:
+            current_y = target_y
+        affiche_trucs_de_base()
+        pygame.draw.circle(fenetre, couleurs_jetons[symbole], (x, int(current_y)), taille_case//3)
+        pygame.display.flip()
+
+def affiche_trucs_de_base():
+    fenetre.fill((255, 255, 255))
+    afficher_grille()
+    afficher_pions()
+
+animation_en_cours = False
+
 partie_en_cours = True
 while partie_en_cours:
     for event in pygame.event.get():
@@ -53,11 +81,15 @@ while partie_en_cours:
             pygame.quit()
             exit()
         if event.type == pygame.MOUSEBUTTONDOWN:
-            if partie.tour_joueur == 2 and isinstance(partie.joueur2, bot.Bot) :
+            if est_tour_bot(partie):
+                print("bot joue")
                 colonne = partie.joueur2.trouver_coup(partie.plateau, partie.joueur1)
                 print(partie.joueur2.coups)
             else:
                 colonne = (event.pos[0] - decalage) // taille_case
+            final_ligne = partie.plateau.hauteurs_colonnes[colonne]
+            symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
+            animation_jeton(colonne, final_ligne, symbole)
             if partie.jouer(colonne, partie.tour_joueur):
 
                 if partie.plateau.est_nul():
@@ -72,11 +104,9 @@ while partie_en_cours:
                 else:
                     partie.tour_joueur = 1
 
-    fenetre.fill((255, 255, 255))
-    afficher_grille()
-    afficher_pions()
+    affiche_trucs_de_base()
     mouse = pygame.mouse.get_pos()
-    if decalage < mouse[0] < decalage + taille_case * plateau_largeur:
+    if decalage < mouse[0] < decalage + taille_case * plateau_largeur and not est_tour_bot(partie):
         colonne = (mouse[0] - decalage) // taille_case
         symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
         previsualise_pion(colonne, symbole)

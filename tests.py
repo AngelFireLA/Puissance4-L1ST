@@ -119,7 +119,7 @@ def coups_en_x_secondes_avec_victoire(PlateauClass, duration=0.1):
 
 # Test de Performance de Negamax
 def test_negamax(bot: negamax.Negamax):
-    profondeurs = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+    profondeurs = [4, 5, 6, 7, 8, 9, 10]
     for p in profondeurs:
         partie = Partie()
         j1 = Joueur("P1", "O")
@@ -130,6 +130,6 @@ def test_negamax(bot: negamax.Negamax):
         bot.trouver_coup(partie.plateau, j1)
         print(f"Profondeur {p} atteint en {time.time()-start_time} secondes avec {bot.coups} positions explorées.")
 
-
 bot = negamaxv2.Negamax2("P2", "X")
+
 test_negamax(bot)
