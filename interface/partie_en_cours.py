@@ -8,16 +8,18 @@ pygame.init()
 
 partie = Partie()
 joueur1 = Joueur("Joueur 1", "X")
-joueur2 = bots.negamaxv2.Negamax2("Joueur 2", "O", profondeur=10)
+joueur2 = bots.negamaxv2.Negamax2("Joueur 2", "O", profondeur=8)
 # joueur2 = Joueur("Joueur 2", "O")
 partie.ajouter_joueur(joueur1)
 partie.ajouter_joueur(joueur2)
 plateau_largeur = partie.plateau.colonnes
 plateau_hauteur = partie.plateau.lignes
 taille_case = 100
-decalage = 50
+decalage = 100
 fenetre = pygame.display.set_mode((plateau_largeur * taille_case + decalage*2, plateau_hauteur * taille_case + decalage*2))
 pygame.display.set_caption("Puissance 4")
+
+couleurs_jetons = {'X': (255, 0, 255), 'O': (255, 255, 0)}
 def afficher_grille():
     for x in range(plateau_largeur+1):
         pygame.draw.line(fenetre, (0, 0, 0), (x * taille_case + decalage, decalage), (x * taille_case + decalage, plateau_hauteur * taille_case + decalage), width=3)
@@ -30,16 +32,19 @@ def p_x(colonne):
 def p_y(ligne):
     return ((plateau_hauteur-1-ligne) * taille_case + taille_case//2) + decalage
 
+def previsualise_pion(colonne, symbole):
+    couleur = (*couleurs_jetons[symbole], 128)
+    surface = pygame.Surface((taille_case, taille_case), pygame.SRCALPHA)  # Create a surface with alpha channel
+    pygame.draw.circle(surface, couleur, (taille_case // 2, taille_case // 2), taille_case // 3)
+    fenetre.blit(surface, (p_x(colonne) - taille_case // 2, decalage // 2 - taille_case // 2))
+
+
 def afficher_pions():
     for ligne in range(partie.plateau.lignes - 1, -1, -1):
         for colonne in range(partie.plateau.colonnes):
             if ligne < partie.plateau.hauteurs_colonnes[colonne]:
-                jeton = partie.plateau.grille[colonne][ligne]
-                if jeton == "X":
-                    joueur = 1
-                else:
-                    joueur = 2
-                pygame.draw.circle(fenetre, (50*joueur, 50*joueur, 50*joueur), (p_x(colonne), p_y(ligne)), taille_case//3)
+                symbole = partie.plateau.grille[colonne][ligne]
+                pygame.draw.circle(fenetre, couleurs_jetons[symbole], (p_x(colonne), p_y(ligne)), taille_case//3)
 
 partie_en_cours = True
 while partie_en_cours:
@@ -70,4 +75,9 @@ while partie_en_cours:
     fenetre.fill((255, 255, 255))
     afficher_grille()
     afficher_pions()
+    mouse = pygame.mouse.get_pos()
+    if decalage < mouse[0] < decalage + taille_case * plateau_largeur:
+        colonne = (mouse[0] - decalage) // taille_case
+        symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
+        previsualise_pion(colonne, symbole)
     pygame.display.flip()
