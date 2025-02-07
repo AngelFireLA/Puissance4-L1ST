@@ -25,3 +25,7 @@ dict_couleurs = {
     "orange": (255, 165, 0),
     "bleu marin": (20, 40, 70),
 }
+
+largeur_fenetre, hauteur_fenetre = 800, 600
+couleurs_jetons = {'X': (255, 150, 200), 'O': (80, 140, 230)}
+couleur_plateau = (160, 170, 190)
