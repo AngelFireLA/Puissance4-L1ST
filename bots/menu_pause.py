@@ -7,8 +7,8 @@ from interface import menu_options
 arriere_plan = pygame.image.load("../assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 boutton_quitter = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 + 200, 400, 100, "Quitter", dict_couleurs["rouge"], couleur_surlignée=(255, 90, 90))
-boutton_reprendre = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 100, 400, 100, "Reprendre",(100, 150, 255))
-boutton_options = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 + 50, 400, 100, "Options",(100, 150, 255))
+boutton_reprendre = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 100, 400, 100, "Reprendre", dict_couleurs["bleu boutton"])
+boutton_options = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 + 50, 400, 100, "Options", dict_couleurs["bleu boutton"])
 
 def main():
     en_cours = True

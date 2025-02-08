@@ -1,4 +1,5 @@
 import random
+import socket
 
 import pygame
 
@@ -6,31 +7,25 @@ import bots.random_bot
 from moteur.partie import Partie
 from moteur.joueur import Joueur
 from bots import bot, random_bot, negamax, negamaxv2, menu_pause
-from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau
-
+from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, récupérer_ip_cible
+import uuid
 
 def afficher_grille():
-    grid_width = plateau_largeur * taille_case
-    grid_height = plateau_hauteur * taille_case
-    grid_surface = pygame.Surface((grid_width, grid_height), pygame.SRCALPHA)
+    largeur_grille = plateau_largeur * taille_case
+    hauteur_grille = plateau_hauteur * taille_case
+    surface_grille = pygame.Surface((largeur_grille, hauteur_grille), pygame.SRCALPHA)
 
-    # Fill the grid surface with the blue color
-    grid_surface.fill(couleur_plateau)
+    surface_grille.fill(couleur_plateau)
+    marge = 10
+    rayon = taille_case // 2 - marge
 
-    # Set margin to adjust the hole size (change this value to fine-tune the look)
-    margin = 10
-    # Calculate the radius so that the circle fits nicely within a cell
-    radius = taille_case // 2 - margin
+    for ligne in range(plateau_hauteur):
+        for colonne in range(plateau_largeur):
+            centre_x = colonne * taille_case + taille_case // 2
+            centre_y = (plateau_hauteur - 1 - ligne) * taille_case + taille_case // 2
+            pygame.draw.circle(surface_grille, (0, 0, 0, 0), (centre_x, centre_y), rayon)
 
-    # Loop over each cell in the grid.
-    # We use (plateau_hauteur - 1 - row) so that row 0 appears at the bottom.
-    for row in range(plateau_hauteur):
-        for col in range(plateau_largeur):
-            center_x = col * taille_case + taille_case // 2
-            center_y = (plateau_hauteur - 1 - row) * taille_case + taille_case // 2
-            pygame.draw.circle(grid_surface, (0, 0, 0, 0), (center_x, center_y), radius)
-
-    fenetre.blit(grid_surface, (decalage, decalage))
+    fenetre.blit(surface_grille, (decalage, decalage))
 
 
 def p_x(colonne):
@@ -164,3 +159,116 @@ def main(profondeur=6):
             previsualise_pion(colonne, symbole)
         if partie_en_cours: pygame.display.flip()
         clock.tick(60)
+
+def tour_opposé(tour):
+    return 1 if tour == 2 else 2
+
+
+def main_multi():
+    global partie, plateau_largeur, plateau_hauteur, taille_case, decalage, fenetre, partie_en_cours, arriere_plan
+    partie = Partie()
+    clock = pygame.time.Clock()
+    plateau_largeur = partie.plateau.colonnes
+    plateau_hauteur = partie.plateau.lignes
+    arriere_plan = pygame.image.load("../assets/images/menu_arrière_plan.jpg")
+    largeur_fenetre, hauteur_fenetre = plateau_largeur * taille_case + decalage * 2, plateau_hauteur * taille_case + decalage * 2
+    arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
+
+    fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
+    pygame.display.set_caption("Partie de Puissance 4")
+
+    port = récupérer_port()
+    local = est_local()
+    socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+    ip_serveur = récupérer_ip_cible() if not local else "127.0.0.1"
+    socket_client.connect((ip_serveur, port))
+    #make socket not blocking
+    socket_client.setblocking(False)
+    nom_utilisateur = str(uuid.uuid4())
+    socket_client.sendall(f"@connexion:{nom_utilisateur}".encode('utf-8'))
+    print("Connexion établie")
+    fenetre.blit(arriere_plan, (0, 0))
+    afficher_texte(fenetre, largeur_fenetre//2, hauteur_fenetre//2, "En attente d'un adversaire...", 60, dict_couleurs["bleu marin"])
+    pygame.display.flip()
+    réponse = ""
+    while not réponse.startswith("@commencer:"):
+        try:
+            réponse = socket_client.recv(2048).decode('utf-8')
+        except BlockingIOError:
+            pass
+        clock.tick(60)
+    print("Partie va commencer")
+    indexe_joueur, nom_adversaire = réponse.split(":")[1].split("|")
+    indexe_joueur = int(indexe_joueur)
+    joueur1 = Joueur(nom_utilisateur, "X")
+    joueur2 = Joueur(nom_adversaire, "O")
+
+    partie.ajouter_joueur(joueur1)
+    partie.ajouter_joueur(joueur2)
+
+    partie_en_cours = True
+    colonne_choisie = None
+    while partie_en_cours:
+        affiche_trucs_de_base()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if partie.tour_joueur == indexe_joueur:
+                    colonne_choisie = (event.pos[0] - decalage) // taille_case
+                    socket_client.sendall(f"@jouer:{colonne_choisie}".encode('utf-8'))
+
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    if menu_pause.main():
+                        partie_en_cours = False
+                        return
+                    else:
+                        fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
+
+        if partie.tour_joueur == tour_opposé(indexe_joueur):
+            try:
+                réponse = socket_client.recv(2048).decode('utf-8')
+                if réponse.startswith("@jouer:"):
+                    colonne_choisie = int(réponse.split(":")[1])
+            except BlockingIOError:
+                pass
+
+        if colonne_choisie is not None:
+            final_ligne = partie.plateau.hauteurs_colonnes[colonne_choisie]
+            symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
+            animation_jeton(colonne_choisie, final_ligne, symbole)
+            if partie.jouer(colonne_choisie, partie.tour_joueur):
+
+                if partie.plateau.est_nul():
+                    print("Match nul")
+                    afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Match nul !", 60,
+                                   dict_couleurs["bleu marin"])
+                    pygame.display.flip()
+                    pygame.time.wait(3000)
+                    partie_en_cours = False
+                    socket_client.close()
+                if partie.plateau.est_victoire(colonne_choisie):
+                    texte_résultat = "Victoire !" if partie.tour_joueur == indexe_joueur else f"Défaite !"
+                    afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2,
+                                   texte_résultat, 60, dict_couleurs["bleu marin"])
+                    pygame.display.flip()
+                    pygame.time.wait(3000)
+                    partie_en_cours = False
+                    socket_client.close()
+
+                if partie.tour_joueur == 1:
+                    partie.tour_joueur = 2
+                else:
+                    partie.tour_joueur = 1
+            colonne_choisie = None
+
+        mouse = pygame.mouse.get_pos()
+        if decalage < mouse[0] < decalage + taille_case * plateau_largeur and partie.tour_joueur == indexe_joueur:
+            colonne = (mouse[0] - decalage) // taille_case
+            symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
+            previsualise_pion(colonne, symbole)
+        if partie_en_cours: pygame.display.flip()
+        clock.tick(60)
+
