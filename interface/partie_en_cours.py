@@ -6,7 +6,7 @@ import pygame
 import bots.random_bot
 from moteur.partie import Partie
 from moteur.joueur import Joueur
-from bots import bot, random_bot, negamax, negamaxv2, menu_pause
+from bots import bot, random_bot, negamax, negamaxv3, menu_pause
 from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, récupérer_ip_cible
 import uuid
 
@@ -90,10 +90,12 @@ partie = Partie()
 def main(profondeur=6):
     global partie, plateau_largeur, plateau_hauteur, taille_case, decalage, fenetre, partie_en_cours, arriere_plan
     partie = Partie()
+    partie.tour_joueur = 1
     clock = pygame.time.Clock()
     joueur1 = Joueur("Joueur 1", "X")
     if profondeur > 0:
-        joueur2 = bots.negamaxv2.Negamax2(random.choice(noms_robots), "O", profondeur=profondeur)
+        temp_de_pensée_max = 1 if profondeur >= 8 else 0
+        joueur2 = bots.negamaxv3.Negamax3(random.choice(noms_robots), "O", profondeur=profondeur, temps_max=temp_de_pensée_max)
     else:
         joueur2 = Joueur("Joueur 2", "O")
     # joueur2 = Joueur("Joueur 2", "O")
@@ -117,7 +119,7 @@ def main(profondeur=6):
                 if est_tour_bot(partie):
                     print("bot joue")
                     colonne = partie.joueur2.trouver_coup(partie.plateau, partie.joueur1)
-                    print(partie.joueur2.coups)
+                    print("Coups évalués :", partie.joueur2.coups)
                 else:
                     colonne = (event.pos[0] - decalage) // taille_case
                 final_ligne = partie.plateau.hauteurs_colonnes[colonne]
@@ -157,6 +159,75 @@ def main(profondeur=6):
             colonne = (mouse[0] - decalage) // taille_case
             symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
             previsualise_pion(colonne, symbole)
+        if partie_en_cours: pygame.display.flip()
+        clock.tick(60)
+
+def main_bot_v_bot(profondeur=None):
+    global partie, plateau_largeur, plateau_hauteur, taille_case, decalage, fenetre, partie_en_cours, arriere_plan
+    partie = Partie()
+    partie.tour_joueur = 1
+    clock = pygame.time.Clock()
+    profondeur_bot_1 = 10
+    profondeur_bot_2 = 8
+    joueur1 = bots.negamaxv3.Negamax3(random.choice(noms_robots), "X", profondeur=profondeur_bot_1)
+    temp_de_pensée_max = 5
+    joueur2 = bots.negamaxv3.Negamax3(random.choice(noms_robots), "O", profondeur=profondeur_bot_2, temps_max=temp_de_pensée_max)
+    # joueur2 = Joueur("Joueur 2", "O")
+    partie.ajouter_joueur(joueur1)
+    partie.ajouter_joueur(joueur2)
+    plateau_largeur = partie.plateau.colonnes
+    plateau_hauteur = partie.plateau.lignes
+    arriere_plan = pygame.image.load("../assets/images/menu_arrière_plan.jpg")
+    largeur_fenetre, hauteur_fenetre = plateau_largeur * taille_case + decalage * 2, plateau_hauteur * taille_case + decalage * 2
+    arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
+
+    fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
+    pygame.display.set_caption("Partie de Puissance 4")
+    partie_en_cours = True
+    while partie_en_cours:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                pygame.quit()
+                exit()
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                if est_tour_bot(partie):
+                    colonne = partie.joueur2.trouver_coup(partie.plateau, partie.joueur1)
+                    print("Coups évalués par joueur 2 :", partie.joueur2.coups)
+                else:
+                    colonne = partie.joueur1.trouver_coup(partie.plateau, partie.joueur2)
+                    print("Coups évalués par joueur 1 :", partie.joueur1.coups)
+                final_ligne = partie.plateau.hauteurs_colonnes[colonne]
+                symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
+                animation_jeton(colonne, final_ligne, symbole)
+                if partie.jouer(colonne, partie.tour_joueur):
+
+                    if partie.plateau.est_nul():
+                        print("Match nul")
+                        afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Match nul !", 60, dict_couleurs["bleu marin"])
+                        pygame.display.flip()
+                        pygame.time.wait(3000)
+                        partie_en_cours = False
+                    if partie.plateau.est_victoire(colonne):
+                        joueur_actuel = partie.joueur1 if partie.tour_joueur == 1 else partie.joueur2
+                        afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Victoire de {joueur_actuel.nom} !", 60, dict_couleurs["bleu marin"])
+                        pygame.display.flip()
+                        pygame.time.wait(3000)
+                        partie_en_cours = False
+
+                    if partie.tour_joueur == 1:
+                        partie.tour_joueur = 2
+                    else:
+                        partie.tour_joueur = 1
+
+            #if escape is pressed, show pause menu :
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    if menu_pause.main():
+                        partie_en_cours = False
+                        return
+                    else:
+                        fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
+        affiche_trucs_de_base()
         if partie_en_cours: pygame.display.flip()
         clock.tick(60)
 

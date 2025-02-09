@@ -45,12 +45,15 @@ def main():
                     return
                 except ValueError as e:
                     pass
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    return
 
         afficher_texte(fenetre, largeur_fenetre // 2 - 150, 240, "Entrez un port ouvert :", 38, couleur=dict_couleurs["bleu marin"])
         afficher_texte(fenetre, largeur_fenetre // 2 - 150, 340, "Entrez l'IP du serveur :", 38, couleur=dict_couleurs["bleu marin"])
         try:
-            port_choisi = int(zone_texte_pour_port.getText())
-            ip_choisie = zone_texte_pour_ip.getText()
+            port_choisi = int(zone_texte_pour_port.getText().strip())
+            ip_choisie = zone_texte_pour_ip.getText().strip()
             if 1024 <= port_choisi <= 49151 and ip_est_valide(ip_choisie):
                 continue_button.montrer = True
             else:

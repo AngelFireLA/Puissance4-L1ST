@@ -8,13 +8,15 @@ import entrer_port_menu
 import rejoindre_partie_menu
 arriere_plan = pygame.image.load("../assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
-
+boutton_créer_partie = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 75, 450, 100, "Créer une partie",
+                                       dict_couleurs["bleu boutton"])
+boutton_rejoindre_partie = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 + 75, 450, 100,
+                                           "Rejoindre une partie", dict_couleurs["bleu boutton"])
 def main():
     clock = pygame.time.Clock()
     fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
     pygame.display.set_caption("Menu Puissance 4")
-    boutton_créer_partie = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 75, 450, 100, "Créer une partie", dict_couleurs["bleu boutton"])
-    boutton_rejoindre_partie = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 + 75, 450, 100, "Rejoindre une partie", dict_couleurs["bleu boutton"])
+
     en_cours = True
     while en_cours:
         fenetre.blit(arriere_plan, (0, 0))
@@ -41,9 +43,12 @@ def main():
                 if boutton_rejoindre_partie.boutton_clické(event):
                     rejoindre_partie_menu.main()
                     fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    return
 
         afficher_texte(fenetre, largeur_fenetre//2, 50, "Multijoueur :", 60, couleur=dict_couleurs["bleu marin"])
         boutton_créer_partie.afficher(fenetre)
         boutton_rejoindre_partie.afficher(fenetre)
-        clock.tick(60)
         pygame.display.flip()
+        clock.tick(60)
