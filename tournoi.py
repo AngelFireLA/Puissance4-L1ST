@@ -1,7 +1,7 @@
 import time
 import concurrent.futures
 from moteur.partie import Partie
-from bots import bot, random_bot, negamax, negamaxv2, negamaxv3
+from bots import bot, random_bot, negamax, negamaxv2, negamaxv3, neuralbot
 
 
 def une_partie(bot1, bot2, i):
@@ -49,8 +49,13 @@ def tournoi(bot1, bot2, parties: int, max_workers=None):
 if __name__ == '__main__':
 
     # Instantiate bots
-    bot1 = negamaxv2.Negamax2("Joueur 1", "X", profondeur=8)
-    bot2 = negamaxv3.Negamax3("Joueur 2", "O", profondeur=4, temps_max=0.2)
+    #bot1 = negamaxv2.Negamax2("Joueur 1", "X", profondeur=8)
+    bot1 = neuralbot.NeuralBot("Bot", "O",
+                                  model_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\winner_gen100.pkl",
+                                  config_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\config_feedforward")
+
+    bot2 = negamaxv3.Negamax3("Joueur 2", "X", profondeur=4)
+
     #bot2 = negamaxv3.Negamax3("Joueur 2", "O", profondeur=6, temps_max=0.1)
     #bot2 = random_bot.RandomBot("Joueur 2", "O")
     #bot2 = bot.Bot("Joueur 2", "O")

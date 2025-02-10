@@ -27,14 +27,15 @@ def main():
                 pygame.quit()
                 exit()
             if event.type == pygame.MOUSEMOTION:
-                if pygame.time.get_ticks() % 5 == 0:
+                if pygame.time.get_ticks() % 3 == 0:
                     if boutton_troll.rect.collidepoint(event.pos):
+                        old_rect = boutton_troll.rect.copy()
                         boutton_troll.x = random.randint(boutton_troll.largeur // 2,
                                                          largeur_fenetre - boutton_troll.largeur // 2)
                         boutton_troll.y = random.randint(boutton_troll.hauteur // 2,
                                                          hauteur_fenetre - boutton_troll.hauteur // 2)
                         boutton_troll.génère_rect()
-                        while boutton_troll.rect.colliderect(boutton_solo.rect) or boutton_troll.rect.colliderect(boutton_local.rect) or boutton_troll.rect.colliderect(boutton_options.rect) or boutton_troll.rect.colliderect(boutton_multijoueur.rect):
+                        while boutton_troll.rect.colliderect(boutton_solo.rect) or boutton_troll.rect.colliderect(boutton_local.rect) or boutton_troll.rect.colliderect(boutton_options.rect) or boutton_troll.rect.colliderect(boutton_multijoueur.rect) or boutton_troll.rect.colliderect(old_rect):
                             boutton_troll.x = random.randint(boutton_troll.largeur // 2,
                                                              largeur_fenetre - boutton_troll.largeur // 2)
                             boutton_troll.y = random.randint(boutton_troll.hauteur // 2,
