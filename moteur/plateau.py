@@ -1,3 +1,5 @@
+import random
+
 class Plateau:
     def __init__(self, colonnes=7, lignes=6, grille=None, colonnes_jouables=None, hauteurs_colonnes=None):
         self.colonnes = colonnes
@@ -5,7 +7,6 @@ class Plateau:
         self.grille = self.construire_grille() if grille is None else grille
         self.colonnes_jouables = set(range(self.colonnes)) if colonnes_jouables is None else colonnes_jouables
         self.hauteurs_colonnes = [0] * self.colonnes if hauteurs_colonnes is None else hauteurs_colonnes
-
     def construire_grille(self):
         return [[] for _ in range(self.colonnes)]
 
@@ -31,6 +32,7 @@ class Plateau:
 
         self.grille[colonne].append(symbole)
         self.hauteurs_colonnes[colonne] += 1
+
         if self.colonne_pleine(colonne):
             self.colonnes_jouables.remove(colonne)
 
@@ -42,36 +44,48 @@ class Plateau:
     def est_nul(self):
         return len(self.colonnes_jouables) == 0
 
+
     def est_victoire(self, colonne):
         jeton = self.grille[colonne][-1]
-        jeton_ligne = self.hauteurs_colonnes[colonne] - 1
-        directions = [(1, 0), (-1, 0), (1, 1), (-1, 1), (1, -1), (-1, -1)]
-        directions_potentielles = []
-        if jeton_ligne > 2:
-            directions_potentielles.append((0, 1))
-        for direction in directions:
-            c = colonne + direction[0]
-            l = jeton_ligne + direction[1]
-            if self.colonne_valide(c):
-                if 0 <= l < self.hauteurs_colonnes[c]:
-                    if self.grille[c][l] == jeton:
-                        directions_potentielles.append(direction)
-        for direction_potentielle in directions_potentielles:
+        ligne = self.hauteurs_colonnes[colonne] - 1
+        directions = [(1, 0), (0, 1), (1, 1), (1, -1)]
+        for dx, dy in directions:
             compte = 1
-            for i in [-1, 1]:
-                compte_local = 1
-                while True:
-                    c = colonne + i * direction_potentielle[0] * compte_local
-                    l = jeton_ligne + i * direction_potentielle[1] * compte_local
-                    if self.colonne_valide(c) and 0 <= l < self.hauteurs_colonnes[c]:
-                        if self.grille[c][l] == jeton:
-                            compte += 1
-                            compte_local += 1
-                        else:
-                            break
-                    else:
-                        break
+            x, y = colonne, ligne
+            while True:
+                x += dx
+                y += dy
+                if 0 <= x < self.colonnes and 0 <= y < self.hauteurs_colonnes[x] and self.grille[x][y] == jeton:
+                    compte += 1
+                else:
+                    break
+            x, y = colonne, ligne
+            while True:
+                x -= dx
+                y -= dy
+                if 0 <= x < self.colonnes and 0 <= y < self.hauteurs_colonnes[x] and self.grille[x][y] == jeton:
+                    compte += 1
+                else:
+                    break
             if compte >= 4:
                 return True
         return False
+
+    def jouer_coup_reversible(self, colonne, symbole):
+        self.grille[colonne].append(symbole)
+        self.hauteurs_colonnes[colonne] += 1
+
+        colonne_est_enlevée = False
+        if self.colonne_pleine(colonne) and colonne in self.colonnes_jouables:
+            self.colonnes_jouables.remove(colonne)
+            colonne_est_enlevée = True
+        return colonne_est_enlevée
+
+    def annuler_coup(self, colonne, colonne_est_enlevée, symbole):
+        self.grille[colonne].pop()
+        self.hauteurs_colonnes[colonne] -= 1
+
+        if colonne_est_enlevée:
+            self.colonnes_jouables.add(colonne)
+
 

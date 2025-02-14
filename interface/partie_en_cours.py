@@ -8,6 +8,8 @@ from moteur.partie import Partie
 from moteur.joueur import Joueur
 import menu_pause
 from bots import bot, random_bot, negamax, negamaxv3, neuralbot
+from interface import menu_pause
+from bots import bot, random_bot, negamax, negamaxv5, neuralbot
 from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, récupérer_ip_cible
 import uuid
 
@@ -91,7 +93,7 @@ partie = Partie()
 def main(profondeur=6):
     global partie, plateau_largeur, plateau_hauteur, taille_case, decalage, fenetre, partie_en_cours, arriere_plan
     partie = Partie()
-    partie.tour_joueur = 1
+    partie.tour_joueur = 2
     clock = pygame.time.Clock()
     joueur1 = Joueur("Joueur 1", "X")
     if profondeur > 0:
@@ -121,7 +123,7 @@ def main(profondeur=6):
                 if est_tour_bot(partie):
                     print("bot joue")
                     colonne = partie.joueur2.trouver_coup(partie.plateau, partie.joueur1)
-                    print("Coups évalués :", partie.joueur2.coups)
+                    #print("Coups évalués :", partie.joueur2.coups)
                 else:
                     colonne = (event.pos[0] - decalage) // taille_case
                 final_ligne = partie.plateau.hauteurs_colonnes[colonne]
@@ -146,6 +148,13 @@ def main(profondeur=6):
                         partie.tour_joueur = 2
                     else:
                         partie.tour_joueur = 1
+                else:
+                    print("Coup invalide")
+                    gagnant = partie.joueur1 if partie.tour_joueur == 2 else partie.joueur2
+                    afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Victoire de {gagnant.nom} !", 60, dict_couleurs["bleu marin"])
+                    pygame.display.flip()
+                    pygame.time.wait(3000)
+                    partie_en_cours = False
 
             #if escape is pressed, show pause menu :
             if event.type == pygame.KEYDOWN:
@@ -171,11 +180,11 @@ def main_bot(profondeur=None):
     clock = pygame.time.Clock()
     profondeur_bot_1 = 2
     profondeur_bot_2 = 8
-    joueur1 = bots.negamaxv3.Negamax3(random.choice(noms_robots), "O", profondeur=profondeur_bot_1)
-    temp_de_pensée_max = 5
+    joueur1 = bots.negamaxv5.Negamax5(random.choice(noms_robots), "O", profondeur=profondeur_bot_1)
     joueur2 = neuralbot.NeuralBot("Bot", "X",
                                   model_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\winner_gen50.pkl",
                                   config_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\config_feedforward")
+
     # joueur2 = Joueur("Joueur 2", "O")
     partie.ajouter_joueur(joueur1)
     partie.ajouter_joueur(joueur2)
@@ -199,7 +208,7 @@ def main_bot(profondeur=None):
                     #print("Coups évalués par joueur 2 :", partie.joueur2.coups)
                 else:
                     colonne = partie.joueur1.trouver_coup(partie.plateau, partie.joueur2)
-                    print("Coups évalués par joueur 1 :", partie.joueur1.coups)
+                    #print("Coups évalués par joueur 1 :", partie.joueur1.coups)
                 final_ligne = partie.plateau.hauteurs_colonnes[colonne]
                 symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
                 animation_jeton(colonne, final_ligne, symbole)
