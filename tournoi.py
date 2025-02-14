@@ -2,13 +2,15 @@ import time
 import concurrent.futures
 from moteur.partie import Partie
 from bots import bot, random_bot, negamax, negamaxv2, negamaxv3, neuralbot
+from bots import bot, random_bot, negamax, negamaxv2, negamaxv3
+from bots import bot, random_bot, negamax, negamaxv2, negamaxv3, neuralbot, negamaxv4, negamaxv5
 
 
 def une_partie(bot1, bot2, i):
     partie = Partie()
     partie.ajouter_joueur(bot1)
     partie.ajouter_joueur(bot2)
-    partie.tour_joueur = i % 2 + 1
+    partie.tour_joueur = 1
 
     while True:
         if partie.tour_joueur == 1:
@@ -19,10 +21,13 @@ def une_partie(bot1, bot2, i):
             if partie.plateau.est_nul():
                 return "nul"
             if partie.plateau.est_victoire(colonne):
+                time.sleep(0.1)
                 return "bot1" if partie.tour_joueur == 1 else "bot2"
             partie.tour_joueur = 2 if partie.tour_joueur == 1 else 1
         else:
+            #print("Invalid move encountered", partie.tour_joueur)
             return "bot2" if partie.tour_joueur == 1 else "bot1"
+
 
 
 def tournoi(bot1, bot2, parties: int, max_workers=None):
@@ -54,11 +59,7 @@ if __name__ == '__main__':
                                   model_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\winner_gen100.pkl",
                                   config_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\config_feedforward")
 
-    bot2 = negamaxv3.Negamax3("Joueur 2", "X", profondeur=4)
-
-    #bot2 = negamaxv3.Negamax3("Joueur 2", "O", profondeur=6, temps_max=0.1)
-    #bot2 = random_bot.RandomBot("Joueur 2", "O")
-    #bot2 = bot.Bot("Joueur 2", "O")
+    bot2 = negamaxv5.Negamax5("Joueur 2", "X", profondeur=4)
 
     start_time = time.time()
     resultats = tournoi(bot1, bot2, 1000)

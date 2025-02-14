@@ -1,151 +1,108 @@
-import random
 import pickle
+import random
+
 import neat
-import os
 import moteur.plateau as plateau
-from moteur import joueur, partie
-from bots import negamaxv3, bot, random_bot
+from moteur.joueur import Joueur
+from bots import negamaxv5
 
 
-# --- Custom Reporter for Saving Intermediate Best Genomes ---
-class SaveIntermediateReporter(neat.reporting.BaseReporter):
-    def __init__(self, thresholds):
-        # thresholds: a collection of generation numbers at which to save
-        self.thresholds = set(thresholds)
-        self.current_generation = None
-
-    def start_generation(self, generation):
-        # Save the current generation number
-        self.current_generation = generation
-
-    def post_evaluate(self, config, population, species, best_genome):
-        if self.current_generation in self.thresholds:
-            filename = f'winner_gen{self.current_generation}.pkl'
-            with open(filename, 'wb') as f:
-                pickle.dump(best_genome, f)
-            print(f"Saved best genome of generation {self.current_generation} to {filename}")
-
-
-# --- Helper function for converting a board to a neural network input vector ---
-def vectorize_board(board: plateau.Plateau):
-    vector = []
-    for col in range(board.colonnes):
-        # Get the list of tokens in the current column.
-        column_tokens = board.grille[col]
-        # Fill the column with its tokens; empty slots are represented by "."
-        full_column = column_tokens + ["." for _ in range(board.lignes - board.hauteurs_colonnes[col])]
-        # Convert each cell as needed: empty=0, "X"=1, "O"=-1
-        vector.extend([0 if cell == "." else 1 if cell == "O" else -1 for cell in full_column])
-        #for each column, add 1 if the column isn't full, 0 otherwise
-        non_full_columns = board.colonnes_jouables
-        vector.append(1 if col in non_full_columns else 0)
-    return vector
+# --- Helper Function: same as in training ---
+def get_move_from_net(net, game_board, my_symbol, opp_symbol):
+    input_vector = []
+    for row in range(game_board.lignes):
+        for col in range(game_board.colonnes):
+            if row < len(game_board.grille[col]):
+                token = game_board.grille[col][row]
+                if token == my_symbol:
+                    input_vector.append(1.0)
+                elif token == opp_symbol:
+                    input_vector.append(-1.0)
+                else:
+                    input_vector.append(0.0)
+            else:
+                input_vector.append(0.0)
+    outputs = net.activate(input_vector)
+    valid_moves = list(game_board.colonnes_jouables)
+    if not valid_moves:
+        return None
+    best_move = max(valid_moves, key=lambda col: outputs[col])
+    return best_move
 
 
-# --- Fitness evaluation function ---
-def eval_genomes(genomes, config):
-    global gen_counter
-    gen_counter += 1
-    for genome_id, genome in genomes:
-        # Create the network from genome
-        net = neat.nn.FeedForwardNetwork.create(genome, config)
-        fitness = run_connect4_game(net)  # simulate one game and return a fitness score
-        genome.fitness = fitness
+def simulate_game(net, first_player):
+    game_board = plateau.Plateau()
+    if first_player == 1:
+        network_symbol = 'X'
+        opponent_symbol = 'O'
+    else:
+        network_symbol = 'O'
+        opponent_symbol = 'X'
 
+    # Dummy player for Negamax opponent.
+    dummy = Joueur("Dummy", network_symbol)
+    # Instantiate the Negamax opponent (adjust depth if needed)
+    opponent_bot = negamaxv5.Negamax5("Negamax", opponent_symbol, profondeur=2)
 
-# --- Game simulation function ---
-def run_connect4_game(net):
-    fitness = 0
-    for _ in range(20):
-        partie_test = partie.Partie()
-        partie_en_cours = True
-
-        # Set up players: always player 1 is controlled by the genome,
-        # and choose an opponent based on the generation counter.
-        joueur1 = joueur.Joueur("Joueur 1", "X")
-        if gen_counter <= 50:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=2)
-        elif gen_counter <= 400:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=4)
-        elif gen_counter <= 500:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=4, temps_max=0.01)
-        elif gen_counter <= 600:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=4, temps_max=0.025)
-        elif gen_counter <= 700:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=6, temps_max=0.025)
-        elif gen_counter <= 800:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=4, temps_max=0.1)
-        elif gen_counter <= 900:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=6, temps_max=0.1)
+    current_player = first_player
+    move_count = 0
+    while True:
+        if (first_player == 1 and current_player == 1) or (first_player == 2 and current_player == 2):
+            move = get_move_from_net(net, game_board, network_symbol, opponent_symbol)
+            if move is None or move not in game_board.colonnes_jouables:
+                return -1, move_count  # illegal move penalty
         else:
-            joueur2 = negamaxv3.Negamax3("Bot", "O", profondeur=8, temps_max=0.1)
+            move = opponent_bot.trouver_coup(game_board, dummy)
+            if move is None or move not in game_board.colonnes_jouables:
+                move = random.choice(list(game_board.colonnes_jouables))
 
-        partie_test.ajouter_joueur(joueur1)
-        partie_test.ajouter_joueur(joueur2)
-        partie.tour_joueur = random.randint(1, 2)
+        game_board.ajouter_jeton(move, network_symbol if ((first_player == 1 and current_player == 1) or (
+                    first_player == 2 and current_player == 2)) else opponent_symbol)
+        move_count += 1
 
-        while partie_en_cours:
-            if partie_test.tour_joueur == 1:
-                inputs = vectorize_board(partie_test.plateau)
-                outputs = net.activate(inputs)
-                colonne = outputs.index(max(outputs))
-                if colonne not in partie_test.plateau.colonnes_jouables:
-                    fitness -= 125*5
-                    break
+        if game_board.est_victoire(move):
+            if ((first_player == 1 and current_player == 1) or (first_player == 2 and current_player == 2)):
+                return 1, move_count  # network wins
             else:
-                colonne = joueur2.trouver_coup(partie_test.plateau, joueur1)
+                return 0, move_count  # network loses
+        if game_board.est_nul():
+            return 0.5, move_count
 
-            if partie_test.jouer(colonne, partie_test.tour_joueur):
-
-                if partie_test.plateau.est_victoire(colonne):
-                    bonus = (100 - partie_test.tour)*5
-                    malus = (-100 + partie_test.tour)*5
-                    fitness += bonus if partie_test.tour_joueur == 1 else malus
-                    break
-                elif partie_test.plateau.est_nul():
-                    break
-                # Switch turn:
-                partie_test.tour_joueur = 2 if partie_test.tour_joueur == 1 else 1
-            else:
-                print("Invalid move encountered")
-                break
-    return fitness
+        current_player = 2 if current_player == 1 else 1
 
 
-gen_counter = 0
+def evaluate_net(net, num_games=10):
+    total_score = 0.0
+    for i in range(num_games):
+        first_player = 1 if i % 2 == 0 else 2
+        result, move_count = simulate_game(net, first_player)
+        if result == 1:
+            total_score += 1.5 + (42 - move_count) / 42.0
+        elif result == 0.5:
+            total_score += 0.5
+        elif result == 0:
+            total_score += 0.0
+        elif result == -1:
+            total_score += -1.0
+    average_score = total_score / num_games
+    return average_score
 
 
-# --- Main run function ---
-def run(config_file):
-    global gen_counter
-    # Load configuration from file.
+# --- Main Testing Code ---
+if __name__ == '__main__':
+    # Adjust paths to your genome and config files
+    genome_path = r'path/to/winner.pkl'
+    config_path = r'path/to/config_feedforward'
+
+    with open(genome_path, 'rb') as f:
+        genome = pickle.load(f)
+
     config = neat.Config(
         neat.DefaultGenome, neat.DefaultReproduction,
         neat.DefaultSpeciesSet, neat.DefaultStagnation,
-        config_file
+        config_path
     )
 
-    # Create the population.
-    p = neat.Population(config)
-
-    # Add reporters: standard output and statistics.
-    p.add_reporter(neat.StdOutReporter(True))
-    stats = neat.StatisticsReporter()
-    p.add_reporter(stats)
-    # Add our custom reporter to save best genomes at our thresholds.
-    thresholds = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1500, 2000, 2500, 3000, 3500, 4000, 4500, 5000, 6000, 7000, 8000, 9000, 10000]
-    p.add_reporter(SaveIntermediateReporter(thresholds))
-
-    gen_counter = 0
-    # Run evolution for 300 generations.
-    winner = p.run(eval_genomes, 10000)
-
-    print('\nBest genome:\n{!s}'.format(winner))
-    return winner
-
-
-if __name__ == '__main__':
-    # Determine the path to your configuration file.
-    local_dir = os.path.dirname(__file__)
-    config_path = os.path.join(local_dir, 'config_feedforward')
-    run(config_path)
+    net = neat.nn.FeedForwardNetwork.create(genome, config)
+    avg_fitness = evaluate_net(net, num_games=10)
+    print("Average fitness (training-like simulation):", avg_fitness)

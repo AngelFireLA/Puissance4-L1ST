@@ -1,22 +1,44 @@
 import pickle
+import random
 
 import neat
 
 from bots.bot import Bot
 
-def vectorize_board(board):
-    vector = []
-    for col in range(board.colonnes):
-        # Get the list of tokens in the current column.
-        column_tokens = board.grille[col]
-        # Fill the column with its tokens; empty slots are represented by "."
-        full_column = column_tokens + ["." for _ in range(board.lignes - board.hauteurs_colonnes[col])]
-        # Convert each cell as needed: empty=0, "X"=1, "O"=-1
-        vector.extend([0 if cell == "." else 1 if cell == "O" else -1 for cell in full_column])
-        #for each column, add 1 if the column isn't full, 0 otherwise
-        non_full_columns = board.colonnes_jouables
-        vector.append(1 if col in non_full_columns else 0)
-    return vector
+def get_move_from_net(net, game_board, my_symbol, opp_symbol):
+    """
+    Convert the board into 42 inputs:
+      - 1.0 for cells with my_symbol,
+      - -1.0 for cells with opp_symbol,
+      - 0.0 for empty.
+    Then, activate the network and choose the valid move (column)
+    with the highest output.
+    """
+    input_vector = []
+    for row in range(game_board.lignes):
+        for col in range(game_board.colonnes):
+            if row < len(game_board.grille[col]):
+                token = game_board.grille[col][row]
+                if token == my_symbol:
+                    input_vector.append(1.0)
+                elif token == opp_symbol:
+                    input_vector.append(-1.0)
+                else:
+                    input_vector.append(0.0)
+            else:
+                input_vector.append(0.0)
+    outputs = net.activate(input_vector)
+    valid_moves = list(game_board.colonnes_jouables)
+    if not valid_moves:
+        return None
+    # Choose the valid move with the highest output value.
+    best_move = max(valid_moves, key=lambda col: outputs[col])
+    # (This check is just in case—best_move should always be valid here.)
+    if best_move not in valid_moves:
+        return None
+    return best_move
+
+
 
 def load_genome(genome_file):
     with open(genome_file, 'rb') as f:
@@ -36,7 +58,5 @@ class NeuralBot(Bot):
 
     def trouver_coup(self, plateau, joueur2):
         net = neat.nn.FeedForwardNetwork.create(self.genome, self.config)
-        inputs = vectorize_board(plateau)
-        outputs = net.activate(inputs)
-        colonne = outputs.index(max(outputs))
-        return colonne
+        return get_move_from_net(net, plateau, self.symbole, joueur2.symbole)
+
