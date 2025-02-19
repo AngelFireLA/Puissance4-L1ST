@@ -6,14 +6,14 @@ from interface import boutton
 from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, couleur_plateau, couleurs_jetons
 
 hauteur_slider_musique = hauteur_fenetre//2 - 125
-arriere_plan = pygame.image.load("../assets/images/menu_arrière_plan.jpg")
+arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 boutton_revenir= boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 + 250, 300, 75, "Revenir", dict_couleurs["bleu boutton"])
-no_sound_image = pygame.image.load("../assets/images/no-volume.png")
+no_sound_image = pygame.image.load("assets/images/no-volume.png")
 no_sound_image = pygame.transform.scale(no_sound_image, (150, 150))
 no_sound_rect = no_sound_image.get_rect()
 no_sound_rect.center = largeur_fenetre//2-275, hauteur_slider_musique + 25
-sound_image = pygame.image.load("../assets/images/volume.png")
+sound_image = pygame.image.load("assets/images/volume.png")
 sound_image = pygame.transform.scale(sound_image, (150, 150))
 sound_image_rect = sound_image.get_rect()
 sound_image_rect.center = largeur_fenetre//2-275, hauteur_slider_musique + 25

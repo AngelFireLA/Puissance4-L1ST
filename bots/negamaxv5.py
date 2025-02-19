@@ -26,10 +26,9 @@ class Negamax5(Bot):
         self.table_de_transposition = {}
         i = -1
         coups_restants = 0
-        # Sum the available moves for all playable columns.
         for colonne in list(plateau.colonnes_jouables):
             coups_restants += plateau.lignes - plateau.hauteurs_colonnes[colonne]
-        meilleur_coups = []  # This will hold moves with the best score so far.
+        meilleur_coups = []
 
         if self.temps_de_pensée_max == 0:
             # Fixed-depth search.
@@ -43,17 +42,14 @@ class Negamax5(Bot):
                 score = -self.negamax(plateau, depth=self.profondeur + i, symbole=prochain_symbole,
                                        alpha=-float('inf'), beta=float('inf'))
                 plateau.annuler_coup(col, colonne_est_enlevée, self.symbole)
-                # If a move yields an immediate win (score > 0), return it.
                 if score > 0:
                     return col
-                # Update our best move(s).
                 if score > meilleur_score:
                     meilleur_score = score
                     meilleur_coups = [col]
                 elif score == meilleur_score:
                     meilleur_coups.append(col)
         else:
-            # Iterative deepening with a time limit.
             while time.time() - start_time <= self.temps_de_pensée_max and meilleur_score <= 0 and i <= coups_restants:
                 meilleur_score = -float('inf')
                 meilleur_coups = []
@@ -76,14 +72,11 @@ class Negamax5(Bot):
                         meilleur_coups.append(col)
                 i += 1
 
-        # If no move was selected by the search, return 0 as a fallback.
         if not meilleur_coups:
             return 0
 
-        # --- Weighted random tie-breaking ---
         center = plateau.colonnes // 2
-        # We want moves closer to the center to have higher weight.
-        # Determine the maximum possible distance among the playable moves.
+
         max_distance = max(abs(col - center) for col in plateau.colonnes_jouables) if plateau.colonnes_jouables else 1
         # For each candidate move, the weight is:
         #   weight = (max_distance - distance_to_center + 1)

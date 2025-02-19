@@ -7,7 +7,7 @@ import bots.random_bot
 from moteur.partie import Partie
 from moteur.joueur import Joueur
 from interface import menu_pause
-from bots import bot, random_bot, negamax, negamaxv5, neuralbot
+from bots import bot, random_bot, negamax, negamaxv5
 from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, récupérer_ip_cible
 import uuid
 
@@ -91,11 +91,11 @@ partie = Partie()
 def main(profondeur=6):
     global partie, plateau_largeur, plateau_hauteur, taille_case, decalage, fenetre, partie_en_cours, arriere_plan
     partie = Partie()
-    partie.tour_joueur = 2
+    partie.tour_joueur = 1
     clock = pygame.time.Clock()
     joueur1 = Joueur("Joueur 1", "X")
     if profondeur > 0:
-        temp_de_pensée_max = 1 if profondeur >= 8 else 0
+        temp_de_pensée_max = 3 if profondeur >= 8 else 0
         joueur2 = bots.negamaxv5.Negamax5(random.choice(noms_robots), "O", profondeur=profondeur, temps_max=temp_de_pensée_max)
 
     else:
@@ -105,7 +105,7 @@ def main(profondeur=6):
     partie.ajouter_joueur(joueur2)
     plateau_largeur = partie.plateau.colonnes
     plateau_hauteur = partie.plateau.lignes
-    arriere_plan = pygame.image.load("../assets/images/menu_arrière_plan.jpg")
+    arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
     largeur_fenetre, hauteur_fenetre = plateau_largeur * taille_case + decalage * 2, plateau_hauteur * taille_case + decalage * 2
     arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 
@@ -146,13 +146,13 @@ def main(profondeur=6):
                         partie.tour_joueur = 2
                     else:
                         partie.tour_joueur = 1
-                else:
-                    print("Coup invalide")
-                    gagnant = partie.joueur1 if partie.tour_joueur == 2 else partie.joueur2
-                    afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Victoire de {gagnant.nom} !", 60, dict_couleurs["bleu marin"])
-                    pygame.display.flip()
-                    pygame.time.wait(3000)
-                    partie_en_cours = False
+                # else:
+                #     print("Coup invalide")
+                #     gagnant = partie.joueur1 if partie.tour_joueur == 2 else partie.joueur2
+                #     afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Victoire de {gagnant.nom} !", 60, dict_couleurs["bleu marin"])
+                #     pygame.display.flip()
+                #     pygame.time.wait(3000)
+                #     partie_en_cours = False
 
             #if escape is pressed, show pause menu :
             if event.type == pygame.KEYDOWN:
