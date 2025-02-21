@@ -47,7 +47,7 @@ def main():
                 if event.key == pygame.K_ESCAPE:
                     return
 
-        afficher_texte(fenetre, largeur_fenetre//2, 50, "Multijoueur :", 60, couleur=dict_couleurs["bleu marin"])
+        afficher_texte(fenetre, largeur_fenetre//2, 90, "Multijoueur :", 75, couleur=dict_couleurs["bleu marin"])
         boutton_créer_partie.afficher(fenetre)
         boutton_rejoindre_partie.afficher(fenetre)
         pygame.display.flip()
