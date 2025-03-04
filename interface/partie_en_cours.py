@@ -160,7 +160,7 @@ def main(profondeur=6):
                     else:
                         fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
 
-        if est_tour_bot(partie):
+        if est_tour_bot(partie) and partie_en_cours:
             pygame.time.wait(500)
             afficher_texte(fenetre, largeur_fenetre//2, decalage//2, f"{joueur2.nom} réfléchit...", 45, dict_couleurs["bleu marin"])
             pygame.display.flip()
@@ -183,7 +183,10 @@ def main(profondeur=6):
             colonne = (mouse[0] - decalage) // taille_case
             symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
             previsualise_pion(colonne, symbole, fenetre)
-        if partie_en_cours: pygame.display.flip()
+        if partie_en_cours:
+            pygame.draw.circle(fenetre, couleurs_jetons[
+                partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole], (largeur_fenetre - 50, 50), 25)
+            pygame.display.flip()
         clock.tick(60)
 
 
@@ -226,7 +229,7 @@ def main_multi():
     socket_client = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     ip_serveur = récupérer_ip_cible() if not local else "127.0.0.1"
     socket_client.connect((ip_serveur, port))
-    #make socket not blocking
+
     socket_client.setblocking(False)
     nom_utilisateur = str(uuid.uuid4())
     socket_client.sendall(f"@connexion:{nom_utilisateur}".encode('utf-8'))
@@ -312,5 +315,7 @@ def main_multi():
             colonne = (mouse[0] - decalage) // taille_case
             symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
             previsualise_pion(colonne, symbole, fenetre)
-        if partie_en_cours: pygame.display.flip()
+        if partie_en_cours:
+            pygame.draw.circle(fenetre, couleurs_jetons[partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole], (largeur_fenetre - 50, 50), 25)
+            pygame.display.flip()
         clock.tick(60)
