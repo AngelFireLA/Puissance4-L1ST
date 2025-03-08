@@ -13,7 +13,7 @@ def afficher_texte(fenetre, x, y, texte, taille, couleur=(0, 0, 0), font="freesa
     fenetre.blit(texte, text_rect)
 
 def charger_config():
-    with open("../config.json", "r") as fichier:
+    with open("config.json", "r") as fichier:
         return json.load(fichier)
 
 def récupérer_port():

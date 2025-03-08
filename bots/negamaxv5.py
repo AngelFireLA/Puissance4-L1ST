@@ -26,13 +26,11 @@ class Negamax5(Bot):
         self.table_de_transposition = {}
         i = -1
         coups_restants = 0
-        # Sum the available moves for all playable columns.
         for colonne in list(plateau.colonnes_jouables):
             coups_restants += plateau.lignes - plateau.hauteurs_colonnes[colonne]
-        meilleur_coups = []  # This will hold moves with the best score so far.
+        meilleur_coups = []
 
         if self.temps_de_pensée_max == 0:
-            # Fixed-depth search.
             for col in tri_coups(plateau):
                 colonne_est_enlevée = plateau.jouer_coup_reversible(col, self.symbole)
                 if plateau.est_victoire(col):
@@ -40,20 +38,17 @@ class Negamax5(Bot):
                     return col
 
                 prochain_symbole = joueur2.symbole
-                score = -self.negamax(plateau, depth=self.profondeur + i, symbole=prochain_symbole,
+                score = -self.negamax(plateau, profondeur=self.profondeur + i, symbole=prochain_symbole,
                                        alpha=-float('inf'), beta=float('inf'))
                 plateau.annuler_coup(col, colonne_est_enlevée, self.symbole)
-                # If a move yields an immediate win (score > 0), return it.
                 if score > 0:
                     return col
-                # Update our best move(s).
                 if score > meilleur_score:
                     meilleur_score = score
                     meilleur_coups = [col]
                 elif score == meilleur_score:
                     meilleur_coups.append(col)
         else:
-            # Iterative deepening with a time limit.
             while time.time() - start_time <= self.temps_de_pensée_max and meilleur_score <= 0 and i <= coups_restants:
                 meilleur_score = -float('inf')
                 meilleur_coups = []
@@ -64,7 +59,7 @@ class Negamax5(Bot):
                         return col
 
                     prochain_symbole = joueur2.symbole
-                    score = -self.negamax(plateau, depth=self.profondeur + i, symbole=prochain_symbole,
+                    score = -self.negamax(plateau, profondeur=self.profondeur + i, symbole=prochain_symbole,
                                            alpha=-float('inf'), beta=float('inf'))
                     plateau.annuler_coup(col, colonne_est_enlevée, self.symbole)
                     if score > 0:
@@ -76,34 +71,26 @@ class Negamax5(Bot):
                         meilleur_coups.append(col)
                 i += 1
 
-        # If no move was selected by the search, return 0 as a fallback.
         if not meilleur_coups:
             return 0
 
-        # --- Weighted random tie-breaking ---
         center = plateau.colonnes // 2
-        # We want moves closer to the center to have higher weight.
-        # Determine the maximum possible distance among the playable moves.
+
         max_distance = max(abs(col - center) for col in plateau.colonnes_jouables) if plateau.colonnes_jouables else 1
-        # For each candidate move, the weight is:
-        #   weight = (max_distance - distance_to_center + 1)
-        # Thus a move at the center (distance 0) gets weight = max_distance + 1.
+
         weights = [(max_distance - abs(col - center) + 1) for col in meilleur_coups]
-        # Select one move from the best moves using the computed weights.
         selected_move = random.choices(meilleur_coups, weights=weights, k=1)[0]
         return selected_move
 
-    def board_to_tuple(self, plateau):
-        # Represent each column as a tuple with fixed length.
-        # Fill missing slots with the empty marker (".")
+    def grille_à_tuple(self, plateau):
         return tuple(tuple(col + ["."] * (plateau.lignes - len(col))) for col in plateau.grille)
 
-    def negamax(self, plateau, depth, symbole, alpha, beta):
+    def negamax(self, plateau, profondeur, symbole, alpha, beta):
         self.coups += 1
-        if depth == 0 or plateau.est_nul():
+        if profondeur == 0 or plateau.est_nul():
             return 0
 
-        clé = (self.board_to_tuple(plateau), depth, symbole)
+        clé = (self.grille_à_tuple(plateau), profondeur, symbole)
         if clé in self.table_de_transposition:
             return self.table_de_transposition[clé]
 
@@ -112,11 +99,11 @@ class Negamax5(Bot):
             colonne_est_enlevée = plateau.jouer_coup_reversible(col, symbole)
             if plateau.est_victoire(col):
                 plateau.annuler_coup(col, colonne_est_enlevée, symbole)
-                self.table_de_transposition[clé] = 1000 + depth
-                return 1000 + depth
+                self.table_de_transposition[clé] = 1000 + profondeur
+                return 1000 + profondeur
 
             symbole_suivant = self.symbole if symbole != self.symbole else self.autre_symbole()
-            score = -self.negamax(plateau, depth - 1, symbole_suivant, -beta, -alpha)
+            score = -self.negamax(plateau, profondeur - 1, symbole_suivant, -beta, -alpha)
             plateau.annuler_coup(col, colonne_est_enlevée, symbole)
 
             if score > meilleur_score:
