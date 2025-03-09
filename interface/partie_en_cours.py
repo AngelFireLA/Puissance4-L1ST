@@ -133,8 +133,9 @@ def main(profondeur=6):
     pygame.display.set_caption("Partie de Puissance 4")
     partie_en_cours = True
     while partie_en_cours:
+        affiche_trucs_de_base(plateau_largeur, plateau_hauteur, arriere_plan, partie, fenetre)
+
         for event in pygame.event.get():
-            affiche_trucs_de_base(plateau_largeur, plateau_hauteur, arriere_plan, partie, fenetre)
             if event.type == pygame.QUIT:
                 pygame.quit()
                 exit()
