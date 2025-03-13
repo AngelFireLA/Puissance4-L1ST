@@ -39,7 +39,7 @@ def p_y(ligne, plateau_hauteur):
 
 def previsualise_pion(colonne, symbole, fenetre):
     couleur = (*couleurs_jetons[symbole], 255)
-    surface = pygame.Surface((taille_case, taille_case), pygame.SRCALPHA)  # Create a surface with alpha channel
+    surface = pygame.Surface((taille_case, taille_case), pygame.SRCALPHA)
     pygame.draw.circle(surface, couleur, (taille_case // 2, taille_case // 2), taille_jeton)
     fenetre.blit(surface, (p_x(colonne) - taille_case // 2, decalage // 2 - taille_case // 2))
 
@@ -68,14 +68,14 @@ def tour_opposé(tour):
 
 def vérifie_fin_de_partie(fenêtre, hauteur_fenêtre, largeur_fenêtre, partie, colonne_choisie):
     joueur_actuel = partie.joueur1 if partie.tour_joueur == 1 else partie.joueur2
-    if partie.plateau.est_nul():
-        print("Match nul")
-        afficher_texte(fenêtre, largeur_fenêtre // 2, hauteur_fenêtre // 2, f"Match nul !", 60, dict_couleurs["bleu marin"])
+    if partie.plateau.est_victoire(colonne_choisie):
+        afficher_texte(fenêtre, largeur_fenêtre // 2, hauteur_fenêtre // 2, f"Victoire de {joueur_actuel.nom} !", 60, dict_couleurs["bleu marin"])
         pygame.display.flip()
         pygame.time.wait(3000)
         return False
-    if partie.plateau.est_victoire(colonne_choisie):
-        afficher_texte(fenêtre, largeur_fenêtre // 2, hauteur_fenêtre // 2, f"Victoire de {joueur_actuel.nom} !", 60, dict_couleurs["bleu marin"])
+    if partie.plateau.est_nul():
+        print("Match nul")
+        afficher_texte(fenêtre, largeur_fenêtre // 2, hauteur_fenêtre // 2, f"Match nul !", 60, dict_couleurs["bleu marin"])
         pygame.display.flip()
         pygame.time.wait(3000)
         return False
@@ -185,8 +185,7 @@ def main(profondeur=6):
             symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
             previsualise_pion(colonne, symbole, fenetre)
         if partie_en_cours:
-            pygame.draw.circle(fenetre, couleurs_jetons[
-                partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole], (largeur_fenetre - 50, 50), 25)
+            pygame.draw.circle(fenetre, couleurs_jetons[partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole], (largeur_fenetre - 50, 50), 25)
             pygame.display.flip()
         clock.tick(60)
 

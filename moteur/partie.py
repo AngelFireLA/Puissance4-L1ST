@@ -7,7 +7,6 @@ class Partie:
         self.joueur1 = None
         self.joueur2 = None
         self.tour = 0
-        self.historique_des_coups = []
         self.tour_joueur = 1
 
     def ajouter_joueur(self, joueur):
@@ -22,16 +21,15 @@ class Partie:
         if num_joueur != self.tour_joueur:
             print("Ce n'est pas votre tour")
             return
+
         if num_joueur == 1:
             symbole = self.joueur1.symbole
         elif num_joueur == 2:
             symbole = self.joueur2.symbole
-
         else:
             raise ValueError("Joueur inconnu")
 
         self.tour += 1
-        self.historique_des_coups.append((colonne, num_joueur))
         return self.plateau.ajouter_jeton(colonne, symbole)
 
     def partie_textuelle(self):

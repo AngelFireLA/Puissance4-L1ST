@@ -59,6 +59,7 @@ class Plateau:
                     compte += 1
                 else:
                     break
+
             x, y = colonne, ligne
             while True:
                 x -= dx
