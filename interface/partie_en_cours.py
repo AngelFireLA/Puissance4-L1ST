@@ -162,9 +162,9 @@ def main(profondeur=6):
                         fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
 
         if est_tour_bot(partie) and partie_en_cours:
-            pygame.time.wait(500)
             afficher_texte(fenetre, largeur_fenetre//2, decalage//2, f"{joueur2.nom} réfléchit...", 45, dict_couleurs["bleu marin"])
             pygame.display.flip()
+            pygame.time.wait(500)
             colonne = partie.joueur2.trouver_coup(partie.plateau, partie.joueur1)
             #print("Coups évalués :", partie.joueur2.coups)
             ligne_finale = partie.plateau.hauteurs_colonnes[colonne]
