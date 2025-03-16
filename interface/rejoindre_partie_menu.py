@@ -1,11 +1,12 @@
 import pygame
 import pygame_widgets
 from pygame_widgets.textbox import TextBox
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, mettre_à_jour_port, mettre_à_jour_ip, ip_est_valide
+from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, mettre_à_jour_port, mettre_à_jour_ip, \
+    ip_est_valide, chemin_absolu_dossier
 from interface.boutton import Boutton
 import interface.partie_en_cours as partie_en_cours
 
-arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
+arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 
 

@@ -1,9 +1,9 @@
 import pygame
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre
+from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, chemin_absolu_dossier
 from interface import boutton
 import interface.partie_en_cours as partie_en_cours
 
-arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
+arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 boutton_difficulté_facile = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 150, 300, 75, "Facile",dict_couleurs["vert"], couleur_surlignée=(100, 255, 100))
 boutton_difficulté_moyen = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 50, 300, 75, "Moyen",dict_couleurs["jaune"], couleur_surlignée=(255, 255, 100))

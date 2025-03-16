@@ -7,10 +7,9 @@ import interface.partie_en_cours as partie_en_cours
 import interface.menu_solo as menu_solo
 import interface.menu_options as menu_options
 import interface.menu_multijoueur as menu_multijoueur
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre
+from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, chemin_absolu_dossier
 
-
-arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
+arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 boutton_troll = boutton.Boutton(75, hauteur_fenetre // 2 + 250, 100, 50, "Quitter", (255, 0, 0), amplitude_arrondi=1.2, couleur_surlignée=(255, 50, 50))
 boutton_solo = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 100, 350, 75, "Solo", dict_couleurs["bleu boutton"])

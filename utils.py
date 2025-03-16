@@ -1,4 +1,5 @@
 import ipaddress
+import os
 
 import pygame
 import json
@@ -13,7 +14,7 @@ def afficher_texte(fenetre, x, y, texte, taille, couleur=(0, 0, 0), font="freesa
     fenetre.blit(texte, text_rect)
 
 def charger_config():
-    with open("config.json", "r") as fichier:
+    with open(chemin_absolu_dossier+"config.json", "r") as fichier:
         return json.load(fichier)
 
 def récupérer_port():
@@ -25,7 +26,7 @@ def récupérer_ip_cible():
 def mettre_à_jour_ip(nouvelle_ip):
     config = charger_config()
     config["ip"] = nouvelle_ip
-    with open("../config.json", "w") as fichier:
+    with open(chemin_absolu_dossier+"config.json", "w") as fichier:
         json.dump(config, fichier)
 
 def est_local():
@@ -34,7 +35,7 @@ def est_local():
 def mettre_à_jour_port(nouveau_port):
     config = charger_config()
     config["port"] = nouveau_port
-    with open("../config.json", "w") as fichier:
+    with open(chemin_absolu_dossier+"config.json", "w") as fichier:
         json.dump(config, fichier)
 
 def ip_est_valide(ip):
@@ -72,3 +73,6 @@ def status_serveur(status=None):
     if status is None:
         return serveur_tourne
     serveur_tourne = status
+
+
+chemin_absolu_dossier = os.path.dirname(os.path.abspath(__file__)) + "/"

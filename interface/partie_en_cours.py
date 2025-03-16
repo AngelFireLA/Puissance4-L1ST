@@ -7,7 +7,8 @@ from moteur.partie import Partie
 from moteur.joueur import Joueur
 from interface import menu_pause
 from bots import negamaxv5
-from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, récupérer_ip_cible
+from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, \
+    récupérer_ip_cible, chemin_absolu_dossier
 import uuid
 
 
@@ -126,7 +127,7 @@ def main(profondeur=6):
     partie.ajouter_joueur(joueur2)
     plateau_largeur = partie.plateau.colonnes
     plateau_hauteur = partie.plateau.lignes
-    arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
+    arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
     largeur_fenetre, hauteur_fenetre = plateau_largeur * taille_case + decalage * 2, plateau_hauteur * taille_case + decalage * 2
     arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
     fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
@@ -217,7 +218,7 @@ def main_multi():
     clock = pygame.time.Clock()
     plateau_largeur = partie.plateau.colonnes
     plateau_hauteur = partie.plateau.lignes
-    arriere_plan = pygame.image.load("assets/images/menu_arrière_plan.jpg")
+    arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
     largeur_fenetre, hauteur_fenetre = plateau_largeur * taille_case + decalage * 2, plateau_hauteur * taille_case + decalage * 2
     arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 
