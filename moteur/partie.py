@@ -18,17 +18,17 @@ class Partie:
         else:
             raise ValueError("La partie est déjà pleine")
 
-    def jouer(self, colonne, num_joueur):
+    def jouer(self, colonne, num_joueur, symbole=None):
         if num_joueur != self.tour_joueur:
             print("Ce n'est pas votre tour")
             return
-        if num_joueur == 1:
-            symbole = self.joueur1.symbole
-        elif num_joueur == 2:
-            symbole = self.joueur2.symbole
-
-        else:
-            raise ValueError("Joueur inconnu")
+        if not symbole:
+            if num_joueur == 1:
+                symbole = self.joueur1.symbole
+            elif num_joueur == 2:
+                symbole = self.joueur2.symbole
+            else:
+                raise ValueError("Joueur inconnu")
 
         self.tour += 1
         self.historique_des_coups.append((colonne, num_joueur))

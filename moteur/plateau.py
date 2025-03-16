@@ -88,4 +88,3 @@ class Plateau:
         if colonne_est_enlevée:
             self.colonnes_jouables.add(colonne)
 
-

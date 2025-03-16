@@ -1,108 +1,202 @@
-import pickle
 import random
-
+import pickle
 import neat
+import os
 import moteur.plateau as plateau
-from moteur.joueur import Joueur
-from bots import negamaxv5
+from moteur import joueur, partie
+from bots import negamaxv5, bot, random_bot
 
 
-# --- Helper Function: same as in training ---
-def get_move_from_net(net, game_board, my_symbol, opp_symbol):
-    input_vector = []
-    for row in range(game_board.lignes):
-        for col in range(game_board.colonnes):
-            if row < len(game_board.grille[col]):
-                token = game_board.grille[col][row]
-                if token == my_symbol:
-                    input_vector.append(1.0)
-                elif token == opp_symbol:
-                    input_vector.append(-1.0)
-                else:
-                    input_vector.append(0.0)
-            else:
-                input_vector.append(0.0)
-    outputs = net.activate(input_vector)
-    valid_moves = list(game_board.colonnes_jouables)
-    if not valid_moves:
-        return None
-    best_move = max(valid_moves, key=lambda col: outputs[col])
-    return best_move
+# --- Custom Reporter for Saving Intermediate Best Genomes ---
+class SaveIntermediateReporter(neat.reporting.BaseReporter):
+    def __init__(self, thresholds):
+        # thresholds: a collection of generation numbers at which to save
+        self.thresholds = set(thresholds)
+        self.current_generation = None
+
+    def start_generation(self, generation):
+        # Save the current generation number
+        self.current_generation = generation
+
+    def post_evaluate(self, config, population, species, best_genome):
+        if self.current_generation in self.thresholds:
+            filename = f'genomes/winner12_gen{self.current_generation}.pkl'
+            with open(filename, 'wb') as f:
+                pickle.dump(best_genome, f)
+            print(f"Saved best genome of generation {self.current_generation} to {filename}")
 
 
-def simulate_game(net, first_player):
-    game_board = plateau.Plateau()
-    if first_player == 1:
-        network_symbol = 'X'
-        opponent_symbol = 'O'
-    else:
-        network_symbol = 'O'
-        opponent_symbol = 'X'
+# --- Helper function for converting a board to a neural network input vector ---
+def vectorize_board(board: plateau.Plateau):
+    vector = []
+    column_states = []
+    for col in range(board.colonnes):
+        # Get the list of tokens in the current column.
+        column_tokens = board.grille[col]
+        # Fill the column with its tokens; empty slots are represented by "."
+        full_column = column_tokens + ["." for _ in range(board.lignes - board.hauteurs_colonnes[col])]
+        # Convert each cell as needed: empty=0, "X"=1, "O"=-1
+        vector.extend([0 if cell == "." else 1 if cell == "O" else -1 for cell in full_column])
+        #for each column, add 1 if the column isn't full, 0 otherwise
+        non_full_columns = board.colonnes_jouables
+        column_states.append(1 if col in non_full_columns else 0)
+    return vector + column_states
 
-    # Dummy player for Negamax opponent.
-    dummy = Joueur("Dummy", network_symbol)
-    # Instantiate the Negamax opponent (adjust depth if needed)
-    opponent_bot = negamaxv5.Negamax5("Negamax", opponent_symbol, profondeur=2)
 
-    current_player = first_player
-    move_count = 0
-    while True:
-        if (first_player == 1 and current_player == 1) or (first_player == 2 and current_player == 2):
-            move = get_move_from_net(net, game_board, network_symbol, opponent_symbol)
-            if move is None or move not in game_board.colonnes_jouables:
-                return -1, move_count  # illegal move penalty
+
+# --- Game simulation function ---
+def run_connect4_game(net, gen_counter):
+    fitness = 0
+    amount_of_games = 10
+    for _ in range(amount_of_games):
+        partie_test = partie.Partie()
+        partie_en_cours = True
+        # Set up players: always player 1 is controlled by the genome,
+        # and choose an opponent based on the generation counter.
+        joueur1 = joueur.Joueur("Joueur 1", "O")
+        import random
+
+        # For each generation bracket, define a list of (adversary, weight) pairs.
+        if gen_counter <= 50:
+            # Early generations: only basic bots available.
+            adversaires = [
+                (random_bot.RandomBot("Bot", "X"), 1),
+                (negamaxv5.Negamax5("Bot", "X", profondeur=1), 1),
+                (bot.Bot("Bot", "X"), 1)
+            ]
+            fitness -= 125
+        # else:
+        elif gen_counter <= 1500:
+            # From 251 to 1000, add the deeper bot with higher weight, but keep the older ones with lower weight.
+            adversaires = [
+                (random_bot.RandomBot("Bot", "X"), 0.5),
+                (negamaxv5.Negamax5("Bot", "X", profondeur=1), 0.3),
+                (bot.Bot("Bot", "X"), 1),
+                (negamaxv5.Negamax5("Bot", "X", profondeur=2), 5)
+            ]
         else:
-            move = opponent_bot.trouver_coup(game_board, dummy)
-            if move is None or move not in game_board.colonnes_jouables:
-                move = random.choice(list(game_board.colonnes_jouables))
+            adversaires = [
+                (random_bot.RandomBot("Bot", "X"), 0.2),
+                (negamaxv5.Negamax5("Bot", "X", profondeur=1), 0.1),
+                (bot.Bot("Bot", "X"), 0.7),
+                (negamaxv5.Negamax5("Bot", "X", profondeur=2), 2),
+                (negamaxv5.Negamax5("Bot", "X", profondeur=4), 5)
+            ]
+        # elif gen_counter <= 6000:
+        #     adversaires = [
+        #         (random_bot.RandomBot("Bot", "X"), 0.3),
+        #         (bot.Bot("Bot", "X"), 0.4),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=2), 1),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=4), 2),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=6), 6)
+        #     ]
+        # elif gen_counter <= 10000:
+        #     adversaires = [
+        #         (random_bot.RandomBot("Bot", "X"), 0.2),
+        #         (bot.Bot("Bot", "X"), 0.1),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=4), 1.5),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=6), 2),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=8), 7)
+        #     ]
+        # elif gen_counter <= 15000:
+        #     adversaires = [
+        #         (random_bot.RandomBot("Bot", "X"), 0.1),
+        #         (bot.Bot("Bot", "X"), 0.1),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=8), 3),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=10), 9)
+        #     ]
+        # else:
+        #     # After 15000 generations, only the best bots are used.
+        #     adversaires = [
+        #         (random_bot.RandomBot("Bot", "X"), 0.1),
+        #         (bot.Bot("Bot", "X"), 0.1),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=8), 2),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=10), 4),
+        #         (negamaxv5.Negamax5("Bot", "X", profondeur=12), 10)
+        #     ]
 
-        game_board.ajouter_jeton(move, network_symbol if ((first_player == 1 and current_player == 1) or (
-                    first_player == 2 and current_player == 2)) else opponent_symbol)
-        move_count += 1
+        # Unpack the bots and weights.
+        bots, weights = zip(*adversaires)
+        # Use weighted random selection (random.choices returns a list, so take the first element).
+        joueur2 = random.choices(bots, weights=weights, k=1)[0]
 
-        if game_board.est_victoire(move):
-            if ((first_player == 1 and current_player == 1) or (first_player == 2 and current_player == 2)):
-                return 1, move_count  # network wins
+        partie_test.ajouter_joueur(joueur1)
+        partie_test.ajouter_joueur(joueur2)
+        partie_test.tour_joueur = random.randint(1, 2)
+
+        while partie_en_cours:
+            if partie_test.tour_joueur == 1:
+                inputs = vectorize_board(partie_test.plateau)
+                outputs = net.activate(inputs)
+                # Get a list of column indices sorted by output (highest first)
+                sorted_columns = sorted(range(len(outputs)), key=lambda i: outputs[i], reverse=True)
+
+                # Find the first valid move in the sorted order and compute the penalty
+                valid_choice = None
+                for rank, col in enumerate(sorted_columns):
+                    if col in partie_test.plateau.colonnes_jouables:
+                        valid_choice = col
+                        break
+                    else:
+                        fitness -= rank*-5
+                colonne = valid_choice
             else:
-                return 0, move_count  # network loses
-        if game_board.est_nul():
-            return 0.5, move_count
+                colonne = joueur2.trouver_coup(partie_test.plateau, joueur1)
 
-        current_player = 2 if current_player == 1 else 1
+            if partie_test.jouer(colonne, partie_test.tour_joueur):
 
-
-def evaluate_net(net, num_games=10):
-    total_score = 0.0
-    for i in range(num_games):
-        first_player = 1 if i % 2 == 0 else 2
-        result, move_count = simulate_game(net, first_player)
-        if result == 1:
-            total_score += 1.5 + (42 - move_count) / 42.0
-        elif result == 0.5:
-            total_score += 0.5
-        elif result == 0:
-            total_score += 0.0
-        elif result == -1:
-            total_score += -1.0
-    average_score = total_score / num_games
-    return average_score
+                if partie_test.plateau.est_victoire(colonne):
+                    bonus = (100 - partie_test.tour)
+                    malus = (-100 + partie_test.tour)
+                    fitness += bonus if partie_test.tour_joueur == 1 else malus
+                    break
+                elif partie_test.plateau.est_nul():
+                    break
+                # Switch turn:
+                partie_test.tour_joueur = 2 if partie_test.tour_joueur == 1 else 1
+            else:
+                print("Invalid move encountered")
+                break
+    return fitness/amount_of_games
 
 
-# --- Main Testing Code ---
-if __name__ == '__main__':
-    # Adjust paths to your genome and config files
-    genome_path = r'path/to/winner.pkl'
-    config_path = r'path/to/config_feedforward'
 
-    with open(genome_path, 'rb') as f:
-        genome = pickle.load(f)
+def eval_genome(genome, config, gen_counter):
+    net = neat.nn.FeedForwardNetwork.create(genome, config)
+    fitness = run_connect4_game(net, gen_counter)  # run a game (or several) and get fitness
+    return fitness
 
+
+
+# --- Main run function ---
+def run(config_file):
     config = neat.Config(
         neat.DefaultGenome, neat.DefaultReproduction,
         neat.DefaultSpeciesSet, neat.DefaultStagnation,
-        config_path
+        config_file
     )
+    p = neat.Population(config)
+    p.add_reporter(neat.StdOutReporter(True))
+    stats = neat.StatisticsReporter()
+    p.add_reporter(stats)
 
-    net = neat.nn.FeedForwardNetwork.create(genome, config)
-    avg_fitness = evaluate_net(net, num_games=10)
-    print("Average fitness (training-like simulation):", avg_fitness)
+    thresholds = [i*100 for i in range(1, 51)]
+    p.add_reporter(SaveIntermediateReporter(thresholds))
+
+    num_workers = os.cpu_count()  # or use max(1, os.cpu_count() - 1)
+    pe = neat.ParallelEvaluator(num_workers, eval_genome)
+    winner = p.run(pe.evaluate, 50000)
+
+    #save best genome
+    with open('genomes/winner12.pkl', 'wb') as f:
+        pickle.dump(winner, f)
+
+    print('\nBest genome:\n{!s}'.format(winner))
+    return winner
+
+
+if __name__ == '__main__':
+    # Determine the path to your configuration file.
+    local_dir = os.path.dirname(__file__)
+    config_path = os.path.join(local_dir, 'config_feedforward')
+    run(config_path)
