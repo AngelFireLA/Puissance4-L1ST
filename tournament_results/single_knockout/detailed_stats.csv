@@ -1,0 +1,117 @@
+Bot,ELO,Wins,Losses,Draws,Win %,W/L Ratio,First Player Wins,Second Player Wins,Bot Type,Avg Execution Time (s)
+Default Bot,1200.0,2,2,0,50.00%,1.000,1,1,Default,1.8954
+Negamax P1,1169.5,0,2,0,0.00%,0.000,0,0,Negamax,0.5012
+Negamax P2,1169.5,0,2,0,0.00%,0.000,0,0,Negamax,2.6099
+Negamax P4,1169.5,0,2,0,0.00%,0.000,0,0,Negamax,1.3897
+Negamax P6,1169.5,0,2,0,0.00%,0.000,0,0,Negamax,3.0244
+Negamax2 P1,1169.5,0,2,0,0.00%,0.000,0,0,Negamax2,5.8325
+Negamax2 P2,1173.5,1,3,0,25.00%,0.333,1,0,Negamax2,1.8861
+Negamax2 P4,1198.5,1,1,0,50.00%,1.000,1,0,Negamax2,3.5456
+Negamax2 P6,1169.5,0,2,0,0.00%,0.000,0,0,Negamax2,0.3317
+Negamax2 P8,1230.5,4,2,0,66.67%,2.000,2,2,Negamax2,5.8754
+Negamax3 P1,1173.5,1,3,0,25.00%,0.333,0,1,Negamax3,0.0592
+Negamax3 P2,1169.5,0,2,0,0.00%,0.000,0,0,Negamax3,1.4224
+Negamax3 P4,1169.5,0,2,0,0.00%,0.000,0,0,Negamax3,1.8565
+Negamax3 P6,1184.0,0,1,1,25.00%,0.000,0,0,Negamax3,6.4506
+Negamax3 P8,1217.9,4,3,1,56.25%,1.333,3,1,Negamax3,6.3863
+Negamax4 P1,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,0.0000
+Negamax4 P10,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,32.0736
+Negamax4 P10 T0.01,1198.5,1,1,0,50.00%,1.000,1,0,Negamax4,10.0344
+Negamax4 P10 T0.025,1216.0,2,1,1,62.50%,2.000,1,1,Negamax4,10.6812
+Negamax4 P10 T0.1,1201.3,2,2,0,50.00%,1.000,1,1,Negamax4,31.0839
+Negamax4 P10 T0.25,1200.0,2,2,0,50.00%,1.000,1,1,Negamax4,7.7888
+Negamax4 P2,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,0.7685
+Negamax4 P4,1198.5,1,1,0,50.00%,1.000,1,0,Negamax4,15.4275
+Negamax4 P4 T0.01,1200.0,2,2,0,50.00%,1.000,1,1,Negamax4,0.3928
+Negamax4 P4 T0.025,1200.0,2,2,0,50.00%,1.000,1,1,Negamax4,5.9821
+Negamax4 P4 T0.1,1214.8,3,2,1,58.33%,1.500,1,2,Negamax4,2.6734
+Negamax4 P4 T0.25,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,5.8996
+Negamax4 P6,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,7.7470
+Negamax4 P6 T0.01,1198.5,1,1,0,50.00%,1.000,1,0,Negamax4,6.5753
+Negamax4 P6 T0.025,1185.5,0,1,1,25.00%,0.000,0,0,Negamax4,1.1781
+Negamax4 P6 T0.1,1200.0,2,2,0,50.00%,1.000,1,1,Negamax4,3.0265
+Negamax4 P6 T0.25,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,6.2516
+Negamax4 P8,1228.1,4,2,0,66.67%,2.000,2,2,Negamax4,4.1675
+Negamax4 P8 T0.01,1169.5,0,2,0,0.00%,0.000,0,0,Negamax4,14.5752
+Negamax4 P8 T0.025,1216.0,2,1,1,62.50%,2.000,1,1,Negamax4,2.1679
+Negamax4 P8 T0.1,1185.5,0,1,1,25.00%,0.000,0,0,Negamax4,2.4978
+Negamax4 P8 T0.25,1218.5,3,2,1,58.33%,1.500,2,1,Negamax4,7.1722
+Negamax5 P1,1169.5,0,2,0,0.00%,0.000,0,0,Negamax5,0.1177
+Negamax5 P10,1184.0,0,1,1,25.00%,0.000,0,0,Negamax5,7.6554
+Negamax5 P10 T0.01,1200.0,2,2,0,50.00%,1.000,1,1,Negamax5,3.7530
+Negamax5 P10 T0.025,1201.5,2,2,2,50.00%,1.000,1,1,Negamax5,20.1533
+Negamax5 P10 T0.1,1200.0,2,2,0,50.00%,1.000,1,1,Negamax5,3.4829
+Negamax5 P10 T0.25,1215.8,2,1,1,62.50%,2.000,2,0,Negamax5,6.1335
+Negamax5 P12,1186.7,1,2,1,37.50%,0.500,0,1,Negamax5,22.5342
+Negamax5 P12 T0.01,1200.0,2,2,0,50.00%,1.000,1,1,Negamax5,21.5580
+Negamax5 P12 T0.025,1188.0,1,2,1,37.50%,0.500,1,0,Negamax5,11.4871
+Negamax5 P12 T0.1,1229.1,3,1,0,75.00%,3.000,2,1,Negamax5,27.3786
+Negamax5 P12 T0.25,1214.5,2,1,1,62.50%,2.000,1,1,Negamax5,23.9411
+Negamax5 P2,1169.5,0,2,0,0.00%,0.000,0,0,Negamax5,0.2055
+Negamax5 P4,1198.5,1,1,0,50.00%,1.000,0,1,Negamax5,9.6527
+Negamax5 P4 T0.01,1245.0,4,1,1,75.00%,4.000,2,2,Negamax5,0.4486
+Negamax5 P4 T0.025,1185.5,0,1,1,25.00%,0.000,0,0,Negamax5,15.7614
+Negamax5 P4 T0.1,1198.5,1,1,0,50.00%,1.000,1,0,Negamax5,0.8070
+Negamax5 P4 T0.25,1201.1,2,2,0,50.00%,1.000,1,1,Negamax5,4.2424
+Negamax5 P6,1198.5,1,1,0,50.00%,1.000,1,0,Negamax5,0.0518
+Negamax5 P6 T0.01,1169.5,0,2,0,0.00%,0.000,0,0,Negamax5,4.3708
+Negamax5 P6 T0.025,1247.6,5,2,1,68.75%,2.500,2,3,Negamax5,1.5191
+Negamax5 P6 T0.1,1245.0,4,1,1,75.00%,4.000,1,3,Negamax5,7.3133
+Negamax5 P6 T0.25,1226.9,5,3,0,62.50%,1.667,2,3,Negamax5,6.0319
+Negamax5 P8,1185.4,1,2,1,37.50%,0.500,1,0,Negamax5,1.5761
+Negamax5 P8 T0.01,1246.2,6,3,1,65.00%,2.000,3,3,Negamax5,10.4652
+Negamax5 P8 T0.025,1184.0,0,1,1,25.00%,0.000,0,0,Negamax5,23.9368
+Negamax5 P8 T0.1,1198.7,2,2,0,50.00%,1.000,1,1,Negamax5,1.6277
+Negamax5 P8 T0.25,1170.9,1,3,0,25.00%,0.333,1,0,Negamax5,9.6829
+Negamax5B P1,1169.5,0,2,0,0.00%,0.000,0,0,Negamax5B,1.4023
+Negamax5B P10,1233.6,3,1,4,62.50%,3.000,2,1,Negamax5B,5.7786
+Negamax5B P10 T0.01,1184.0,0,1,1,25.00%,0.000,0,0,Negamax5B,3.7859
+Negamax5B P10 T0.025,1229.3,4,2,0,66.67%,2.000,2,2,Negamax5B,3.8505
+Negamax5B P10 T0.1,1228.2,4,2,0,66.67%,2.000,2,2,Negamax5B,3.7280
+Negamax5B P10 T0.25,1356.3,12,1,1,89.29%,12.000,7,5,Negamax5B,7.4651
+Negamax5B P12,1257.1,6,2,0,75.00%,3.000,3,3,Negamax5B,15.9549
+Negamax5B P12 T0.01,1231.7,4,2,0,66.67%,2.000,3,1,Negamax5B,12.7389
+Negamax5B P12 T0.025,1232.2,5,3,0,62.50%,1.667,3,2,Negamax5B,12.0372
+Negamax5B P12 T0.1,1214.4,2,1,1,62.50%,2.000,1,1,Negamax5B,20.9728
+Negamax5B P12 T0.25,1200.0,2,2,0,50.00%,1.000,1,1,Negamax5B,10.3838
+Negamax5B P2,1185.5,0,1,1,25.00%,0.000,0,0,Negamax5B,2.8820
+Negamax5B P4,1214.5,2,1,1,62.50%,2.000,1,1,Negamax5B,2.1807
+Negamax5B P4 T0.01,1261.9,5,1,2,75.00%,5.000,4,1,Negamax5B,4.4607
+Negamax5B P4 T0.025,1233.1,4,2,0,66.67%,2.000,2,2,Negamax5B,5.2964
+Negamax5B P4 T0.1,1280.4,8,3,1,70.83%,2.667,3,5,Negamax5B,8.3702
+Negamax5B P4 T0.25,1218.6,3,2,1,58.33%,1.500,1,2,Negamax5B,14.6621
+Negamax5B P6,1184.0,0,1,1,25.00%,0.000,0,0,Negamax5B,0.6375
+Negamax5B P6 T0.01,1184.0,0,1,1,25.00%,0.000,0,0,Negamax5B,9.7381
+Negamax5B P6 T0.025,1216.2,2,1,3,58.33%,2.000,1,1,Negamax5B,2.7717
+Negamax5B P6 T0.1,1275.0,6,1,1,81.25%,6.000,2,4,Negamax5B,3.8475
+Negamax5B P6 T0.25,1275.2,7,2,1,75.00%,3.500,4,3,Negamax5B,6.1914
+Negamax5B P8,1229.1,3,1,0,75.00%,3.000,1,2,Negamax5B,0.6067
+Negamax5B P8 T0.01,1288.3,6,0,4,80.00%,inf,3,3,Negamax5B,1.0382
+Negamax5B P8 T0.025,1288.7,7,1,4,75.00%,7.000,4,3,Negamax5B,2.5268
+Negamax5B P8 T0.1,1244.8,4,1,1,75.00%,4.000,2,2,Negamax5B,6.7317
+Negamax5B P8 T0.25,1308.6,8,1,3,79.17%,8.000,5,3,Negamax5B,7.4798
+Neural Bot genomes/checkpoint_gen100.pkl,1198.5,1,1,0,50.00%,1.000,0,1,Neural,0.0022
+Neural Bot genomes/checkpoint_gen200.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.8454
+Neural Bot genomes/winne7.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.1495
+Neural Bot genomes/winner.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.3799
+Neural Bot genomes/winner2_gen1200.pkl,1173.5,1,3,0,25.00%,0.333,1,0,Neural,1.1548
+Neural Bot genomes/winner3_gen1000.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,6.1547
+Neural Bot genomes/winner3_gen800.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,4.4215
+Neural Bot genomes/winner4_gen300.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,3.1858
+Neural Bot genomes/winner5_gen300.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.1070
+Neural Bot genomes/winner6_gen200.pkl,1172.2,1,3,0,25.00%,0.333,1,0,Neural,0.5343
+Neural Bot genomes/winner7_gen900.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,1.4736
+Neural Bot genomes/winner8.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,1.1990
+Neural Bot genomes/winner8_gen300.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,1.1876
+Neural Bot genomes/winner9_gen800.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.5381
+Neural Bot genomes/winner_gen100.pkl,1198.5,1,1,0,50.00%,1.000,1,0,Neural,0.0037
+Neural Bot winner.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.9116
+Neural Bot winner_1gen1000.pkl,1173.5,1,3,0,25.00%,0.333,1,0,Neural,0.3131
+Neural Bot winner_1gen1500.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,30.9124
+Neural Bot winner_1gen400.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,2.6938
+Neural Bot winner_1gen50.pkl,1198.5,1,1,0,50.00%,1.000,1,0,Neural,0.0195
+Neural Bot winner_gen100.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.2642
+Neural Bot winner_gen1000.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,0.0115
+Neural Bot winner_gen200.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,1.9126
+Neural Bot winner_gen700.pkl,1169.5,0,2,0,0.00%,0.000,0,0,Neural,1.0095
+Random Bot,1169.5,0,2,0,0.00%,0.000,0,0,Random,2.2061

@@ -1,31 +1,36 @@
 import time
 import concurrent.futures
 from moteur.partie import Partie
-from bots import bot, random_bot, negamax, negamaxv2, negamaxv3, neuralbot
-from bots import bot, random_bot, negamax, negamaxv2, negamaxv3
-from bots import bot, random_bot, negamax, negamaxv2, negamaxv3, neuralbot, negamaxv4, negamaxv5
+from bots import negamaxv5, gpt4o, same, o3_mini_high, o3_mini_high_search, negamaxv5_b, claude37_sonnet, \
+    claude37_sonnet_thinking, gemini_flash_20, r1, gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, \
+    negamaxv6
 
 
 def une_partie(bot1, bot2, i):
     partie = Partie()
     partie.ajouter_joueur(bot1)
     partie.ajouter_joueur(bot2)
-    partie.tour_joueur = 1
+    partie.tour_joueur = i%2 + 1
 
     while True:
         if partie.tour_joueur == 1:
-            colonne = bot1.trouver_coup(partie.plateau, bot2)
+            copie_plateau = partie.plateau.copier_grille()
+            colonne = bot1.trouver_coup(copie_plateau, bot2)
         else:
-            colonne = bot2.trouver_coup(partie.plateau, bot1)
+            copie_plateau = partie.plateau.copier_grille()
+            colonne = bot2.trouver_coup(copie_plateau, bot1)
         if partie.jouer(colonne, partie.tour_joueur):
             if partie.plateau.est_nul():
                 return "nul"
             if partie.plateau.est_victoire(colonne):
-                time.sleep(0.1)
+                print("bot1" if partie.tour_joueur == 1 else "bot2")
+                partie.plateau.afficher()
+                print()
                 return "bot1" if partie.tour_joueur == 1 else "bot2"
+
             partie.tour_joueur = 2 if partie.tour_joueur == 1 else 1
         else:
-            #print("Invalid move encountered", partie.tour_joueur)
+            print("Invalid move encountered", partie.tour_joueur, colonne)
             return "bot2" if partie.tour_joueur == 1 else "bot1"
 
 
@@ -54,13 +59,11 @@ def tournoi(bot1, bot2, parties: int, max_workers=None):
 if __name__ == '__main__':
 
     # Instantiate bots
-    #bot1 = negamaxv2.Negamax2("Joueur 1", "X", profondeur=8)
-    bot1 = neuralbot.NeuralBot("Bot", "O",
-                                  model_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\winner_gen100.pkl",
-                                  config_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\config_feedforward")
+    bot1 = negamaxv5_b.Negamax5B("Joueur 1", "X", profondeur=6)
+    #bot1 = qwq.AdvancedNegamaxBot("Joueur 1", "O", profondeur=6)
 
-    bot2 = negamaxv5.Negamax5("Joueur 2", "X", profondeur=4)
+    bot2 = negamaxv6.Negamax6("Joueur 2", "O", profondeur=6)
 
     start_time = time.time()
-    resultats = tournoi(bot1, bot2, 1000)
+    resultats = tournoi(bot1, bot2, 2)
     print(resultats, "in", time.time() - start_time, "seconds")

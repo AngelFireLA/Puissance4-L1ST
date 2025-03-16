@@ -1,8 +1,9 @@
 import random
-from bots import negamax, negamaxv3, negamaxv5, negamaxv4
+from bots import negamax, negamaxv3, negamaxv5, negamaxv4, claude37_sonnet, claude37_sonnet_thinking, gemini_flash_20, \
+    gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, negamaxv6
 import moteur.plateau as plateau
 import time
-
+from bots import negamaxv5, gpt4o, same, o3_mini_high, o3_mini_high_search, negamaxv5_b
 from moteur.joueur import Joueur
 from moteur.partie import Partie
 
@@ -127,10 +128,10 @@ def test_negamax(bot: negamax.Negamax):
         bot.profondeur = p
         start_time = time.perf_counter()
         bot.trouver_coup(partie.plateau, j1)
-        print(f"Profondeur {p} atteint en {time.perf_counter()-start_time} secondes avec {bot.coups} positions explorées.")
+        print(f"Profondeur {p} atteint en {time.perf_counter()-start_time} secondes.")
 
 
-bot = negamaxv5.Negamax5("P2", "X")
+bot = negamaxv6.Negamax6("P1", "O")
 
 test_negamax(bot)
 # bot = negamaxv5.Negamax5("P1", "O")

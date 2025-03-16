@@ -1,0 +1,31 @@
+INTERESTING TOURNAMENT RECORDS
+============================
+
+Strongest Bot: Negamax5B P12 T0.25 (ELO: 1683.1)
+
+Strongest Bot by Type:
+  Negamax: Negamax P6 (ELO: 1078.3)
+  Negamax2: Negamax2 P6 (ELO: 1160.5)
+  Negamax3: Negamax3 P8 (ELO: 1190.7)
+  Negamax4: Negamax4 P10 (ELO: 1378.7)
+  Negamax5: Negamax5 P12 T0.025 (ELO: 1374.9)
+  Negamax5B: Negamax5B P12 T0.25 (ELO: 1683.1)
+  DefaultBot: Default Bot (ELO: 546.0)
+  RandomBot: Random Bot (ELO: 63.5)
+  NeuralBot: Neural Bot genomes/winner2_gen1200.pkl (ELO: 786.3)
+
+Most Draws: Negamax5B P6 T0.25 (122 draws)
+Most Decisive Bot: Negamax P1 (Draw ratio: 0.00)
+
+Biggest Upset:
+  Neural Bot genomes/winner.pkl (ELO: 276.7) defeated Negamax2 P2 (ELO: 808.3)
+  Score: 3-1-0 (W-L-D)
+  ELO Gap: 531.6 points
+
+Closest Rivalry:
+  Neural Bot genomes/winner5_gen300.pkl vs Neural Bot genomes/winner8_gen300.pkl
+  Score: 2-2-0 (W-L-D)
+
+Largest ELO Gap Between Consecutive Ranks:
+  Ranks 115-116: 128.3 ELO points
+  Neural Bot winner_1gen50.pkl (191.8) vs Random Bot (63.5)

@@ -1,0 +1,45 @@
+INTERESTING TOURNAMENT RECORDS
+============================
+
+Strongest Bot: QwQ P6 (ELO: 1686.6)
+
+Strongest Bot by Type:
+  Negamax: Negamax P6 (ELO: 1035.5)
+  Negamax2: Negamax2 P6 (ELO: 1068.5)
+  Negamax3: Negamax3 P8 (ELO: 1048.7)
+  Negamax4: Negamax4 P10 T0.25 (ELO: 1164.2)
+  Negamax5: Negamax5 P12 T0.025 (ELO: 1255.3)
+  Negamax5B: Negamax5B P6 T0.1 (ELO: 1451.9)
+  DefaultBot: Default Bot (ELO: 519.8)
+  RandomBot: Random Bot (ELO: 242.2)
+  NeuralBot: Neural Bot winner_1gen1500.pkl (ELO: 744.5)
+  o3-mini-high-search: o3-mini-high-search I7000 (ELO: 595.2)
+  claude3.7-sonnet-thinking: claude3.7-sonnet-thinking P8 (ELO: 1591.0)
+  o1: o1 P6 (ELO: 1078.0)
+  claude3.7-sonnet: claude3.7-sonnet P12 (ELO: 1316.7)
+  gemini-flash-2.0-thinking: gemini-flash-2.0-thinking P8 (ELO: 1402.6)
+  gpt4o: gpt4o P6 T0.025 (ELO: 1468.1)
+  QwQ: QwQ P6 (ELO: 1686.6)
+  gemini-flash-2.0: gemini-flash-2.0 P2 (ELO: 1148.3)
+  gemini-pro-2.0: gemini-pro-2.0 P8 (ELO: 1505.5)
+  LeChat: LeChat P8 (ELO: 1150.1)
+  r1: r1 T0.025 (ELO: 695.0)
+  o3-mini-high: o3-mini-high P6 (ELO: 1555.9)
+  same.dev: same.dev P6 (ELO: 1280.5)
+  Gemma3: Gemma3 P6 (ELO: 734.3)
+
+Most Draws: Negamax5B P10 T0.1 (178 draws)
+Most Decisive Bot: Negamax P1 (Draw ratio: 0.00)
+
+Biggest Upset:
+  Neural Bot winner_gen700.pkl (ELO: 336.3) defeated gpt4o P12 T0.01 (ELO: 939.1)
+  Score: 2-0-0 (W-L-D)
+  ELO Gap: 602.8 points
+
+Closest Rivalry:
+  Neural Bot genomes/winner5_gen300.pkl vs Neural Bot genomes/winner8_gen300.pkl
+  Score: 2-2-0 (W-L-D)
+
+Largest ELO Gap Between Consecutive Ranks:
+  Ranks 210-211: 207.2 ELO points
+  Random Bot (242.2) vs gemini-flash-2.0 P1 (35.0)

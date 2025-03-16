@@ -1,0 +1,117 @@
+Rank,Bot,ELO,Wins,Losses,Draws,Win %,Tournament
+1,Negamax5B P10 T0.25,1356.3,12,1,1,89.29%,Single_knockout
+2,Negamax5B P8 T0.25,1308.6,8,1,3,79.17%,Single_knockout
+3,Negamax5B P8 T0.025,1288.7,7,1,4,75.00%,Single_knockout
+4,Negamax5B P8 T0.01,1288.3,6,0,4,80.00%,Single_knockout
+5,Negamax5B P4 T0.1,1280.4,8,3,1,70.83%,Single_knockout
+6,Negamax5B P6 T0.25,1275.2,7,2,1,75.00%,Single_knockout
+7,Negamax5B P6 T0.1,1275.0,6,1,1,81.25%,Single_knockout
+8,Negamax5B P4 T0.01,1261.9,5,1,2,75.00%,Single_knockout
+9,Negamax5B P12,1257.1,6,2,0,75.00%,Single_knockout
+10,Negamax5 P6 T0.025,1247.6,5,2,1,68.75%,Single_knockout
+11,Negamax5 P8 T0.01,1246.2,6,3,1,65.00%,Single_knockout
+12,Negamax5 P4 T0.01,1245.0,4,1,1,75.00%,Single_knockout
+13,Negamax5 P6 T0.1,1245.0,4,1,1,75.00%,Single_knockout
+14,Negamax5B P8 T0.1,1244.8,4,1,1,75.00%,Single_knockout
+15,Negamax5B P10,1233.6,3,1,4,62.50%,Single_knockout
+16,Negamax5B P4 T0.025,1233.1,4,2,0,66.67%,Single_knockout
+17,Negamax5B P12 T0.025,1232.2,5,3,0,62.50%,Single_knockout
+18,Negamax5B P12 T0.01,1231.7,4,2,0,66.67%,Single_knockout
+19,Negamax2 P8,1230.5,4,2,0,66.67%,Single_knockout
+20,Negamax5B P10 T0.025,1229.3,4,2,0,66.67%,Single_knockout
+21,Negamax5 P12 T0.1,1229.1,3,1,0,75.00%,Single_knockout
+22,Negamax5B P8,1229.1,3,1,0,75.00%,Single_knockout
+23,Negamax5B P10 T0.1,1228.2,4,2,0,66.67%,Single_knockout
+24,Negamax4 P8,1228.1,4,2,0,66.67%,Single_knockout
+25,Negamax5 P6 T0.25,1226.9,5,3,0,62.50%,Single_knockout
+26,Negamax5B P4 T0.25,1218.6,3,2,1,58.33%,Single_knockout
+27,Negamax4 P8 T0.25,1218.5,3,2,1,58.33%,Single_knockout
+28,Negamax3 P8,1217.9,4,3,1,56.25%,Single_knockout
+29,Negamax5B P6 T0.025,1216.2,2,1,3,58.33%,Single_knockout
+30,Negamax4 P8 T0.025,1216.0,2,1,1,62.50%,Single_knockout
+31,Negamax4 P10 T0.025,1216.0,2,1,1,62.50%,Single_knockout
+32,Negamax5 P10 T0.25,1215.8,2,1,1,62.50%,Single_knockout
+33,Negamax4 P4 T0.1,1214.8,3,2,1,58.33%,Single_knockout
+34,Negamax5B P4,1214.5,2,1,1,62.50%,Single_knockout
+35,Negamax5 P12 T0.25,1214.5,2,1,1,62.50%,Single_knockout
+36,Negamax5B P12 T0.1,1214.4,2,1,1,62.50%,Single_knockout
+37,Negamax5 P10 T0.025,1201.5,2,2,2,50.00%,Single_knockout
+38,Negamax4 P10 T0.1,1201.3,2,2,0,50.00%,Single_knockout
+39,Negamax5 P4 T0.25,1201.1,2,2,0,50.00%,Single_knockout
+40,Negamax4 P4 T0.01,1200.0,2,2,0,50.00%,Single_knockout
+41,Negamax4 P4 T0.025,1200.0,2,2,0,50.00%,Single_knockout
+42,Negamax4 P6 T0.1,1200.0,2,2,0,50.00%,Single_knockout
+43,Negamax4 P10 T0.25,1200.0,2,2,0,50.00%,Single_knockout
+44,Negamax5 P10 T0.01,1200.0,2,2,0,50.00%,Single_knockout
+45,Negamax5 P10 T0.1,1200.0,2,2,0,50.00%,Single_knockout
+46,Negamax5 P12 T0.01,1200.0,2,2,0,50.00%,Single_knockout
+47,Negamax5B P12 T0.25,1200.0,2,2,0,50.00%,Single_knockout
+48,Default Bot,1200.0,2,2,0,50.00%,Single_knockout
+49,Negamax5 P8 T0.1,1198.7,2,2,0,50.00%,Single_knockout
+50,Negamax2 P4,1198.5,1,1,0,50.00%,Single_knockout
+51,Negamax4 P4,1198.5,1,1,0,50.00%,Single_knockout
+52,Negamax4 P6 T0.01,1198.5,1,1,0,50.00%,Single_knockout
+53,Negamax4 P10 T0.01,1198.5,1,1,0,50.00%,Single_knockout
+54,Negamax5 P4,1198.5,1,1,0,50.00%,Single_knockout
+55,Negamax5 P6,1198.5,1,1,0,50.00%,Single_knockout
+56,Negamax5 P4 T0.1,1198.5,1,1,0,50.00%,Single_knockout
+57,Neural Bot winner_1gen50.pkl,1198.5,1,1,0,50.00%,Single_knockout
+58,Neural Bot genomes/winner_gen100.pkl,1198.5,1,1,0,50.00%,Single_knockout
+59,Neural Bot genomes/checkpoint_gen100.pkl,1198.5,1,1,0,50.00%,Single_knockout
+60,Negamax5 P12 T0.025,1188.0,1,2,1,37.50%,Single_knockout
+61,Negamax5 P12,1186.7,1,2,1,37.50%,Single_knockout
+62,Negamax4 P6 T0.025,1185.5,0,1,1,25.00%,Single_knockout
+63,Negamax4 P8 T0.1,1185.5,0,1,1,25.00%,Single_knockout
+64,Negamax5 P4 T0.025,1185.5,0,1,1,25.00%,Single_knockout
+65,Negamax5B P2,1185.5,0,1,1,25.00%,Single_knockout
+66,Negamax5 P8,1185.4,1,2,1,37.50%,Single_knockout
+67,Negamax3 P6,1184.0,0,1,1,25.00%,Single_knockout
+68,Negamax5 P10,1184.0,0,1,1,25.00%,Single_knockout
+69,Negamax5 P8 T0.025,1184.0,0,1,1,25.00%,Single_knockout
+70,Negamax5B P6,1184.0,0,1,1,25.00%,Single_knockout
+71,Negamax5B P6 T0.01,1184.0,0,1,1,25.00%,Single_knockout
+72,Negamax5B P10 T0.01,1184.0,0,1,1,25.00%,Single_knockout
+73,Negamax2 P2,1173.5,1,3,0,25.00%,Single_knockout
+74,Negamax3 P1,1173.5,1,3,0,25.00%,Single_knockout
+75,Neural Bot winner_1gen1000.pkl,1173.5,1,3,0,25.00%,Single_knockout
+76,Neural Bot genomes/winner2_gen1200.pkl,1173.5,1,3,0,25.00%,Single_knockout
+77,Neural Bot genomes/winner6_gen200.pkl,1172.2,1,3,0,25.00%,Single_knockout
+78,Negamax5 P8 T0.25,1170.9,1,3,0,25.00%,Single_knockout
+79,Negamax P1,1169.5,0,2,0,0.00%,Single_knockout
+80,Negamax P2,1169.5,0,2,0,0.00%,Single_knockout
+81,Negamax P4,1169.5,0,2,0,0.00%,Single_knockout
+82,Negamax P6,1169.5,0,2,0,0.00%,Single_knockout
+83,Negamax2 P1,1169.5,0,2,0,0.00%,Single_knockout
+84,Negamax2 P6,1169.5,0,2,0,0.00%,Single_knockout
+85,Negamax3 P2,1169.5,0,2,0,0.00%,Single_knockout
+86,Negamax3 P4,1169.5,0,2,0,0.00%,Single_knockout
+87,Negamax4 P1,1169.5,0,2,0,0.00%,Single_knockout
+88,Negamax4 P2,1169.5,0,2,0,0.00%,Single_knockout
+89,Negamax4 P6,1169.5,0,2,0,0.00%,Single_knockout
+90,Negamax4 P10,1169.5,0,2,0,0.00%,Single_knockout
+91,Negamax4 P4 T0.25,1169.5,0,2,0,0.00%,Single_knockout
+92,Negamax4 P6 T0.25,1169.5,0,2,0,0.00%,Single_knockout
+93,Negamax4 P8 T0.01,1169.5,0,2,0,0.00%,Single_knockout
+94,Negamax5 P1,1169.5,0,2,0,0.00%,Single_knockout
+95,Negamax5 P2,1169.5,0,2,0,0.00%,Single_knockout
+96,Negamax5 P6 T0.01,1169.5,0,2,0,0.00%,Single_knockout
+97,Negamax5B P1,1169.5,0,2,0,0.00%,Single_knockout
+98,Random Bot,1169.5,0,2,0,0.00%,Single_knockout
+99,Neural Bot winner.pkl,1169.5,0,2,0,0.00%,Single_knockout
+100,Neural Bot winner_gen700.pkl,1169.5,0,2,0,0.00%,Single_knockout
+101,Neural Bot winner_gen200.pkl,1169.5,0,2,0,0.00%,Single_knockout
+102,Neural Bot winner_gen1000.pkl,1169.5,0,2,0,0.00%,Single_knockout
+103,Neural Bot winner_1gen1500.pkl,1169.5,0,2,0,0.00%,Single_knockout
+104,Neural Bot winner_gen100.pkl,1169.5,0,2,0,0.00%,Single_knockout
+105,Neural Bot winner_1gen400.pkl,1169.5,0,2,0,0.00%,Single_knockout
+106,Neural Bot genomes/winner3_gen1000.pkl,1169.5,0,2,0,0.00%,Single_knockout
+107,Neural Bot genomes/winner4_gen300.pkl,1169.5,0,2,0,0.00%,Single_knockout
+108,Neural Bot genomes/winner5_gen300.pkl,1169.5,0,2,0,0.00%,Single_knockout
+109,Neural Bot genomes/winner.pkl,1169.5,0,2,0,0.00%,Single_knockout
+110,Neural Bot genomes/winner7_gen900.pkl,1169.5,0,2,0,0.00%,Single_knockout
+111,Neural Bot genomes/winne7.pkl,1169.5,0,2,0,0.00%,Single_knockout
+112,Neural Bot genomes/winner8_gen300.pkl,1169.5,0,2,0,0.00%,Single_knockout
+113,Neural Bot genomes/winner8.pkl,1169.5,0,2,0,0.00%,Single_knockout
+114,Neural Bot genomes/winner9_gen800.pkl,1169.5,0,2,0,0.00%,Single_knockout
+115,Neural Bot genomes/winner3_gen800.pkl,1169.5,0,2,0,0.00%,Single_knockout
+116,Neural Bot genomes/checkpoint_gen200.pkl,1169.5,0,2,0,0.00%,Single_knockout

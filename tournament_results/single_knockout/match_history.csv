@@ -1,0 +1,231 @@
+Player 1,Player 2,Result,Player 1 First,Timestamp
+Negamax2 P8,Neural Bot genomes/checkpoint_gen200.pkl,Player 1 Win,True,2025-03-08 18:10:11.750128
+Neural Bot genomes/checkpoint_gen200.pkl,Negamax2 P8,Player 2 Win,True,2025-03-08 18:10:12.675408
+Neural Bot genomes/winner.pkl,Negamax4 P4 T0.025,Player 2 Win,True,2025-03-08 18:10:13.197290
+Negamax4 P4 T0.025,Neural Bot genomes/winner.pkl,Player 1 Win,True,2025-03-08 18:10:13.435183
+Default Bot,Negamax4 P1,Player 1 Win,True,2025-03-08 18:10:13.435183
+Negamax4 P1,Default Bot,Player 2 Win,True,2025-03-08 18:10:13.435183
+Neural Bot winner_1gen400.pkl,Negamax5B P10 T0.25,Player 2 Win,True,2025-03-08 18:10:17.009469
+Negamax5B P10 T0.25,Neural Bot winner_1gen400.pkl,Player 1 Win,True,2025-03-08 18:10:18.822693
+Negamax4 P4 T0.25,Negamax5B P4 T0.025,Player 2 Win,True,2025-03-08 18:10:24.944936
+Negamax5B P4 T0.025,Negamax4 P4 T0.25,Player 1 Win,True,2025-03-08 18:10:30.621894
+Negamax2 P6,Negamax5B P8,Player 2 Win,True,2025-03-08 18:10:30.971055
+Negamax5B P8,Negamax2 P6,Player 1 Win,True,2025-03-08 18:10:31.285307
+Negamax5B P12 T0.025,Negamax4 P8 T0.01,Player 1 Win,True,2025-03-08 18:10:37.949591
+Negamax4 P8 T0.01,Negamax5B P12 T0.025,Player 2 Win,True,2025-03-08 18:11:00.435664
+Neural Bot winner_1gen1500.pkl,Negamax5 P12 T0.01,Player 2 Win,True,2025-03-08 18:11:54.375744
+Negamax5 P12 T0.01,Neural Bot winner_1gen1500.pkl,Player 1 Win,True,2025-03-08 18:12:02.260401
+Negamax5 P6,Negamax2 P2,Player 1 Win,True,2025-03-08 18:12:02.280470
+Negamax2 P2,Negamax5 P6,Player 1 Win,True,2025-03-08 18:12:02.363960
+Neural Bot winner.pkl,Negamax5B P10 T0.1,Player 2 Win,True,2025-03-08 18:12:03.613340
+Negamax5B P10 T0.1,Neural Bot winner.pkl,Player 1 Win,True,2025-03-08 18:12:04.187157
+Neural Bot winner_gen700.pkl,Negamax5B P6 T0.25,Player 2 Win,True,2025-03-08 18:12:05.201446
+Negamax5B P6 T0.25,Neural Bot winner_gen700.pkl,Player 1 Win,True,2025-03-08 18:12:06.205048
+Negamax5B P1,Negamax5 P10 T0.01,Player 2 Win,True,2025-03-08 18:12:08.043965
+Negamax5 P10 T0.01,Negamax5B P1,Player 1 Win,True,2025-03-08 18:12:09.010810
+Negamax4 P4,Negamax5 P12 T0.025,Player 1 Win,True,2025-03-08 18:12:27.564940
+Negamax5 P12 T0.025,Negamax4 P4,Player 1 Win,True,2025-03-08 18:12:39.865858
+Negamax5B P4 T0.01,Negamax5 P1,Player 1 Win,True,2025-03-08 18:12:39.933875
+Negamax5 P1,Negamax5B P4 T0.01,Player 2 Win,True,2025-03-08 18:12:40.101198
+Negamax4 P6 T0.01,Negamax4 P8 T0.25,Player 1 Win,True,2025-03-08 18:12:46.427604
+Negamax4 P8 T0.25,Negamax4 P6 T0.01,Player 1 Win,True,2025-03-08 18:12:53.251721
+Negamax4 P10 T0.01,Negamax5 P8 T0.25,Player 1 Win,True,2025-03-08 18:13:04.691375
+Negamax5 P8 T0.25,Negamax4 P10 T0.01,Player 1 Win,True,2025-03-08 18:13:13.320561
+Negamax3 P2,Negamax4 P6 T0.1,Player 2 Win,True,2025-03-08 18:13:15.691539
+Negamax4 P6 T0.1,Negamax3 P2,Player 1 Win,True,2025-03-08 18:13:16.165390
+Negamax P2,Negamax5 P6 T0.25,Player 2 Win,True,2025-03-08 18:13:16.942628
+Negamax5 P6 T0.25,Negamax P2,Player 1 Win,True,2025-03-08 18:13:21.385182
+Negamax5B P4 T0.25,Negamax5B P2,Player 1 Win,True,2025-03-08 18:13:23.350351
+Negamax5B P2,Negamax5B P4 T0.25,Draw,True,2025-03-08 18:13:27.149245
+Negamax5B P6 T0.01,Negamax5B P12 T0.1,Draw,True,2025-03-08 18:13:36.237698
+Negamax5B P12 T0.1,Negamax5B P6 T0.01,Player 1 Win,True,2025-03-08 18:13:46.625477
+Negamax4 P10 T0.1,Negamax5 P4,Player 2 Win,True,2025-03-08 18:13:56.737316
+Negamax5 P4,Negamax4 P10 T0.1,Player 2 Win,True,2025-03-08 18:14:05.930797
+Negamax5 P10 T0.025,Negamax5B P10 T0.01,Draw,True,2025-03-08 18:14:10.091361
+Negamax5B P10 T0.01,Negamax5 P10 T0.025,Player 2 Win,True,2025-03-08 18:14:13.502639
+Negamax5 P8 T0.01,Negamax P1,Player 1 Win,True,2025-03-08 18:14:14.139298
+Negamax P1,Negamax5 P8 T0.01,Player 2 Win,True,2025-03-08 18:14:14.504968
+Negamax5 P12 T0.25,Negamax5 P4 T0.025,Player 1 Win,True,2025-03-08 18:14:32.379204
+Negamax5 P4 T0.025,Negamax5 P12 T0.25,Draw,True,2025-03-08 18:14:46.027709
+Neural Bot genomes/winner8.pkl,Negamax5B P10 T0.025,Player 2 Win,True,2025-03-08 18:14:47.415996
+Negamax5B P10 T0.025,Neural Bot genomes/winner8.pkl,Player 1 Win,True,2025-03-08 18:14:48.425661
+Negamax5 P10 T0.1,Random Bot,Player 1 Win,True,2025-03-08 18:14:50.144657
+Random Bot,Negamax5 P10 T0.1,Player 2 Win,True,2025-03-08 18:14:52.837811
+Negamax5B P4,Neural Bot winner_gen1000.pkl,Player 1 Win,True,2025-03-08 18:14:52.843360
+Neural Bot winner_gen1000.pkl,Negamax5B P4,Player 2 Win,True,2025-03-08 18:14:52.860885
+Negamax5 P6 T0.01,Negamax5B P8 T0.25,Player 2 Win,True,2025-03-08 18:14:56.362836
+Negamax5B P8 T0.25,Negamax5 P6 T0.01,Player 1 Win,True,2025-03-08 18:15:01.602418
+Negamax3 P6,Negamax5 P10 T0.25,Draw,True,2025-03-08 18:15:08.028347
+Negamax5 P10 T0.25,Negamax3 P6,Player 1 Win,True,2025-03-08 18:15:14.503534
+Negamax5B P10,Neural Bot genomes/winner8_gen300.pkl,Player 1 Win,True,2025-03-08 18:15:15.470836
+Neural Bot genomes/winner8_gen300.pkl,Negamax5B P10,Player 2 Win,True,2025-03-08 18:15:16.878659
+Negamax5B P6 T0.025,Negamax4 P6 T0.025,Player 1 Win,True,2025-03-08 18:15:17.937517
+Negamax4 P6 T0.025,Negamax5B P6 T0.025,Draw,True,2025-03-08 18:15:19.234955
+Negamax2 P4,Negamax5 P4 T0.25,Player 1 Win,True,2025-03-08 18:15:24.852344
+Negamax5 P4 T0.25,Negamax2 P4,Player 1 Win,True,2025-03-08 18:15:26.326153
+Negamax4 P10,Negamax5 P12 T0.1,Player 2 Win,True,2025-03-08 18:15:49.667356
+Negamax5 P12 T0.1,Negamax4 P10,Player 1 Win,True,2025-03-08 18:16:30.473404
+Neural Bot genomes/winner3_gen800.pkl,Negamax5B P12 T0.01,Player 2 Win,True,2025-03-08 18:16:35.436512
+Negamax5B P12 T0.01,Neural Bot genomes/winner3_gen800.pkl,Player 1 Win,True,2025-03-08 18:16:39.316451
+Neural Bot genomes/winner_gen100.pkl,Neural Bot genomes/winner6_gen200.pkl,Player 1 Win,True,2025-03-08 18:16:39.321823
+Neural Bot genomes/winner6_gen200.pkl,Neural Bot genomes/winner_gen100.pkl,Player 1 Win,True,2025-03-08 18:16:39.323815
+Negamax5 P10,Negamax3 P8,Draw,True,2025-03-08 18:16:46.175901
+Negamax3 P8,Negamax5 P10,Player 1 Win,True,2025-03-08 18:16:54.634654
+Negamax5 P8 T0.1,Negamax4 P2,Player 1 Win,True,2025-03-08 18:16:55.144990
+Negamax4 P2,Negamax5 P8 T0.1,Player 2 Win,True,2025-03-08 18:16:56.171730
+Negamax5B P6,Negamax5B P8 T0.025,Draw,True,2025-03-08 18:16:56.797261
+Negamax5B P8 T0.025,Negamax5B P6,Player 1 Win,True,2025-03-08 18:16:57.446748
+Neural Bot genomes/winner9_gen800.pkl,Negamax4 P8 T0.025,Player 2 Win,True,2025-03-08 18:16:58.214938
+Negamax4 P8 T0.025,Neural Bot genomes/winner9_gen800.pkl,Player 1 Win,True,2025-03-08 18:16:58.523029
+Negamax4 P4 T0.1,Neural Bot genomes/winner7_gen900.pkl,Player 1 Win,True,2025-03-08 18:16:59.922522
+Neural Bot genomes/winner7_gen900.pkl,Negamax4 P4 T0.1,Player 2 Win,True,2025-03-08 18:17:01.470221
+Neural Bot genomes/winner5_gen300.pkl,Negamax5 P4 T0.01,Player 2 Win,True,2025-03-08 18:17:01.597307
+Negamax5 P4 T0.01,Neural Bot genomes/winner5_gen300.pkl,Player 1 Win,True,2025-03-08 18:17:01.684140
+Negamax5 P8,Negamax4 P8 T0.1,Player 1 Win,True,2025-03-08 18:17:03.634113
+Negamax4 P8 T0.1,Negamax5 P8,Draw,True,2025-03-08 18:17:06.679647
+Negamax5B P8 T0.01,Negamax5 P2,Player 1 Win,True,2025-03-08 18:17:06.910248
+Negamax5 P2,Negamax5B P8 T0.01,Player 2 Win,True,2025-03-08 18:17:07.090701
+Negamax3 P1,Neural Bot genomes/checkpoint_gen100.pkl,Player 2 Win,True,2025-03-08 18:17:07.093971
+Neural Bot genomes/checkpoint_gen100.pkl,Negamax3 P1,Player 2 Win,True,2025-03-08 18:17:07.095055
+Negamax4 P4 T0.01,Neural Bot genomes/winne7.pkl,Player 1 Win,True,2025-03-08 18:17:07.284896
+Neural Bot genomes/winne7.pkl,Negamax4 P4 T0.01,Player 2 Win,True,2025-03-08 18:17:07.394123
+Negamax5 P6 T0.025,Neural Bot winner_gen100.pkl,Player 1 Win,True,2025-03-08 18:17:07.659788
+Neural Bot winner_gen100.pkl,Negamax5 P6 T0.025,Player 2 Win,True,2025-03-08 18:17:07.922490
+Negamax4 P10 T0.025,Neural Bot genomes/winner4_gen300.pkl,Player 1 Win,True,2025-03-08 18:17:09.520732
+Neural Bot genomes/winner4_gen300.pkl,Negamax4 P10 T0.025,Player 2 Win,True,2025-03-08 18:17:14.294030
+Negamax5 P6 T0.1,Negamax3 P4,Player 1 Win,True,2025-03-08 18:17:16.219836
+Negamax3 P4,Negamax5 P6 T0.1,Player 2 Win,True,2025-03-08 18:17:18.007120
+Negamax2 P1,Negamax5B P12,Player 2 Win,True,2025-03-08 18:17:25.871641
+Negamax5B P12,Negamax2 P1,Player 1 Win,True,2025-03-08 18:17:29.672206
+Negamax5 P12,Negamax5 P8 T0.025,Draw,True,2025-03-08 18:17:36.434673
+Negamax5 P8 T0.025,Negamax5 P12,Player 2 Win,True,2025-03-08 18:18:17.545742
+Neural Bot winner_gen200.pkl,Negamax4 P8,Player 2 Win,True,2025-03-08 18:18:18.820670
+Negamax4 P8,Neural Bot winner_gen200.pkl,Player 1 Win,True,2025-03-08 18:18:21.371018
+Neural Bot winner_1gen50.pkl,Neural Bot winner_1gen1000.pkl,Player 1 Win,True,2025-03-08 18:18:21.390075
+Neural Bot winner_1gen1000.pkl,Neural Bot winner_1gen50.pkl,Player 1 Win,True,2025-03-08 18:18:21.410091
+Negamax2 P8,Negamax4 P4 T0.025,Player 1 Win,True,2025-03-08 18:18:36.291765
+Negamax4 P4 T0.025,Negamax2 P8,Player 2 Win,True,2025-03-08 18:18:44.606889
+Default Bot,Negamax5B P10 T0.25,Player 2 Win,True,2025-03-08 18:18:50.058776
+Negamax5B P10 T0.25,Default Bot,Player 1 Win,True,2025-03-08 18:18:52.188350
+Negamax5B P4 T0.025,Negamax5B P8,Player 2 Win,True,2025-03-08 18:18:53.101954
+Negamax5B P8,Negamax5B P4 T0.025,Player 2 Win,True,2025-03-08 18:18:53.951592
+Negamax5B P12 T0.025,Negamax5 P12 T0.01,Player 1 Win,True,2025-03-08 18:19:06.809411
+Negamax5 P12 T0.01,Negamax5B P12 T0.025,Player 2 Win,True,2025-03-08 18:19:18.358681
+Negamax2 P2,Negamax5B P10 T0.1,Player 2 Win,True,2025-03-08 18:19:23.710981
+Negamax5B P10 T0.1,Negamax2 P2,Player 1 Win,True,2025-03-08 18:19:25.799538
+Negamax5B P6 T0.25,Negamax5 P10 T0.01,Player 1 Win,True,2025-03-08 18:19:30.424051
+Negamax5 P10 T0.01,Negamax5B P6 T0.25,Player 2 Win,True,2025-03-08 18:19:38.006828
+Negamax5 P12 T0.025,Negamax5B P4 T0.01,Draw,True,2025-03-08 18:19:46.496909
+Negamax5B P4 T0.01,Negamax5 P12 T0.025,Player 1 Win,True,2025-03-08 18:19:53.100345
+Negamax4 P8 T0.25,Negamax5 P8 T0.25,Player 1 Win,True,2025-03-08 18:20:00.103791
+Negamax5 P8 T0.25,Negamax4 P8 T0.25,Player 2 Win,True,2025-03-08 18:20:11.763212
+Negamax4 P6 T0.1,Negamax5 P6 T0.25,Player 2 Win,True,2025-03-08 18:20:17.663737
+Negamax5 P6 T0.25,Negamax4 P6 T0.1,Player 1 Win,True,2025-03-08 18:20:21.024568
+Negamax5B P4 T0.25,Negamax5B P12 T0.1,Player 2 Win,True,2025-03-08 18:20:55.665068
+Negamax5B P12 T0.1,Negamax5B P4 T0.25,Player 2 Win,True,2025-03-08 18:21:25.440604
+Negamax4 P10 T0.1,Negamax5 P10 T0.025,Player 1 Win,True,2025-03-08 18:22:35.090190
+Negamax5 P10 T0.025,Negamax4 P10 T0.1,Player 1 Win,True,2025-03-08 18:23:10.470963
+Negamax5 P8 T0.01,Negamax5 P12 T0.25,Player 2 Win,True,2025-03-08 18:23:56.419723
+Negamax5 P12 T0.25,Negamax5 P8 T0.01,Player 2 Win,True,2025-03-08 18:24:14.712498
+Negamax5B P10 T0.025,Negamax5 P10 T0.1,Player 1 Win,True,2025-03-08 18:24:19.636128
+Negamax5 P10 T0.1,Negamax5B P10 T0.025,Player 2 Win,True,2025-03-08 18:24:24.231894
+Negamax5B P4,Negamax5B P8 T0.25,Draw,True,2025-03-08 18:24:28.390713
+Negamax5B P8 T0.25,Negamax5B P4,Player 1 Win,True,2025-03-08 18:24:32.931610
+Negamax5 P10 T0.25,Negamax5B P10,Player 1 Win,True,2025-03-08 18:24:38.578870
+Negamax5B P10,Negamax5 P10 T0.25,Player 1 Win,True,2025-03-08 18:24:44.564653
+Negamax5B P6 T0.025,Negamax5 P4 T0.25,Player 2 Win,True,2025-03-08 18:24:49.302142
+Negamax5 P4 T0.25,Negamax5B P6 T0.025,Player 2 Win,True,2025-03-08 18:24:54.442907
+Negamax5 P12 T0.1,Negamax5B P12 T0.01,Player 1 Win,True,2025-03-08 18:25:12.328743
+Negamax5B P12 T0.01,Negamax5 P12 T0.1,Player 1 Win,True,2025-03-08 18:25:39.809865
+Neural Bot genomes/winner6_gen200.pkl,Negamax3 P8,Player 2 Win,True,2025-03-08 18:25:41.208962
+Negamax3 P8,Neural Bot genomes/winner6_gen200.pkl,Player 1 Win,True,2025-03-08 18:25:41.939783
+Negamax5 P8 T0.1,Negamax5B P8 T0.025,Player 2 Win,True,2025-03-08 18:25:44.450636
+Negamax5B P8 T0.025,Negamax5 P8 T0.1,Player 1 Win,True,2025-03-08 18:25:46.913477
+Negamax4 P8 T0.025,Negamax4 P4 T0.1,Player 2 Win,True,2025-03-08 18:25:49.792238
+Negamax4 P4 T0.1,Negamax4 P8 T0.025,Draw,True,2025-03-08 18:25:54.508702
+Negamax5 P4 T0.01,Negamax5 P8,Player 1 Win,True,2025-03-08 18:25:55.195989
+Negamax5 P8,Negamax5 P4 T0.01,Player 2 Win,True,2025-03-08 18:25:55.817772
+Negamax5B P8 T0.01,Negamax3 P1,Player 1 Win,True,2025-03-08 18:25:55.966129
+Negamax3 P1,Negamax5B P8 T0.01,Player 2 Win,True,2025-03-08 18:25:56.050277
+Negamax4 P4 T0.01,Negamax5 P6 T0.025,Player 2 Win,True,2025-03-08 18:25:56.842325
+Negamax5 P6 T0.025,Negamax4 P4 T0.01,Player 1 Win,True,2025-03-08 18:25:57.322532
+Negamax4 P10 T0.025,Negamax5 P6 T0.1,Player 2 Win,True,2025-03-08 18:26:14.175341
+Negamax5 P6 T0.1,Negamax4 P10 T0.025,Draw,True,2025-03-08 18:26:33.675801
+Negamax5B P12,Negamax5 P12,Player 1 Win,True,2025-03-08 18:26:54.448000
+Negamax5 P12,Negamax5B P12,Player 2 Win,True,2025-03-08 18:27:15.939151
+Negamax4 P8,Neural Bot winner_1gen1000.pkl,Player 1 Win,True,2025-03-08 18:27:16.401550
+Neural Bot winner_1gen1000.pkl,Negamax4 P8,Player 2 Win,True,2025-03-08 18:27:17.152656
+Neural Bot genomes/winner3_gen1000.pkl,Negamax4 P10 T0.25,Player 2 Win,True,2025-03-08 18:27:23.496874
+Negamax4 P10 T0.25,Neural Bot genomes/winner3_gen1000.pkl,Player 1 Win,True,2025-03-08 18:27:29.461990
+Negamax5B P4 T0.1,Negamax P4,Player 1 Win,True,2025-03-08 18:27:30.985597
+Negamax P4,Negamax5B P4 T0.1,Player 2 Win,True,2025-03-08 18:27:32.241313
+Negamax5B P6 T0.1,Negamax4 P6 T0.25,Player 1 Win,True,2025-03-08 18:27:38.476620
+Negamax4 P6 T0.25,Negamax5B P6 T0.1,Player 2 Win,True,2025-03-08 18:27:44.744514
+Negamax5 P4 T0.1,Neural Bot genomes/winner2_gen1200.pkl,Player 1 Win,True,2025-03-08 18:27:44.978700
+Neural Bot genomes/winner2_gen1200.pkl,Negamax5 P4 T0.1,Player 1 Win,True,2025-03-08 18:27:46.358564
+Negamax5B P12 T0.25,Negamax4 P6,Player 1 Win,True,2025-03-08 18:27:53.495684
+Negamax4 P6,Negamax5B P12 T0.25,Player 2 Win,True,2025-03-08 18:28:01.852544
+Negamax5B P8 T0.1,Negamax P6,Player 1 Win,True,2025-03-08 18:28:04.759062
+Negamax P6,Negamax5B P8 T0.1,Player 2 Win,True,2025-03-08 18:28:07.901249
+Negamax2 P8,Negamax5B P10 T0.25,Player 2 Win,True,2025-03-08 18:28:13.161983
+Negamax5B P10 T0.25,Negamax2 P8,Player 1 Win,True,2025-03-08 18:28:18.295568
+Negamax5B P4 T0.025,Negamax5B P12 T0.025,Player 1 Win,True,2025-03-08 18:28:27.914149
+Negamax5B P12 T0.025,Negamax5B P4 T0.025,Player 1 Win,True,2025-03-08 18:28:36.511518
+Negamax5B P10 T0.1,Negamax5B P6 T0.25,Player 2 Win,True,2025-03-08 18:28:42.729682
+Negamax5B P6 T0.25,Negamax5B P10 T0.1,Player 1 Win,True,2025-03-08 18:28:49.615452
+Negamax5B P4 T0.01,Negamax4 P8 T0.25,Player 1 Win,True,2025-03-08 18:28:54.638415
+Negamax4 P8 T0.25,Negamax5B P4 T0.01,Draw,True,2025-03-08 18:29:00.835440
+Negamax5 P6 T0.25,Negamax5B P4 T0.25,Player 2 Win,True,2025-03-08 18:29:09.397871
+Negamax5B P4 T0.25,Negamax5 P6 T0.25,Player 2 Win,True,2025-03-08 18:29:18.629168
+Negamax5 P10 T0.025,Negamax5 P8 T0.01,Draw,True,2025-03-08 18:29:24.114851
+Negamax5 P8 T0.01,Negamax5 P10 T0.025,Player 1 Win,True,2025-03-08 18:29:26.946772
+Negamax5B P10 T0.025,Negamax5B P8 T0.25,Player 2 Win,True,2025-03-08 18:29:32.171119
+Negamax5B P8 T0.25,Negamax5B P10 T0.025,Player 1 Win,True,2025-03-08 18:29:38.132320
+Negamax5B P10,Negamax5B P6 T0.025,Draw,True,2025-03-08 18:29:40.300422
+Negamax5B P6 T0.025,Negamax5B P10,Draw,True,2025-03-08 18:29:42.527918
+Negamax5B P12 T0.01,Negamax3 P8,Player 1 Win,True,2025-03-08 18:29:48.254391
+Negamax3 P8,Negamax5B P12 T0.01,Player 1 Win,True,2025-03-08 18:30:04.751524
+Negamax5B P8 T0.025,Negamax4 P4 T0.1,Player 1 Win,True,2025-03-08 18:30:07.730884
+Negamax4 P4 T0.1,Negamax5B P8 T0.025,Player 2 Win,True,2025-03-08 18:30:10.249737
+Negamax5 P4 T0.01,Negamax5B P8 T0.01,Player 2 Win,True,2025-03-08 18:30:10.839209
+Negamax5B P8 T0.01,Negamax5 P4 T0.01,Draw,True,2025-03-08 18:30:11.418265
+Negamax5 P6 T0.025,Negamax5 P6 T0.1,Player 2 Win,True,2025-03-08 18:30:13.319554
+Negamax5 P6 T0.1,Negamax5 P6 T0.025,Player 2 Win,True,2025-03-08 18:30:15.231667
+Negamax5B P12,Negamax4 P8,Player 1 Win,True,2025-03-08 18:30:25.270117
+Negamax4 P8,Negamax5B P12,Player 2 Win,True,2025-03-08 18:30:35.197870
+Negamax4 P10 T0.25,Negamax5B P4 T0.1,Player 2 Win,True,2025-03-08 18:30:43.972411
+Negamax5B P4 T0.1,Negamax4 P10 T0.25,Player 1 Win,True,2025-03-08 18:30:54.043858
+Negamax5B P6 T0.1,Neural Bot genomes/winner2_gen1200.pkl,Player 1 Win,True,2025-03-08 18:30:55.477908
+Neural Bot genomes/winner2_gen1200.pkl,Negamax5B P6 T0.1,Player 2 Win,True,2025-03-08 18:30:57.047742
+Negamax5B P12 T0.25,Negamax5B P8 T0.1,Player 2 Win,True,2025-03-08 18:31:09.714730
+Negamax5B P8 T0.1,Negamax5B P12 T0.25,Player 1 Win,True,2025-03-08 18:31:23.090127
+Negamax5B P10 T0.25,Negamax5B P12 T0.025,Player 1 Win,True,2025-03-08 18:31:36.126956
+Negamax5B P12 T0.025,Negamax5B P10 T0.25,Player 2 Win,True,2025-03-08 18:31:47.614637
+Negamax5B P6 T0.25,Negamax5B P4 T0.01,Player 1 Win,True,2025-03-08 18:31:52.141322
+Negamax5B P4 T0.01,Negamax5B P6 T0.25,Player 1 Win,True,2025-03-08 18:31:56.751204
+Negamax5 P6 T0.25,Negamax5 P8 T0.01,Player 2 Win,True,2025-03-08 18:32:04.996290
+Negamax5 P8 T0.01,Negamax5 P6 T0.25,Player 1 Win,True,2025-03-08 18:32:12.731317
+Negamax5B P8 T0.25,Negamax5B P10,Draw,True,2025-03-08 18:32:27.127276
+Negamax5B P10,Negamax5B P8 T0.25,Draw,True,2025-03-08 18:32:40.556569
+Negamax3 P8,Negamax5B P8 T0.025,Player 2 Win,True,2025-03-08 18:32:46.024408
+Negamax5B P8 T0.025,Negamax3 P8,Player 1 Win,True,2025-03-08 18:32:51.982352
+Negamax5B P8 T0.01,Negamax5 P6 T0.025,Player 1 Win,True,2025-03-08 18:32:53.698412
+Negamax5 P6 T0.025,Negamax5B P8 T0.01,Draw,True,2025-03-08 18:32:58.521453
+Negamax5B P12,Negamax5B P4 T0.1,Player 2 Win,True,2025-03-08 18:33:39.252966
+Negamax5B P4 T0.1,Negamax5B P12,Player 1 Win,True,2025-03-08 18:33:52.266312
+Negamax5B P6 T0.1,Negamax5B P8 T0.1,Draw,True,2025-03-08 18:33:56.574337
+Negamax5B P8 T0.1,Negamax5B P6 T0.1,Player 2 Win,True,2025-03-08 18:34:00.566225
+Negamax5B P10 T0.25,Negamax5B P6 T0.25,Player 1 Win,True,2025-03-08 18:34:11.957248
+Negamax5B P6 T0.25,Negamax5B P10 T0.25,Draw,True,2025-03-08 18:34:26.013173
+Negamax5 P8 T0.01,Negamax5B P8 T0.25,Player 2 Win,True,2025-03-08 18:34:33.938840
+Negamax5B P8 T0.25,Negamax5 P8 T0.01,Player 1 Win,True,2025-03-08 18:34:41.123714
+Negamax5B P8 T0.025,Negamax5B P8 T0.01,Draw,True,2025-03-08 18:34:42.182204
+Negamax5B P8 T0.01,Negamax5B P8 T0.025,Draw,True,2025-03-08 18:34:43.155018
+Negamax5B P4 T0.1,Negamax5B P6 T0.1,Player 2 Win,True,2025-03-08 18:34:46.614219
+Negamax5B P6 T0.1,Negamax5B P4 T0.1,Player 2 Win,True,2025-03-08 18:34:50.127144
+Negamax5B P10 T0.25,Negamax5B P8 T0.25,Player 1 Win,True,2025-03-08 18:34:58.895939
+Negamax5B P8 T0.25,Negamax5B P10 T0.25,Player 1 Win,True,2025-03-08 18:35:08.322280
+Negamax5B P8 T0.025,Negamax5B P4 T0.1,Player 2 Win,True,2025-03-08 18:35:10.649203
+Negamax5B P4 T0.1,Negamax5B P8 T0.025,Draw,True,2025-03-08 18:35:13.440276
+Negamax5B P10 T0.25,Negamax5B P4 T0.1,Player 1 Win,True,2025-03-08 18:35:19.980878
+Negamax5B P4 T0.1,Negamax5B P10 T0.25,Player 2 Win,True,2025-03-08 18:35:26.422833
