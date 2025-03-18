@@ -1,7 +1,7 @@
 import random
 import time
 
-from bots.bot import Bot
+from .bot import Bot
 
 def center_ordered_moves(plateau):
     center = plateau.colonnes // 2

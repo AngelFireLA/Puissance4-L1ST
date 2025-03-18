@@ -1,8 +1,8 @@
 import pygame
 import pygame_widgets
 from pygame_widgets.textbox import TextBox
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, mettre_à_jour_port, chemin_absolu_dossier
-from interface.boutton import Boutton
+from ..utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, mettre_à_jour_port, chemin_absolu_dossier
+from .boutton import Boutton
 
 arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))

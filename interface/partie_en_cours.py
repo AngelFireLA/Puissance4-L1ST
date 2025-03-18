@@ -2,13 +2,11 @@ import random
 import socket
 import pygame
 
-import bots.random_bot
-from moteur.partie import Partie
-from moteur.joueur import Joueur
-from interface import menu_pause
-from bots import negamaxv5
-from utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, \
-    récupérer_ip_cible, chemin_absolu_dossier
+from ..moteur.partie import Partie
+from ..moteur.joueur import Joueur
+from . import menu_pause
+from ..bots import negamaxv5
+from ..utils import afficher_texte, dict_couleurs, couleurs_jetons, couleur_plateau, est_local, récupérer_port, récupérer_ip_cible, chemin_absolu_dossier
 import uuid
 
 
@@ -118,7 +116,7 @@ def main(profondeur=6):
     joueur1 = Joueur("Joueur 1", "X")
     if profondeur > 0:
         temp_de_pensée_max = 3 if profondeur >= 8 else 0
-        joueur2 = bots.negamaxv5.Negamax5(random.choice(noms_robots), "O", profondeur=profondeur, temps_max=temp_de_pensée_max)
+        joueur2 = negamaxv5.Negamax5(random.choice(noms_robots), "O", profondeur=profondeur, temps_max=temp_de_pensée_max)
 
     else:
         joueur2 = Joueur("Joueur 2", "O")
@@ -244,7 +242,7 @@ def main_multi():
             réponse = socket_client.recv(2048).decode('utf-8')
         except BlockingIOError:
             pass
-        clock.tick(60)
+
     print("Partie va commencer")
     indexe_joueur, nom_adversaire = réponse.split(":")[1].split("|")
     indexe_joueur = int(indexe_joueur)
@@ -287,15 +285,6 @@ def main_multi():
             symbole = partie.joueur1.symbole if partie.tour_joueur == 1 else partie.joueur2.symbole
             animation_jeton(colonne_choisie, ligne_finale, symbole)
             if partie.jouer(colonne_choisie, partie.tour_joueur):
-
-                if partie.plateau.est_nul():
-                    print("Match nul")
-                    afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Match nul !", 60,
-                                   dict_couleurs["bleu marin"])
-                    pygame.display.flip()
-                    pygame.time.wait(3000)
-                    partie_en_cours = False
-                    socket_client.close()
                 if partie.plateau.est_victoire(colonne_choisie):
                     texte_résultat = "Victoire !" if partie.tour_joueur == indexe_joueur else f"Défaite !"
                     afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2,
@@ -304,7 +293,14 @@ def main_multi():
                     pygame.time.wait(3000)
                     partie_en_cours = False
                     socket_client.close()
-
+                if partie.plateau.est_nul():
+                    print("Match nul")
+                    afficher_texte(fenetre, largeur_fenetre // 2, hauteur_fenetre // 2, f"Match nul !", 60,
+                                   dict_couleurs["bleu marin"])
+                    pygame.display.flip()
+                    pygame.time.wait(3000)
+                    partie_en_cours = False
+                    socket_client.close()
                 if partie.tour_joueur == 1:
                     partie.tour_joueur = 2
                 else:

@@ -1,12 +1,12 @@
 import pygame
 
-from interface import boutton, partie_en_cours
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, est_local, charger_config, \
+from . import boutton, partie_en_cours
+from ..utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, est_local, charger_config, \
     récupérer_port, mettre_à_jour_port, mettre_à_jour_ip, chemin_absolu_dossier
 import threading
-import multijoueur.serveur as serveur
-import interface.entrer_port_menu as entrer_port_menu
-import interface.rejoindre_partie_menu as rejoindre_partie_menu
+from ..multijoueur import serveur
+from . import entrer_port_menu
+from . import rejoindre_partie_menu
 arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
 boutton_créer_partie = boutton.Boutton(largeur_fenetre // 2, hauteur_fenetre // 2 - 75, 450, 100, "Créer une partie",

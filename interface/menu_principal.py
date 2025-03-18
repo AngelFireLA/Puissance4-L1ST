@@ -2,12 +2,12 @@ import random
 import pygame
 pygame.init()
 
-import interface.boutton as boutton
-import interface.partie_en_cours as partie_en_cours
-import interface.menu_solo as menu_solo
-import interface.menu_options as menu_options
-import interface.menu_multijoueur as menu_multijoueur
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, chemin_absolu_dossier
+from . import boutton
+from . import partie_en_cours
+from . import menu_solo
+from . import menu_options
+from . import menu_multijoueur
+from ..utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, chemin_absolu_dossier
 
 arriere_plan = pygame.image.load(chemin_absolu_dossier+"assets/images/menu_arrière_plan.jpg")
 arriere_plan = pygame.transform.scale(arriere_plan, (largeur_fenetre, hauteur_fenetre))
@@ -48,8 +48,7 @@ def main():
                     partie_en_cours.main(profondeur=0)
                     fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))
                 if boutton_troll.boutton_clické(event):
-                    pygame.quit()
-                    exit()
+                    return
                 # if boutton_options.boutton_clické(event):
                 #     menu_options.main()
                 #     fenetre = pygame.display.set_mode((largeur_fenetre, hauteur_fenetre))

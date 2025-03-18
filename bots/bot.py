@@ -1,6 +1,6 @@
 import random
 
-from moteur.joueur import Joueur
+from ..moteur.joueur import Joueur
 class Bot(Joueur):
     def __init__(self, nom, symbole):
         super().__init__(nom, symbole)

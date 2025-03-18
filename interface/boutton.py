@@ -1,5 +1,5 @@
 import pygame
-from utils import souris_est_dans_zone, dict_couleurs
+from ..utils import souris_est_dans_zone, dict_couleurs
 
 class Boutton:
     def __init__(self, x, y, largeur, hauteur, texte, couleur, couleur_surlignée=None,font="freesansbold.ttf", amplitude_arrondi=1.5, montrer=True, couleur_texte=None):

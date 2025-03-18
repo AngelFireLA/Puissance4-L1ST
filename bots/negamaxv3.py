@@ -1,7 +1,7 @@
 import random
 import time
 
-from bots.bot import Bot
+from .bot import Bot
 
 class Negamax3(Bot):
     def __init__(self, nom, symbole, profondeur=4, temps_max=0):

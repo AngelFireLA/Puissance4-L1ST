@@ -1,5 +1,5 @@
-import moteur.plateau as plateau
-from moteur.joueur import Joueur
+from . import plateau
+
 class Partie:
 
     def __init__(self, colonnes=7, lignes=6):

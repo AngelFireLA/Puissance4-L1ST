@@ -2,8 +2,8 @@
 import pygame
 import pygame_widgets
 from pygame_widgets.slider import Slider
-from interface import boutton
-from utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, couleur_plateau, couleurs_jetons, \
+from . import boutton
+from ..utils import afficher_texte, dict_couleurs, largeur_fenetre, hauteur_fenetre, couleur_plateau, couleurs_jetons, \
     chemin_absolu_dossier
 
 hauteur_slider_musique = hauteur_fenetre//2 - 125

@@ -1,4 +1,4 @@
-from bots.bot import Bot
+from .bot import Bot
 import random
 class RandomBot(Bot):
     def __init__(self, nom, symbole):

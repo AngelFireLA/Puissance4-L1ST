@@ -1,7 +1,7 @@
 import random
 import time
 
-from bots.bot import Bot
+from .bot import Bot
 
 def tri_coups(plateau):
     centre = plateau.colonnes // 2
