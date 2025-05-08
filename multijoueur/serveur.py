@@ -2,7 +2,7 @@ import random
 import socket
 import threading
 import time
-from ..utils import status_serveur
+from utils import status_serveur
 
 class Serveur:
     def __init__(self, ip='0.0.0.0', port=25565):
@@ -45,7 +45,7 @@ class Serveur:
                 if not data:
                     break
                 if data.startswith("@connexion:"):
-                    nom_utilisateur = data.split(":")[1]
+                    nom_utilisateur = data.split(":")[1].strip().replace("|", "_")
                     if nom_utilisateur in self.clients:
                         break
                     print(f"Joueur {nom_utilisateur} connecté")
@@ -55,7 +55,7 @@ class Serveur:
                         on_commence = random.choice([True, False])
                         j1_tour = 1 if on_commence else 2
                         j2_tour = 2 if on_commence else 1
-                        autre_utilisateur = [client for client in self.clients if client != nom_utilisateur][0]
+                        autre_utilisateur = [client for client in self.clients if client != nom_utilisateur][0].strip().replace("|", "_")
                         self.envoyer_message(nom_utilisateur, f"@commencer:{j1_tour}|{autre_utilisateur}")
                         self.envoyer_message(autre_utilisateur, f"@commencer:{j2_tour}|{nom_utilisateur}")
 

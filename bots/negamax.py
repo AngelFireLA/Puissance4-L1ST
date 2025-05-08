@@ -1,6 +1,6 @@
 import random
 
-from .bot import Bot
+from bots.bot import Bot
 
 class Negamax(Bot):
     def __init__(self, nom, symbole, profondeur=4):
