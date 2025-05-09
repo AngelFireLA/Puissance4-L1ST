@@ -1,9 +1,9 @@
 import random
 from bots import negamax, negamaxv3, negamaxv5, negamaxv4, claude37_sonnet, claude37_sonnet_thinking, gemini_flash_20, \
-    gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, negamaxv6
+    gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, qwen3, gemini25_flash_thinking
 import moteur.plateau as plateau
 import time
-from bots import negamaxv5, gpt4o, same, o3_mini_high, o3_mini_high_search, negamaxv5_b
+from bots import negamaxv5, gpt4o, same, o3_mini_high, o3_mini_high_search, negamaxv5_b, gemini25_pro, o4_mini_high, o3
 from moteur.joueur import Joueur
 from moteur.partie import Partie
 
@@ -119,7 +119,8 @@ def coups_en_x_secondes_avec_victoire(PlateauClass, duration=0.1):
 
 # Test de Performance de Negamax
 def test_negamax(bot: negamax.Negamax):
-    profondeurs = [4, 5, 6, 7, 8, 9, 10, 11, 12] # , 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,29,30, 31,32, 32, 33,34,35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
+
+    profondeurs = [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16] # , 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28,29,30, 31,32, 32, 33,34,35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45]
     for p in profondeurs:
         partie = Partie()
         j1 = Joueur("P1", "O")
@@ -131,7 +132,7 @@ def test_negamax(bot: negamax.Negamax):
         print(f"Profondeur {p} atteint en {time.perf_counter()-start_time} secondes.")
 
 
-bot = negamaxv6.Negamax6("P1", "O")
+bot = o3.StellarStorm("P1", "X", temps_max=10)
 
 test_negamax(bot)
 # bot = negamaxv5.Negamax5("P1", "O")

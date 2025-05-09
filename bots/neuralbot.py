@@ -44,8 +44,8 @@ def gelu_activation(x):
     return x * 0.5 * (1 + math.erf(x / math.sqrt(2)))
 
 class NeuralBot(Bot):
-    def __init__(self, name, symbole, model_path, config_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\config_feedforward"):
-        super().__init__(name, symbole)
+    def __init__(self, nom, symbole, model_path, config_path=r"C:\Dev\Python\Puissance4-L1ST\custom_neural_network\config_feedforward"):
+        super().__init__(nom, symbole)
         self.model_path = model_path
         self.genome = load_genome(model_path)
         self.config = neat.Config(

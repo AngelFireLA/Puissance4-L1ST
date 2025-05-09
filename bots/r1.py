@@ -3,7 +3,7 @@ import time
 from bots.bot import Bot
 
 class ZobristNegamaxBot(Bot):
-    def __init__(self, nom, symbole, temps_max=1):
+    def __init__(self, nom, symbole, temps_max=0.5):
         super().__init__(nom, symbole)
         self.zobrist_tables = {}  # Key: (cols, rows), value: Zobrist table
         self.lines_cache = {}      # Key: (cols, rows), value: list of lines

@@ -12,7 +12,7 @@ def tri_coups(plateau):
 
 
 class MTDfbBot(Bot):  # Unique name: MTDfbBot
-    def __init__(self, nom, symbole, profondeur=6, temps_max=1):
+    def __init__(self, nom, symbole, profondeur=6, temps_max=0.5):
         super().__init__(nom, symbole)
         self.profondeur = profondeur
         self.temps_max = temps_max

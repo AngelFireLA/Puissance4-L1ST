@@ -10,7 +10,7 @@ def tri_coups(plateau):
 
 
 class AlphaConnectX(Bot):
-    def __init__(self, nom, symbole, profondeur=5, temps_max=0.02):
+    def __init__(self, nom, symbole, profondeur=5, temps_max=0.5):
         super().__init__(nom, symbole)
         self.profondeur = profondeur
         self.temps_max = temps_max
@@ -25,7 +25,7 @@ class AlphaConnectX(Bot):
 
         coups_restants = sum(plateau.lignes - plateau.hauteurs_colonnes[col] for col in plateau.colonnes_jouables)
 
-        while time.time() - debut < self.temps_max and profondeur <= coups_restants:
+        while time.time() - debut < self.temps_max and profondeur <= coups_restants and meilleur_score <= 0:
             for col in tri_coups(plateau):
                 colonne_enlevee = plateau.jouer_coup_reversible(col, self.symbole)
                 if plateau.est_victoire(col):

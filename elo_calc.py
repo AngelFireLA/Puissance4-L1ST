@@ -54,11 +54,11 @@ def une_partie(bot1_template, bot2_template):
             colonne = bot2.trouver_coup(partie.plateau, bot1)
 
         if partie.jouer(colonne, partie.tour_joueur):
-            if partie.plateau.est_nul():
-                result = "nul"
-                break
             if partie.plateau.est_victoire(colonne):
                 result = "bot1" if partie.tour_joueur == 1 else "bot2"
+                break
+            if partie.plateau.est_nul():
+                result = "nul"
                 break
             partie.tour_joueur = 2 if partie.tour_joueur == 1 else 1
         else:

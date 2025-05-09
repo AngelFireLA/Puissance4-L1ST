@@ -6,7 +6,7 @@ from moteur.joueur import Joueur
 from bots.bot import Bot
 
 class AdvancedConnect4Bot(Bot):
-    def __init__(self, nom, symbole, profondeur=4, temps_max=1):
+    def __init__(self, nom, symbole, profondeur=4, temps_max=0.5):
         super().__init__(nom, symbole)
         self.profondeur = profondeur
         self.temps_max = temps_max

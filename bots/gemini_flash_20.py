@@ -36,7 +36,7 @@ def sort_moves(board):
     return sorted(list(board.colonnes_jouables), key=lambda col: abs(col - center))
 
 class AlphaConnect(Joueur):
-    def __init__(self, nom, symbole, profondeur=4, temp_max=1):
+    def __init__(self, nom, symbole, profondeur=4, temp_max=0.5):
         super().__init__(nom, symbole)
         self.profondeur = profondeur
         self.temp_max = temp_max
