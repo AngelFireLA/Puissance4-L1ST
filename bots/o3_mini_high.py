@@ -1,4 +1,3 @@
-import random
 import math
 from bots.bot import Bot
 

@@ -1,4 +1,3 @@
-import random
 import time
 from collections import deque
 
@@ -45,7 +44,7 @@ class MTDfbBot(Bot):  # Unique name: MTDfbBot
         return meilleur_coup
 
     def iterative_deepening(self, plateau, joueur2, start_time):
-        meilleur_coup = random.choice(list(plateau.colonnes_jouables))
+        meilleur_coup = list(plateau.colonnes_jouables)[0]
         profondeur_actuelle = 1
 
         while time.time() - start_time < self.temps_max and profondeur_actuelle <= self.profondeur:

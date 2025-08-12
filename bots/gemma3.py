@@ -1,5 +1,4 @@
 from math import inf
-import random
 
 from bots.bot import Bot
 
@@ -17,7 +16,7 @@ class SigmaBot(Bot):
         self.adversaire_symbole = joueur2.symbole
 
         meilleur_score = -inf
-        meilleur_coup = random.choice(list(plateau.colonnes_jouables))
+        meilleur_coup = list(plateau.colonnes_jouables)[0]
 
         # Check for immediate winning moves
         for colonne in plateau.colonnes_jouables:
@@ -56,8 +55,7 @@ class SigmaBot(Bot):
             if score > meilleur_score:
                 meilleur_score = score
                 meilleur_coup = colonne
-            elif score == meilleur_score and random.random() < 0.5:
-                # Add some randomness among equal scores
+            elif score == meilleur_score:
                 meilleur_coup = colonne
 
         return meilleur_coup

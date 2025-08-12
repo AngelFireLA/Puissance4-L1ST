@@ -3,7 +3,7 @@ from bots import negamax, negamaxv3, negamaxv5, negamaxv4, claude37_sonnet, clau
     gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, qwen3, gemini25_flash_thinking
 import moteur.plateau as plateau
 import time
-from bots import negamaxv5, gpt4o, same, o3_mini_high, o3_mini_high_search, negamaxv5_b, gemini25_pro, o4_mini_high, o3
+from bots import negamaxv5, gpt4o, same, o3_mini_high, claude41_opus, negamaxv5_b, gemini25_pro, o4_mini_high, o3
 from moteur.joueur import Joueur
 from moteur.partie import Partie
 
@@ -132,7 +132,7 @@ def test_negamax(bot: negamax.Negamax):
         print(f"Profondeur {p} atteint en {time.perf_counter()-start_time} secondes.")
 
 
-bot = o3.StellarStorm("P1", "X", temps_max=10)
+bot = claude41_opus.Thunderstrike("P2", "X")
 
 test_negamax(bot)
 # bot = negamaxv5.Negamax5("P1", "O")

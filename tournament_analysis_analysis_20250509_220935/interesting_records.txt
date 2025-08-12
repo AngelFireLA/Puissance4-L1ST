@@ -1,0 +1,47 @@
+INTERESTING TOURNAMENT RECORDS
+============================
+
+Elo Calculation Parameters:
+  Initial Elo: 1000.0
+  Number of Passes: 10
+  K-Factor Range: 64 (start) to 16 (end)
+
+Strongest Bot: claude3.7-sonnet-thinking P8 (ELO: 1377.1, Type: claude3.7-sonnet-thinking)
+
+Strongest Bot by Type:
+  claude3.7-sonnet-thinking: claude3.7-sonnet-thinking P8 (ELO: 1377.1, Overall Rank: 1)
+  QwQ: QwQ P6 (ELO: 1376.1, Overall Rank: 2)
+  gemini-pro-2.0: gemini-pro-2.0 P8 (ELO: 1306.2, Overall Rank: 3)
+  gpt4o: gpt4o P8 (ELO: 1301.9, Overall Rank: 4)
+  o3-mini-high: o3-mini-high P6 (ELO: 1291.5, Overall Rank: 5)
+  Gemini2.5 Pro: Gemini2.5 Pro P6 (ELO: 1273.6, Overall Rank: 6)
+  gemini-flash-2.0-thinking: gemini-flash-2.0-thinking P8 (ELO: 1222.1, Overall Rank: 9)
+  Negamax4: Negamax4 P8 (ELO: 1199.4, Overall Rank: 10)
+  Negamax5: Negamax5 P6 (ELO: 1199.2, Overall Rank: 11)
+  o4-mini-high: o4-mini-high P12 (ELO: 1195.9, Overall Rank: 12)
+  Negamax5B: Negamax5B P10 (ELO: 1184.3, Overall Rank: 16)
+  LeChat: LeChat P6 (ELO: 1184.1, Overall Rank: 17)
+  o1: o1 P8 (ELO: 1100.0, Overall Rank: 29)
+  claude3.7-sonnet: claude3.7-sonnet P10 (ELO: 1099.2, Overall Rank: 30)
+  same.dev: same.dev P6 (ELO: 970.2, Overall Rank: 36)
+  Negamax2: Negamax2 P6 (ELO: 828.7, Overall Rank: 38)
+  o3: o3 P10 (ELO: 816.9, Overall Rank: 39)
+  Negamax: Negamax P6 (ELO: 812.6, Overall Rank: 40)
+  Negamax3: Negamax3 P6 (ELO: 799.2, Overall Rank: 42)
+  Qwen3: Qwen3 P6 (ELO: 793.9, Overall Rank: 43)
+  Gemini2.5 Flash Thinking: Gemini2.5 Flash Thinking P8 (ELO: 753.2, Overall Rank: 46)
+  Gemma2: Gemma2 P8 (ELO: 743.4, Overall Rank: 47)
+  gemini-flash-2.0: gemini-flash-2.0 P6 (ELO: 708.8, Overall Rank: 49)
+  r1: r1 T0.25 (ELO: 596.9, Overall Rank: 52)
+  DefaultBot: Default Bot (ELO: 435.8, Overall Rank: 55)
+  RandomBot: Random Bot (ELO: 51.7, Overall Rank: 56)
+
+Bot with Most Draws: Negamax4 P10 (46 draws, Draw Rate: 41.82%)
+Most Decisive Bot (min 20 games): Default Bot (Draw Rate: 0.00%)
+
+Biggest Upset (Single Game):
+  Game ID: 2479
+  Winner: Gemini2.5 Flash Thinking P6 (Elo: 532.6)
+  Loser: gpt4o P10 (Elo: 1240.2)
+  Elo Difference Overcome: 707.7 points
+

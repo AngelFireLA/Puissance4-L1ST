@@ -1,6 +1,5 @@
 # bots/stellarstorm.py
 import math
-import random
 import time
 from typing import List, Tuple
 
@@ -100,7 +99,7 @@ class StellarStorm(Bot):
 
         # -----  Iterative deepening with aspiration window  -----
         guess = 0
-        best_col = random.choice(tuple(plateau.colonnes_jouables))
+        best_col = tuple(plateau.colonnes_jouables)[0]
         for depth in range(1, self.profondeur + 1):
             window = 50
             alpha = guess - window

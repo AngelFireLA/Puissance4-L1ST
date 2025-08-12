@@ -1,4 +1,3 @@
-import random
 import time
 
 from bots.bot import Bot
@@ -42,7 +41,6 @@ class Negamax3(Bot):
                     meilleur_coups = [col]
                 elif score == meilleur_score:
                     meilleur_coups.append(col)
-                    random.shuffle(meilleur_coups)
         else:
             while time.time()-start_time <= self.temps_de_pensée_max and meilleur_score <= 0 and i <= coups_restants:
 
@@ -67,7 +65,6 @@ class Negamax3(Bot):
                         meilleur_coups = [col]
                     elif score == meilleur_score:
                         meilleur_coups.append(col)
-                        random.shuffle(meilleur_coups)
                 i += 1
 
         # print()

@@ -1,0 +1,1541 @@
+bot1,bot2,bot1_wins,bot2_wins,draws,total_games_in_match,total_moves,total_time,bot1_type,bot2_type
+Default Bot,Negamax2 P6,0,2,0,2,23,0.2221825122833252,DefaultBot,Negamax2
+Default Bot,Negamax4 P6,0,2,0,2,17,0.09360909461975098,DefaultBot,Negamax4
+Gemini2.5 Flash Thinking P6,Gemini2.5 Pro P4 T0.25,0,2,0,2,45,1.1573069095611572,Gemini2.5 Flash Thinking,Gemini2.5 Pro
+Gemini2.5 Flash Thinking P8,LeChat P6,0,1,1,2,49,1.2810742855072021,Gemini2.5 Flash Thinking,LeChat
+Negamax4 P6,o4-mini-high P10,1,0,1,2,80,1.6469273567199707,Negamax4,o4-mini-high
+Negamax5B P6,Negamax5B P8,0,1,1,2,80,1.5123517513275146,Negamax5B,Negamax5B
+Negamax5 P6,gemini-flash-2.0 P6,2,0,0,2,63,2.112067699432373,Negamax5,gemini-flash-2.0
+Random Bot,claude3.7-sonnet-thinking P6,0,2,0,2,23,2.537524461746216,RandomBot,claude3.7-sonnet-thinking
+Gemini2.5 Flash Thinking P8,Negamax4 P8,0,1,1,2,49,2.5025527477264404,Gemini2.5 Flash Thinking,Negamax4
+Gemini2.5 Flash Thinking P6,Gemini2.5 Pro P6 T0.25,0,2,0,2,37,3.3415184020996094,Gemini2.5 Flash Thinking,Gemini2.5 Pro
+Negamax5 P6,o3-mini-high P6,0,2,0,2,67,3.870779037475586,Negamax5,o3-mini-high
+Negamax4 P8,Negamax5B P8,0,0,2,2,84,3.0833115577697754,Negamax4,Negamax5B
+Gemma2 P6,Negamax5B P8,0,2,0,2,63,4.354280471801758,Gemma2,Negamax5B
+Gemma2 P6,o3 P8,2,0,0,2,23,5.1889519691467285,Gemma2,o3
+Negamax5 P8,claude3.7-sonnet-thinking P6,1,1,0,2,82,5.679529190063477,Negamax5,claude3.7-sonnet-thinking
+Negamax2 P8,r1 T0.25,2,0,0,2,17,5.7646424770355225,Negamax2,r1
+Negamax2 P6,Random Bot,2,0,0,2,27,0.3284027576446533,Negamax2,RandomBot
+Negamax5B P6,o3 P10,2,0,0,2,33,6.786192893981934,Negamax5B,o3
+Gemini2.5 Pro P6,Negamax2 P6,2,0,0,2,55,6.9710094928741455,Gemini2.5 Pro,Negamax2
+Gemini2.5 Flash Thinking P6,o1 P8,0,2,0,2,49,7.184284925460815,Gemini2.5 Flash Thinking,o1
+o3 P8,same.dev P6,1,1,0,2,38,7.288403272628784,o3,same.dev
+Negamax4 P8,o1 P6,1,0,1,2,84,7.447501182556152,Negamax4,o1
+Gemini2.5 Flash Thinking P6,claude3.7-sonnet P8,0,2,0,2,45,6.469329118728638,Gemini2.5 Flash Thinking,claude3.7-sonnet
+Qwen3 P6,o3-mini-high P6,0,2,0,2,37,5.71139121055603,Qwen3,o3-mini-high
+LeChat P6,r1 T0.25,2,0,0,2,33,8.561760187149048,LeChat,r1
+LeChat P6,r1 T0.5,2,0,0,2,33,8.533828735351562,LeChat,r1
+LeChat P10,Negamax5 P6,0,0,2,2,84,9.280287265777588,LeChat,Negamax5
+Negamax4 P6,gemini-flash-2.0 P6,2,0,0,2,63,1.6445002555847168,Negamax4,gemini-flash-2.0
+claude3.7-sonnet P8,same.dev P6,1,1,0,2,34,7.358947277069092,claude3.7-sonnet,same.dev
+Gemma2 P6,gemini-flash-2.0 P6,2,0,0,2,15,2.720770835876465,Gemma2,gemini-flash-2.0
+gemini-flash-2.0 P6,o3 P8,0,2,0,2,27,5.996718883514404,gemini-flash-2.0,o3
+Default Bot,Gemini2.5 Flash Thinking P6,1,1,0,2,36,0.43952393531799316,DefaultBot,Gemini2.5 Flash Thinking
+LeChat P6,Qwen3 P6,2,0,0,2,33,2.942577838897705,LeChat,Qwen3
+Gemma2 P8,o1 P6,0,2,0,2,33,11.442949295043945,Gemma2,o1
+Gemini2.5 Flash Thinking P8,Negamax2 P8,1,1,0,2,44,4.887022256851196,Gemini2.5 Flash Thinking,Negamax2
+Negamax4 P6,o1 P6,2,0,0,2,81,3.0489184856414795,Negamax4,o1
+Gemini2.5 Pro P4 T0.25,Negamax5B P6,0,2,0,2,71,1.0183420181274414,Gemini2.5 Pro,Negamax5B
+claude3.7-sonnet P10,o3-mini-high P6,0,2,0,2,47,14.039309740066528,claude3.7-sonnet,o3-mini-high
+LeChat P8,claude3.7-sonnet P8,2,0,0,2,63,12.780322790145874,LeChat,claude3.7-sonnet
+Gemma2 P6,Negamax5B P10,0,2,0,2,61,15.009551525115967,Gemma2,Negamax5B
+Gemini2.5 Flash Thinking P6,o3 P10,0,2,0,2,29,6.462159156799316,Gemini2.5 Flash Thinking,o3
+Negamax P6,Negamax4 P6,0,2,0,2,67,5.130507230758667,Negamax,Negamax4
+Qwen3 P6,gemini-pro-2.0 P6,0,2,0,2,47,6.521178722381592,Qwen3,gemini-pro-2.0
+gemini-flash-2.0 P8,r1 T0.25,1,1,0,2,40,15.823973655700684,gemini-flash-2.0,r1
+Negamax4 P8,o3 P10,2,0,0,2,37,10.177490711212158,Negamax4,o3
+claude3.7-sonnet P8,o3-mini-high P6,0,2,0,2,49,16.424229383468628,claude3.7-sonnet,o3-mini-high
+Negamax4 P4 T0.25,Negamax5 P10,0,1,1,2,83,6.49716591835022,Negamax4,Negamax5
+Negamax2 P6,o4-mini-high P12,0,2,0,2,43,11.637298107147217,Negamax2,o4-mini-high
+Gemma2 P8,o3-mini-high P6,0,2,0,2,23,7.029348611831665,Gemma2,o3-mini-high
+claude3.7-sonnet P10,r1 T0.5,2,0,0,2,43,17.020485162734985,claude3.7-sonnet,r1
+Negamax4 P8,Negamax5 P6,1,0,1,2,80,2.2197372913360596,Negamax4,Negamax5
+LeChat P8,QwQ P6,0,2,0,2,77,18.38967490196228,LeChat,QwQ
+Negamax2 P8,o4-mini-high P8,0,2,0,2,53,3.1434967517852783,Negamax2,o4-mini-high
+Gemma2 P6,Negamax2 P6,0,2,0,2,51,3.299166202545166,Gemma2,Negamax2
+Gemini2.5 Pro P4 T0.25,gemini-flash-2.0 P8,2,0,0,2,27,6.192652940750122,Gemini2.5 Pro,gemini-flash-2.0
+Qwen3 P6,gpt4o P8,0,2,0,2,43,16.32320213317871,Qwen3,gpt4o
+Negamax5B P10,claude3.7-sonnet P6,1,1,0,2,50,12.652878999710083,Negamax5B,claude3.7-sonnet
+LeChat P6,Negamax5 P8,1,0,1,2,78,1.9624977111816406,LeChat,Negamax5
+gemini-flash-2.0-thinking P6,o4-mini-high P6,1,0,1,2,82,1.9018876552581787,gemini-flash-2.0-thinking,o4-mini-high
+Gemini2.5 Pro P6,Negamax3 P6,2,0,0,2,55,5.809253454208374,Gemini2.5 Pro,Negamax3
+Negamax5B P8,r1 T0.5,1,0,1,2,61,16.084928274154663,Negamax5B,r1
+Negamax3 P6,Negamax5B P10,0,2,0,2,61,10.840519905090332,Negamax3,Negamax5B
+gemini-flash-2.0 P6,o1 P8,1,1,0,2,46,15.642973184585571,gemini-flash-2.0,o1
+Gemini2.5 Pro P6 T0.25,gemini-flash-2.0 P6,1,1,0,2,46,4.18712306022644,Gemini2.5 Pro,gemini-flash-2.0
+Negamax5 P6,o1 P8,0,0,2,2,84,23.093504190444946,Negamax5,o1
+Negamax5B P10,gemini-flash-2.0 P8,1,0,1,2,61,12.005962133407593,Negamax5B,gemini-flash-2.0
+o1 P8,same.dev P6,2,0,0,2,17,6.7403082847595215,o1,same.dev
+Negamax4 P6,o1 P8,0,0,2,2,84,19.47496199607849,Negamax4,o1
+Negamax5B P10,gpt4o P6,0,1,1,2,81,22.378594636917114,Negamax5B,gpt4o
+LeChat P6,Negamax3 P6,2,0,0,2,51,1.2450106143951416,LeChat,Negamax3
+Negamax2 P8,gemini-flash-2.0-thinking P6,0,2,0,2,55,14.963577032089233,Negamax2,gemini-flash-2.0-thinking
+Negamax4 P8,o4-mini-high P6,1,1,0,2,68,2.0359408855438232,Negamax4,o4-mini-high
+claude3.7-sonnet-thinking P8,gemini-flash-2.0-thinking P6,1,1,0,2,54,11.859050512313843,claude3.7-sonnet-thinking,gemini-flash-2.0-thinking
+Negamax4 P4 T0.25,claude3.7-sonnet-thinking P6,1,1,0,2,56,3.6028168201446533,Negamax4,claude3.7-sonnet-thinking
+Negamax4 P8,QwQ P6,0,2,0,2,79,17.311028480529785,Negamax4,QwQ
+Gemini2.5 Pro P6 T0.25,Negamax2 P6,2,0,0,2,55,5.212427377700806,Gemini2.5 Pro,Negamax2
+Gemini2.5 Pro P6 T0.25,gpt4o P6,2,0,0,2,69,23.634772062301636,Gemini2.5 Pro,gpt4o
+LeChat P10,o1 P8,1,1,0,2,44,26.330976486206055,LeChat,o1
+Gemini2.5 Pro P6,o4-mini-high P8,2,0,0,2,73,3.7822611331939697,Gemini2.5 Pro,o4-mini-high
+claude3.7-sonnet P8,o4-mini-high P8,0,1,1,2,67,9.763694524765015,claude3.7-sonnet,o4-mini-high
+Gemini2.5 Pro P6,gemini-pro-2.0 P8,2,0,0,2,75,26.814748525619507,Gemini2.5 Pro,gemini-pro-2.0
+Random Bot,gemini-flash-2.0 P6,0,2,0,2,15,0.6248717308044434,RandomBot,gemini-flash-2.0
+LeChat P6,gemini-flash-2.0 P8,1,0,1,2,53,6.9998345375061035,LeChat,gemini-flash-2.0
+o3-mini-high P6,r1 T0.25,2,0,0,2,27,11.220211267471313,o3-mini-high,r1
+Negamax5 P6,QwQ P6,1,1,0,2,70,10.807189702987671,Negamax5,QwQ
+Negamax3 P6,Qwen3 P6,0,2,0,2,43,4.338769197463989,Negamax3,Qwen3
+Negamax2 P8,Random Bot,2,0,0,2,17,1.5225811004638672,Negamax2,RandomBot
+Negamax P6,claude3.7-sonnet-thinking P8,0,2,0,2,37,14.028178215026855,Negamax,claude3.7-sonnet-thinking
+o4-mini-high P8,same.dev P6,1,1,0,2,62,3.3966763019561768,o4-mini-high,same.dev
+Gemma2 P6,o1 P6,0,2,0,2,27,4.182661294937134,Gemma2,o1
+Negamax5 P6,claude3.7-sonnet P8,1,1,0,2,72,10.743557214736938,Negamax5,claude3.7-sonnet
+Negamax2 P8,gpt4o P6,0,2,0,2,61,16.802648544311523,Negamax2,gpt4o
+Qwen3 P6,gemini-flash-2.0 P6,2,0,0,2,31,4.657407999038696,Qwen3,gemini-flash-2.0
+o3 P6,o4-mini-high P6,0,2,0,2,33,4.441727161407471,o3,o4-mini-high
+Negamax3 P8,claude3.7-sonnet-thinking P6,0,2,0,2,55,17.606465101242065,Negamax3,claude3.7-sonnet-thinking
+Negamax5 P8,gemini-pro-2.0 P6,1,0,1,2,76,5.5588672161102295,Negamax5,gemini-pro-2.0
+Negamax5B P10,o3 P6,2,0,0,2,39,10.449604511260986,Negamax5B,o3
+Negamax2 P6,o1 P8,0,2,0,2,59,28.018616914749146,Negamax2,o1
+Qwen3 P6,gemini-flash-2.0 P8,2,0,0,2,31,7.846897840499878,Qwen3,gemini-flash-2.0
+Negamax3 P6,QwQ P6,0,2,0,2,41,11.745876789093018,Negamax3,QwQ
+Negamax3 P6,o3-mini-high P6,0,2,0,2,57,6.642341375350952,Negamax3,o3-mini-high
+Gemini2.5 Pro P4 T0.25,gemini-flash-2.0 P6,2,0,0,2,25,2.6903188228607178,Gemini2.5 Pro,gemini-flash-2.0
+Negamax2 P8,same.dev P6,2,0,0,2,17,1.9760828018188477,Negamax2,same.dev
+Gemma2 P6,QwQ P6,0,2,0,2,25,9.402944564819336,Gemma2,QwQ
+Negamax3 P8,Random Bot,2,0,0,2,15,5.491603136062622,Negamax3,RandomBot
+Negamax3 P6,o3 P10,2,0,0,2,53,14.06166124343872,Negamax3,o3
+o4-mini-high P6,r1 T0.5,1,0,1,2,53,13.039700269699097,o4-mini-high,r1
+gemini-pro-2.0 P6,o4-mini-high P12,0,1,1,2,78,13.29161024093628,gemini-pro-2.0,o4-mini-high
+gemini-pro-2.0 P8,o3 P6,2,0,0,2,55,24.167997121810913,gemini-pro-2.0,o3
+Gemini2.5 Pro P6,Negamax P6,2,0,0,2,55,12.352503538131714,Gemini2.5 Pro,Negamax
+Gemini2.5 Pro P6,Negamax3 P8,2,0,0,2,63,16.627700805664062,Gemini2.5 Pro,Negamax3
+Gemini2.5 Flash Thinking P8,QwQ P6,0,2,0,2,43,13.109205722808838,Gemini2.5 Flash Thinking,QwQ
+Gemini2.5 Flash Thinking P8,o1 P6,0,2,0,2,29,5.00767183303833,Gemini2.5 Flash Thinking,o1
+gpt4o P10,o3 P10,2,0,0,2,29,18.08018922805786,gpt4o,o3
+Gemma2 P8,gemini-pro-2.0 P6,0,2,0,2,17,6.981021404266357,Gemma2,gemini-pro-2.0
+LeChat P8,gemini-flash-2.0 P6,1,0,1,2,81,6.149278163909912,LeChat,gemini-flash-2.0
+Gemini2.5 Pro P6 T0.25,claude3.7-sonnet P10,1,1,0,2,62,12.855752944946289,Gemini2.5 Pro,claude3.7-sonnet
+Gemini2.5 Flash Thinking P8,Gemini2.5 Pro P6 T0.25,0,2,0,2,47,4.740074157714844,Gemini2.5 Flash Thinking,Gemini2.5 Pro
+Random Bot,gpt4o P6,0,2,0,2,25,8.777203559875488,RandomBot,gpt4o
+Negamax5 P6,o1 P6,2,0,0,2,81,3.9543867111206055,Negamax5,o1
+gemini-pro-2.0 P8,o4-mini-high P6,1,1,0,2,60,16.814006090164185,gemini-pro-2.0,o4-mini-high
+LeChat P8,gemini-pro-2.0 P8,2,0,0,2,65,20.6583251953125,LeChat,gemini-pro-2.0
+Gemini2.5 Pro P6,gemini-flash-2.0-thinking P8,2,0,0,2,57,23.78675889968872,Gemini2.5 Pro,gemini-flash-2.0-thinking
+Negamax5 P8,o4-mini-high P10,0,1,1,2,72,4.260350942611694,Negamax5,o4-mini-high
+Negamax3 P8,gpt4o P10,0,2,0,2,59,22.219889402389526,Negamax3,gpt4o
+gemini-pro-2.0 P6,o3 P6,2,0,0,2,37,6.925924062728882,gemini-pro-2.0,o3
+o4-mini-high P10,o4-mini-high P12,0,0,2,2,84,15.376544952392578,o4-mini-high,o4-mini-high
+Gemini2.5 Flash Thinking P6,same.dev P6,0,2,0,2,31,1.6074228286743164,Gemini2.5 Flash Thinking,same.dev
+Negamax5B P10,claude3.7-sonnet-thinking P8,0,1,1,2,77,25.584392309188843,Negamax5B,claude3.7-sonnet-thinking
+Negamax5 P10,claude3.7-sonnet P8,1,1,0,2,50,15.75858998298645,Negamax5,claude3.7-sonnet
+gemini-flash-2.0-thinking P6,o3-mini-high P6,1,1,0,2,64,8.43624210357666,gemini-flash-2.0-thinking,o3-mini-high
+Random Bot,same.dev P6,0,2,0,2,17,0.0,RandomBot,same.dev
+Negamax5B P8,gemini-flash-2.0-thinking P8,1,1,0,2,76,16.98803424835205,Negamax5B,gemini-flash-2.0-thinking
+o4-mini-high P8,r1 T0.25,1,0,1,2,53,13.259607076644897,o4-mini-high,r1
+Negamax5 P10,gemini-flash-2.0 P8,1,0,1,2,61,14.237596988677979,Negamax5,gemini-flash-2.0
+Gemini2.5 Pro P4 T0.25,Negamax2 P6,2,0,0,2,43,2.309483051300049,Gemini2.5 Pro,Negamax2
+Negamax3 P8,o3 P10,1,1,0,2,50,22.8641300201416,Negamax3,o3
+Negamax3 P6,gemini-flash-2.0 P6,2,0,0,2,35,3.6700847148895264,Negamax3,gemini-flash-2.0
+Negamax5 P8,r1 T0.5,1,0,1,2,61,16.419989347457886,Negamax5,r1
+Gemini2.5 Pro P4 T0.25,Negamax5 P8,0,1,1,2,82,3.333481788635254,Gemini2.5 Pro,Negamax5
+Default Bot,Gemini2.5 Pro P6,0,2,0,2,21,2.1742169857025146,DefaultBot,Gemini2.5 Pro
+Negamax3 P6,claude3.7-sonnet-thinking P6,0,2,0,2,37,5.755149602890015,Negamax3,claude3.7-sonnet-thinking
+Gemini2.5 Flash Thinking P6,gemini-flash-2.0-thinking P6,0,2,0,2,27,2.0573902130126953,Gemini2.5 Flash Thinking,gemini-flash-2.0-thinking
+Default Bot,claude3.7-sonnet-thinking P8,0,2,0,2,21,5.268186330795288,DefaultBot,claude3.7-sonnet-thinking
+Gemini2.5 Pro P4 T0.25,gpt4o P10,2,0,0,2,67,19.877381324768066,Gemini2.5 Pro,gpt4o
+gemini-pro-2.0 P6,o4-mini-high P6,0,1,1,2,78,4.94777250289917,gemini-pro-2.0,o4-mini-high
+Negamax5B P8,gemini-pro-2.0 P6,1,0,1,2,76,7.2216973304748535,Negamax5B,gemini-pro-2.0
+Negamax5 P10,o3 P8,2,0,0,2,47,17.166339874267578,Negamax5,o3
+claude3.7-sonnet P6,o3 P10,1,1,0,2,24,9.807688474655151,claude3.7-sonnet,o3
+Default Bot,Gemini2.5 Flash Thinking P8,1,1,0,2,30,1.847919225692749,DefaultBot,Gemini2.5 Flash Thinking
+Negamax4 P10,gemini-flash-2.0-thinking P6,2,0,0,2,63,54.176029682159424,Negamax4,gemini-flash-2.0-thinking
+Gemma2 P6,same.dev P6,2,0,0,2,17,1.1536943912506104,Gemma2,same.dev
+Gemini2.5 Flash Thinking P6,gpt4o P8,0,2,0,2,49,13.514858722686768,Gemini2.5 Flash Thinking,gpt4o
+claude3.7-sonnet P10,gemini-pro-2.0 P6,0,2,0,2,31,7.198136568069458,claude3.7-sonnet,gemini-pro-2.0
+Negamax5 P6,Negamax5B P10,0,0,2,2,84,9.171979188919067,Negamax5,Negamax5B
+Gemini2.5 Pro P6,gemini-pro-2.0 P6,2,0,0,2,67,12.689254760742188,Gemini2.5 Pro,gemini-pro-2.0
+Gemini2.5 Flash Thinking P6,gemini-flash-2.0 P6,0,2,0,2,49,1.7904150485992432,Gemini2.5 Flash Thinking,gemini-flash-2.0
+gemini-flash-2.0-thinking P8,gpt4o P10,1,1,0,2,54,36.556406021118164,gemini-flash-2.0-thinking,gpt4o
+claude3.7-sonnet P10,o1 P8,0,2,0,2,39,21.488140106201172,claude3.7-sonnet,o1
+gemini-pro-2.0 P8,gpt4o P10,2,0,0,2,71,44.803882122039795,gemini-pro-2.0,gpt4o
+o4-mini-high P12,same.dev P6,1,1,0,2,62,14.477484941482544,o4-mini-high,same.dev
+gemini-flash-2.0-thinking P6,same.dev P6,2,0,0,2,23,1.5818333625793457,gemini-flash-2.0-thinking,same.dev
+gemini-flash-2.0 P6,same.dev P6,1,1,0,2,40,2.5832948684692383,gemini-flash-2.0,same.dev
+Negamax P6,Negamax5 P10,0,2,0,2,61,19.496582746505737,Negamax,Negamax5
+claude3.7-sonnet-thinking P8,o3 P8,2,0,0,2,41,20.619800329208374,claude3.7-sonnet-thinking,o3
+o1 P8,o3 P8,1,1,0,2,62,48.72694182395935,o1,o3
+Gemini2.5 Pro P6 T0.25,Negamax4 P8,1,1,0,2,72,7.0509326457977295,Gemini2.5 Pro,Negamax4
+gemini-flash-2.0 P8,same.dev P6,0,2,0,2,35,9.34853982925415,gemini-flash-2.0,same.dev
+gemini-pro-2.0 P8,o1 P8,2,0,0,2,77,67.90565419197083,gemini-pro-2.0,o1
+Gemma2 P8,LeChat P8,2,0,0,2,21,11.874386072158813,Gemma2,LeChat
+Gemini2.5 Flash Thinking P6,Negamax P6,1,1,0,2,40,5.299190521240234,Gemini2.5 Flash Thinking,Negamax
+Gemini2.5 Pro P4 T0.25,Negamax2 P8,2,0,0,2,43,19.141693592071533,Gemini2.5 Pro,Negamax2
+Negamax5 P6,r1 T0.5,2,0,0,2,47,11.764232635498047,Negamax5,r1
+Negamax2 P6,Negamax5B P6,0,2,0,2,67,0.7656500339508057,Negamax2,Negamax5B
+Negamax P6,gpt4o P10,0,2,0,2,45,20.623966932296753,Negamax,gpt4o
+Negamax5 P10,Qwen3 P6,1,0,1,2,54,19.654062271118164,Negamax5,Qwen3
+gpt4o P6,o1 P8,2,0,0,2,61,38.56629157066345,gpt4o,o1
+Negamax5 P8,o3 P6,2,0,0,2,41,7.963619709014893,Negamax5,o3
+Gemini2.5 Pro P6 T0.25,Negamax3 P8,2,0,0,2,43,25.335007190704346,Gemini2.5 Pro,Negamax3
+Gemma2 P6,gemini-pro-2.0 P8,0,2,0,2,17,5.897494554519653,Gemma2,gemini-pro-2.0
+Gemini2.5 Pro P6,Gemma2 P6,2,0,0,2,19,3.950923204421997,Gemini2.5 Pro,Gemma2
+Gemini2.5 Flash Thinking P6,gemini-pro-2.0 P8,0,2,0,2,31,12.999931335449219,Gemini2.5 Flash Thinking,gemini-pro-2.0
+Gemma2 P8,Negamax4 P8,0,2,0,2,63,24.098183155059814,Gemma2,Negamax4
+Negamax3 P6,o4-mini-high P10,0,2,0,2,53,2.5439090728759766,Negamax3,o4-mini-high
+o3 P10,o3-mini-high P6,1,1,0,2,30,9.7158944606781,o3,o3-mini-high
+Negamax3 P6,r1 T0.5,2,0,0,2,17,4.201328754425049,Negamax3,r1
+claude3.7-sonnet-thinking P6,gpt4o P8,1,1,0,2,76,25.22745108604431,claude3.7-sonnet-thinking,gpt4o
+o1 P8,o4-mini-high P8,0,1,1,2,80,36.90714645385742,o1,o4-mini-high
+Gemma2 P8,claude3.7-sonnet-thinking P8,0,2,0,2,19,9.90831971168518,Gemma2,claude3.7-sonnet-thinking
+Negamax4 P8,gemini-pro-2.0 P8,1,0,1,2,82,21.253389596939087,Negamax4,gemini-pro-2.0
+Gemini2.5 Pro P6 T0.25,gemini-flash-2.0 P8,2,0,0,2,29,6.996414422988892,Gemini2.5 Pro,gemini-flash-2.0
+Default Bot,gemini-pro-2.0 P8,0,2,0,2,17,6.229715347290039,DefaultBot,gemini-pro-2.0
+Negamax5 P10,o1 P6,2,0,0,2,83,13.933519840240479,Negamax5,o1
+Default Bot,Gemma2 P8,0,2,0,2,17,8.7381112575531,DefaultBot,Gemma2
+Gemma2 P8,Negamax5 P6,0,2,0,2,59,12.869460105895996,Gemma2,Negamax5
+Negamax P6,gpt4o P8,0,2,0,2,55,22.295132875442505,Negamax,gpt4o
+Qwen3 P6,o4-mini-high P6,0,2,0,2,29,2.7355399131774902,Qwen3,o4-mini-high
+claude3.7-sonnet P8,o4-mini-high P12,0,2,0,2,61,20.91499972343445,claude3.7-sonnet,o4-mini-high
+LeChat P8,Negamax3 P6,1,1,0,2,46,5.29193115234375,LeChat,Negamax3
+Default Bot,Negamax5B P6,0,2,0,2,17,0.10266852378845215,DefaultBot,Negamax5B
+gemini-flash-2.0-thinking P8,o3 P8,2,0,0,2,55,28.90132236480713,gemini-flash-2.0-thinking,o3
+Negamax5B P8,o4-mini-high P10,0,1,1,2,72,4.726535081863403,Negamax5B,o4-mini-high
+claude3.7-sonnet P8,gemini-flash-2.0-thinking P6,0,2,0,2,31,6.162367343902588,claude3.7-sonnet,gemini-flash-2.0-thinking
+claude3.7-sonnet-thinking P6,gemini-pro-2.0 P8,0,2,0,2,65,22.403759241104126,claude3.7-sonnet-thinking,gemini-pro-2.0
+LeChat P8,o4-mini-high P6,0,1,1,2,80,4.804766416549683,LeChat,o4-mini-high
+Negamax2 P6,gemini-pro-2.0 P6,0,2,0,2,39,4.946637153625488,Negamax2,gemini-pro-2.0
+Gemini2.5 Flash Thinking P6,LeChat P8,0,2,0,2,33,5.628332853317261,Gemini2.5 Flash Thinking,LeChat
+Gemini2.5 Pro P6 T0.25,LeChat P6,0,2,0,2,77,5.645308971405029,Gemini2.5 Pro,LeChat
+gemini-flash-2.0 P8,o4-mini-high P6,0,1,1,2,53,6.024356842041016,gemini-flash-2.0,o4-mini-high
+gemini-flash-2.0-thinking P8,o4-mini-high P12,1,1,0,2,54,33.72436451911926,gemini-flash-2.0-thinking,o4-mini-high
+Gemini2.5 Flash Thinking P6,Random Bot,2,0,0,2,41,0.68398118019104,Gemini2.5 Flash Thinking,RandomBot
+Negamax4 P4 T0.25,gpt4o P10,0,1,1,2,81,18.33796453475952,Negamax4,gpt4o
+Negamax5B P10,o3 P8,2,0,0,2,47,17.179146766662598,Negamax5B,o3
+claude3.7-sonnet P10,o3 P8,1,1,0,2,24,8.460543870925903,claude3.7-sonnet,o3
+o3 P6,r1 T0.25,1,1,0,2,24,8.077989101409912,o3,r1
+Negamax P6,r1 T0.5,2,0,0,2,17,8.275294780731201,Negamax,r1
+Gemini2.5 Flash Thinking P6,o3-mini-high P6,0,2,0,2,25,2.9206058979034424,Gemini2.5 Flash Thinking,o3-mini-high
+LeChat P10,LeChat P6,0,0,2,2,84,12.212763786315918,LeChat,LeChat
+LeChat P8,o3 P10,2,0,0,2,27,10.446783304214478,LeChat,o3
+Gemini2.5 Pro P6,o4-mini-high P10,0,1,1,2,67,10.079183340072632,Gemini2.5 Pro,o4-mini-high
+QwQ P6,claude3.7-sonnet P6,1,1,0,2,42,17.602439880371094,QwQ,claude3.7-sonnet
+Gemini2.5 Pro P6,o3 P6,2,0,0,2,37,8.128649950027466,Gemini2.5 Pro,o3
+Negamax2 P6,o4-mini-high P8,0,2,0,2,53,0.7036049365997314,Negamax2,o4-mini-high
+Negamax3 P6,Negamax4 P6,0,2,0,2,67,0.7817502021789551,Negamax3,Negamax4
+Gemini2.5 Pro P6 T0.25,Negamax4 P10,0,1,1,2,78,43.66932487487793,Gemini2.5 Pro,Negamax4
+QwQ P6,o4-mini-high P6,1,1,0,2,70,16.873040437698364,QwQ,o4-mini-high
+Negamax3 P6,o4-mini-high P6,0,2,0,2,55,0.4071471691131592,Negamax3,o4-mini-high
+LeChat P10,Negamax3 P6,1,1,0,2,40,14.063753366470337,LeChat,Negamax3
+Gemma2 P6,claude3.7-sonnet-thinking P6,0,2,0,2,17,3.0149474143981934,Gemma2,claude3.7-sonnet-thinking
+Negamax4 P6,Negamax4 P8,1,1,0,2,76,2.8364243507385254,Negamax4,Negamax4
+Negamax4 P6,gemini-flash-2.0-thinking P8,1,1,0,2,60,14.653447151184082,Negamax4,gemini-flash-2.0-thinking
+Negamax4 P8,o3 P6,2,0,0,2,41,10.812467575073242,Negamax4,o3
+Negamax5B P8,Random Bot,2,0,0,2,27,1.1598050594329834,Negamax5B,RandomBot
+o4-mini-high P10,r1 T0.5,1,0,1,2,53,15.265280961990356,o4-mini-high,r1
+claude3.7-sonnet P10,gpt4o P6,1,1,0,2,56,21.31505036354065,claude3.7-sonnet,gpt4o
+Negamax3 P6,o1 P8,0,2,0,2,59,30.500152587890625,Negamax3,o1
+Gemini2.5 Pro P6 T0.25,gpt4o P8,1,1,0,2,70,22.265454053878784,Gemini2.5 Pro,gpt4o
+LeChat P10,Negamax4 P8,0,1,1,2,80,12.672304630279541,LeChat,Negamax4
+Gemma2 P8,Negamax5B P10,0,2,0,2,59,34.43503284454346,Gemma2,Negamax5B
+LeChat P6,o4-mini-high P8,0,0,2,2,84,1.153092384338379,LeChat,o4-mini-high
+Gemini2.5 Pro P6,LeChat P10,1,1,0,2,40,13.58559274673462,Gemini2.5 Pro,LeChat
+Gemini2.5 Pro P6 T0.25,Negamax5B P10,1,1,0,2,78,12.752403736114502,Gemini2.5 Pro,Negamax5B
+Negamax P6,Negamax4 P8,0,2,0,2,53,10.735235214233398,Negamax,Negamax4
+Negamax5 P8,o3 P8,2,0,0,2,37,8.997898817062378,Negamax5,o3
+Gemini2.5 Pro P6,same.dev P6,1,1,0,2,32,5.168832540512085,Gemini2.5 Pro,same.dev
+o3 P10,r1 T0.25,2,0,0,2,25,11.284380674362183,o3,r1
+Gemini2.5 Pro P6 T0.25,LeChat P10,1,1,0,2,36,12.020513534545898,Gemini2.5 Pro,LeChat
+gemini-flash-2.0-thinking P8,o4-mini-high P10,1,1,0,2,68,22.34710431098938,gemini-flash-2.0-thinking,o4-mini-high
+Negamax4 P10,Negamax5 P8,0,0,2,2,84,23.73064136505127,Negamax4,Negamax5
+Negamax4 P10,gpt4o P10,0,1,1,2,81,51.35852408409119,Negamax4,gpt4o
+gemini-flash-2.0 P6,o4-mini-high P8,0,1,1,2,81,2.371587038040161,gemini-flash-2.0,o4-mini-high
+Gemma2 P6,gemini-flash-2.0-thinking P6,0,2,0,2,19,4.933349132537842,Gemma2,gemini-flash-2.0-thinking
+Negamax5 P8,gemini-flash-2.0-thinking P6,1,1,0,2,78,5.516710996627808,Negamax5,gemini-flash-2.0-thinking
+Negamax4 P6,gemini-pro-2.0 P6,1,0,1,2,78,4.438732385635376,Negamax4,gemini-pro-2.0
+Gemini2.5 Pro P4 T0.25,gemini-flash-2.0-thinking P6,0,1,1,2,79,3.9439024925231934,Gemini2.5 Pro,gemini-flash-2.0-thinking
+Default Bot,gemini-flash-2.0-thinking P6,0,2,0,2,21,2.7927589416503906,DefaultBot,gemini-flash-2.0-thinking
+Random Bot,o4-mini-high P6,0,2,0,2,17,0.02202606201171875,RandomBot,o4-mini-high
+Random Bot,gemini-flash-2.0-thinking P8,0,2,0,2,15,10.892669439315796,RandomBot,gemini-flash-2.0-thinking
+Default Bot,claude3.7-sonnet-thinking P6,0,2,0,2,19,2.9105193614959717,DefaultBot,claude3.7-sonnet-thinking
+gemini-flash-2.0 P8,r1 T0.5,1,1,0,2,34,14.493626356124878,gemini-flash-2.0,r1
+Negamax4 P10,gemini-flash-2.0 P6,1,0,1,2,57,30.942989826202393,Negamax4,gemini-flash-2.0
+QwQ P6,o1 P6,2,0,0,2,61,18.046760082244873,QwQ,o1
+Gemini2.5 Pro P6,r1 T0.5,2,0,0,2,23,9.753613233566284,Gemini2.5 Pro,r1
+Negamax4 P8,gpt4o P10,1,1,0,2,76,19.18690252304077,Negamax4,gpt4o
+Negamax5B P8,gemini-flash-2.0 P6,1,0,1,2,81,3.440537929534912,Negamax5B,gemini-flash-2.0
+LeChat P10,claude3.7-sonnet P6,1,1,0,2,50,19.61853575706482,LeChat,claude3.7-sonnet
+Gemini2.5 Flash Thinking P6,claude3.7-sonnet-thinking P6,0,2,0,2,49,4.063045024871826,Gemini2.5 Flash Thinking,claude3.7-sonnet-thinking
+Negamax4 P8,Negamax5B P6,1,0,1,2,80,2.9225151538848877,Negamax4,Negamax5B
+LeChat P10,gpt4o P10,1,1,0,2,76,27.357027053833008,LeChat,gpt4o
+Negamax3 P8,Negamax5B P10,0,1,1,2,72,18.94522213935852,Negamax3,Negamax5B
+Gemma2 P8,Qwen3 P6,1,1,0,2,28,9.43625807762146,Gemma2,Qwen3
+Negamax5B P8,gemini-pro-2.0 P8,1,0,1,2,82,21.05236291885376,Negamax5B,gemini-pro-2.0
+Negamax2 P8,Negamax4 P8,0,2,0,2,53,9.425669431686401,Negamax2,Negamax4
+Negamax4 P4 T0.25,Negamax5B P6,0,0,2,2,84,0.3067810535430908,Negamax4,Negamax5B
+claude3.7-sonnet P10,o4-mini-high P6,1,0,1,2,74,10.007011651992798,claude3.7-sonnet,o4-mini-high
+Random Bot,o1 P6,0,2,0,2,23,1.725583553314209,RandomBot,o1
+Negamax5 P8,claude3.7-sonnet P10,1,1,0,2,72,11.660223484039307,Negamax5,claude3.7-sonnet
+Gemma2 P6,o3 P6,1,1,0,2,30,3.852351665496826,Gemma2,o3
+gemini-pro-2.0 P8,o3 P10,2,0,0,2,41,24.47502589225769,gemini-pro-2.0,o3
+Gemini2.5 Pro P6,QwQ P6,0,2,0,2,73,25.127341747283936,Gemini2.5 Pro,QwQ
+gemini-flash-2.0-thinking P6,o3 P6,1,1,0,2,44,5.152660369873047,gemini-flash-2.0-thinking,o3
+Negamax4 P10,o3 P10,2,0,0,2,31,34.7762496471405,Negamax4,o3
+Negamax P6,claude3.7-sonnet-thinking P6,0,2,0,2,55,12.881307601928711,Negamax,claude3.7-sonnet-thinking
+Negamax4 P4 T0.25,o1 P6,2,0,0,2,81,3.6088175773620605,Negamax4,o1
+Negamax P6,Negamax4 P10,0,2,0,2,65,84.55208230018616,Negamax,Negamax4
+LeChat P10,o4-mini-high P10,0,0,2,2,84,14.867389917373657,LeChat,o4-mini-high
+Gemini2.5 Flash Thinking P8,gemini-pro-2.0 P6,0,2,0,2,47,4.803415060043335,Gemini2.5 Flash Thinking,gemini-pro-2.0
+Gemini2.5 Flash Thinking P8,Random Bot,2,0,0,2,33,2.26719331741333,Gemini2.5 Flash Thinking,RandomBot
+Negamax4 P6,gemini-flash-2.0-thinking P6,2,0,0,2,63,3.0752618312835693,Negamax4,gemini-flash-2.0-thinking
+QwQ P6,o3 P10,2,0,0,2,39,29.640231370925903,QwQ,o3
+claude3.7-sonnet-thinking P8,o4-mini-high P8,1,0,1,2,81,14.833228588104248,claude3.7-sonnet-thinking,o4-mini-high
+Negamax4 P10,same.dev P6,1,1,0,2,78,40.79859113693237,Negamax4,same.dev
+gemini-flash-2.0-thinking P8,o4-mini-high P6,1,0,1,2,74,18.066500663757324,gemini-flash-2.0-thinking,o4-mini-high
+Negamax3 P8,Negamax4 P6,0,2,0,2,67,4.00134539604187,Negamax3,Negamax4
+Gemma2 P6,Gemma2 P8,2,0,0,2,79,24.466059684753418,Gemma2,Gemma2
+LeChat P8,gpt4o P10,0,2,0,2,77,21.045535802841187,LeChat,gpt4o
+Negamax3 P6,gpt4o P8,0,2,0,2,59,17.399969577789307,Negamax3,gpt4o
+Negamax4 P4 T0.25,gemini-flash-2.0 P6,1,0,1,2,81,2.7281136512756348,Negamax4,gemini-flash-2.0
+Gemini2.5 Pro P4 T0.25,r1 T0.25,2,0,0,2,27,7.358514308929443,Gemini2.5 Pro,r1
+Negamax5B P10,o1 P6,2,0,0,2,83,17.043638944625854,Negamax5B,o1
+Gemini2.5 Flash Thinking P8,o3 P10,1,1,0,2,36,9.298685550689697,Gemini2.5 Flash Thinking,o3
+Negamax5 P6,gpt4o P10,0,1,1,2,81,19.35862112045288,Negamax5,gpt4o
+Negamax4 P4 T0.25,claude3.7-sonnet-thinking P8,0,1,1,2,57,10.20826268196106,Negamax4,claude3.7-sonnet-thinking
+Random Bot,claude3.7-sonnet P8,0,2,0,2,29,3.437671422958374,RandomBot,claude3.7-sonnet
+LeChat P10,claude3.7-sonnet-thinking P8,0,1,1,2,77,28.21424651145935,LeChat,claude3.7-sonnet-thinking
+Gemma2 P8,same.dev P6,2,0,0,2,21,8.334598064422607,Gemma2,same.dev
+LeChat P10,o4-mini-high P8,0,1,1,2,79,11.350366115570068,LeChat,o4-mini-high
+Negamax5 P8,o4-mini-high P8,0,1,1,2,72,1.93967866897583,Negamax5,o4-mini-high
+gemini-pro-2.0 P8,o4-mini-high P10,0,1,1,2,80,21.649176836013794,gemini-pro-2.0,o4-mini-high
+o3 P10,o4-mini-high P6,0,2,0,2,27,6.548964738845825,o3,o4-mini-high
+Gemini2.5 Flash Thinking P8,Gemma2 P6,1,1,0,2,42,3.777341842651367,Gemini2.5 Flash Thinking,Gemma2
+Gemini2.5 Flash Thinking P6,Negamax4 P8,0,2,0,2,33,4.36939549446106,Gemini2.5 Flash Thinking,Negamax4
+gemini-flash-2.0-thinking P8,same.dev P6,1,0,1,2,55,11.211870193481445,gemini-flash-2.0-thinking,same.dev
+Gemini2.5 Flash Thinking P8,Gemma2 P8,2,0,0,2,45,14.018605947494507,Gemini2.5 Flash Thinking,Gemma2
+claude3.7-sonnet P10,o1 P6,1,1,0,2,42,11.550888299942017,claude3.7-sonnet,o1
+Negamax4 P8,o4-mini-high P8,1,1,0,2,68,3.2977871894836426,Negamax4,o4-mini-high
+Random Bot,gemini-flash-2.0 P8,0,2,0,2,25,4.843939781188965,RandomBot,gemini-flash-2.0
+claude3.7-sonnet P6,gpt4o P8,1,1,0,2,68,28.536081790924072,claude3.7-sonnet,gpt4o
+Negamax5 P6,Negamax5B P8,0,1,1,2,80,1.8181562423706055,Negamax5,Negamax5B
+claude3.7-sonnet-thinking P6,o3 P6,2,0,0,2,47,9.948750257492065,claude3.7-sonnet-thinking,o3
+Negamax4 P6,same.dev P6,1,1,0,2,72,4.369874954223633,Negamax4,same.dev
+Negamax2 P8,gemini-flash-2.0 P8,2,0,0,2,17,6.027534246444702,Negamax2,gemini-flash-2.0
+LeChat P10,o3 P10,0,1,1,2,53,20.993212938308716,LeChat,o3
+Negamax2 P8,Negamax5 P6,0,2,0,2,67,4.143857479095459,Negamax2,Negamax5
+gemini-pro-2.0 P6,o3-mini-high P6,1,1,0,2,62,11.555021524429321,gemini-pro-2.0,o3-mini-high
+Gemini2.5 Pro P4 T0.25,o3 P10,0,2,0,2,75,17.307395696640015,Gemini2.5 Pro,o3
+Random Bot,o4-mini-high P8,0,2,0,2,15,0.10350871086120605,RandomBot,o4-mini-high
+o1 P8,r1 T0.5,2,0,0,2,23,20.604182481765747,o1,r1
+QwQ P6,gemini-pro-2.0 P8,1,1,0,2,70,37.33307600021362,QwQ,gemini-pro-2.0
+LeChat P8,gemini-flash-2.0 P8,1,0,1,2,53,9.262309789657593,LeChat,gemini-flash-2.0
+Negamax4 P10,Negamax5B P6,0,0,2,2,84,22.81987977027893,Negamax4,Negamax5B
+Negamax4 P10,Negamax4 P8,0,0,2,2,84,25.576107501983643,Negamax4,Negamax4
+Negamax4 P10,o3 P6,2,0,0,2,31,33.43568563461304,Negamax4,o3
+gemini-flash-2.0-thinking P6,o1 P8,1,0,1,2,82,40.39135408401489,gemini-flash-2.0-thinking,o1
+LeChat P8,Negamax5 P10,0,0,2,2,84,13.107656240463257,LeChat,Negamax5
+Negamax4 P10,r1 T0.5,1,0,1,2,61,42.70515751838684,Negamax4,r1
+Negamax2 P8,Negamax4 P4 T0.25,0,2,0,2,65,5.168945550918579,Negamax2,Negamax4
+LeChat P6,o4-mini-high P6,0,0,2,2,84,0.9275796413421631,LeChat,o4-mini-high
+claude3.7-sonnet-thinking P8,r1 T0.25,2,0,0,2,29,14.268237590789795,claude3.7-sonnet-thinking,r1
+Gemini2.5 Flash Thinking P6,gpt4o P6,0,2,0,2,49,13.792200088500977,Gemini2.5 Flash Thinking,gpt4o
+Negamax4 P6,Qwen3 P6,2,0,0,2,39,4.162360429763794,Negamax4,Qwen3
+LeChat P6,Negamax5B P8,1,0,1,2,78,2.318697452545166,LeChat,Negamax5B
+Negamax3 P6,claude3.7-sonnet P8,0,2,0,2,43,6.693077564239502,Negamax3,claude3.7-sonnet
+gemini-flash-2.0 P6,o4-mini-high P10,0,1,1,2,81,5.221444606781006,gemini-flash-2.0,o4-mini-high
+claude3.7-sonnet P8,r1 T0.25,2,0,0,2,43,17.02547335624695,claude3.7-sonnet,r1
+claude3.7-sonnet P10,gemini-pro-2.0 P8,1,1,0,2,36,14.672774314880371,claude3.7-sonnet,gemini-pro-2.0
+claude3.7-sonnet-thinking P8,gpt4o P10,1,0,1,2,77,37.552992820739746,claude3.7-sonnet-thinking,gpt4o
+Negamax4 P4 T0.25,QwQ P6,0,2,0,2,47,12.6060950756073,Negamax4,QwQ
+Gemini2.5 Flash Thinking P6,Negamax4 P10,0,2,0,2,29,39.016165018081665,Gemini2.5 Flash Thinking,Negamax4
+QwQ P6,o3 P6,2,0,0,2,35,17.73104453086853,QwQ,o3
+Negamax2 P6,Negamax4 P10,0,2,0,2,65,77.48213410377502,Negamax2,Negamax4
+claude3.7-sonnet-thinking P6,gpt4o P6,1,1,0,2,80,24.911187410354614,claude3.7-sonnet-thinking,gpt4o
+Negamax2 P6,o3 P10,1,1,0,2,50,13.016638994216919,Negamax2,o3
+Negamax3 P6,claude3.7-sonnet P10,0,2,0,2,43,6.70509672164917,Negamax3,claude3.7-sonnet
+Default Bot,gemini-flash-2.0 P8,1,1,0,2,16,3.6223292350769043,DefaultBot,gemini-flash-2.0
+Gemini2.5 Pro P6 T0.25,claude3.7-sonnet P6,2,0,0,2,41,10.333910942077637,Gemini2.5 Pro,claude3.7-sonnet
+Qwen3 P6,gemini-flash-2.0-thinking P8,0,2,0,2,43,33.484814405441284,Qwen3,gemini-flash-2.0-thinking
+o1 P6,o3 P10,2,0,0,2,39,15.8433837890625,o1,o3
+o1 P6,r1 T0.25,2,0,0,2,25,8.957287311553955,o1,r1
+Gemini2.5 Pro P6 T0.25,o4-mini-high P8,1,1,0,2,70,5.696002006530762,Gemini2.5 Pro,o4-mini-high
+Gemini2.5 Pro P4 T0.25,QwQ P6,1,1,0,2,54,23.324535369873047,Gemini2.5 Pro,QwQ
+Negamax2 P8,o3 P6,1,1,0,2,66,15.724870681762695,Negamax2,o3
+claude3.7-sonnet-thinking P8,o3-mini-high P6,2,0,0,2,73,22.26344919204712,claude3.7-sonnet-thinking,o3-mini-high
+Negamax P6,o3 P8,1,1,0,2,50,17.370518684387207,Negamax,o3
+Negamax5 P8,claude3.7-sonnet P6,1,1,0,2,74,11.507510900497437,Negamax5,claude3.7-sonnet
+Default Bot,o4-mini-high P6,0,2,0,2,17,0.03400135040283203,DefaultBot,o4-mini-high
+gemini-pro-2.0 P6,o4-mini-high P8,0,1,1,2,78,5.364466667175293,gemini-pro-2.0,o4-mini-high
+QwQ P6,gemini-flash-2.0-thinking P6,1,1,0,2,66,19.40769624710083,QwQ,gemini-flash-2.0-thinking
+gemini-flash-2.0 P6,o4-mini-high P6,0,1,1,2,81,2.019681692123413,gemini-flash-2.0,o4-mini-high
+claude3.7-sonnet P8,gpt4o P6,1,1,0,2,68,27.420905351638794,claude3.7-sonnet,gpt4o
+gemini-flash-2.0-thinking P8,gpt4o P6,1,1,0,2,54,35.6084988117218,gemini-flash-2.0-thinking,gpt4o
+Negamax P6,o4-mini-high P8,0,2,0,2,53,6.977609634399414,Negamax,o4-mini-high
+Negamax P6,gemini-flash-2.0-thinking P6,0,2,0,2,55,10.247410535812378,Negamax,gemini-flash-2.0-thinking
+Gemini2.5 Flash Thinking P6,o1 P6,1,1,0,2,46,1.7406532764434814,Gemini2.5 Flash Thinking,o1
+Negamax5 P10,QwQ P6,0,2,0,2,77,31.364760398864746,Negamax5,QwQ
+Negamax4 P6,r1 T0.5,2,0,0,2,47,11.7515389919281,Negamax4,r1
+Gemini2.5 Pro P4 T0.25,o4-mini-high P6,0,1,1,2,77,1.549142837524414,Gemini2.5 Pro,o4-mini-high
+gpt4o P6,r1 T0.25,1,0,1,2,53,25.19420838356018,gpt4o,r1
+LeChat P6,gemini-pro-2.0 P6,1,0,1,2,78,4.9359354972839355,LeChat,gemini-pro-2.0
+Negamax5B P6,same.dev P6,1,1,0,2,72,3.2842864990234375,Negamax5B,same.dev
+Gemini2.5 Pro P6 T0.25,Gemma2 P8,2,0,0,2,15,5.185462713241577,Gemini2.5 Pro,Gemma2
+Negamax5B P10,QwQ P6,0,2,0,2,77,24.511154890060425,Negamax5B,QwQ
+Gemini2.5 Pro P6 T0.25,Negamax4 P4 T0.25,1,1,0,2,74,5.118951797485352,Gemini2.5 Pro,Negamax4
+Gemma2 P6,claude3.7-sonnet P6,0,2,0,2,31,5.685497999191284,Gemma2,claude3.7-sonnet
+Gemini2.5 Pro P6 T0.25,o1 P8,2,0,0,2,77,31.25873374938965,Gemini2.5 Pro,o1
+gemini-pro-2.0 P8,o1 P6,2,0,0,2,73,31.763783931732178,gemini-pro-2.0,o1
+Gemini2.5 Pro P6 T0.25,Negamax P6,2,0,0,2,53,11.569015502929688,Gemini2.5 Pro,Negamax
+Negamax5 P8,gemini-flash-2.0 P6,1,0,1,2,81,4.344876527786255,Negamax5,gemini-flash-2.0
+o4-mini-high P6,same.dev P6,1,1,0,2,62,3.0742619037628174,o4-mini-high,same.dev
+Negamax3 P6,o3 P6,2,0,0,2,49,5.789506435394287,Negamax3,o3
+Negamax5 P6,claude3.7-sonnet-thinking P8,0,1,1,2,81,14.744795560836792,Negamax5,claude3.7-sonnet-thinking
+o1 P6,same.dev P6,1,1,0,2,42,5.302965402603149,o1,same.dev
+claude3.7-sonnet-thinking P6,o4-mini-high P12,0,2,0,2,83,15.800391435623169,claude3.7-sonnet-thinking,o4-mini-high
+Negamax5 P8,gemini-pro-2.0 P8,1,1,0,2,72,20.357795000076294,Negamax5,gemini-pro-2.0
+LeChat P8,claude3.7-sonnet-thinking P6,0,1,1,2,75,12.376087427139282,LeChat,claude3.7-sonnet-thinking
+Gemma2 P6,r1 T0.5,2,0,0,2,17,4.942439794540405,Gemma2,r1
+Negamax5B P10,Negamax5B P6,0,0,2,2,84,8.990795373916626,Negamax5B,Negamax5B
+Gemini2.5 Pro P6 T0.25,gemini-pro-2.0 P6,0,1,1,2,62,8.779776334762573,Gemini2.5 Pro,gemini-pro-2.0
+Gemma2 P6,Negamax5 P10,0,2,0,2,61,21.09536600112915,Gemma2,Negamax5
+Negamax3 P6,Negamax4 P4 T0.25,0,2,0,2,65,0.6080529689788818,Negamax3,Negamax4
+Negamax4 P8,o4-mini-high P10,1,1,0,2,68,4.8074259757995605,Negamax4,o4-mini-high
+LeChat P10,Qwen3 P6,1,1,0,2,28,13.596203088760376,LeChat,Qwen3
+Random Bot,gemini-pro-2.0 P8,0,2,0,2,15,4.331881046295166,RandomBot,gemini-pro-2.0
+claude3.7-sonnet-thinking P6,o3 P8,2,0,0,2,59,16.54546546936035,claude3.7-sonnet-thinking,o3
+Gemini2.5 Pro P6 T0.25,Qwen3 P6,2,0,0,2,39,7.811691761016846,Gemini2.5 Pro,Qwen3
+gemini-flash-2.0-thinking P8,gpt4o P8,1,1,0,2,50,34.241007566452026,gemini-flash-2.0-thinking,gpt4o
+Gemini2.5 Pro P6,o1 P6,1,1,0,2,68,9.64635944366455,Gemini2.5 Pro,o1
+gemini-flash-2.0 P6,gemini-pro-2.0 P8,1,1,0,2,40,13.281674146652222,gemini-flash-2.0,gemini-pro-2.0
+LeChat P8,Negamax4 P6,0,1,1,2,76,5.04144549369812,LeChat,Negamax4
+QwQ P6,gemini-flash-2.0 P6,2,0,0,2,31,14.398276329040527,QwQ,gemini-flash-2.0
+Gemini2.5 Flash Thinking P6,Qwen3 P6,0,2,0,2,33,2.895761251449585,Gemini2.5 Flash Thinking,Qwen3
+Negamax5B P10,o4-mini-high P6,1,0,1,2,83,7.947714805603027,Negamax5B,o4-mini-high
+Default Bot,gemini-pro-2.0 P6,0,2,0,2,27,1.6836538314819336,DefaultBot,gemini-pro-2.0
+Gemini2.5 Pro P4 T0.25,Qwen3 P6,2,0,0,2,47,8.738274812698364,Gemini2.5 Pro,Qwen3
+Negamax4 P4 T0.25,o3 P10,2,0,0,2,33,6.6355860233306885,Negamax4,o3
+Default Bot,same.dev P6,1,1,0,2,22,1.3226141929626465,DefaultBot,same.dev
+Default Bot,Gemini2.5 Pro P4 T0.25,0,2,0,2,19,0.590054988861084,DefaultBot,Gemini2.5 Pro
+Negamax5B P10,gpt4o P8,0,2,0,2,73,22.697506189346313,Negamax5B,gpt4o
+claude3.7-sonnet-thinking P6,o1 P8,2,0,0,2,69,50.885984659194946,claude3.7-sonnet-thinking,o1
+LeChat P8,Negamax5B P6,0,1,1,2,80,5.0184454917907715,LeChat,Negamax5B
+Negamax4 P6,claude3.7-sonnet P6,0,1,1,2,74,10.198904991149902,Negamax4,claude3.7-sonnet
+Negamax4 P8,Negamax5 P10,0,0,2,2,84,10.503437280654907,Negamax4,Negamax5
+Gemma2 P8,claude3.7-sonnet P10,0,2,0,2,35,14.42028522491455,Gemma2,claude3.7-sonnet
+claude3.7-sonnet P8,o4-mini-high P10,1,1,0,2,74,11.491525173187256,claude3.7-sonnet,o4-mini-high
+gpt4o P6,o3 P8,2,0,0,2,35,19.110195875167847,gpt4o,o3
+Gemma2 P8,gemini-pro-2.0 P8,0,2,0,2,15,9.42684030532837,Gemma2,gemini-pro-2.0
+Negamax4 P8,claude3.7-sonnet-thinking P8,0,1,1,2,77,18.821671962738037,Negamax4,claude3.7-sonnet-thinking
+Gemini2.5 Pro P6,Negamax4 P8,1,1,0,2,80,6.945626258850098,Gemini2.5 Pro,Negamax4
+gpt4o P10,gpt4o P8,1,1,0,2,78,35.33963084220886,gpt4o,gpt4o
+Default Bot,Gemini2.5 Pro P6 T0.25,0,2,0,2,19,1.7506518363952637,DefaultBot,Gemini2.5 Pro
+Negamax5B P10,r1 T0.5,2,0,0,2,41,17.24553418159485,Negamax5B,r1
+Gemini2.5 Flash Thinking P8,Negamax5B P6,0,1,1,2,49,1.4816317558288574,Gemini2.5 Flash Thinking,Negamax5B
+claude3.7-sonnet-thinking P8,gemini-flash-2.0 P6,2,0,0,2,29,10.234909296035767,claude3.7-sonnet-thinking,gemini-flash-2.0
+Negamax4 P10,gemini-flash-2.0-thinking P8,1,1,0,2,70,67.26029133796692,Negamax4,gemini-flash-2.0-thinking
+Negamax3 P8,Negamax5 P10,0,1,1,2,72,19.219218015670776,Negamax3,Negamax5
+LeChat P10,o3 P8,1,1,0,2,34,19.400731325149536,LeChat,o3
+Gemini2.5 Flash Thinking P8,LeChat P8,1,1,0,2,48,4.378390073776245,Gemini2.5 Flash Thinking,LeChat
+Qwen3 P6,same.dev P6,1,1,0,2,28,3.1742823123931885,Qwen3,same.dev
+gpt4o P6,same.dev P6,1,1,0,2,76,20.680341720581055,gpt4o,same.dev
+Negamax4 P10,Negamax5B P8,0,0,2,2,84,24.37316632270813,Negamax4,Negamax5B
+LeChat P8,r1 T0.5,2,0,0,2,33,11.980072736740112,LeChat,r1
+Negamax4 P10,claude3.7-sonnet P8,1,1,0,2,74,37.79735732078552,Negamax4,claude3.7-sonnet
+gemini-flash-2.0 P6,o3-mini-high P6,0,2,0,2,31,5.3484838008880615,gemini-flash-2.0,o3-mini-high
+Negamax2 P8,claude3.7-sonnet-thinking P6,0,2,0,2,51,32.63190531730652,Negamax2,claude3.7-sonnet-thinking
+Gemini2.5 Pro P4 T0.25,o4-mini-high P12,0,2,0,2,77,12.408114910125732,Gemini2.5 Pro,o4-mini-high
+LeChat P8,Qwen3 P6,1,1,0,2,24,5.337981939315796,LeChat,Qwen3
+Negamax4 P6,Negamax5 P8,1,1,0,2,76,1.8351624011993408,Negamax4,Negamax5
+LeChat P6,o3 P8,2,0,0,2,35,7.909215927124023,LeChat,o3
+Gemini2.5 Pro P6,Negamax4 P10,0,0,2,2,84,35.929210901260376,Gemini2.5 Pro,Negamax4
+Negamax3 P8,gpt4o P8,0,2,0,2,63,19.672266721725464,Negamax3,gpt4o
+Negamax5B P6,gpt4o P10,0,1,1,2,81,19.16672420501709,Negamax5B,gpt4o
+Negamax5 P10,o3 P6,2,0,0,2,39,13.41620945930481,Negamax5,o3
+Negamax3 P8,QwQ P6,0,2,0,2,43,20.737359285354614,Negamax3,QwQ
+LeChat P6,gemini-flash-2.0-thinking P8,1,1,0,2,64,19.956289052963257,LeChat,gemini-flash-2.0-thinking
+Gemini2.5 Flash Thinking P6,Negamax5 P10,0,2,0,2,49,12.213103771209717,Gemini2.5 Flash Thinking,Negamax5
+gpt4o P8,o1 P6,2,0,0,2,77,22.792048931121826,gpt4o,o1
+Negamax4 P10,Negamax4 P4 T0.25,0,0,2,2,84,22.521520137786865,Negamax4,Negamax4
+claude3.7-sonnet P8,gpt4o P8,1,1,0,2,68,31.185797214508057,claude3.7-sonnet,gpt4o
+Qwen3 P6,gpt4o P6,0,2,0,2,33,13.094176769256592,Qwen3,gpt4o
+Gemini2.5 Flash Thinking P6,gemini-flash-2.0-thinking P8,0,2,0,2,25,13.219194650650024,Gemini2.5 Flash Thinking,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6,Negamax5 P8,1,1,0,2,76,7.343159198760986,Gemini2.5 Pro,Negamax5
+QwQ P6,gpt4o P10,1,1,0,2,68,36.23474717140198,QwQ,gpt4o
+Negamax P6,gemini-pro-2.0 P6,0,2,0,2,39,11.786558151245117,Negamax,gemini-pro-2.0
+o1 P6,o4-mini-high P6,0,2,0,2,75,5.521500825881958,o1,o4-mini-high
+Negamax3 P8,o3 P6,1,1,0,2,66,15.824427127838135,Negamax3,o3
+Default Bot,r1 T0.25,1,1,0,2,14,4.5169031620025635,DefaultBot,r1
+Negamax3 P8,Negamax4 P8,0,2,0,2,53,9.470845222473145,Negamax3,Negamax4
+Gemini2.5 Flash Thinking P6,gemini-flash-2.0 P8,0,2,0,2,31,6.671102285385132,Gemini2.5 Flash Thinking,gemini-flash-2.0
+r1 T0.25,same.dev P6,0,2,0,2,33,9.330336332321167,r1,same.dev
+o4-mini-high P10,o4-mini-high P6,0,0,2,2,84,2.2897071838378906,o4-mini-high,o4-mini-high
+Gemini2.5 Pro P6,Negamax5B P8,1,1,0,2,76,7.270648241043091,Gemini2.5 Pro,Negamax5B
+gpt4o P8,o4-mini-high P10,1,0,1,2,81,18.74869656562805,gpt4o,o4-mini-high
+Gemma2 P8,gpt4o P8,0,2,0,2,41,22.804052352905273,Gemma2,gpt4o
+claude3.7-sonnet-thinking P6,gemini-flash-2.0 P6,2,0,0,2,23,4.6969218254089355,claude3.7-sonnet-thinking,gemini-flash-2.0
+claude3.7-sonnet-thinking P6,gpt4o P10,1,1,0,2,78,30.933783292770386,claude3.7-sonnet-thinking,gpt4o
+gemini-flash-2.0 P6,gemini-flash-2.0-thinking P6,0,2,0,2,43,5.322484493255615,gemini-flash-2.0,gemini-flash-2.0-thinking
+Gemini2.5 Pro P4 T0.25,claude3.7-sonnet-thinking P8,1,1,0,2,76,16.214460611343384,Gemini2.5 Pro,claude3.7-sonnet-thinking
+Gemma2 P6,gemini-flash-2.0-thinking P8,0,2,0,2,45,27.639484643936157,Gemma2,gemini-flash-2.0-thinking
+Negamax4 P10,Negamax4 P6,0,0,2,2,84,25.382286071777344,Negamax4,Negamax4
+gemini-flash-2.0 P8,o3-mini-high P6,0,2,0,2,41,12.28109860420227,gemini-flash-2.0,o3-mini-high
+Negamax3 P6,claude3.7-sonnet-thinking P8,0,2,0,2,37,10.405934810638428,Negamax3,claude3.7-sonnet-thinking
+Random Bot,o3-mini-high P6,0,2,0,2,25,2.989269733428955,RandomBot,o3-mini-high
+Gemini2.5 Pro P6 T0.25,Gemma2 P6,2,0,0,2,17,2.406216621398926,Gemini2.5 Pro,Gemma2
+Gemini2.5 Pro P4 T0.25,same.dev P6,1,1,0,2,38,4.590911865234375,Gemini2.5 Pro,same.dev
+Gemini2.5 Pro P4 T0.25,LeChat P10,1,1,0,2,74,11.709062337875366,Gemini2.5 Pro,LeChat
+Gemini2.5 Flash Thinking P6,Gemma2 P6,1,1,0,2,42,1.9606742858886719,Gemini2.5 Flash Thinking,Gemma2
+Negamax2 P6,claude3.7-sonnet P6,0,2,0,2,43,6.827619791030884,Negamax2,claude3.7-sonnet
+gpt4o P8,o4-mini-high P8,1,0,1,2,81,16.713008880615234,gpt4o,o4-mini-high
+Qwen3 P6,r1 T0.25,2,0,0,2,29,9.662380933761597,Qwen3,r1
+Gemini2.5 Pro P4 T0.25,Negamax4 P10,1,1,0,2,72,29.197637796401978,Gemini2.5 Pro,Negamax4
+claude3.7-sonnet P10,gemini-flash-2.0 P6,1,1,0,2,26,6.159059524536133,claude3.7-sonnet,gemini-flash-2.0
+Negamax3 P8,gemini-flash-2.0 P6,2,0,0,2,15,5.318492650985718,Negamax3,gemini-flash-2.0
+Gemma2 P8,o4-mini-high P8,0,2,0,2,41,12.483634948730469,Gemma2,o4-mini-high
+Gemma2 P8,gpt4o P10,0,2,0,2,41,32.921471118927,Gemma2,gpt4o
+gemini-pro-2.0 P6,r1 T0.25,2,0,0,2,23,7.0651466846466064,gemini-pro-2.0,r1
+claude3.7-sonnet P10,claude3.7-sonnet P8,1,1,0,2,36,11.244521141052246,claude3.7-sonnet,claude3.7-sonnet
+Negamax3 P8,Negamax4 P4 T0.25,0,2,0,2,65,4.447391033172607,Negamax3,Negamax4
+LeChat P10,claude3.7-sonnet P8,1,1,0,2,50,19.704275131225586,LeChat,claude3.7-sonnet
+Negamax2 P6,Negamax5B P10,0,2,0,2,61,17.092042684555054,Negamax2,Negamax5B
+Negamax2 P6,Negamax5 P6,0,2,0,2,67,0.7420706748962402,Negamax2,Negamax5
+LeChat P6,claude3.7-sonnet P8,1,1,0,2,54,8.009721040725708,LeChat,claude3.7-sonnet
+gpt4o P8,r1 T0.25,1,0,1,2,53,25.221273183822632,gpt4o,r1
+claude3.7-sonnet P10,claude3.7-sonnet-thinking P8,0,2,0,2,47,16.02344512939453,claude3.7-sonnet,claude3.7-sonnet-thinking
+Negamax P6,Negamax5B P10,0,2,0,2,61,19.159727334976196,Negamax,Negamax5B
+gemini-pro-2.0 P6,gemini-pro-2.0 P8,1,1,0,2,76,24.022669553756714,gemini-pro-2.0,gemini-pro-2.0
+Negamax4 P6,gpt4o P6,0,1,1,2,81,17.742095232009888,Negamax4,gpt4o
+claude3.7-sonnet P6,gemini-flash-2.0 P8,2,0,0,2,45,13.084680080413818,claude3.7-sonnet,gemini-flash-2.0
+Negamax P6,gemini-flash-2.0-thinking P8,0,2,0,2,61,41.19671034812927,Negamax,gemini-flash-2.0-thinking
+Negamax3 P8,gemini-pro-2.0 P8,0,2,0,2,43,32.163392543792725,Negamax3,gemini-pro-2.0
+Gemma2 P8,QwQ P6,0,2,0,2,25,15.916930198669434,Gemma2,QwQ
+Gemma2 P6,claude3.7-sonnet P10,0,2,0,2,31,5.5314953327178955,Gemma2,claude3.7-sonnet
+Negamax5 P8,Qwen3 P6,2,0,0,2,39,5.097445487976074,Negamax5,Qwen3
+Negamax3 P8,Qwen3 P6,1,1,0,2,60,37.744402170181274,Negamax3,Qwen3
+Gemma2 P8,Negamax2 P6,1,1,0,2,58,21.44292163848877,Gemma2,Negamax2
+gemini-pro-2.0 P8,r1 T0.5,2,0,0,2,19,10.632939100265503,gemini-pro-2.0,r1
+gemini-flash-2.0-thinking P8,o1 P8,1,1,0,2,60,75.0716917514801,gemini-flash-2.0-thinking,o1
+Negamax2 P8,claude3.7-sonnet P8,0,2,0,2,43,15.230348825454712,Negamax2,claude3.7-sonnet
+Default Bot,o3 P10,0,2,0,2,23,4.914924144744873,DefaultBot,o3
+Negamax4 P4 T0.25,same.dev P6,0,1,1,2,81,3.077763795852661,Negamax4,same.dev
+LeChat P6,gemini-flash-2.0-thinking P6,1,1,0,2,76,4.180854082107544,LeChat,gemini-flash-2.0-thinking
+Random Bot,r1 T0.5,0,2,0,2,45,11.512505769729614,RandomBot,r1
+o1 P6,o3 P6,2,0,0,2,37,7.765675783157349,o1,o3
+claude3.7-sonnet P6,gemini-flash-2.0-thinking P8,0,2,0,2,35,21.915449380874634,claude3.7-sonnet,gemini-flash-2.0-thinking
+o4-mini-high P6,o4-mini-high P8,0,0,2,2,84,0.5455448627471924,o4-mini-high,o4-mini-high
+o3 P6,o4-mini-high P12,0,2,0,2,33,20.08928608894348,o3,o4-mini-high
+gemini-flash-2.0 P8,gpt4o P10,0,2,0,2,49,18.30912160873413,gemini-flash-2.0,gpt4o
+Gemini2.5 Pro P6,o4-mini-high P6,2,0,0,2,73,4.733920574188232,Gemini2.5 Pro,o4-mini-high
+Random Bot,r1 T0.25,0,2,0,2,29,8.244722604751587,RandomBot,r1
+Negamax P6,o4-mini-high P12,0,2,0,2,43,20.8658447265625,Negamax,o4-mini-high
+Negamax4 P6,r1 T0.25,2,0,0,2,47,11.750038385391235,Negamax4,r1
+Negamax4 P10,claude3.7-sonnet-thinking P8,0,1,1,2,77,43.27837681770325,Negamax4,claude3.7-sonnet-thinking
+Gemini2.5 Pro P6 T0.25,claude3.7-sonnet-thinking P6,1,1,0,2,76,12.327089786529541,Gemini2.5 Pro,claude3.7-sonnet-thinking
+LeChat P10,gemini-pro-2.0 P8,1,1,0,2,34,18.45962119102478,LeChat,gemini-pro-2.0
+Negamax5 P10,Negamax5B P6,0,0,2,2,84,8.14473557472229,Negamax5,Negamax5B
+Gemini2.5 Pro P6,Gemma2 P8,2,0,0,2,23,14.7187979221344,Gemini2.5 Pro,Gemma2
+LeChat P8,Negamax4 P10,0,0,2,2,84,27.916990995407104,LeChat,Negamax4
+o3 P8,o3-mini-high P6,0,2,0,2,21,9.746872663497925,o3,o3-mini-high
+claude3.7-sonnet-thinking P6,gemini-flash-2.0-thinking P6,1,1,0,2,72,11.528027534484863,claude3.7-sonnet-thinking,gemini-flash-2.0-thinking
+Negamax5 P6,same.dev P6,1,1,0,2,72,3.298797130584717,Negamax5,same.dev
+Gemini2.5 Flash Thinking P8,Negamax P6,0,2,0,2,31,6.65809965133667,Gemini2.5 Flash Thinking,Negamax
+Negamax2 P8,Negamax5B P8,0,2,0,2,57,6.107045412063599,Negamax2,Negamax5B
+LeChat P6,gpt4o P8,0,1,1,2,81,17.546050310134888,LeChat,gpt4o
+claude3.7-sonnet P6,r1 T0.25,2,0,0,2,43,17.028504133224487,claude3.7-sonnet,r1
+LeChat P6,Negamax P6,2,0,0,2,51,7.890204429626465,LeChat,Negamax
+Gemini2.5 Flash Thinking P6,o4-mini-high P10,0,2,0,2,33,1.8381614685058594,Gemini2.5 Flash Thinking,o4-mini-high
+Negamax2 P8,Negamax3 P8,1,1,0,2,76,3.842339515686035,Negamax2,Negamax3
+Negamax2 P8,gpt4o P10,0,2,0,2,61,25.409250497817993,Negamax2,gpt4o
+Negamax5 P6,gemini-pro-2.0 P6,1,0,1,2,78,4.477900743484497,Negamax5,gemini-pro-2.0
+Negamax5B P10,gemini-flash-2.0-thinking P8,1,1,0,2,68,30.91725468635559,Negamax5B,gemini-flash-2.0-thinking
+gpt4o P10,o3 P6,2,0,0,2,37,17.685564041137695,gpt4o,o3
+LeChat P10,gpt4o P8,0,1,1,2,81,29.212104320526123,LeChat,gpt4o
+Gemini2.5 Flash Thinking P8,claude3.7-sonnet-thinking P8,0,1,1,2,53,13.584218502044678,Gemini2.5 Flash Thinking,claude3.7-sonnet-thinking
+o3 P8,o4-mini-high P8,0,2,0,2,27,5.9140307903289795,o3,o4-mini-high
+Negamax5B P10,gemini-flash-2.0-thinking P6,2,0,0,2,57,16.1429500579834,Negamax5B,gemini-flash-2.0-thinking
+Gemma2 P8,Negamax5 P10,0,2,0,2,59,30.70723605155945,Gemma2,Negamax5
+Gemma2 P6,LeChat P10,2,0,0,2,17,13.65022611618042,Gemma2,LeChat
+Default Bot,Negamax4 P10,0,2,0,2,23,26.24884343147278,DefaultBot,Negamax4
+o3-mini-high P6,o4-mini-high P8,1,1,0,2,64,7.616687536239624,o3-mini-high,o4-mini-high
+LeChat P10,same.dev P6,1,1,0,2,76,14.646822929382324,LeChat,same.dev
+gpt4o P10,o3 P8,2,0,0,2,31,19.086219549179077,gpt4o,o3
+Negamax2 P6,Negamax5 P10,0,2,0,2,61,14.439296960830688,Negamax2,Negamax5
+gemini-flash-2.0-thinking P6,o3 P10,0,2,0,2,47,12.993171453475952,gemini-flash-2.0-thinking,o3
+LeChat P10,Negamax5B P8,0,0,2,2,84,12.05608057975769,LeChat,Negamax5B
+Default Bot,o1 P8,0,2,0,2,17,13.77724313735962,DefaultBot,o1
+LeChat P8,claude3.7-sonnet P10,1,1,0,2,68,14.175772666931152,LeChat,claude3.7-sonnet
+claude3.7-sonnet P8,gemini-pro-2.0 P6,0,2,0,2,31,7.187649488449097,claude3.7-sonnet,gemini-pro-2.0
+Negamax4 P10,o3-mini-high P6,0,2,0,2,75,32.71641778945923,Negamax4,o3-mini-high
+gpt4o P8,o3-mini-high P6,2,0,0,2,65,22.781052350997925,gpt4o,o3-mini-high
+Negamax3 P6,Negamax5 P8,0,2,0,2,57,2.817250967025757,Negamax3,Negamax5
+gemini-flash-2.0 P6,r1 T0.5,1,1,0,2,40,12.052592039108276,gemini-flash-2.0,r1
+Negamax2 P6,claude3.7-sonnet-thinking P6,0,2,0,2,55,6.910118818283081,Negamax2,claude3.7-sonnet-thinking
+gemini-pro-2.0 P8,gpt4o P8,2,0,0,2,73,34.6755952835083,gemini-pro-2.0,gpt4o
+Gemma2 P6,LeChat P6,0,2,0,2,35,2.986271619796753,Gemma2,LeChat
+Default Bot,claude3.7-sonnet P10,0,2,0,2,31,4.664921998977661,DefaultBot,claude3.7-sonnet
+Gemini2.5 Pro P6 T0.25,Negamax5 P6,0,1,1,2,82,5.248979806900024,Gemini2.5 Pro,Negamax5
+LeChat P10,o1 P6,0,2,0,2,23,12.208603620529175,LeChat,o1
+Negamax2 P8,o3-mini-high P6,0,2,0,2,57,15.112868785858154,Negamax2,o3-mini-high
+gpt4o P6,gpt4o P8,1,1,0,2,78,33.13046646118164,gpt4o,gpt4o
+Negamax5B P6,Qwen3 P6,2,0,0,2,39,3.2688043117523193,Negamax5B,Qwen3
+Negamax3 P8,gpt4o P6,0,2,0,2,59,21.930482864379883,Negamax3,gpt4o
+Negamax2 P8,gemini-flash-2.0 P6,2,0,0,2,15,5.0404579639434814,Negamax2,gemini-flash-2.0
+r1 T0.25,r1 T0.5,1,1,0,2,30,15.032363176345825,r1,r1
+Gemini2.5 Flash Thinking P6,Negamax2 P6,1,1,0,2,40,1.1861050128936768,Gemini2.5 Flash Thinking,Negamax2
+gemini-pro-2.0 P8,o4-mini-high P8,0,2,0,2,67,17.024539709091187,gemini-pro-2.0,o4-mini-high
+Negamax2 P8,Negamax4 P10,0,2,0,2,65,73.25957989692688,Negamax2,Negamax4
+Negamax4 P8,same.dev P6,1,1,0,2,78,7.288658857345581,Negamax4,same.dev
+Random Bot,gpt4o P8,0,2,0,2,19,6.317072629928589,RandomBot,gpt4o
+Default Bot,Negamax3 P8,0,2,0,2,17,1.1501073837280273,DefaultBot,Negamax3
+claude3.7-sonnet P6,o3-mini-high P6,0,2,0,2,49,15.350390434265137,claude3.7-sonnet,o3-mini-high
+o1 P6,r1 T0.5,2,0,0,2,25,8.05073094367981,o1,r1
+LeChat P10,gpt4o P6,0,1,1,2,79,27.775001764297485,LeChat,gpt4o
+claude3.7-sonnet P8,r1 T0.5,2,0,0,2,43,17.031545162200928,claude3.7-sonnet,r1
+Negamax3 P8,same.dev P6,2,0,0,2,17,2.594241142272949,Negamax3,same.dev
+QwQ P6,Random Bot,2,0,0,2,21,11.598059177398682,QwQ,RandomBot
+Gemini2.5 Flash Thinking P8,gemini-flash-2.0-thinking P6,0,2,0,2,49,3.672837495803833,Gemini2.5 Flash Thinking,gemini-flash-2.0-thinking
+Gemma2 P6,Negamax P6,0,2,0,2,51,9.09332799911499,Gemma2,Negamax
+gpt4o P6,o3-mini-high P6,1,1,0,2,68,24.56272554397583,gpt4o,o3-mini-high
+LeChat P10,gemini-flash-2.0 P6,1,1,0,2,26,9.864890336990356,LeChat,gemini-flash-2.0
+Negamax5B P6,o4-mini-high P6,0,0,2,2,84,0.3210334777832031,Negamax5B,o4-mini-high
+Negamax5B P10,Qwen3 P6,1,0,1,2,54,19.484265565872192,Negamax5B,Qwen3
+gpt4o P10,o4-mini-high P6,2,0,0,2,77,17.7606098651886,gpt4o,o4-mini-high
+Gemini2.5 Pro P4 T0.25,o4-mini-high P10,0,2,0,2,77,2.900752305984497,Gemini2.5 Pro,o4-mini-high
+Negamax5B P8,Qwen3 P6,2,0,0,2,39,6.372564315795898,Negamax5B,Qwen3
+gemini-flash-2.0 P6,gpt4o P8,0,2,0,2,49,20.00831151008606,gemini-flash-2.0,gpt4o
+Negamax5 P8,gpt4o P10,0,1,1,2,81,20.509350299835205,Negamax5,gpt4o
+claude3.7-sonnet P8,o1 P6,0,2,0,2,37,9.274334192276001,claude3.7-sonnet,o1
+Negamax P6,Negamax5 P6,0,2,0,2,67,7.234637975692749,Negamax,Negamax5
+claude3.7-sonnet-thinking P6,claude3.7-sonnet-thinking P8,1,1,0,2,62,19.31724262237549,claude3.7-sonnet-thinking,claude3.7-sonnet-thinking
+Negamax2 P8,gemini-flash-2.0-thinking P8,0,2,0,2,61,43.741941928863525,Negamax2,gemini-flash-2.0-thinking
+Default Bot,LeChat P8,0,2,0,2,17,2.3677051067352295,DefaultBot,LeChat
+Negamax4 P6,o4-mini-high P8,1,0,1,2,80,0.5980515480041504,Negamax4,o4-mini-high
+Negamax4 P10,claude3.7-sonnet P6,1,1,0,2,74,33.5880241394043,Negamax4,claude3.7-sonnet
+Negamax3 P8,o3 P8,2,0,0,2,65,24.1784884929657,Negamax3,o3
+Negamax2 P8,Negamax3 P6,1,1,0,2,76,2.2840118408203125,Negamax2,Negamax3
+Gemini2.5 Pro P4 T0.25,Negamax3 P6,2,0,0,2,43,2.40552020072937,Gemini2.5 Pro,Negamax3
+Default Bot,o4-mini-high P8,0,2,0,2,17,0.12950873374938965,DefaultBot,o4-mini-high
+Negamax4 P6,claude3.7-sonnet P8,0,1,1,2,74,10.410226106643677,Negamax4,claude3.7-sonnet
+Gemma2 P6,Qwen3 P6,1,1,0,2,26,3.559128999710083,Gemma2,Qwen3
+Negamax5B P8,o1 P8,1,1,0,2,76,34.51142978668213,Negamax5B,o1
+Default Bot,gpt4o P6,0,2,0,2,17,4.84725022315979,DefaultBot,gpt4o
+Negamax3 P8,gemini-flash-2.0-thinking P8,0,2,0,2,61,56.548871994018555,Negamax3,gemini-flash-2.0-thinking
+Negamax5 P10,o4-mini-high P8,1,0,1,2,83,9.447655439376831,Negamax5,o4-mini-high
+Default Bot,gemini-flash-2.0-thinking P8,0,2,0,2,23,7.591988801956177,DefaultBot,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6 T0.25,gpt4o P10,1,1,0,2,78,21.51973533630371,Gemini2.5 Pro,gpt4o
+Gemma2 P6,o1 P8,0,2,0,2,17,20.439137935638428,Gemma2,o1
+Negamax P6,claude3.7-sonnet P10,0,2,0,2,43,13.544511795043945,Negamax,claude3.7-sonnet
+gemini-flash-2.0 P8,o1 P8,0,2,0,2,17,10.670250177383423,gemini-flash-2.0,o1
+Negamax4 P6,gemini-pro-2.0 P8,0,1,1,2,73,18.71247911453247,Negamax4,gemini-pro-2.0
+Random Bot,gpt4o P10,0,2,0,2,15,6.881612062454224,RandomBot,gpt4o
+gemini-pro-2.0 P8,o4-mini-high P12,0,1,1,2,80,29.929491758346558,gemini-pro-2.0,o4-mini-high
+Negamax5B P6,Random Bot,2,0,0,2,15,0.09650897979736328,Negamax5B,RandomBot
+Default Bot,Negamax5 P8,0,2,0,2,17,0.7340695858001709,DefaultBot,Negamax5
+claude3.7-sonnet P8,o3 P8,1,1,0,2,24,8.501255750656128,claude3.7-sonnet,o3
+o4-mini-high P12,r1 T0.25,1,0,1,2,53,25.362070560455322,o4-mini-high,r1
+gemini-flash-2.0-thinking P8,o3 P10,2,0,0,2,37,22.417287826538086,gemini-flash-2.0-thinking,o3
+Gemma2 P8,Negamax3 P6,1,1,0,2,58,26.308653116226196,Gemma2,Negamax3
+QwQ P6,gemini-flash-2.0 P8,2,0,0,2,31,14.78661584854126,QwQ,gemini-flash-2.0
+Negamax P6,Negamax5 P8,0,2,0,2,57,9.09529423713684,Negamax,Negamax5
+Negamax5B P10,o3-mini-high P6,0,2,0,2,67,13.331673383712769,Negamax5B,o3-mini-high
+Negamax3 P6,same.dev P6,2,0,0,2,17,0.16001677513122559,Negamax3,same.dev
+Negamax3 P6,Random Bot,2,0,0,2,35,0.5635426044464111,Negamax3,RandomBot
+Negamax5B P6,o3 P6,2,0,0,2,43,3.893836259841919,Negamax5B,o3
+Negamax4 P10,o4-mini-high P6,0,0,2,2,84,22.7118079662323,Negamax4,o4-mini-high
+Negamax5B P8,gemini-flash-2.0 P8,1,0,1,2,61,8.876769065856934,Negamax5B,gemini-flash-2.0
+LeChat P8,Negamax2 P8,1,1,0,2,32,7.950690507888794,LeChat,Negamax2
+Negamax5B P10,gemini-flash-2.0 P6,1,0,1,2,59,11.555503129959106,Negamax5B,gemini-flash-2.0
+claude3.7-sonnet P6,same.dev P6,2,0,0,2,43,8.638750553131104,claude3.7-sonnet,same.dev
+Negamax5 P6,claude3.7-sonnet P6,0,1,1,2,74,10.204888582229614,Negamax5,claude3.7-sonnet
+gemini-pro-2.0 P8,gpt4o P6,2,0,0,2,73,34.71689796447754,gemini-pro-2.0,gpt4o
+o3 P10,r1 T0.5,2,0,0,2,25,11.323484659194946,o3,r1
+Negamax5 P6,r1 T0.25,2,0,0,2,47,11.741025447845459,Negamax5,r1
+Random Bot,o4-mini-high P12,0,2,0,2,31,9.49832534790039,RandomBot,o4-mini-high
+Negamax2 P6,r1 T0.25,2,0,0,2,17,4.203362464904785,Negamax2,r1
+Negamax2 P6,Negamax3 P8,1,1,0,2,76,1.9186630249023438,Negamax2,Negamax3
+LeChat P8,claude3.7-sonnet-thinking P8,0,1,1,2,77,18.102399349212646,LeChat,claude3.7-sonnet-thinking
+Gemini2.5 Pro P6,o1 P8,1,0,1,2,76,29.751435041427612,Gemini2.5 Pro,o1
+Negamax2 P8,o1 P8,0,2,0,2,59,46.95299196243286,Negamax2,o1
+Negamax3 P6,Negamax5B P6,0,2,0,2,67,0.778071403503418,Negamax3,Negamax5B
+Gemini2.5 Flash Thinking P6,Gemini2.5 Pro P6,0,2,0,2,37,4.284874200820923,Gemini2.5 Flash Thinking,Gemini2.5 Pro
+Gemini2.5 Flash Thinking P8,Negamax4 P6,0,1,1,2,49,1.7476506233215332,Gemini2.5 Flash Thinking,Negamax4
+LeChat P8,o4-mini-high P10,0,1,1,2,76,5.916010856628418,LeChat,o4-mini-high
+claude3.7-sonnet-thinking P6,same.dev P6,1,0,1,2,51,5.512978553771973,claude3.7-sonnet-thinking,same.dev
+Negamax5 P10,claude3.7-sonnet P6,1,1,0,2,48,15.737867832183838,Negamax5,claude3.7-sonnet
+Negamax4 P4 T0.25,o4-mini-high P10,1,0,1,2,80,1.8366687297821045,Negamax4,o4-mini-high
+Gemini2.5 Flash Thinking P8,Negamax2 P6,0,2,0,2,31,1.964669942855835,Gemini2.5 Flash Thinking,Negamax2
+LeChat P6,Negamax2 P6,2,0,0,2,51,1.8676671981811523,LeChat,Negamax2
+LeChat P8,gpt4o P6,1,1,0,2,80,20.310283422470093,LeChat,gpt4o
+Qwen3 P6,gemini-pro-2.0 P8,0,2,0,2,43,15.335340023040771,Qwen3,gemini-pro-2.0
+Negamax3 P8,o1 P6,0,2,0,2,63,11.913532495498657,Negamax3,o1
+Negamax3 P8,gemini-pro-2.0 P6,0,2,0,2,39,24.44645094871521,Negamax3,gemini-pro-2.0
+Negamax5B P6,o4-mini-high P10,0,0,2,2,84,3.052258253097534,Negamax5B,o4-mini-high
+Negamax4 P8,Random Bot,2,0,0,2,15,0.8080697059631348,Negamax4,RandomBot
+claude3.7-sonnet P6,o4-mini-high P10,1,1,0,2,74,12.15005874633789,claude3.7-sonnet,o4-mini-high
+Gemini2.5 Pro P4 T0.25,o1 P8,1,1,0,2,74,58.860053300857544,Gemini2.5 Pro,o1
+claude3.7-sonnet P10,o4-mini-high P10,1,1,0,2,72,11.64752459526062,claude3.7-sonnet,o4-mini-high
+LeChat P10,Negamax4 P6,0,0,2,2,84,11.629526376724243,LeChat,Negamax4
+Negamax4 P10,gpt4o P8,0,1,1,2,81,49.202680349349976,Negamax4,gpt4o
+Gemma2 P6,o3 P10,0,2,0,2,43,12.014060258865356,Gemma2,o3
+Negamax2 P8,o3 P10,2,0,0,2,63,25.674753665924072,Negamax2,o3
+Gemma2 P6,gpt4o P8,0,2,0,2,39,14.56928563117981,Gemma2,gpt4o
+claude3.7-sonnet P6,claude3.7-sonnet-thinking P6,0,2,0,2,47,10.846464395523071,claude3.7-sonnet,claude3.7-sonnet-thinking
+Negamax P6,Qwen3 P6,0,2,0,2,43,13.338675260543823,Negamax,Qwen3
+LeChat P10,Negamax4 P4 T0.25,1,0,1,2,80,11.031976461410522,LeChat,Negamax4
+Gemma2 P6,gemini-pro-2.0 P6,0,2,0,2,17,2.4817216396331787,Gemma2,gemini-pro-2.0
+Negamax4 P10,gpt4o P6,0,1,1,2,81,50.01974940299988,Negamax4,gpt4o
+Negamax3 P8,claude3.7-sonnet P10,0,2,0,2,43,13.986249208450317,Negamax3,claude3.7-sonnet
+claude3.7-sonnet-thinking P6,gemini-pro-2.0 P6,0,1,1,2,76,13.859739542007446,claude3.7-sonnet-thinking,gemini-pro-2.0
+Negamax4 P4 T0.25,Random Bot,2,0,0,2,15,0.01399993896484375,Negamax4,RandomBot
+gemini-flash-2.0-thinking P8,o4-mini-high P8,1,1,0,2,68,18.56565022468567,gemini-flash-2.0-thinking,o4-mini-high
+LeChat P10,Negamax3 P8,2,0,0,2,51,19.523738145828247,LeChat,Negamax3
+Negamax5B P8,claude3.7-sonnet-thinking P8,0,1,1,2,77,17.46906089782715,Negamax5B,claude3.7-sonnet-thinking
+Negamax3 P8,gemini-flash-2.0-thinking P6,0,2,0,2,55,16.25844693183899,Negamax3,gemini-flash-2.0-thinking
+Gemini2.5 Flash Thinking P8,same.dev P6,1,1,0,2,46,2.904759645462036,Gemini2.5 Flash Thinking,same.dev
+gemini-flash-2.0 P8,o4-mini-high P10,0,1,1,2,53,7.775700807571411,gemini-flash-2.0,o4-mini-high
+Negamax2 P6,gpt4o P6,0,2,0,2,61,17.229045152664185,Negamax2,gpt4o
+Negamax P6,Random Bot,2,0,0,2,19,4.089865684509277,Negamax,RandomBot
+claude3.7-sonnet P8,gemini-flash-2.0 P8,2,0,0,2,45,13.224701166152954,claude3.7-sonnet,gemini-flash-2.0
+Gemini2.5 Flash Thinking P8,Negamax4 P4 T0.25,0,1,1,2,49,1.2581067085266113,Gemini2.5 Flash Thinking,Negamax4
+Gemini2.5 Pro P4 T0.25,Negamax5B P10,1,1,0,2,82,10.076407670974731,Gemini2.5 Pro,Negamax5B
+Gemini2.5 Pro P6 T0.25,o3 P6,2,0,0,2,47,9.44435453414917,Gemini2.5 Pro,o3
+gemini-flash-2.0-thinking P6,r1 T0.25,2,0,0,2,35,10.687456369400024,gemini-flash-2.0-thinking,r1
+claude3.7-sonnet-thinking P8,gemini-pro-2.0 P6,1,1,0,2,56,18.03661298751831,claude3.7-sonnet-thinking,gemini-pro-2.0
+Default Bot,claude3.7-sonnet P6,0,2,0,2,27,3.6588315963745117,DefaultBot,claude3.7-sonnet
+Negamax4 P8,r1 T0.5,2,0,0,2,41,12.550628900527954,Negamax4,r1
+Negamax4 P10,o1 P6,2,0,0,2,77,41.58099412918091,Negamax4,o1
+Negamax P6,o1 P6,1,1,0,2,80,18.759682178497314,Negamax,o1
+Gemini2.5 Flash Thinking P6,o4-mini-high P8,0,2,0,2,33,0.7360727787017822,Gemini2.5 Flash Thinking,o4-mini-high
+gemini-pro-2.0 P6,gpt4o P6,1,1,0,2,72,21.392914295196533,gemini-pro-2.0,gpt4o
+Negamax5B P8,gpt4o P8,0,1,1,2,81,18.9301974773407,Negamax5B,gpt4o
+Gemini2.5 Pro P6 T0.25,Random Bot,2,0,0,2,23,2.396211862564087,Gemini2.5 Pro,RandomBot
+Gemini2.5 Pro P6 T0.25,Negamax5 P8,0,2,0,2,71,6.76860499382019,Gemini2.5 Pro,Negamax5
+QwQ P6,Qwen3 P6,2,0,0,2,37,15.391877174377441,QwQ,Qwen3
+o1 P8,o3 P6,1,1,0,2,60,59.3605842590332,o1,o3
+o3-mini-high P6,same.dev P6,1,1,0,2,34,4.957936763763428,o3-mini-high,same.dev
+gemini-flash-2.0 P8,o3 P6,1,1,0,2,44,12.602125644683838,gemini-flash-2.0,o3
+Gemini2.5 Pro P6 T0.25,QwQ P6,0,2,0,2,71,22.425002098083496,Gemini2.5 Pro,QwQ
+Negamax4 P8,gemini-flash-2.0-thinking P6,1,1,0,2,78,6.8336021900177,Negamax4,gemini-flash-2.0-thinking
+Gemma2 P8,claude3.7-sonnet P6,0,2,0,2,35,14.344287633895874,Gemma2,claude3.7-sonnet
+LeChat P8,gemini-flash-2.0-thinking P6,1,1,0,2,40,5.546982049942017,LeChat,gemini-flash-2.0-thinking
+Qwen3 P6,o3 P8,1,1,0,2,28,7.932199001312256,Qwen3,o3
+Gemini2.5 Pro P6 T0.25,r1 T0.5,2,0,0,2,29,9.862376689910889,Gemini2.5 Pro,r1
+Gemma2 P6,Negamax3 P6,0,2,0,2,67,3.684828758239746,Gemma2,Negamax3
+Negamax5B P6,claude3.7-sonnet P10,0,2,0,2,73,10.659449577331543,Negamax5B,claude3.7-sonnet
+Gemma2 P8,LeChat P10,2,0,0,2,27,23.65711760520935,Gemma2,LeChat
+o1 P8,o4-mini-high P10,0,1,1,2,68,33.21195387840271,o1,o4-mini-high
+Gemini2.5 Pro P6,claude3.7-sonnet-thinking P8,1,1,0,2,72,22.29549789428711,Gemini2.5 Pro,claude3.7-sonnet-thinking
+Gemini2.5 Flash Thinking P6,Negamax5 P6,0,2,0,2,33,0.8765811920166016,Gemini2.5 Flash Thinking,Negamax5
+Default Bot,Negamax5B P10,0,2,0,2,17,10.583940267562866,DefaultBot,Negamax5B
+LeChat P10,r1 T0.5,2,0,0,2,33,17.412548542022705,LeChat,r1
+LeChat P10,Negamax2 P8,1,1,0,2,40,17.412041187286377,LeChat,Negamax2
+Gemini2.5 Pro P4 T0.25,Negamax P6,2,0,0,2,43,9.840373754501343,Gemini2.5 Pro,Negamax
+claude3.7-sonnet-thinking P6,o1 P6,2,0,0,2,61,13.257174015045166,claude3.7-sonnet-thinking,o1
+o3-mini-high P6,o4-mini-high P10,1,1,0,2,64,9.565343618392944,o3-mini-high,o4-mini-high
+Negamax2 P8,claude3.7-sonnet P10,0,2,0,2,43,14.047753810882568,Negamax2,claude3.7-sonnet
+Qwen3 P6,o1 P6,0,2,0,2,37,7.296149492263794,Qwen3,o1
+Default Bot,LeChat P6,0,2,0,2,17,0.3770334720611572,DefaultBot,LeChat
+Negamax4 P4 T0.25,o1 P8,0,0,2,2,84,37.51483178138733,Negamax4,o1
+Gemini2.5 Pro P4 T0.25,Negamax4 P8,1,0,1,2,84,4.482391834259033,Gemini2.5 Pro,Negamax4
+gemini-flash-2.0 P8,o4-mini-high P8,0,1,1,2,53,6.493077516555786,gemini-flash-2.0,o4-mini-high
+Negamax4 P8,claude3.7-sonnet P6,2,0,0,2,53,9.1153085231781,Negamax4,claude3.7-sonnet
+Negamax4 P10,r1 T0.25,1,0,1,2,61,38.820955991744995,Negamax4,r1
+Negamax4 P4 T0.25,o3 P8,2,0,0,2,33,5.9270241260528564,Negamax4,o3
+Gemini2.5 Pro P4 T0.25,LeChat P8,0,2,0,2,59,6.1615540981292725,Gemini2.5 Pro,LeChat
+o4-mini-high P10,o4-mini-high P8,0,0,2,2,84,2.8697636127471924,o4-mini-high,o4-mini-high
+gemini-flash-2.0 P8,o4-mini-high P12,0,1,1,2,53,15.447377920150757,gemini-flash-2.0,o4-mini-high
+claude3.7-sonnet-thinking P8,gemini-flash-2.0-thinking P8,1,0,1,2,76,47.84475255012512,claude3.7-sonnet-thinking,gemini-flash-2.0-thinking
+Negamax4 P8,o1 P8,1,0,1,2,82,30.064194202423096,Negamax4,o1
+Negamax4 P4 T0.25,gpt4o P6,0,2,0,2,75,16.6909921169281,Negamax4,gpt4o
+Negamax5 P10,Negamax5B P8,0,0,2,2,84,10.373932838439941,Negamax5,Negamax5B
+LeChat P8,Negamax4 P8,0,0,2,2,84,7.702193260192871,LeChat,Negamax4
+LeChat P6,gpt4o P6,0,0,2,2,84,18.14562201499939,LeChat,gpt4o
+Random Bot,claude3.7-sonnet P6,0,2,0,2,27,3.439305543899536,RandomBot,claude3.7-sonnet
+gpt4o P8,o3 P8,2,0,0,2,37,21.506415605545044,gpt4o,o3
+o1 P6,o3-mini-high P6,0,2,0,2,53,11.918566226959229,o1,o3-mini-high
+QwQ P6,claude3.7-sonnet P10,1,1,0,2,42,22.373490571975708,QwQ,claude3.7-sonnet
+Negamax5B P8,o4-mini-high P12,0,1,1,2,72,11.400022029876709,Negamax5B,o4-mini-high
+Gemini2.5 Flash Thinking P6,Gemma2 P8,2,0,0,2,43,9.998899459838867,Gemini2.5 Flash Thinking,Gemma2
+Negamax4 P4 T0.25,claude3.7-sonnet P6,1,0,1,2,67,9.63386583328247,Negamax4,claude3.7-sonnet
+claude3.7-sonnet P10,claude3.7-sonnet P6,1,1,0,2,36,11.238003492355347,claude3.7-sonnet,claude3.7-sonnet
+Negamax4 P6,claude3.7-sonnet P10,0,1,1,2,70,9.897390604019165,Negamax4,claude3.7-sonnet
+Negamax5 P8,same.dev P6,1,1,0,2,78,5.608498573303223,Negamax5,same.dev
+Gemma2 P6,o4-mini-high P8,0,2,0,2,35,1.9636712074279785,Gemma2,o4-mini-high
+Gemini2.5 Flash Thinking P8,Gemini2.5 Pro P6,0,1,1,2,53,5.9395365715026855,Gemini2.5 Flash Thinking,Gemini2.5 Pro
+QwQ P6,o1 P8,2,0,0,2,55,39.4695348739624,QwQ,o1
+Gemini2.5 Pro P6 T0.25,o4-mini-high P12,0,2,0,2,53,20.746352910995483,Gemini2.5 Pro,o4-mini-high
+Default Bot,gemini-flash-2.0 P6,0,2,0,2,21,1.248617172241211,DefaultBot,gemini-flash-2.0
+Negamax5 P10,o3 P10,2,0,0,2,35,16.157947301864624,Negamax5,o3
+Default Bot,gpt4o P8,0,2,0,2,19,5.284977197647095,DefaultBot,gpt4o
+claude3.7-sonnet-thinking P6,gemini-flash-2.0 P8,2,0,0,2,23,8.202733755111694,claude3.7-sonnet-thinking,gemini-flash-2.0
+Negamax4 P8,gemini-flash-2.0-thinking P8,0,1,1,2,80,19.4692485332489,Negamax4,gemini-flash-2.0-thinking
+LeChat P8,Negamax3 P8,1,1,0,2,32,8.216735124588013,LeChat,Negamax3
+Negamax4 P6,o3-mini-high P6,0,2,0,2,67,8.47925877571106,Negamax4,o3-mini-high
+Negamax5 P8,claude3.7-sonnet-thinking P8,0,1,1,2,77,17.593581676483154,Negamax5,claude3.7-sonnet-thinking
+LeChat P6,o3-mini-high P6,0,2,0,2,67,5.79651951789856,LeChat,o3-mini-high
+Negamax2 P8,o4-mini-high P10,0,2,0,2,53,7.564171314239502,Negamax2,o4-mini-high
+Negamax4 P4 T0.25,claude3.7-sonnet P8,0,1,1,2,74,10.09439992904663,Negamax4,claude3.7-sonnet
+Negamax3 P6,o1 P6,1,1,0,2,82,13.332682847976685,Negamax3,o1
+claude3.7-sonnet-thinking P6,gemini-flash-2.0-thinking P8,2,0,0,2,65,28.58755111694336,claude3.7-sonnet-thinking,gemini-flash-2.0-thinking
+Default Bot,Negamax P6,0,2,0,2,23,4.494389057159424,DefaultBot,Negamax
+Negamax2 P6,gpt4o P8,0,2,0,2,59,17.950101137161255,Negamax2,gpt4o
+gemini-flash-2.0-thinking P8,o3 P6,2,0,0,2,45,22.471999406814575,gemini-flash-2.0-thinking,o3
+Negamax3 P6,Negamax3 P8,1,1,0,2,76,2.216189384460449,Negamax3,Negamax3
+claude3.7-sonnet-thinking P8,gemini-flash-2.0 P8,2,0,0,2,23,11.797051668167114,claude3.7-sonnet-thinking,gemini-flash-2.0
+Negamax4 P10,gemini-flash-2.0 P8,1,0,1,2,61,27.506956815719604,Negamax4,gemini-flash-2.0
+Gemini2.5 Flash Thinking P8,Negamax5 P6,0,1,1,2,49,1.7236502170562744,Gemini2.5 Flash Thinking,Negamax5
+Gemini2.5 Pro P4 T0.25,o3 P8,1,0,1,2,75,15.14284348487854,Gemini2.5 Pro,o3
+Gemma2 P6,Negamax4 P6,0,2,0,2,59,2.3432140350341797,Gemma2,Negamax4
+Negamax4 P4 T0.25,Negamax5B P10,0,1,1,2,83,8.135215044021606,Negamax4,Negamax5B
+gemini-flash-2.0-thinking P6,gpt4o P10,0,2,0,2,49,24.3096706867218,gemini-flash-2.0-thinking,gpt4o
+Gemini2.5 Pro P6 T0.25,o3-mini-high P6,0,2,0,2,67,13.751238107681274,Gemini2.5 Pro,o3-mini-high
+claude3.7-sonnet P6,o1 P6,0,2,0,2,39,10.415930986404419,claude3.7-sonnet,o1
+o1 P8,o4-mini-high P12,0,2,0,2,65,37.397340297698975,o1,o4-mini-high
+Negamax5 P6,gpt4o P8,0,1,1,2,81,17.570577144622803,Negamax5,gpt4o
+Gemma2 P8,gpt4o P6,0,2,0,2,41,25.728808641433716,Gemma2,gpt4o
+gemini-flash-2.0-thinking P6,o4-mini-high P10,1,1,0,2,70,4.119876384735107,gemini-flash-2.0-thinking,o4-mini-high
+Negamax5 P6,gemini-pro-2.0 P8,1,1,0,2,58,18.559667587280273,Negamax5,gemini-pro-2.0
+gpt4o P10,gpt4o P6,1,1,0,2,78,32.30039668083191,gpt4o,gpt4o
+Negamax2 P8,r1 T0.5,2,0,0,2,17,5.996546745300293,Negamax2,r1
+Negamax P6,gemini-flash-2.0 P8,2,0,0,2,17,7.626688480377197,Negamax,gemini-flash-2.0
+Gemma2 P6,o3-mini-high P6,0,2,0,2,23,4.699930191040039,Gemma2,o3-mini-high
+LeChat P6,claude3.7-sonnet P6,1,1,0,2,50,8.749791622161865,LeChat,claude3.7-sonnet
+Gemini2.5 Flash Thinking P6,Gemini2.5 Flash Thinking P8,1,1,0,2,62,3.66032075881958,Gemini2.5 Flash Thinking,Gemini2.5 Flash Thinking
+claude3.7-sonnet P10,r1 T0.25,2,0,0,2,43,17.047026872634888,claude3.7-sonnet,r1
+Qwen3 P6,claude3.7-sonnet-thinking P8,0,2,0,2,51,19.049206495285034,Qwen3,claude3.7-sonnet-thinking
+Negamax2 P6,QwQ P6,0,2,0,2,41,16.033433198928833,Negamax2,QwQ
+Negamax5 P10,same.dev P6,0,0,2,2,84,14.074762344360352,Negamax5,same.dev
+Negamax2 P8,Negamax5B P10,0,1,1,2,72,19.037699222564697,Negamax2,Negamax5B
+Negamax5B P8,o4-mini-high P8,0,1,1,2,72,2.1811952590942383,Negamax5B,o4-mini-high
+Negamax5B P8,claude3.7-sonnet P8,1,1,0,2,72,11.707551956176758,Negamax5B,claude3.7-sonnet
+Negamax5B P10,o4-mini-high P10,1,0,1,2,83,11.32802677154541,Negamax5B,o4-mini-high
+QwQ P6,gemini-pro-2.0 P6,2,0,0,2,67,19.510750770568848,QwQ,gemini-pro-2.0
+LeChat P6,o3 P10,2,0,0,2,35,9.211828470230103,LeChat,o3
+Negamax4 P4 T0.25,Negamax5 P8,1,0,1,2,80,1.606140375137329,Negamax4,Negamax5
+LeChat P6,claude3.7-sonnet-thinking P8,0,1,1,2,77,14.527793884277344,LeChat,claude3.7-sonnet-thinking
+gemini-flash-2.0 P8,o3 P10,0,2,0,2,25,11.540040016174316,gemini-flash-2.0,o3
+Gemma2 P6,o4-mini-high P6,0,2,0,2,35,1.6966454982757568,Gemma2,o4-mini-high
+claude3.7-sonnet P6,gpt4o P6,1,1,0,2,68,26.924899339675903,claude3.7-sonnet,gpt4o
+Qwen3 P6,Random Bot,2,0,0,2,23,3.625314474105835,Qwen3,RandomBot
+Gemma2 P6,Random Bot,2,0,0,2,19,1.3556132316589355,Gemma2,RandomBot
+Gemini2.5 Flash Thinking P8,gpt4o P10,0,1,1,2,49,14.431289434432983,Gemini2.5 Flash Thinking,gpt4o
+o1 P8,o3-mini-high P6,0,2,0,2,69,22.89654040336609,o1,o3-mini-high
+Negamax2 P8,Negamax5B P6,0,2,0,2,67,3.9583494663238525,Negamax2,Negamax5B
+gemini-flash-2.0-thinking P6,o3 P8,1,1,0,2,46,10.393919706344604,gemini-flash-2.0-thinking,o3
+Negamax5B P6,QwQ P6,1,1,0,2,70,16.58247995376587,Negamax5B,QwQ
+Negamax P6,Negamax2 P8,1,1,0,2,76,6.88611102104187,Negamax,Negamax2
+gemini-pro-2.0 P8,r1 T0.25,2,0,0,2,19,10.649940013885498,gemini-pro-2.0,r1
+claude3.7-sonnet P10,o3 P6,1,1,0,2,20,4.70491361618042,claude3.7-sonnet,o3
+Negamax4 P10,gemini-pro-2.0 P8,0,1,1,2,75,49.46940851211548,Negamax4,gemini-pro-2.0
+gemini-flash-2.0 P8,gemini-flash-2.0-thinking P6,0,2,0,2,47,10.087395429611206,gemini-flash-2.0,gemini-flash-2.0-thinking
+Negamax5 P8,Negamax5B P8,0,0,2,2,84,3.0577809810638428,Negamax5,Negamax5B
+Gemini2.5 Pro P6,gemini-flash-2.0 P8,2,0,0,2,29,10.219908952713013,Gemini2.5 Pro,gemini-flash-2.0
+Gemini2.5 Pro P6,claude3.7-sonnet-thinking P6,0,1,1,2,82,14.260268688201904,Gemini2.5 Pro,claude3.7-sonnet-thinking
+gemini-flash-2.0-thinking P6,o1 P6,0,2,0,2,59,12.48761534690857,gemini-flash-2.0-thinking,o1
+o3 P8,o4-mini-high P10,0,2,0,2,27,8.122223854064941,o3,o4-mini-high
+QwQ P6,o4-mini-high P10,1,1,0,2,70,22.052478551864624,QwQ,o4-mini-high
+claude3.7-sonnet P10,gemini-flash-2.0-thinking P8,0,2,0,2,33,17.188547372817993,claude3.7-sonnet,gemini-flash-2.0-thinking
+Negamax2 P8,gpt4o P8,0,2,0,2,63,20.179811000823975,Negamax2,gpt4o
+Negamax4 P8,gemini-flash-2.0 P6,1,0,1,2,81,4.650422096252441,Negamax4,gemini-flash-2.0
+claude3.7-sonnet P10,gemini-flash-2.0-thinking P6,1,1,0,2,44,9.160825490951538,claude3.7-sonnet,gemini-flash-2.0-thinking
+o4-mini-high P8,r1 T0.5,1,0,1,2,53,13.256688117980957,o4-mini-high,r1
+Negamax4 P4 T0.25,o4-mini-high P6,1,0,1,2,80,0.09750962257385254,Negamax4,o4-mini-high
+Negamax4 P8,claude3.7-sonnet P10,1,1,0,2,50,9.59486198425293,Negamax4,claude3.7-sonnet
+LeChat P8,gemini-pro-2.0 P6,0,1,1,2,49,6.079058408737183,LeChat,gemini-pro-2.0
+o3 P10,o4-mini-high P8,0,2,0,2,27,6.854129314422607,o3,o4-mini-high
+Negamax4 P8,o3-mini-high P6,0,1,1,2,77,6.45558500289917,Negamax4,o3-mini-high
+Negamax3 P6,gemini-pro-2.0 P8,0,2,0,2,43,16.341959953308105,Negamax3,gemini-pro-2.0
+Random Bot,gemini-flash-2.0-thinking P6,0,2,0,2,19,0.928098201751709,RandomBot,gemini-flash-2.0-thinking
+Negamax3 P6,r1 T0.25,2,0,0,2,17,4.168384790420532,Negamax3,r1
+claude3.7-sonnet P6,gemini-pro-2.0 P6,0,2,0,2,31,7.698204278945923,claude3.7-sonnet,gemini-pro-2.0
+Negamax4 P8,gemini-pro-2.0 P6,1,0,1,2,76,8.217261552810669,Negamax4,gemini-pro-2.0
+Gemini2.5 Pro P4 T0.25,o4-mini-high P8,0,1,1,2,77,1.419128656387329,Gemini2.5 Pro,o4-mini-high
+Gemini2.5 Flash Thinking P6,Negamax5B P10,0,2,0,2,49,10.80098819732666,Gemini2.5 Flash Thinking,Negamax5B
+Gemini2.5 Pro P4 T0.25,Gemini2.5 Pro P6 T0.25,1,1,0,2,68,6.630114555358887,Gemini2.5 Pro,Gemini2.5 Pro
+Negamax5 P8,gemini-flash-2.0-thinking P8,1,1,0,2,76,16.34397530555725,Negamax5,gemini-flash-2.0-thinking
+LeChat P10,gemini-flash-2.0-thinking P6,0,2,0,2,59,12.10860562324524,LeChat,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6 T0.25,Negamax5B P8,2,0,0,2,75,6.077057123184204,Gemini2.5 Pro,Negamax5B
+Gemini2.5 Flash Thinking P8,gpt4o P8,0,2,0,2,49,13.590730428695679,Gemini2.5 Flash Thinking,gpt4o
+gemini-pro-2.0 P6,o3 P8,1,1,0,2,52,12.891674518585205,gemini-pro-2.0,o3
+Negamax2 P6,o3 P8,1,1,0,2,50,10.99100637435913,Negamax2,o3
+claude3.7-sonnet P8,gpt4o P10,1,1,0,2,48,22.605035305023193,claude3.7-sonnet,gpt4o
+Negamax5 P8,o1 P6,1,0,1,2,84,8.262253999710083,Negamax5,o1
+claude3.7-sonnet P8,o3 P10,1,1,0,2,24,9.80989146232605,claude3.7-sonnet,o3
+claude3.7-sonnet P8,o3 P6,1,1,0,2,20,4.701923131942749,claude3.7-sonnet,o3
+Gemma2 P8,o4-mini-high P10,0,2,0,2,41,15.246892213821411,Gemma2,o4-mini-high
+Negamax3 P6,claude3.7-sonnet P6,0,2,0,2,43,6.706111431121826,Negamax3,claude3.7-sonnet
+Gemini2.5 Flash Thinking P8,gemini-flash-2.0 P8,0,1,1,2,49,7.309164762496948,Gemini2.5 Flash Thinking,gemini-flash-2.0
+LeChat P6,Negamax4 P4 T0.25,0,1,1,2,80,0.9165842533111572,LeChat,Negamax4
+Negamax5B P6,o3-mini-high P6,0,2,0,2,67,5.096961259841919,Negamax5B,o3-mini-high
+Default Bot,Qwen3 P6,0,2,0,2,17,1.889672040939331,DefaultBot,Qwen3
+Negamax5 P10,gpt4o P6,0,1,1,2,76,23.59912872314453,Negamax5,gpt4o
+claude3.7-sonnet P10,same.dev P6,1,1,0,2,34,7.349154949188232,claude3.7-sonnet,same.dev
+Negamax4 P4 T0.25,gpt4o P8,0,1,1,2,81,18.01763343811035,Negamax4,gpt4o
+Gemini2.5 Flash Thinking P6,claude3.7-sonnet P10,0,2,0,2,27,4.822428464889526,Gemini2.5 Flash Thinking,claude3.7-sonnet
+Gemini2.5 Flash Thinking P6,claude3.7-sonnet-thinking P8,0,2,0,2,29,7.8376970291137695,Gemini2.5 Flash Thinking,claude3.7-sonnet-thinking
+Negamax5B P6,o1 P6,2,0,0,2,81,4.190375328063965,Negamax5B,o1
+Negamax4 P4 T0.25,Negamax5 P6,0,0,2,2,84,0.31552910804748535,Negamax4,Negamax5
+Gemini2.5 Pro P4 T0.25,claude3.7-sonnet P8,2,0,0,2,59,10.409942150115967,Gemini2.5 Pro,claude3.7-sonnet
+Negamax5B P6,gemini-flash-2.0-thinking P6,2,0,0,2,63,3.08677339553833,Negamax5B,gemini-flash-2.0-thinking
+Negamax4 P10,Qwen3 P6,2,0,0,2,43,138.8712339401245,Negamax4,Qwen3
+Negamax4 P6,claude3.7-sonnet-thinking P8,0,1,1,2,81,14.723826885223389,Negamax4,claude3.7-sonnet-thinking
+Gemini2.5 Pro P6,Gemini2.5 Pro P6 T0.25,1,1,0,2,40,10.21291708946228,Gemini2.5 Pro,Gemini2.5 Pro
+Negamax5 P10,claude3.7-sonnet-thinking P8,0,1,1,2,81,22.82905673980713,Negamax5,claude3.7-sonnet-thinking
+Negamax5B P8,r1 T0.25,1,0,1,2,61,16.279976844787598,Negamax5B,r1
+Negamax P6,r1 T0.25,2,0,0,2,17,8.02172064781189,Negamax,r1
+Negamax5B P6,gpt4o P8,0,1,1,2,81,17.112048864364624,Negamax5B,gpt4o
+Gemini2.5 Flash Thinking P8,Negamax3 P8,1,1,0,2,44,7.933212757110596,Gemini2.5 Flash Thinking,Negamax3
+LeChat P10,r1 T0.25,2,0,0,2,33,17.556593418121338,LeChat,r1
+Negamax4 P10,Negamax5B P10,0,0,2,2,84,31.561843633651733,Negamax4,Negamax5B
+Negamax5 P10,o4-mini-high P10,1,0,1,2,83,11.75206446647644,Negamax5,o4-mini-high
+LeChat P6,gemini-flash-2.0 P6,2,0,0,2,45,3.0957884788513184,LeChat,gemini-flash-2.0
+LeChat P8,o3 P8,2,0,0,2,27,9.37934136390686,LeChat,o3
+Negamax P6,claude3.7-sonnet P8,0,2,0,2,43,13.095680952072144,Negamax,claude3.7-sonnet
+Negamax5B P10,same.dev P6,0,0,2,2,84,12.022083759307861,Negamax5B,same.dev
+Random Bot,claude3.7-sonnet P10,0,2,0,2,17,2.451728582382202,RandomBot,claude3.7-sonnet
+Gemini2.5 Pro P6 T0.25,gemini-pro-2.0 P8,0,2,0,2,53,22.31652307510376,Gemini2.5 Pro,gemini-pro-2.0
+Gemma2 P8,r1 T0.25,2,0,0,2,21,13.236193180084229,Gemma2,r1
+gpt4o P10,o3-mini-high P6,1,1,0,2,60,22.80706810951233,gpt4o,o3-mini-high
+Gemini2.5 Flash Thinking P8,o3 P8,0,1,1,2,55,9.980396747589111,Gemini2.5 Flash Thinking,o3
+Negamax4 P6,Negamax5B P8,1,1,0,2,76,1.879671573638916,Negamax4,Negamax5B
+Negamax5 P10,Negamax5 P8,0,0,2,2,84,9.3183434009552,Negamax5,Negamax5
+Negamax5 P6,gemini-flash-2.0 P8,1,0,1,2,61,7.427673578262329,Negamax5,gemini-flash-2.0
+LeChat P10,gemini-pro-2.0 P6,0,1,1,2,49,11.075498580932617,LeChat,gemini-pro-2.0
+o4-mini-high P12,o4-mini-high P8,0,0,2,2,84,9.635867595672607,o4-mini-high,o4-mini-high
+o3 P8,r1 T0.25,2,0,0,2,25,10.070412397384644,o3,r1
+Negamax4 P6,o3 P10,2,0,0,2,33,6.84661340713501,Negamax4,o3
+claude3.7-sonnet P6,o3 P8,1,1,0,2,24,8.43175721168518,claude3.7-sonnet,o3
+Negamax P6,o1 P8,0,2,0,2,59,32.682451486587524,Negamax,o1
+LeChat P6,Negamax2 P8,1,0,1,2,71,7.372152328491211,LeChat,Negamax2
+Negamax5 P10,Negamax5B P10,0,0,2,2,84,13.708732604980469,Negamax5,Negamax5B
+LeChat P8,Negamax5B P8,0,0,2,2,84,6.663092851638794,LeChat,Negamax5B
+gemini-flash-2.0 P6,o4-mini-high P12,0,1,1,2,81,16.690996408462524,gemini-flash-2.0,o4-mini-high
+Qwen3 P6,claude3.7-sonnet P8,0,2,0,2,31,7.491168737411499,Qwen3,claude3.7-sonnet
+claude3.7-sonnet-thinking P8,r1 T0.5,2,0,0,2,29,13.787242412567139,claude3.7-sonnet-thinking,r1
+gpt4o P10,r1 T0.25,2,0,0,2,33,20.962378978729248,gpt4o,r1
+Default Bot,Negamax5 P6,0,2,0,2,17,0.2270190715789795,DefaultBot,Negamax5
+Gemini2.5 Pro P6 T0.25,Negamax3 P6,2,0,0,2,55,6.11004114151001,Gemini2.5 Pro,Negamax3
+Negamax5B P6,r1 T0.5,2,0,0,2,47,11.772059917449951,Negamax5B,r1
+claude3.7-sonnet-thinking P8,same.dev P6,1,0,1,2,51,12.272599935531616,claude3.7-sonnet-thinking,same.dev
+claude3.7-sonnet P6,claude3.7-sonnet-thinking P8,0,2,0,2,47,15.69491696357727,claude3.7-sonnet,claude3.7-sonnet-thinking
+Negamax5 P8,gpt4o P8,0,1,1,2,81,18.1111319065094,Negamax5,gpt4o
+Gemini2.5 Pro P6,LeChat P8,2,0,0,2,73,12.86465048789978,Gemini2.5 Pro,LeChat
+LeChat P6,o1 P8,1,0,1,2,82,26.25086212158203,LeChat,o1
+LeChat P6,Negamax4 P6,0,1,1,2,76,1.0785932540893555,LeChat,Negamax4
+Gemini2.5 Flash Thinking P6,o4-mini-high P12,0,2,0,2,33,7.898204803466797,Gemini2.5 Flash Thinking,o4-mini-high
+Negamax4 P6,gpt4o P10,0,2,0,2,79,19.180725574493408,Negamax4,gpt4o
+gpt4o P6,o4-mini-high P12,0,0,2,2,84,32.86695981025696,gpt4o,o4-mini-high
+Gemini2.5 Flash Thinking P8,o4-mini-high P8,0,1,1,2,49,1.5356342792510986,Gemini2.5 Flash Thinking,o4-mini-high
+Negamax3 P6,Negamax5 P10,0,2,0,2,61,16.143934965133667,Negamax3,Negamax5
+Gemini2.5 Pro P4 T0.25,claude3.7-sonnet P6,2,0,0,2,57,10.134907007217407,Gemini2.5 Pro,claude3.7-sonnet
+o3 P10,o3 P6,0,2,0,2,39,13.172665119171143,o3,o3
+Negamax5B P6,claude3.7-sonnet P8,0,1,1,2,74,10.705451965332031,Negamax5B,claude3.7-sonnet
+Negamax4 P6,gemini-flash-2.0 P8,1,0,1,2,61,7.185638904571533,Negamax4,gemini-flash-2.0
+Qwen3 P6,o3 P10,1,1,0,2,32,10.529435157775879,Qwen3,o3
+Negamax3 P8,gemini-flash-2.0 P8,1,1,0,2,36,8.433751344680786,Negamax3,gemini-flash-2.0
+Negamax4 P4 T0.25,gemini-flash-2.0-thinking P8,0,1,1,2,74,13.957245111465454,Negamax4,gemini-flash-2.0-thinking
+gemini-flash-2.0 P8,gpt4o P6,0,1,1,2,53,18.421645402908325,gemini-flash-2.0,gpt4o
+Default Bot,gpt4o P10,0,2,0,2,17,7.89820408821106,DefaultBot,gpt4o
+gemini-flash-2.0 P8,gemini-flash-2.0-thinking P8,0,2,0,2,45,21.250409841537476,gemini-flash-2.0,gemini-flash-2.0-thinking
+LeChat P6,Negamax5B P10,0,0,2,2,84,9.764366149902344,LeChat,Negamax5B
+Negamax3 P8,claude3.7-sonnet P6,0,2,0,2,43,16.460967302322388,Negamax3,claude3.7-sonnet
+Negamax3 P8,r1 T0.5,2,0,0,2,17,6.496073007583618,Negamax3,r1
+Gemini2.5 Flash Thinking P8,Gemini2.5 Pro P4 T0.25,0,1,1,2,49,2.9672656059265137,Gemini2.5 Flash Thinking,Gemini2.5 Pro
+Gemini2.5 Pro P6,claude3.7-sonnet P6,2,0,0,2,45,11.48952341079712,Gemini2.5 Pro,claude3.7-sonnet
+claude3.7-sonnet P8,gemini-flash-2.0 P6,1,1,0,2,26,5.5499866008758545,claude3.7-sonnet,gemini-flash-2.0
+Negamax2 P6,Negamax4 P4 T0.25,0,2,0,2,65,0.5105466842651367,Negamax2,Negamax4
+Negamax P6,Negamax3 P6,1,1,0,2,76,6.660093069076538,Negamax,Negamax3
+Negamax2 P6,gemini-flash-2.0 P8,2,0,0,2,17,4.1683738231658936,Negamax2,gemini-flash-2.0
+Default Bot,o3 P6,0,2,0,2,29,1.8536701202392578,DefaultBot,o3
+Gemma2 P6,LeChat P8,2,0,0,2,19,5.998535871505737,Gemma2,LeChat
+Negamax2 P6,claude3.7-sonnet P10,0,2,0,2,43,6.89211630821228,Negamax2,claude3.7-sonnet
+Gemma2 P6,claude3.7-sonnet-thinking P8,0,2,0,2,23,6.887608528137207,Gemma2,claude3.7-sonnet-thinking
+Gemma2 P8,Negamax4 P6,0,2,0,2,59,12.700628757476807,Gemma2,Negamax4
+QwQ P6,o4-mini-high P8,1,1,0,2,70,21.406408309936523,QwQ,o4-mini-high
+Gemini2.5 Pro P6,Negamax5B P6,1,1,0,2,76,5.08195424079895,Gemini2.5 Pro,Negamax5B
+Gemini2.5 Pro P4 T0.25,Negamax4 P6,0,2,0,2,71,1.7311582565307617,Gemini2.5 Pro,Negamax4
+Negamax5 P6,Negamax5B P6,0,0,2,2,84,0.5225441455841064,Negamax5,Negamax5B
+Negamax5B P6,r1 T0.25,2,0,0,2,47,11.711538791656494,Negamax5B,r1
+Gemini2.5 Pro P6 T0.25,LeChat P8,2,0,0,2,49,7.76569390296936,Gemini2.5 Pro,LeChat
+gpt4o P8,r1 T0.5,1,0,1,2,53,24.8332097530365,gpt4o,r1
+Negamax4 P6,Negamax5 P10,0,0,2,2,84,8.007711172103882,Negamax4,Negamax5
+claude3.7-sonnet P8,claude3.7-sonnet-thinking P8,0,2,0,2,47,16.311949253082275,claude3.7-sonnet,claude3.7-sonnet-thinking
+Random Bot,o4-mini-high P10,0,2,0,2,15,0.49854373931884766,RandomBot,o4-mini-high
+Negamax2 P6,gpt4o P10,0,2,0,2,43,16.790494203567505,Negamax2,gpt4o
+Negamax2 P6,Qwen3 P6,0,2,0,2,43,7.855201721191406,Negamax2,Qwen3
+LeChat P6,Negamax5B P6,0,0,2,2,84,1.0090878009796143,LeChat,Negamax5B
+Gemini2.5 Flash Thinking P8,claude3.7-sonnet P6,0,2,0,2,43,8.448745250701904,Gemini2.5 Flash Thinking,claude3.7-sonnet
+LeChat P6,Random Bot,2,0,0,2,25,0.6560542583465576,LeChat,RandomBot
+QwQ P6,claude3.7-sonnet-thinking P6,2,0,0,2,65,22.041465759277344,QwQ,claude3.7-sonnet-thinking
+Negamax5B P6,gemini-flash-2.0 P6,2,0,0,2,63,2.895756721496582,Negamax5B,gemini-flash-2.0
+Default Bot,Negamax2 P8,0,2,0,2,23,1.7531607151031494,DefaultBot,Negamax2
+Gemini2.5 Pro P4 T0.25,Gemini2.5 Pro P6,0,1,1,2,69,10.815958738327026,Gemini2.5 Pro,Gemini2.5 Pro
+claude3.7-sonnet P10,gemini-flash-2.0 P8,2,0,0,2,47,13.525205850601196,claude3.7-sonnet,gemini-flash-2.0
+o4-mini-high P12,o4-mini-high P6,0,0,2,2,84,12.986648559570312,o4-mini-high,o4-mini-high
+LeChat P6,claude3.7-sonnet P10,1,1,0,2,50,8.735274314880371,LeChat,claude3.7-sonnet
+Random Bot,o1 P8,0,2,0,2,15,10.98497724533081,RandomBot,o1
+claude3.7-sonnet-thinking P6,o4-mini-high P8,0,2,0,2,83,6.751094579696655,claude3.7-sonnet-thinking,o4-mini-high
+Gemma2 P6,o4-mini-high P10,0,2,0,2,35,5.535986423492432,Gemma2,o4-mini-high
+Gemma2 P8,Negamax4 P4 T0.25,0,2,0,2,49,9.731361150741577,Gemma2,Negamax4
+Gemini2.5 Flash Thinking P8,o3 P6,0,1,1,2,55,8.002708911895752,Gemini2.5 Flash Thinking,o3
+gemini-pro-2.0 P6,o1 P6,1,0,1,2,83,11.042484521865845,gemini-pro-2.0,o1
+LeChat P10,Negamax5B P10,0,0,2,2,84,18.832177877426147,LeChat,Negamax5B
+Negamax P6,gemini-pro-2.0 P8,0,2,0,2,41,21.009862422943115,Negamax,gemini-pro-2.0
+gpt4o P8,o1 P8,2,0,0,2,61,45.65958333015442,gpt4o,o1
+Gemini2.5 Flash Thinking P6,Negamax2 P8,0,2,0,2,47,6.1595542430877686,Gemini2.5 Flash Thinking,Negamax2
+Gemini2.5 Flash Thinking P6,r1 T0.25,0,2,0,2,55,14.675303220748901,Gemini2.5 Flash Thinking,r1
+Negamax4 P4 T0.25,claude3.7-sonnet P10,0,1,1,2,74,10.062403678894043,Negamax4,claude3.7-sonnet
+Qwen3 P6,claude3.7-sonnet P6,0,2,0,2,31,7.540173768997192,Qwen3,claude3.7-sonnet
+Negamax2 P6,Negamax5B P8,0,2,0,2,57,2.730748176574707,Negamax2,Negamax5B
+LeChat P10,Negamax5 P8,0,0,2,2,84,11.779055118560791,LeChat,Negamax5
+Negamax5 P6,o3 P8,2,0,0,2,33,5.943031072616577,Negamax5,o3
+Negamax5B P8,gpt4o P6,0,0,2,2,84,19.25622010231018,Negamax5B,gpt4o
+o1 P8,o4-mini-high P6,0,1,1,2,82,38.65144968032837,o1,o4-mini-high
+Negamax2 P6,claude3.7-sonnet P8,0,2,0,2,43,6.6971001625061035,Negamax2,claude3.7-sonnet
+QwQ P6,gpt4o P6,1,1,0,2,70,35.32564640045166,QwQ,gpt4o
+Negamax3 P8,claude3.7-sonnet P8,0,2,0,2,43,14.176270723342896,Negamax3,claude3.7-sonnet
+Negamax2 P8,o3 P8,2,0,0,2,65,24.07465362548828,Negamax2,o3
+Negamax4 P6,o4-mini-high P12,1,0,1,2,80,12.314605712890625,Negamax4,o4-mini-high
+Negamax3 P6,gemini-flash-2.0 P8,2,0,0,2,17,4.205378770828247,Negamax3,gemini-flash-2.0
+Negamax5B P8,claude3.7-sonnet P6,1,1,0,2,72,11.65255093574524,Negamax5B,claude3.7-sonnet
+claude3.7-sonnet-thinking P8,o4-mini-high P10,1,0,1,2,77,15.404379606246948,claude3.7-sonnet-thinking,o4-mini-high
+LeChat P10,o3-mini-high P6,0,2,0,2,67,17.822592735290527,LeChat,o3-mini-high
+o3 P6,o4-mini-high P10,0,2,0,2,33,6.866118669509888,o3,o4-mini-high
+Gemini2.5 Flash Thinking P6,QwQ P6,0,2,0,2,23,12.785147905349731,Gemini2.5 Flash Thinking,QwQ
+Negamax2 P6,gemini-pro-2.0 P8,0,2,0,2,41,15.989432096481323,Negamax2,gemini-pro-2.0
+gemini-pro-2.0 P6,o3 P10,2,0,0,2,61,21.129891872406006,gemini-pro-2.0,o3
+gpt4o P6,o4-mini-high P6,1,0,1,2,81,17.153031587600708,gpt4o,o4-mini-high
+gemini-flash-2.0-thinking P6,r1 T0.5,2,0,0,2,35,10.7729651927948,gemini-flash-2.0-thinking,r1
+Negamax2 P8,Negamax4 P6,0,2,0,2,67,5.330972194671631,Negamax2,Negamax4
+Gemini2.5 Pro P6,claude3.7-sonnet P10,2,0,0,2,45,11.81555986404419,Gemini2.5 Pro,claude3.7-sonnet
+LeChat P8,Negamax2 P6,1,1,0,2,46,5.657006740570068,LeChat,Negamax2
+Negamax5 P6,Random Bot,2,0,0,2,15,0.11150884628295898,Negamax5,RandomBot
+Negamax3 P8,o4-mini-high P8,0,2,0,2,53,5.343969821929932,Negamax3,o4-mini-high
+Default Bot,Gemma2 P6,0,2,0,2,17,1.2131054401397705,DefaultBot,Gemma2
+claude3.7-sonnet P8,claude3.7-sonnet-thinking P6,0,2,0,2,47,10.784959554672241,claude3.7-sonnet,claude3.7-sonnet-thinking
+claude3.7-sonnet-thinking P8,o1 P6,2,0,0,2,37,12.935155153274536,claude3.7-sonnet-thinking,o1
+gemini-pro-2.0 P6,o1 P8,1,1,0,2,56,37.139803647994995,gemini-pro-2.0,o1
+gpt4o P6,r1 T0.5,1,0,1,2,53,25.22424602508545,gpt4o,r1
+Negamax5 P10,o4-mini-high P12,1,0,1,2,83,20.014784336090088,Negamax5,o4-mini-high
+Gemini2.5 Pro P4 T0.25,Negamax3 P8,2,0,0,2,43,23.923632383346558,Gemini2.5 Pro,Negamax3
+Gemini2.5 Pro P6 T0.25,r1 T0.25,2,0,0,2,27,9.126304864883423,Gemini2.5 Pro,r1
+Gemini2.5 Flash Thinking P6,o4-mini-high P6,0,2,0,2,33,0.633054256439209,Gemini2.5 Flash Thinking,o4-mini-high
+Negamax P6,o3 P10,1,1,0,2,66,22.07246994972229,Negamax,o3
+Gemini2.5 Flash Thinking P8,Negamax3 P6,0,2,0,2,31,2.3067023754119873,Gemini2.5 Flash Thinking,Negamax3
+claude3.7-sonnet P8,gemini-flash-2.0-thinking P8,0,2,0,2,35,17.022019863128662,claude3.7-sonnet,gemini-flash-2.0-thinking
+Negamax P6,gemini-flash-2.0 P6,2,0,0,2,35,7.907196760177612,Negamax,gemini-flash-2.0
+LeChat P8,Negamax4 P4 T0.25,0,1,1,2,72,4.181374788284302,LeChat,Negamax4
+gemini-pro-2.0 P8,o3 P8,2,0,0,2,59,29.49312925338745,gemini-pro-2.0,o3
+Gemini2.5 Pro P6 T0.25,Negamax5 P10,1,0,1,2,77,15.2483549118042,Gemini2.5 Pro,Negamax5
+Gemma2 P6,claude3.7-sonnet P8,0,2,0,2,31,5.500997066497803,Gemma2,claude3.7-sonnet
+LeChat P6,QwQ P6,1,1,0,2,70,14.808320760726929,LeChat,QwQ
+Negamax5 P10,claude3.7-sonnet P10,2,0,0,2,53,14.306270360946655,Negamax5,claude3.7-sonnet
+Negamax5 P10,Random Bot,2,0,0,2,15,3.319798707962036,Negamax5,RandomBot
+gpt4o P10,r1 T0.5,2,0,0,2,33,22.663013696670532,gpt4o,r1
+Gemini2.5 Flash Thinking P8,gemini-flash-2.0 P6,1,1,0,2,40,3.165283679962158,Gemini2.5 Flash Thinking,gemini-flash-2.0
+QwQ P6,o4-mini-high P12,1,1,0,2,70,30.10619068145752,QwQ,o4-mini-high
+Negamax5B P6,gpt4o P6,0,1,1,2,81,17.560062170028687,Negamax5B,gpt4o
+Gemini2.5 Flash Thinking P8,claude3.7-sonnet-thinking P6,0,2,0,2,31,4.99445366859436,Gemini2.5 Flash Thinking,claude3.7-sonnet-thinking
+QwQ P6,same.dev P6,1,1,0,2,46,19.268220901489258,QwQ,same.dev
+Negamax5 P6,o4-mini-high P6,0,0,2,2,84,0.34203600883483887,Negamax5,o4-mini-high
+Gemini2.5 Flash Thinking P6,Negamax5B P6,0,2,0,2,33,0.7765648365020752,Gemini2.5 Flash Thinking,Negamax5B
+gemini-flash-2.0-thinking P8,r1 T0.25,2,0,0,2,41,23.752121925354004,gemini-flash-2.0-thinking,r1
+Negamax4 P4 T0.25,o4-mini-high P8,1,0,1,2,80,0.4955427646636963,Negamax4,o4-mini-high
+Qwen3 P6,gpt4o P10,0,2,0,2,43,24.092143058776855,Qwen3,gpt4o
+claude3.7-sonnet P6,o1 P8,0,2,0,2,39,22.37899398803711,claude3.7-sonnet,o1
+claude3.7-sonnet P10,gpt4o P8,1,0,1,2,74,28.180516004562378,claude3.7-sonnet,gpt4o
+Negamax5B P6,claude3.7-sonnet-thinking P8,0,1,1,2,77,14.080754041671753,Negamax5B,claude3.7-sonnet-thinking
+Negamax5B P8,claude3.7-sonnet P10,1,1,0,2,74,11.495523929595947,Negamax5B,claude3.7-sonnet
+Gemini2.5 Pro P6,o3 P8,2,0,0,2,39,15.674386739730835,Gemini2.5 Pro,o3
+o1 P6,o1 P8,0,1,1,2,77,53.66628336906433,o1,o1
+Negamax5 P6,claude3.7-sonnet P10,0,1,1,2,74,10.413926362991333,Negamax5,claude3.7-sonnet
+Gemini2.5 Pro P4 T0.25,Negamax5 P6,0,2,0,2,71,1.7471575736999512,Gemini2.5 Pro,Negamax5
+claude3.7-sonnet-thinking P6,o3 P10,2,0,0,2,69,22.789024114608765,claude3.7-sonnet-thinking,o3
+Qwen3 P6,gemini-flash-2.0-thinking P6,0,2,0,2,49,6.935107231140137,Qwen3,gemini-flash-2.0-thinking
+LeChat P8,o3-mini-high P6,1,1,0,2,58,10.808463335037231,LeChat,o3-mini-high
+Negamax4 P10,o3 P8,2,0,0,2,31,34.053032636642456,Negamax4,o3
+Gemma2 P6,Negamax3 P8,0,2,0,2,67,15.91891884803772,Gemma2,Negamax3
+Gemma2 P8,gemini-flash-2.0 P8,2,0,0,2,21,11.05897331237793,Gemma2,gemini-flash-2.0
+Gemini2.5 Pro P6,r1 T0.25,2,0,0,2,23,9.465340852737427,Gemini2.5 Pro,r1
+gemini-flash-2.0-thinking P6,gemini-flash-2.0-thinking P8,1,1,0,2,72,33.06444263458252,gemini-flash-2.0-thinking,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6,Negamax5 P6,1,1,0,2,76,6.697092056274414,Gemini2.5 Pro,Negamax5
+LeChat P8,o4-mini-high P12,0,1,1,2,76,17.880090475082397,LeChat,o4-mini-high
+Negamax5B P6,claude3.7-sonnet P6,0,1,1,2,78,9.972369909286499,Negamax5B,claude3.7-sonnet
+LeChat P10,Negamax5 P10,0,0,2,2,84,20.32330060005188,LeChat,Negamax5
+Negamax4 P4 T0.25,gemini-flash-2.0-thinking P6,1,0,1,2,65,2.719733715057373,Negamax4,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6,o3 P10,2,0,0,2,57,20.781842470169067,Gemini2.5 Pro,o3
+LeChat P8,Negamax5B P10,0,0,2,2,84,12.937143802642822,LeChat,Negamax5B
+Negamax2 P6,Negamax4 P6,0,2,0,2,67,0.7740681171417236,Negamax2,Negamax4
+LeChat P6,claude3.7-sonnet-thinking P6,2,0,0,2,83,7.188632488250732,LeChat,claude3.7-sonnet-thinking
+claude3.7-sonnet P8,o4-mini-high P6,1,0,1,2,74,10.256401300430298,claude3.7-sonnet,o4-mini-high
+Default Bot,claude3.7-sonnet P8,0,2,0,2,29,4.954433441162109,DefaultBot,claude3.7-sonnet
+Gemma2 P6,Negamax5 P8,0,2,0,2,63,5.657994031906128,Gemma2,Negamax5
+o3-mini-high P6,r1 T0.5,2,0,0,2,27,13.070648431777954,o3-mini-high,r1
+Negamax5 P10,o1 P8,1,1,0,2,62,45.99408507347107,Negamax5,o1
+gemini-flash-2.0-thinking P6,o4-mini-high P8,1,1,0,2,76,3.8033318519592285,gemini-flash-2.0-thinking,o4-mini-high
+Negamax P6,claude3.7-sonnet P6,0,2,0,2,43,11.545507192611694,Negamax,claude3.7-sonnet
+gpt4o P8,o3 P6,2,0,0,2,37,18.93815851211548,gpt4o,o3
+Negamax5 P6,o3 P6,2,0,0,2,43,3.8838398456573486,Negamax5,o3
+LeChat P10,o4-mini-high P12,0,1,1,2,79,23.723591804504395,LeChat,o4-mini-high
+gemini-flash-2.0 P6,o3 P6,0,2,0,2,23,3.774329900741577,gemini-flash-2.0,o3
+gemini-flash-2.0 P6,gemini-flash-2.0-thinking P8,1,1,0,2,40,19.068166971206665,gemini-flash-2.0,gemini-flash-2.0-thinking
+LeChat P6,o1 P6,2,0,0,2,75,7.817678213119507,LeChat,o1
+LeChat P10,o3 P6,2,0,0,2,45,17.27650499343872,LeChat,o3
+Negamax3 P6,gpt4o P6,0,2,0,2,61,17.034485340118408,Negamax3,gpt4o
+LeChat P6,LeChat P8,1,0,1,2,76,4.935923099517822,LeChat,LeChat
+Gemini2.5 Pro P6,gemini-flash-2.0 P6,2,0,0,2,27,4.669905185699463,Gemini2.5 Pro,gemini-flash-2.0
+Default Bot,Negamax5 P10,0,2,0,2,17,3.9183430671691895,DefaultBot,Negamax5
+Negamax5B P8,o1 P6,1,0,1,2,84,8.26770806312561,Negamax5B,o1
+Negamax5B P10,gemini-pro-2.0 P6,1,0,1,2,78,15.847879648208618,Negamax5B,gemini-pro-2.0
+Negamax5 P10,r1 T0.25,2,0,0,2,41,17.27300477027893,Negamax5,r1
+Default Bot,o1 P6,0,2,0,2,19,2.510719060897827,DefaultBot,o1
+claude3.7-sonnet P6,o4-mini-high P12,1,1,0,2,68,22.300445318222046,claude3.7-sonnet,o4-mini-high
+Gemma2 P8,r1 T0.5,2,0,0,2,21,13.197146654129028,Gemma2,r1
+Negamax5 P8,o3 P10,2,0,0,2,37,10.028865575790405,Negamax5,o3
+claude3.7-sonnet-thinking P6,o4-mini-high P6,0,2,0,2,83,6.555063009262085,claude3.7-sonnet-thinking,o4-mini-high
+Negamax3 P6,gemini-flash-2.0-thinking P8,0,2,0,2,61,24.925178289413452,Negamax3,gemini-flash-2.0-thinking
+Negamax4 P10,claude3.7-sonnet P10,1,1,0,2,74,34.267512798309326,Negamax4,claude3.7-sonnet
+Gemini2.5 Flash Thinking P8,o1 P8,0,2,0,2,47,38.17035508155823,Gemini2.5 Flash Thinking,o1
+Negamax4 P6,o3 P8,2,0,0,2,33,5.922518014907837,Negamax4,o3
+QwQ P6,claude3.7-sonnet P8,1,1,0,2,42,17.50001883506775,QwQ,claude3.7-sonnet
+LeChat P10,LeChat P8,0,0,2,2,84,15.655863285064697,LeChat,LeChat
+Negamax3 P6,o4-mini-high P8,0,2,0,2,53,0.9075796604156494,Negamax3,o4-mini-high
+Negamax P6,same.dev P6,2,0,0,2,17,3.9593489170074463,Negamax,same.dev
+Negamax3 P6,gpt4o P10,0,2,0,2,43,16.161407947540283,Negamax3,gpt4o
+Gemma2 P8,Negamax P6,1,1,0,2,58,28.298460721969604,Gemma2,Negamax
+Default Bot,o3 P8,1,1,0,2,24,4.492894649505615,DefaultBot,o3
+Negamax5B P8,QwQ P6,0,2,0,2,77,19.923229217529297,Negamax5B,QwQ
+Gemini2.5 Flash Thinking P8,claude3.7-sonnet P8,0,2,0,2,43,8.443241357803345,Gemini2.5 Flash Thinking,claude3.7-sonnet
+gemini-flash-2.0 P6,o3 P10,0,2,0,2,29,7.917189359664917,gemini-flash-2.0,o3
+LeChat P10,Negamax4 P10,0,0,2,2,84,41.42063617706299,LeChat,Negamax4
+Negamax5 P6,Qwen3 P6,2,0,0,2,39,4.082351922988892,Negamax5,Qwen3
+Default Bot,Negamax5B P8,0,2,0,2,17,1.8561606407165527,DefaultBot,Negamax5B
+Negamax2 P8,o4-mini-high P6,0,2,0,2,55,4.586402654647827,Negamax2,o4-mini-high
+Negamax2 P6,gemini-flash-2.0-thinking P6,0,2,0,2,55,6.593578338623047,Negamax2,gemini-flash-2.0-thinking
+Gemini2.5 Flash Thinking P8,gemini-flash-2.0-thinking P8,1,1,0,2,44,23.62205410003662,Gemini2.5 Flash Thinking,gemini-flash-2.0-thinking
+Gemini2.5 Flash Thinking P8,Negamax5B P10,1,1,0,2,46,7.526158094406128,Gemini2.5 Flash Thinking,Negamax5B
+Default Bot,o4-mini-high P10,0,2,0,2,17,1.2161059379577637,DefaultBot,o4-mini-high
+Negamax5 P10,gemini-pro-2.0 P8,2,0,0,2,69,27.15486168861389,Negamax5,gemini-pro-2.0
+gemini-pro-2.0 P8,o3-mini-high P6,2,0,0,2,81,22.268445253372192,gemini-pro-2.0,o3-mini-high
+o3-mini-high P6,o4-mini-high P12,1,1,0,2,64,14.783294916152954,o3-mini-high,o4-mini-high
+Qwen3 P6,r1 T0.5,2,0,0,2,29,10.327410459518433,Qwen3,r1
+claude3.7-sonnet P8,gemini-pro-2.0 P8,1,1,0,2,40,19.098169326782227,claude3.7-sonnet,gemini-pro-2.0
+LeChat P8,o4-mini-high P8,0,1,1,2,76,4.5494065284729,LeChat,o4-mini-high
+Gemma2 P8,Negamax5B P6,0,2,0,2,59,10.05639100074768,Gemma2,Negamax5B
+Random Bot,claude3.7-sonnet-thinking P8,0,2,0,2,25,8.253731727600098,RandomBot,claude3.7-sonnet-thinking
+Negamax3 P8,o4-mini-high P6,0,2,0,2,55,3.733835458755493,Negamax3,o4-mini-high
+Gemini2.5 Pro P6 T0.25,gemini-flash-2.0-thinking P8,0,2,0,2,73,28.818028926849365,Gemini2.5 Pro,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6,Negamax4 P4 T0.25,2,0,0,2,59,5.848519563674927,Gemini2.5 Pro,Negamax4
+QwQ P6,gemini-flash-2.0-thinking P8,2,0,0,2,55,28.323980808258057,QwQ,gemini-flash-2.0-thinking
+Negamax2 P6,Negamax5 P8,0,2,0,2,57,2.71224308013916,Negamax2,Negamax5
+Negamax5B P10,Negamax5B P8,0,0,2,2,84,10.46443247795105,Negamax5B,Negamax5B
+Negamax5 P8,gemini-flash-2.0 P8,1,0,1,2,61,8.869288682937622,Negamax5,gemini-flash-2.0
+Negamax5 P6,Negamax5 P8,0,1,1,2,80,2.0021746158599854,Negamax5,Negamax5
+Negamax2 P6,gemini-flash-2.0 P6,2,0,0,2,35,3.6053171157836914,Negamax2,gemini-flash-2.0
+Gemma2 P6,Negamax2 P8,0,2,0,2,51,18.625640630722046,Gemma2,Negamax2
+Negamax P6,o3 P6,2,0,0,2,49,13.057154178619385,Negamax,o3
+Gemini2.5 Pro P6 T0.25,o3 P10,2,0,0,2,57,19.47271156311035,Gemini2.5 Pro,o3
+Negamax4 P8,r1 T0.25,2,0,0,2,41,12.967646360397339,Negamax4,r1
+gemini-flash-2.0-thinking P6,gpt4o P6,0,2,0,2,49,15.82790493965149,gemini-flash-2.0-thinking,gpt4o
+o1 P6,o4-mini-high P8,0,2,0,2,75,3.9578447341918945,o1,o4-mini-high
+Gemini2.5 Flash Thinking P6,o3 P8,1,1,0,2,44,9.666356325149536,Gemini2.5 Flash Thinking,o3
+LeChat P10,o4-mini-high P6,0,0,2,2,84,11.796540021896362,LeChat,o4-mini-high
+gemini-pro-2.0 P6,gpt4o P10,1,1,0,2,72,24.633169889450073,gemini-pro-2.0,gpt4o
+Gemini2.5 Pro P6 T0.25,o4-mini-high P10,0,2,0,2,53,7.381654739379883,Gemini2.5 Pro,o4-mini-high
+Gemma2 P6,Negamax4 P8,0,2,0,2,51,15.091842412948608,Gemma2,Negamax4
+Negamax2 P6,o3 P6,2,0,0,2,49,5.7180070877075195,Negamax2,o3
+gpt4o P10,o1 P6,2,0,0,2,79,27.566431522369385,gpt4o,o1
+Gemini2.5 Flash Thinking P6,Negamax5B P8,0,2,0,2,31,2.3652143478393555,Gemini2.5 Flash Thinking,Negamax5B
+Gemma2 P8,gemini-flash-2.0-thinking P6,0,2,0,2,19,10.892460823059082,Gemma2,gemini-flash-2.0-thinking
+Qwen3 P6,o4-mini-high P10,0,2,0,2,29,6.51507568359375,Qwen3,o4-mini-high
+Gemini2.5 Flash Thinking P8,Negamax5B P8,0,1,1,2,49,2.8727540969848633,Gemini2.5 Flash Thinking,Negamax5B
+Negamax4 P10,o4-mini-high P8,0,0,2,2,84,22.810018301010132,Negamax4,o4-mini-high
+LeChat P8,Negamax P6,1,1,0,2,32,9.794867992401123,LeChat,Negamax
+LeChat P10,gemini-flash-2.0 P8,2,0,0,2,33,15.853909015655518,LeChat,gemini-flash-2.0
+LeChat P8,o1 P8,0,1,1,2,49,21.070369958877563,LeChat,o1
+o1 P6,o4-mini-high P12,0,2,0,2,61,15.624382019042969,o1,o4-mini-high
+Negamax3 P8,claude3.7-sonnet-thinking P8,0,2,0,2,37,18.15761375427246,Negamax3,claude3.7-sonnet-thinking
+LeChat P10,QwQ P6,0,2,0,2,47,19.42422914505005,LeChat,QwQ
+Negamax5B P10,gemini-pro-2.0 P8,1,1,0,2,72,28.934559106826782,Negamax5B,gemini-pro-2.0
+Negamax4 P4 T0.25,gemini-flash-2.0 P8,1,0,1,2,61,6.955109596252441,Negamax4,gemini-flash-2.0
+Gemma2 P8,gemini-flash-2.0-thinking P8,0,2,0,2,29,34.20401048660278,Gemma2,gemini-flash-2.0-thinking
+o1 P6,o3 P8,2,0,0,2,43,10.837952375411987,o1,o3
+Negamax2 P6,Negamax2 P8,1,1,0,2,76,1.8511579036712646,Negamax2,Negamax2
+Negamax3 P6,Negamax5B P8,0,2,0,2,57,2.760734796524048,Negamax3,Negamax5B
+Negamax5 P8,claude3.7-sonnet P8,1,1,0,2,72,11.760040044784546,Negamax5,claude3.7-sonnet
+Negamax P6,QwQ P6,0,2,0,2,41,19.889260053634644,Negamax,QwQ
+Random Bot,o3 P6,0,2,0,2,29,2.551229953765869,RandomBot,o3
+Negamax4 P10,Random Bot,2,0,0,2,15,9.033795595169067,Negamax4,RandomBot
+Gemini2.5 Flash Thinking P6,Negamax4 P4 T0.25,0,2,0,2,33,0.6030538082122803,Gemini2.5 Flash Thinking,Negamax4
+o1 P8,o3 P10,2,0,0,2,53,54.71631217002869,o1,o3
+QwQ P6,claude3.7-sonnet-thinking P8,1,1,0,2,68,33.76647973060608,QwQ,claude3.7-sonnet-thinking
+o3 P6,r1 T0.5,1,1,0,2,24,8.054707765579224,o3,r1
+Negamax2 P6,Negamax4 P8,0,2,0,2,53,5.936532020568848,Negamax2,Negamax4
+Negamax3 P8,o1 P8,0,2,0,2,59,34.027005434036255,Negamax3,o1
+claude3.7-sonnet P6,claude3.7-sonnet P8,1,1,0,2,36,11.26949667930603,claude3.7-sonnet,claude3.7-sonnet
+Negamax5 P10,gemini-flash-2.0-thinking P6,2,0,0,2,57,16.024413347244263,Negamax5,gemini-flash-2.0-thinking
+Default Bot,Random Bot,1,1,0,2,20,0.0,DefaultBot,RandomBot
+Negamax4 P4 T0.25,Qwen3 P6,2,0,0,2,29,3.5063107013702393,Negamax4,Qwen3
+QwQ P6,r1 T0.5,2,0,0,2,27,17.36602783203125,QwQ,r1
+Negamax5B P10,r1 T0.25,2,0,0,2,41,17.22451901435852,Negamax5B,r1
+Negamax4 P8,gemini-flash-2.0 P8,2,0,0,2,51,9.666353225708008,Negamax4,gemini-flash-2.0
+Qwen3 P6,o4-mini-high P8,0,2,0,2,29,2.953754186630249,Qwen3,o4-mini-high
+Random Bot,o3 P10,0,2,0,2,19,4.1653666496276855,RandomBot,o3
+LeChat P6,o4-mini-high P12,0,0,2,2,84,11.874038696289062,LeChat,o4-mini-high
+o4-mini-high P6,r1 T0.25,1,0,1,2,53,13.05314588546753,o4-mini-high,r1
+Gemini2.5 Pro P4 T0.25,gpt4o P8,0,1,1,2,77,21.417890310287476,Gemini2.5 Pro,gpt4o
+Negamax4 P6,gpt4o P8,0,1,1,2,81,17.48004174232483,Negamax4,gpt4o
+Gemini2.5 Flash Thinking P8,gpt4o P6,0,2,0,2,49,13.888219594955444,Gemini2.5 Flash Thinking,gpt4o
+Negamax5B P6,gemini-flash-2.0 P8,2,0,0,2,51,7.880194664001465,Negamax5B,gemini-flash-2.0
+Gemini2.5 Pro P4 T0.25,gemini-pro-2.0 P8,1,1,0,2,76,20.979339361190796,Gemini2.5 Pro,gemini-pro-2.0
+LeChat P8,same.dev P6,1,1,0,2,62,8.95978856086731,LeChat,same.dev
+Random Bot,o3 P8,0,2,0,2,27,4.405388116836548,RandomBot,o3
+Negamax5 P10,o3-mini-high P6,0,2,0,2,67,12.540597438812256,Negamax5,o3-mini-high
+claude3.7-sonnet-thinking P8,o3 P10,2,0,0,2,55,27.39841341972351,claude3.7-sonnet-thinking,o3
+Negamax4 P4 T0.25,o3-mini-high P6,1,1,0,2,64,4.783417463302612,Negamax4,o3-mini-high
+Negamax P6,Negamax5B P8,0,2,0,2,57,9.184803485870361,Negamax,Negamax5B
+Gemini2.5 Pro P6,claude3.7-sonnet P8,2,0,0,2,45,13.239153623580933,Gemini2.5 Pro,claude3.7-sonnet
+Gemma2 P6,Negamax4 P4 T0.25,0,2,0,2,37,1.738647222518921,Gemma2,Negamax4
+Gemini2.5 Pro P6 T0.25,claude3.7-sonnet-thinking P8,0,1,1,2,78,18.82064914703369,Gemini2.5 Pro,claude3.7-sonnet-thinking
+Negamax4 P6,o4-mini-high P6,1,0,1,2,80,0.32552552223205566,Negamax4,o4-mini-high
+claude3.7-sonnet P6,gemini-pro-2.0 P8,0,2,0,2,47,18.983664512634277,claude3.7-sonnet,gemini-pro-2.0
+Negamax5B P10,claude3.7-sonnet-thinking P6,1,1,0,2,76,18.619629859924316,Negamax5B,claude3.7-sonnet-thinking
+Gemma2 P8,Random Bot,2,0,0,2,15,10.292396068572998,Gemma2,RandomBot
+claude3.7-sonnet P10,gpt4o P10,1,1,0,2,48,22.744490146636963,claude3.7-sonnet,gpt4o
+gemini-pro-2.0 P6,same.dev P6,1,1,0,2,42,4.66239595413208,gemini-pro-2.0,same.dev
+Negamax4 P6,o3 P6,2,0,0,2,37,4.28386926651001,Negamax4,o3
+LeChat P10,Random Bot,2,0,0,2,15,5.305958271026611,LeChat,RandomBot
+claude3.7-sonnet P6,gemini-flash-2.0-thinking P6,1,1,0,2,44,9.156792402267456,claude3.7-sonnet,gemini-flash-2.0-thinking
+Negamax5 P6,gemini-flash-2.0-thinking P6,2,0,0,2,63,3.8988397121429443,Negamax5,gemini-flash-2.0-thinking
+Negamax5B P8,gemini-flash-2.0-thinking P6,1,1,0,2,78,4.44189190864563,Negamax5B,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6,o4-mini-high P12,0,1,1,2,67,16.969479084014893,Gemini2.5 Pro,o4-mini-high
+Gemini2.5 Flash Thinking P6,r1 T0.5,0,2,0,2,55,14.664782285690308,Gemini2.5 Flash Thinking,r1
+Negamax4 P6,claude3.7-sonnet-thinking P6,2,0,0,2,83,6.3680524826049805,Negamax4,claude3.7-sonnet-thinking
+Negamax5B P8,o3 P8,2,0,0,2,37,9.359817266464233,Negamax5B,o3
+Negamax5 P6,claude3.7-sonnet-thinking P6,1,1,0,2,80,7.451158046722412,Negamax5,claude3.7-sonnet-thinking
+gemini-flash-2.0-thinking P8,gemini-pro-2.0 P6,1,1,0,2,74,31.37476134300232,gemini-flash-2.0-thinking,gemini-pro-2.0
+o3 P10,o4-mini-high P12,0,2,0,2,27,15.99240493774414,o3,o4-mini-high
+Negamax5 P8,Negamax5B P6,1,0,1,2,80,2.051189661026001,Negamax5,Negamax5B
+QwQ P6,o3-mini-high P6,1,1,0,2,74,33.70047092437744,QwQ,o3-mini-high
+o3 P8,o4-mini-high P12,0,2,0,2,27,19.171189308166504,o3,o4-mini-high
+LeChat P8,Negamax5 P6,0,1,1,2,80,4.45041036605835,LeChat,Negamax5
+r1 T0.5,same.dev P6,0,2,0,2,33,9.308336734771729,r1,same.dev
+Negamax2 P8,claude3.7-sonnet P6,0,2,0,2,43,16.026928663253784,Negamax2,claude3.7-sonnet
+Gemini2.5 Flash Thinking P8,Negamax5 P10,1,1,0,2,46,7.558190584182739,Gemini2.5 Flash Thinking,Negamax5
+Negamax5 P8,o1 P8,1,1,0,2,76,35.210119009017944,Negamax5,o1
+claude3.7-sonnet P8,o1 P8,0,2,0,2,39,27.477946043014526,claude3.7-sonnet,o1
+gpt4o P6,o3 P6,2,0,0,2,33,14.722817659378052,gpt4o,o3
+LeChat P10,Negamax P6,1,1,0,2,42,20.409817934036255,LeChat,Negamax
+claude3.7-sonnet-thinking P8,gpt4o P6,1,0,1,2,77,31.505295276641846,claude3.7-sonnet-thinking,gpt4o
+gemini-flash-2.0-thinking P6,gpt4o P8,0,2,0,2,49,16.861506938934326,gemini-flash-2.0-thinking,gpt4o
+Negamax5B P8,same.dev P6,1,1,0,2,78,4.523416519165039,Negamax5B,same.dev
+Negamax5B P10,claude3.7-sonnet P10,2,0,0,2,49,14.355311393737793,Negamax5B,claude3.7-sonnet
+Gemma2 P6,gemini-flash-2.0 P8,2,0,0,2,15,4.76643705368042,Gemma2,gemini-flash-2.0
+Negamax5 P8,Random Bot,2,0,0,2,23,0.7620701789855957,Negamax5,RandomBot
+Negamax2 P8,claude3.7-sonnet-thinking P8,0,2,0,2,37,19.311238527297974,Negamax2,claude3.7-sonnet-thinking
+Qwen3 P6,claude3.7-sonnet-thinking P6,0,2,0,2,45,11.119523286819458,Qwen3,claude3.7-sonnet-thinking
+claude3.7-sonnet P6,o4-mini-high P6,1,0,1,2,74,9.895409345626831,claude3.7-sonnet,o4-mini-high
+Negamax5 P10,gemini-flash-2.0 P6,1,0,1,2,59,11.6395742893219,Negamax5,gemini-flash-2.0
+Gemma2 P8,claude3.7-sonnet P8,0,2,0,2,35,13.254722356796265,Gemma2,claude3.7-sonnet
+Gemini2.5 Pro P4 T0.25,Negamax4 P4 T0.25,1,0,1,2,62,1.0410897731781006,Gemini2.5 Pro,Negamax4
+Gemini2.5 Flash Thinking P6,gpt4o P10,1,1,0,2,44,14.624341487884521,Gemini2.5 Flash Thinking,gpt4o
+Gemini2.5 Pro P4 T0.25,claude3.7-sonnet P10,2,0,0,2,59,9.889404535293579,Gemini2.5 Pro,claude3.7-sonnet
+gemini-pro-2.0 P6,gpt4o P8,1,1,0,2,72,24.10866379737854,gemini-pro-2.0,gpt4o
+Negamax4 P6,Negamax5B P10,0,0,2,2,84,7.995725154876709,Negamax4,Negamax5B
+Gemma2 P8,Negamax5 P8,0,2,0,2,63,13.277719974517822,Gemma2,Negamax5
+o3 P10,o4-mini-high P10,0,2,0,2,27,8.473268270492554,o3,o4-mini-high
+Negamax3 P8,Negamax4 P10,0,2,0,2,65,69.58666944503784,Negamax3,Negamax4
+Negamax5 P6,o4-mini-high P8,0,0,2,2,84,0.7335691452026367,Negamax5,o4-mini-high
+Gemma2 P6,r1 T0.25,2,0,0,2,17,5.178964376449585,Gemma2,r1
+LeChat P6,Negamax3 P8,1,0,1,2,71,6.892129182815552,LeChat,Negamax3
+Gemini2.5 Pro P4 T0.25,o3-mini-high P6,2,0,0,2,65,7.497183561325073,Gemini2.5 Pro,o3-mini-high
+Negamax5 P10,claude3.7-sonnet-thinking P6,2,0,0,2,83,17.478102922439575,Negamax5,claude3.7-sonnet-thinking
+Negamax3 P8,Negamax5 P6,0,2,0,2,67,4.058873176574707,Negamax3,Negamax5
+Gemini2.5 Pro P6,Random Bot,2,0,0,2,31,3.8723433017730713,Gemini2.5 Pro,RandomBot
+Gemini2.5 Pro P6,Negamax4 P6,1,1,0,2,76,5.014447927474976,Gemini2.5 Pro,Negamax4
+claude3.7-sonnet-thinking P6,o3-mini-high P6,1,1,0,2,72,16.479001760482788,claude3.7-sonnet-thinking,o3-mini-high
+Negamax4 P10,o1 P8,2,0,0,2,77,105.17081356048584,Negamax4,o1
+Negamax5 P10,gpt4o P8,0,2,0,2,73,24.630739212036133,Negamax5,gpt4o
+QwQ P6,gpt4o P8,1,1,0,2,70,33.01196074485779,QwQ,gpt4o
+Negamax P6,Negamax5B P6,0,2,0,2,67,6.7051005363464355,Negamax,Negamax5B
+Gemini2.5 Pro P4 T0.25,LeChat P6,1,1,0,2,66,2.403212785720825,Gemini2.5 Pro,LeChat
+Gemma2 P8,o3 P10,1,1,0,2,40,18.710193872451782,Gemma2,o3
+Gemini2.5 Pro P4 T0.25,r1 T0.5,2,0,0,2,27,7.370656490325928,Gemini2.5 Pro,r1
+LeChat P10,claude3.7-sonnet-thinking P6,1,1,0,2,50,11.287513256072998,LeChat,claude3.7-sonnet-thinking
+Negamax4 P8,gpt4o P6,0,0,2,2,84,20.632375717163086,Negamax4,gpt4o
+claude3.7-sonnet P10,claude3.7-sonnet-thinking P6,0,2,0,2,47,10.8169686794281,claude3.7-sonnet,claude3.7-sonnet-thinking
+o3 P6,o3 P8,2,0,0,2,45,14.792821645736694,o3,o3
+Negamax4 P8,o4-mini-high P12,1,1,0,2,70,13.78924012184143,Negamax4,o4-mini-high
+Default Bot,Negamax3 P6,0,2,0,2,17,0.2745237350463867,DefaultBot,Negamax3
+Gemma2 P8,o3 P6,1,1,0,2,34,11.462021589279175,Gemma2,o3
+gpt4o P8,o3 P10,2,0,0,2,37,21.833971977233887,gpt4o,o3
+o1 P8,r1 T0.25,2,0,0,2,23,20.727360725402832,o1,r1
+Negamax2 P8,o4-mini-high P12,0,2,0,2,43,28.539591550827026,Negamax2,o4-mini-high
+Negamax5B P6,o3 P8,2,0,0,2,33,6.064043998718262,Negamax5B,o3
+claude3.7-sonnet P6,o4-mini-high P8,0,2,0,2,67,9.8773832321167,claude3.7-sonnet,o4-mini-high
+o3 P8,o4-mini-high P6,0,2,0,2,27,5.895027160644531,o3,o4-mini-high
+Negamax5 P6,o4-mini-high P12,0,0,2,2,84,9.484346628189087,Negamax5,o4-mini-high
+Negamax3 P6,gemini-pro-2.0 P6,0,2,0,2,39,5.832025527954102,Negamax3,gemini-pro-2.0
+claude3.7-sonnet P6,r1 T0.5,2,0,0,2,43,17.029029607772827,claude3.7-sonnet,r1
+LeChat P6,Negamax4 P8,1,1,0,2,74,3.3953022956848145,LeChat,Negamax4
+Negamax5 P10,Negamax5 P6,0,0,2,2,84,8.886787176132202,Negamax5,Negamax5
+Gemini2.5 Flash Thinking P6,LeChat P6,0,2,0,2,47,1.4511256217956543,Gemini2.5 Flash Thinking,LeChat
+gpt4o P10,o1 P8,2,0,0,2,67,51.033554553985596,gpt4o,o1
+Gemma2 P8,claude3.7-sonnet-thinking P6,0,2,0,2,19,7.294151306152344,Gemma2,claude3.7-sonnet-thinking
+gemini-flash-2.0-thinking P8,o3-mini-high P6,1,1,0,2,54,29.419656991958618,gemini-flash-2.0-thinking,o3-mini-high
+Gemini2.5 Flash Thinking P6,claude3.7-sonnet P6,0,2,0,2,41,6.236061096191406,Gemini2.5 Flash Thinking,claude3.7-sonnet
+Gemini2.5 Pro P6,gemini-flash-2.0-thinking P6,2,0,0,2,65,14.94133710861206,Gemini2.5 Pro,gemini-flash-2.0-thinking
+Gemini2.5 Pro P6,o3-mini-high P6,0,2,0,2,79,16.376950979232788,Gemini2.5 Pro,o3-mini-high
+claude3.7-sonnet P6,gemini-flash-2.0 P6,1,1,0,2,26,5.487990140914917,claude3.7-sonnet,gemini-flash-2.0
+Gemma2 P6,Negamax5B P6,0,2,0,2,59,2.159686803817749,Gemma2,Negamax5B
+Random Bot,gemini-pro-2.0 P6,0,2,0,2,21,1.8581650257110596,RandomBot,gemini-pro-2.0
+LeChat P8,o3 P6,2,0,0,2,27,7.548171520233154,LeChat,o3
+LeChat P10,Negamax2 P6,1,1,0,2,42,15.485885381698608,LeChat,Negamax2
+Gemini2.5 Pro P6 T0.25,same.dev P6,1,1,0,2,46,4.597412347793579,Gemini2.5 Pro,same.dev
+LeChat P6,o3 P6,2,0,0,2,41,7.050626993179321,LeChat,o3
+gemini-flash-2.0 P8,gpt4o P8,0,2,0,2,49,19.706765174865723,gemini-flash-2.0,gpt4o
+claude3.7-sonnet-thinking P6,r1 T0.25,2,0,0,2,27,10.020896434783936,claude3.7-sonnet-thinking,r1
+Gemini2.5 Pro P6,Negamax2 P8,2,0,0,2,63,20.187803506851196,Gemini2.5 Pro,Negamax2
+Negamax P6,Negamax2 P6,1,1,0,2,76,6.456084489822388,Negamax,Negamax2
+Negamax5 P10,o4-mini-high P6,1,0,1,2,83,7.906208276748657,Negamax5,o4-mini-high
+Qwen3 P6,o4-mini-high P12,0,2,0,2,29,14.55730676651001,Qwen3,o4-mini-high
+gpt4o P10,o4-mini-high P12,2,0,0,2,77,33.13947582244873,gpt4o,o4-mini-high
+o3 P8,r1 T0.5,2,0,0,2,25,10.088404655456543,o3,r1
+Negamax5B P10,claude3.7-sonnet P8,1,1,0,2,50,15.664397716522217,Negamax5B,claude3.7-sonnet
+Gemini2.5 Pro P6,Negamax5 P10,1,0,1,2,81,13.149672031402588,Gemini2.5 Pro,Negamax5
+Gemini2.5 Pro P4 T0.25,Negamax5B P8,0,1,1,2,82,3.3317952156066895,Gemini2.5 Pro,Negamax5B
+Negamax4 P6,QwQ P6,0,2,0,2,73,19.385727167129517,Negamax4,QwQ
+Gemini2.5 Flash Thinking P8,Qwen3 P6,1,1,0,2,46,5.694007635116577,Gemini2.5 Flash Thinking,Qwen3
+Gemma2 P8,Negamax5B P8,0,2,0,2,63,13.267177820205688,Gemma2,Negamax5B
+LeChat P10,Negamax5B P6,0,0,2,2,84,11.488526344299316,LeChat,Negamax5B
+gpt4o P8,o4-mini-high P12,1,0,1,2,81,28.05650568008423,gpt4o,o4-mini-high
+Negamax5B P6,claude3.7-sonnet-thinking P6,2,0,0,2,83,6.27606201171875,Negamax5B,claude3.7-sonnet-thinking
+Negamax4 P4 T0.25,gemini-pro-2.0 P8,0,2,0,2,51,15.247359037399292,Negamax4,gemini-pro-2.0
+Negamax3 P8,o4-mini-high P10,0,2,0,2,53,7.5506751537323,Negamax3,o4-mini-high
+Gemini2.5 Flash Thinking P6,Negamax3 P8,0,2,0,2,47,5.062443256378174,Gemini2.5 Flash Thinking,Negamax3
+Negamax4 P8,Qwen3 P6,2,0,0,2,39,10.283417463302612,Negamax4,Qwen3
+Negamax5B P8,o3 P6,2,0,0,2,41,7.929194211959839,Negamax5B,o3
+claude3.7-sonnet P10,o4-mini-high P8,1,0,1,2,74,10.39991545677185,claude3.7-sonnet,o4-mini-high
+Default Bot,LeChat P10,1,1,0,2,20,7.462160110473633,DefaultBot,LeChat
+Gemini2.5 Pro P4 T0.25,Random Bot,2,0,0,2,29,1.1585988998413086,Gemini2.5 Pro,RandomBot
+Gemini2.5 Pro P4 T0.25,o1 P6,0,1,1,2,82,6.081032991409302,Gemini2.5 Pro,o1
+gpt4o P10,o4-mini-high P10,1,0,1,2,81,20.702337503433228,gpt4o,o4-mini-high
+Negamax P6,Negamax3 P8,1,1,0,2,76,6.514068603515625,Negamax,Negamax3
+gpt4o P6,o4-mini-high P8,1,0,1,2,81,17.08550715446472,gpt4o,o4-mini-high
+gemini-flash-2.0-thinking P6,o4-mini-high P12,1,1,0,2,56,16.51095962524414,gemini-flash-2.0-thinking,o4-mini-high
+Gemini2.5 Pro P4 T0.25,claude3.7-sonnet-thinking P6,0,1,1,2,68,8.144717454910278,Gemini2.5 Pro,claude3.7-sonnet-thinking
+Negamax4 P10,o4-mini-high P10,0,0,2,2,84,28.999572277069092,Negamax4,o4-mini-high
+Negamax5B P6,o4-mini-high P12,0,0,2,2,84,13.620195388793945,Negamax5B,o4-mini-high
+Negamax2 P8,o1 P6,0,2,0,2,63,11.758033752441406,Negamax2,o1
+Gemma2 P8,LeChat P6,0,2,0,2,39,13.050654649734497,Gemma2,LeChat
+Gemini2.5 Flash Thinking P6,LeChat P10,0,2,0,2,49,10.866457223892212,Gemini2.5 Flash Thinking,LeChat
+gemini-flash-2.0-thinking P8,gemini-pro-2.0 P8,0,1,1,2,69,46.383139848709106,gemini-flash-2.0-thinking,gemini-pro-2.0
+Gemini2.5 Pro P6,gpt4o P8,1,1,0,2,56,19.42522883415222,Gemini2.5 Pro,gpt4o
+Negamax2 P6,Negamax3 P6,1,1,0,2,76,0.45803356170654297,Negamax2,Negamax3
+claude3.7-sonnet-thinking P8,o3 P6,2,0,0,2,45,13.130162715911865,claude3.7-sonnet-thinking,o3
+gpt4o P6,o3 P10,2,0,0,2,31,18.74765920639038,gpt4o,o3
+Gemini2.5 Flash Thinking P8,o4-mini-high P10,0,1,1,2,49,2.84624981880188,Gemini2.5 Flash Thinking,o4-mini-high
+Negamax5B P6,gemini-pro-2.0 P8,0,2,0,2,63,18.681150436401367,Negamax5B,gemini-pro-2.0
+gemini-flash-2.0 P8,o1 P6,0,2,0,2,31,7.3611485958099365,gemini-flash-2.0,o1
+gemini-flash-2.0-thinking P6,gemini-pro-2.0 P8,0,1,1,2,76,28.279009342193604,gemini-flash-2.0-thinking,gemini-pro-2.0
+Gemini2.5 Pro P6,gpt4o P6,1,1,0,2,62,20.990856885910034,Gemini2.5 Pro,gpt4o
+Negamax3 P8,Negamax5B P8,0,2,0,2,57,7.219640731811523,Negamax3,Negamax5B
+Gemini2.5 Flash Thinking P8,r1 T0.5,0,1,1,2,49,14.030237913131714,Gemini2.5 Flash Thinking,r1
+gemini-flash-2.0 P6,gemini-flash-2.0 P8,1,1,0,2,50,6.705097198486328,gemini-flash-2.0,gemini-flash-2.0
+claude3.7-sonnet-thinking P6,r1 T0.5,2,0,0,2,27,10.104395627975464,claude3.7-sonnet-thinking,r1
+Negamax5B P8,o4-mini-high P6,0,1,1,2,72,1.567140817642212,Negamax5B,o4-mini-high
+Negamax5 P8,r1 T0.25,1,0,1,2,61,16.42944836616516,Negamax5,r1
+Gemma2 P8,o4-mini-high P6,0,2,0,2,41,11.91155457496643,Gemma2,o4-mini-high
+gemini-flash-2.0-thinking P8,r1 T0.5,2,0,0,2,41,26.94688391685486,gemini-flash-2.0-thinking,r1
+gemini-flash-2.0-thinking P6,gemini-pro-2.0 P6,1,1,0,2,66,12.252588987350464,gemini-flash-2.0-thinking,gemini-pro-2.0
+gemini-flash-2.0 P6,gpt4o P10,0,0,2,2,84,21.033854007720947,gemini-flash-2.0,gpt4o
+Negamax2 P6,claude3.7-sonnet-thinking P8,0,2,0,2,37,10.41192626953125,Negamax2,claude3.7-sonnet-thinking
+Gemini2.5 Pro P6,Negamax5B P10,1,0,1,2,81,12.856644868850708,Gemini2.5 Pro,Negamax5B
+Gemma2 P6,Negamax4 P10,0,2,0,2,63,132.97827672958374,Gemma2,Negamax4
+Gemini2.5 Pro P6 T0.25,o3 P8,2,0,0,2,37,12.033582210540771,Gemini2.5 Pro,o3
+Negamax5B P8,o3 P10,2,0,0,2,37,9.864384651184082,Negamax5B,o3
+Negamax2 P6,same.dev P6,2,0,0,2,17,0.16151070594787598,Negamax2,same.dev
+Negamax4 P10,QwQ P6,0,2,0,2,77,48.72634434700012,Negamax4,QwQ
+Gemini2.5 Flash Thinking P8,Negamax4 P10,0,1,1,2,49,23.19505786895752,Gemini2.5 Flash Thinking,Negamax4
+Negamax4 P4 T0.25,o3 P6,2,0,0,2,41,5.183467388153076,Negamax4,o3
+Gemini2.5 Pro P4 T0.25,gemini-flash-2.0-thinking P8,1,1,0,2,64,26.23232364654541,Gemini2.5 Pro,gemini-flash-2.0-thinking
+Negamax P6,o4-mini-high P6,0,2,0,2,55,6.4115753173828125,Negamax,o4-mini-high
+claude3.7-sonnet P10,o3 P10,1,1,0,2,24,9.814876079559326,claude3.7-sonnet,o3
+Negamax3 P6,Negamax4 P10,0,2,0,2,65,70.76233434677124,Negamax3,Negamax4
+LeChat P8,Random Bot,2,0,0,2,15,1.6626496315002441,LeChat,RandomBot
+Gemini2.5 Pro P6 T0.25,Negamax5B P6,0,2,0,2,69,5.781522274017334,Gemini2.5 Pro,Negamax5B
+Gemini2.5 Flash Thinking P8,o4-mini-high P6,0,1,1,2,49,1.5246343612670898,Gemini2.5 Flash Thinking,o4-mini-high
+LeChat P6,gpt4o P10,0,1,1,2,81,19.254710912704468,LeChat,gpt4o
+o3 P6,o3-mini-high P6,0,2,0,2,31,7.089138746261597,o3,o3-mini-high
+claude3.7-sonnet-thinking P8,o4-mini-high P6,1,0,1,2,77,13.82723617553711,claude3.7-sonnet-thinking,o4-mini-high
+Negamax3 P8,Negamax5B P6,0,2,0,2,67,4.022358417510986,Negamax3,Negamax5B
+o3 P10,o3 P8,1,1,0,2,52,22.00596284866333,o3,o3
+Gemma2 P6,Negamax5 P6,0,2,0,2,59,2.145688056945801,Gemma2,Negamax5
+Negamax4 P4 T0.25,o4-mini-high P12,0,1,1,2,81,9.290337562561035,Negamax4,o4-mini-high
+Negamax4 P4 T0.25,Negamax4 P8,1,1,0,2,76,2.654235601425171,Negamax4,Negamax4
+Gemma2 P6,gpt4o P10,0,2,0,2,41,22.938549041748047,Gemma2,gpt4o
+Negamax5B P10,Random Bot,2,0,0,2,31,5.9220290184021,Negamax5B,RandomBot
+Gemma2 P6,gpt4o P6,0,2,0,2,39,14.721818447113037,Gemma2,gpt4o
+Default Bot,o3-mini-high P6,0,2,0,2,23,2.010686159133911,DefaultBot,o3-mini-high
+Negamax5 P8,Negamax5B P10,0,0,2,2,84,9.220332622528076,Negamax5,Negamax5B
+Negamax5B P10,o3 P10,2,0,0,2,47,18.46015691757202,Negamax5B,o3
+Negamax P6,o4-mini-high P10,0,2,0,2,53,9.282333612442017,Negamax,o4-mini-high
+Negamax5 P10,gemini-pro-2.0 P6,1,0,1,2,78,18.60866689682007,Negamax5,gemini-pro-2.0
+LeChat P6,gemini-pro-2.0 P8,0,2,0,2,63,19.091211318969727,LeChat,gemini-pro-2.0
+gpt4o P6,o1 P6,2,0,0,2,77,20.628843069076538,gpt4o,o1
+Negamax5B P6,o4-mini-high P8,0,0,2,2,84,0.5785465240478516,Negamax5B,o4-mini-high
+LeChat P8,claude3.7-sonnet P6,1,1,0,2,68,13.880236864089966,LeChat,claude3.7-sonnet
+Negamax5 P6,gpt4o P6,0,0,2,2,84,17.980615377426147,Negamax5,gpt4o
+QwQ P6,o3 P8,2,0,0,2,39,24.21716594696045,QwQ,o3
+Negamax4 P8,o3 P8,2,0,0,2,37,10.493440866470337,Negamax4,o3
+Negamax4 P10,Negamax5 P6,0,0,2,2,84,26.50486922264099,Negamax4,Negamax5
+Negamax4 P8,claude3.7-sonnet-thinking P6,1,0,1,2,84,10.853964567184448,Negamax4,claude3.7-sonnet-thinking
+Negamax5 P8,o4-mini-high P12,0,1,1,2,72,14.962832689285278,Negamax5,o4-mini-high
+Default Bot,r1 T0.5,1,1,0,2,14,4.485899448394775,DefaultBot,r1
+Gemini2.5 Flash Thinking P6,Negamax4 P6,0,2,0,2,33,0.9395804405212402,Gemini2.5 Flash Thinking,Negamax4
+Gemma2 P8,o1 P8,0,2,0,2,17,22.078476667404175,Gemma2,o1
+gemini-flash-2.0 P6,gemini-pro-2.0 P6,0,2,0,2,35,4.112861633300781,gemini-flash-2.0,gemini-pro-2.0
+LeChat P8,r1 T0.25,2,0,0,2,33,11.488521575927734,LeChat,r1
+o3 P6,same.dev P6,1,0,1,2,51,4.7554240226745605,o3,same.dev
+Qwen3 P6,o3 P6,2,0,0,2,47,7.5401647090911865,Qwen3,o3
+Default Bot,QwQ P6,0,2,0,2,17,7.593673229217529,DefaultBot,QwQ
+Gemini2.5 Pro P6 T0.25,o4-mini-high P6,1,1,0,2,74,5.098949909210205,Gemini2.5 Pro,o4-mini-high
+Gemini2.5 Pro P6 T0.25,Negamax4 P6,1,1,0,2,80,5.909021377563477,Gemini2.5 Pro,Negamax4
+LeChat P6,same.dev P6,1,0,1,2,65,4.788424730300903,LeChat,same.dev
+LeChat P6,o4-mini-high P10,0,0,2,2,84,3.86484432220459,LeChat,o4-mini-high
+Negamax5B P10,o4-mini-high P12,1,0,1,2,83,24.466688632965088,Negamax5B,o4-mini-high
+Negamax4 P8,gpt4o P8,0,1,1,2,81,20.570326566696167,Negamax4,gpt4o
+Negamax4 P4 T0.25,Negamax4 P6,0,0,2,2,84,0.337526798248291,Negamax4,Negamax4
+LeChat P6,Negamax4 P10,0,0,2,2,84,27.65497064590454,LeChat,Negamax4
+Negamax3 P6,o4-mini-high P12,0,2,0,2,43,15.85739803314209,Negamax3,o4-mini-high
+Gemini2.5 Pro P4 T0.25,o3 P6,0,1,1,2,82,6.002525329589844,Gemini2.5 Pro,o3
+Negamax5 P10,gemini-flash-2.0-thinking P8,1,1,0,2,68,31.3062846660614,Negamax5,gemini-flash-2.0-thinking
+Negamax4 P4 T0.25,r1 T0.25,1,0,1,2,61,15.031321287155151,Negamax4,r1
+o4-mini-high P10,same.dev P6,1,1,0,2,62,6.856102705001831,o4-mini-high,same.dev
+Negamax2 P6,o3-mini-high P6,0,2,0,2,57,11.504508256912231,Negamax2,o3-mini-high
+LeChat P8,gemini-flash-2.0-thinking P8,0,2,0,2,39,19.817749738693237,LeChat,gemini-flash-2.0-thinking
+gpt4o P8,same.dev P6,1,0,1,2,81,23.02454686164856,gpt4o,same.dev
+gpt4o P6,o4-mini-high P10,1,0,1,2,81,19.846258878707886,gpt4o,o4-mini-high
+Negamax5 P8,gpt4o P6,0,1,1,2,81,18.162604570388794,Negamax5,gpt4o
+Gemini2.5 Flash Thinking P6,gemini-pro-2.0 P6,0,2,0,2,39,3.247278928756714,Gemini2.5 Flash Thinking,gemini-pro-2.0
+gemini-pro-2.0 P6,o4-mini-high P10,0,1,1,2,78,7.641661167144775,gemini-pro-2.0,o4-mini-high
+Negamax P6,Negamax4 P4 T0.25,0,2,0,2,65,7.280134439468384,Negamax,Negamax4
+Gemini2.5 Flash Thinking P6,Negamax5 P8,0,2,0,2,31,2.325700283050537,Gemini2.5 Flash Thinking,Negamax5
+Negamax2 P6,o4-mini-high P10,0,2,0,2,53,3.4262969493865967,Negamax2,o4-mini-high
+Negamax4 P8,claude3.7-sonnet P8,1,1,0,2,50,9.605836629867554,Negamax4,claude3.7-sonnet
+Negamax4 P10,o4-mini-high P12,0,0,2,2,84,32.3393657207489,Negamax4,o4-mini-high
+Negamax4 P4 T0.25,Negamax5B P8,1,0,1,2,80,1.77915620803833,Negamax4,Negamax5B
+Negamax3 P6,gemini-flash-2.0-thinking P6,0,2,0,2,55,5.155455589294434,Negamax3,gemini-flash-2.0-thinking
+Qwen3 P6,o1 P8,0,2,0,2,43,22.476969957351685,Qwen3,o1
+claude3.7-sonnet-thinking P8,gpt4o P8,1,0,1,2,77,31.708299160003662,claude3.7-sonnet-thinking,gpt4o
+Negamax3 P8,o4-mini-high P12,0,2,0,2,43,21.150855779647827,Negamax3,o4-mini-high
+Negamax4 P10,Negamax5 P10,0,0,2,2,84,31.698298692703247,Negamax4,Negamax5
+Negamax4 P6,Random Bot,2,0,0,2,23,0.12050819396972656,Negamax4,RandomBot
+Gemini2.5 Pro P4 T0.25,gemini-pro-2.0 P6,1,1,0,2,74,7.216627597808838,Gemini2.5 Pro,gemini-pro-2.0
+Negamax4 P8,Negamax5 P8,0,0,2,2,84,4.202366828918457,Negamax4,Negamax5
+Negamax5 P8,o3-mini-high P6,0,1,1,2,77,8.594749689102173,Negamax5,o3-mini-high
+Gemini2.5 Pro P6,LeChat P6,1,1,0,2,74,6.9516096115112305,Gemini2.5 Pro,LeChat
+Gemini2.5 Flash Thinking P8,claude3.7-sonnet P10,0,2,0,2,45,8.736257076263428,Gemini2.5 Flash Thinking,claude3.7-sonnet
+Negamax2 P6,o1 P6,1,1,0,2,80,13.680183410644531,Negamax2,o1
+Gemini2.5 Flash Thinking P8,Negamax5 P8,0,1,1,2,49,2.5087156295776367,Gemini2.5 Flash Thinking,Negamax5
+QwQ P6,r1 T0.25,2,0,0,2,27,17.33500623703003,QwQ,r1
+gpt4o P10,same.dev P6,0,2,0,2,75,24.3511323928833,gpt4o,same.dev
+Gemma2 P8,Negamax2 P8,1,1,0,2,58,44.13940119743347,Gemma2,Negamax2
+Gemini2.5 Pro P4 T0.25,Gemma2 P6,2,0,0,2,17,1.2361068725585938,Gemini2.5 Pro,Gemma2
+Gemini2.5 Pro P6 T0.25,claude3.7-sonnet P8,2,0,0,2,47,11.210975885391235,Gemini2.5 Pro,claude3.7-sonnet
+gpt4o P10,o4-mini-high P8,2,0,0,2,77,18.60961937904358,gpt4o,o4-mini-high
+Negamax3 P8,Negamax5 P8,0,2,0,2,57,6.260045528411865,Negamax3,Negamax5
+Negamax2 P6,gemini-flash-2.0-thinking P8,0,2,0,2,61,25.558239221572876,Negamax2,gemini-flash-2.0-thinking
+Negamax3 P8,o3-mini-high P6,0,2,0,2,57,20.311269521713257,Negamax3,o3-mini-high
+Gemini2.5 Pro P4 T0.25,Gemma2 P8,2,0,0,2,15,4.4768898487091064,Gemini2.5 Pro,Gemma2
+Negamax3 P8,r1 T0.25,2,0,0,2,17,5.980522155761719,Negamax3,r1
+LeChat P6,Negamax5 P10,0,0,2,2,84,10.244889974594116,LeChat,Negamax5
+gemini-flash-2.0 P8,o3 P8,0,2,0,2,25,10.299397230148315,gemini-flash-2.0,o3
+Default Bot,Negamax4 P8,0,2,0,2,23,1.925668478012085,DefaultBot,Negamax4
+Negamax4 P10,gemini-pro-2.0 P6,1,0,1,2,78,60.391335010528564,Negamax4,gemini-pro-2.0
+Negamax4 P6,Negamax5B P6,0,0,2,2,84,0.6735608577728271,Negamax4,Negamax5B
+Negamax5 P10,r1 T0.5,2,0,0,2,41,17.22700810432434,Negamax5,r1
+Gemma2 P8,o4-mini-high P12,0,2,0,2,39,32.90439033508301,Gemma2,o4-mini-high
+claude3.7-sonnet P6,gpt4o P10,1,1,0,2,48,22.015921592712402,claude3.7-sonnet,gpt4o
+gpt4o P8,o4-mini-high P6,1,0,1,2,81,16.840977668762207,gpt4o,o4-mini-high
+Negamax5 P6,o4-mini-high P10,0,0,2,2,84,3.080777406692505,Negamax5,o4-mini-high
+o3 P10,same.dev P6,1,0,1,2,51,11.08796238899231,o3,same.dev
+Gemini2.5 Flash Thinking P6,Negamax3 P6,1,1,0,2,40,1.157106876373291,Gemini2.5 Flash Thinking,Negamax3
+Negamax5 P8,QwQ P6,0,2,0,2,77,22.540974617004395,Negamax5,QwQ
+o3 P6,o4-mini-high P8,0,2,0,2,33,4.828426837921143,o3,o4-mini-high
+gemini-pro-2.0 P8,same.dev P6,2,0,0,2,17,6.187548398971558,gemini-pro-2.0,same.dev
+Negamax4 P4 T0.25,r1 T0.5,1,0,1,2,61,15.032312154769897,Negamax4,r1
+Default Bot,o4-mini-high P12,0,2,0,2,23,6.1120405197143555,DefaultBot,o4-mini-high
+Negamax4 P4 T0.25,gemini-pro-2.0 P6,1,0,1,2,78,4.808427333831787,Negamax4,gemini-pro-2.0
+Negamax4 P6,Negamax5 P6,0,0,2,2,84,0.5960550308227539,Negamax4,Negamax5
+Gemini2.5 Pro P6 T0.25,gemini-flash-2.0-thinking P6,0,2,0,2,79,9.214813232421875,Gemini2.5 Pro,gemini-flash-2.0-thinking
+Gemini2.5 Flash Thinking P6,o3 P6,0,2,0,2,49,6.257553815841675,Gemini2.5 Flash Thinking,o3
+Negamax5B P10,gpt4o P10,1,1,0,2,80,24.974189519882202,Negamax5B,gpt4o
+Gemini2.5 Flash Thinking P8,LeChat P10,0,2,0,2,43,9.420345306396484,Gemini2.5 Flash Thinking,LeChat
+Negamax5 P8,o4-mini-high P6,0,1,1,2,72,1.5831480026245117,Negamax5,o4-mini-high
+o3-mini-high P6,o4-mini-high P6,1,1,0,2,64,5.558501243591309,o3-mini-high,o4-mini-high
+Default Bot,Negamax4 P4 T0.25,0,2,0,2,17,0.01900005340576172,DefaultBot,Negamax4
+LeChat P6,Negamax5 P6,0,0,2,2,84,1.1841111183166504,LeChat,Negamax5
+Qwen3 P6,claude3.7-sonnet P10,0,2,0,2,31,7.724191427230835,Qwen3,claude3.7-sonnet
+gemini-flash-2.0 P6,r1 T0.25,1,1,0,2,40,12.739134311676025,gemini-flash-2.0,r1
+Negamax3 P6,o3 P8,2,0,0,2,63,13.68571424484253,Negamax3,o3
+Negamax5B P6,gemini-pro-2.0 P6,1,0,1,2,78,4.4003989696502686,Negamax5B,gemini-pro-2.0
+Gemini2.5 Pro P4 T0.25,Negamax5 P10,1,1,0,2,82,10.053898334503174,Gemini2.5 Pro,Negamax5
+Negamax5B P10,o4-mini-high P8,1,0,1,2,83,9.428844690322876,Negamax5B,o4-mini-high
+Negamax3 P6,Negamax5 P6,0,2,0,2,67,0.8905792236328125,Negamax3,Negamax5
+Gemini2.5 Flash Thinking P8,o3-mini-high P6,0,2,0,2,45,6.780611991882324,Gemini2.5 Flash Thinking,o3-mini-high
+Gemma2 P8,o3 P8,1,1,0,2,40,17.25552725791931,Gemma2,o3
+Gemini2.5 Pro P6 T0.25,o1 P6,2,0,0,2,59,8.09122633934021,Gemini2.5 Pro,o1
+Negamax5B P8,o3-mini-high P6,0,1,1,2,77,6.108046054840088,Negamax5B,o3-mini-high
+LeChat P8,Negamax5 P8,0,0,2,2,84,5.8850274085998535,LeChat,Negamax5
+Negamax5B P6,gemini-flash-2.0-thinking P8,1,1,0,2,60,18.93318009376526,Negamax5B,gemini-flash-2.0-thinking
+Negamax2 P6,r1 T0.5,2,0,0,2,17,4.171374082565308,Negamax2,r1
+Negamax5 P10,gpt4o P10,1,1,0,2,80,24.718688011169434,Negamax5,gpt4o
+Gemini2.5 Flash Thinking P8,r1 T0.25,0,1,1,2,49,13.701724290847778,Gemini2.5 Flash Thinking,r1
+Negamax P6,o3-mini-high P6,0,2,0,2,57,13.837741374969482,Negamax,o3-mini-high
+Gemma2 P8,gemini-flash-2.0 P6,2,0,0,2,17,8.352749109268188,Gemma2,gemini-flash-2.0
+Negamax5B P8,claude3.7-sonnet-thinking P6,2,0,0,2,83,8.893292903900146,Negamax5B,claude3.7-sonnet-thinking
+LeChat P8,o1 P6,2,0,0,2,61,9.301331043243408,LeChat,o1
+Gemini2.5 Flash Thinking P8,gemini-pro-2.0 P8,0,2,0,2,33,12.728149175643921,Gemini2.5 Flash Thinking,gemini-pro-2.0
+Gemini2.5 Pro P6,Qwen3 P6,2,0,0,2,33,10.062897682189941,Gemini2.5 Pro,Qwen3
+Gemini2.5 Flash Thinking P8,o4-mini-high P12,0,1,1,2,49,13.97174882888794,Gemini2.5 Flash Thinking,o4-mini-high
+claude3.7-sonnet-thinking P6,o4-mini-high P10,1,1,0,2,76,10.170916557312012,claude3.7-sonnet-thinking,o4-mini-high
+gemini-flash-2.0 P8,gemini-pro-2.0 P6,0,2,0,2,21,6.308580160140991,gemini-flash-2.0,gemini-pro-2.0
+Negamax5 P6,o3 P10,2,0,0,2,33,6.841621160507202,Negamax5,o3
+Gemini2.5 Pro P6,gpt4o P10,1,1,0,2,64,22.043482303619385,Gemini2.5 Pro,gpt4o
+Negamax P6,gpt4o P6,0,2,0,2,61,24.498691082000732,Negamax,gpt4o
+gemini-pro-2.0 P6,r1 T0.5,2,0,0,2,23,6.854621171951294,gemini-pro-2.0,r1
+Negamax2 P6,o4-mini-high P6,0,2,0,2,55,0.4120364189147949,Negamax2,o4-mini-high
+o1 P6,o4-mini-high P10,0,2,0,2,61,6.004549741744995,o1,o4-mini-high
+Gemini2.5 Pro P6 T0.25,Negamax2 P8,2,0,0,2,53,21.711450576782227,Gemini2.5 Pro,Negamax2
+Negamax3 P6,Negamax4 P8,0,2,0,2,53,6.092053413391113,Negamax3,Negamax4
+o4-mini-high P10,r1 T0.25,1,0,1,2,53,15.100857257843018,o4-mini-high,r1
+LeChat P10,gemini-flash-2.0-thinking P8,0,2,0,2,47,21.266904830932617,LeChat,gemini-flash-2.0-thinking
+gemini-flash-2.0 P6,o1 P6,0,2,0,2,29,3.5694186687469482,gemini-flash-2.0,o1
+Negamax2 P8,Negamax5 P8,0,2,0,2,57,6.992368459701538,Negamax2,Negamax5
+claude3.7-sonnet P6,o3 P6,1,1,0,2,20,4.693681955337524,claude3.7-sonnet,o3
+gemini-flash-2.0 P6,gpt4o P6,0,2,0,2,55,18.973522424697876,gemini-flash-2.0,gpt4o
+Negamax2 P8,Qwen3 P6,1,1,0,2,60,47.472126722335815,Negamax2,Qwen3
+Gemma2 P6,o4-mini-high P12,0,2,0,2,33,17.240391492843628,Gemma2,o4-mini-high
+Negamax5B P6,o1 P8,0,0,2,2,84,28.183619260787964,Negamax5B,o1
+claude3.7-sonnet-thinking P8,o4-mini-high P12,1,0,1,2,81,26.2473247051239,claude3.7-sonnet-thinking,o4-mini-high
+claude3.7-sonnet-thinking P8,gemini-pro-2.0 P8,1,1,0,2,76,31.55618691444397,claude3.7-sonnet-thinking,gemini-pro-2.0
+gemini-flash-2.0 P8,gemini-pro-2.0 P8,0,2,0,2,21,11.121643543243408,gemini-flash-2.0,gemini-pro-2.0
+Negamax2 P8,QwQ P6,0,2,0,2,43,25.39759063720703,Negamax2,QwQ
+Negamax4 P8,Negamax5B P10,0,0,2,2,84,9.953252077102661,Negamax4,Negamax5B
+LeChat P8,gpt4o P8,0,1,1,2,81,20.101410627365112,LeChat,gpt4o
+Negamax5 P6,gemini-flash-2.0-thinking P8,1,1,0,2,60,13.818378925323486,Negamax5,gemini-flash-2.0-thinking
+Negamax5B P10,o1 P8,1,1,0,2,62,40.58898162841797,Negamax5B,o1
+gemini-flash-2.0-thinking P8,o1 P6,2,0,0,2,77,21.813955307006836,gemini-flash-2.0-thinking,o1
+Negamax2 P8,gemini-pro-2.0 P6,0,2,0,2,39,16.781394720077515,Negamax2,gemini-pro-2.0
+o4-mini-high P12,r1 T0.5,1,0,1,2,53,20.40180730819702,o4-mini-high,r1
+Gemini2.5 Pro P4 T0.25,gpt4o P6,1,1,0,2,74,19.418525457382202,Gemini2.5 Pro,gpt4o
+Negamax2 P8,Negamax5 P10,0,1,1,2,72,13.985889196395874,Negamax2,Negamax5
+claude3.7-sonnet P10,o4-mini-high P12,1,1,0,2,68,17.968308925628662,claude3.7-sonnet,o4-mini-high
+LeChat P10,claude3.7-sonnet P10,1,1,0,2,50,15.926283359527588,LeChat,claude3.7-sonnet
+Negamax5B P8,gpt4o P10,0,0,2,2,84,18.772319555282593,Negamax5B,gpt4o
+Gemma2 P8,Negamax3 P8,1,1,0,2,58,26.580968618392944,Gemma2,Negamax3
+Negamax4 P10,claude3.7-sonnet-thinking P6,1,1,0,2,76,24.355021238327026,Negamax4,claude3.7-sonnet-thinking
+Negamax2 P8,gemini-pro-2.0 P8,0,2,0,2,43,24.60090184211731,Negamax2,gemini-pro-2.0
+Gemma2 P8,Negamax4 P10,0,2,0,2,55,116.14941549301147,Gemma2,Negamax4
+claude3.7-sonnet-thinking P8,o1 P8,2,0,0,2,67,33.45936441421509,claude3.7-sonnet-thinking,o1

@@ -1,758 +1,725 @@
+import json
+import os
 import time
-import copy
-import concurrent.futures
-import itertools
-import random
-import numpy as np
+from datetime import datetime
 import pandas as pd
+import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
-from collections import defaultdict
+from collections import defaultdict, Counter
 from tqdm import tqdm
-from datetime import datetime
-import os
-import pickle
-from elo_tournament_setup import participants
-from moteur.partie import Partie
-from bots import bot, random_bot, negamax, negamaxv2, neuralbot, negamaxv4, negamaxv5, negamaxv3, negamaxv5_b
+import re
+import argparse
+import pickle  # For saving intermediate Elo history if desired
+
+# --- Configuration for Elo Calculation ---
+INITIAL_ELO = 1000.0
+NUM_ELO_PASSES = 10  # Number of full passes over the game data
+K_FACTOR_START = 64  # Initial K-factor for early, larger adjustments
+K_FACTOR_END = 16  # Final K-factor for later, finer tuning
 
 
-def create_bot_instance(bot_template):
-    """Create a new instance of a bot with the same parameters"""
-    bot_class = bot_template.__class__
-    if hasattr(bot_template, 'profondeur') and hasattr(bot_template, 'temps_max'):
-        return bot_class(bot_template.nom, "?", profondeur=bot_template.profondeur, temps_max=bot_template.temps_max)
-    elif hasattr(bot_template, 'profondeur'):
-        return bot_class(bot_template.nom, "?", profondeur=bot_template.profondeur)
-    elif hasattr(bot_template, 'model_path'):
-        return bot_class(bot_template.nom, "?", model_path=bot_template.model_path)
-    else:
-        return bot_class(bot_template.nom, "?")
-
-
-def une_partie(bot1_template, bot2_template):
-    """Play a single game between two bots and return the result"""
-    # Create fresh instances for this match
-    bot1 = create_bot_instance(bot1_template)
-    bot2 = create_bot_instance(bot2_template)
-
-    partie = Partie()
-    bot1.symbole = "O"
-    bot2.symbole = "X"
-    partie.ajouter_joueur(bot1)
-    partie.ajouter_joueur(bot2)
-    partie.tour_joueur = 1
-
-    moves_count = 0
-    start_time = time.time()
-
-    while True:
-        moves_count += 1
-        if partie.tour_joueur == 1:
-            colonne = bot1.trouver_coup(partie.plateau, bot2)
-        else:
-            colonne = bot2.trouver_coup(partie.plateau, bot1)
-
-        if partie.jouer(colonne, partie.tour_joueur):
-            if partie.plateau.est_victoire(colonne):
-                result = "bot1" if partie.tour_joueur == 1 else "bot2"
-                break
-            if partie.plateau.est_nul():
-                result = "nul"
-                break
-            partie.tour_joueur = 2 if partie.tour_joueur == 1 else 1
-        else:
-            result = "bot2" if partie.tour_joueur == 1 else "bot1"
-            break
-
-    game_time = time.time() - start_time
-
-    return {
-        "result": result,
-        "moves": moves_count,
-        "time": game_time,
-    }
-
-
-def jouer_match(bot1_template, bot2_template, num_games=2):
-    """Play a match of multiple games between two bots"""
-    results = {"bot1_wins": 0, "bot2_wins": 0, "draws": 0, "total_moves": 0, "total_time": 0}
-
-    for i in range(num_games):
-        # Alternate who goes first
-        if i % 2 == 0:
-            game_result = une_partie(bot1_template, bot2_template)
-        else:
-            game_result = une_partie(bot2_template, bot1_template)
-            # Invert the result since we swapped the bots
-            if game_result["result"] == "bot1":
-                game_result["result"] = "bot2"
-            elif game_result["result"] == "bot2":
-                game_result["result"] = "bot1"
-
-        results["total_moves"] += game_result["moves"]
-        results["total_time"] += game_result["time"]
-
-        if game_result["result"] == "bot1":
-            results["bot1_wins"] += 1
-        elif game_result["result"] == "bot2":
-            results["bot2_wins"] += 1
-        else:
-            results["draws"] += 1
-
-    return results
-
-
-def calculate_elo_change(rating_a, rating_b, result, k_factor=48):
-    """Calculate the change in Elo rating for player A"""
-    expected_a = 1 / (1 + 10 ** ((rating_b - rating_a) / 400))
-
-    if result == "win":
-        actual_a = 1
-    elif result == "draw":
-        actual_a = 0.5
-    else:  # loss
-        actual_a = 0
-
-    change = k_factor * (actual_a - expected_a)
-    return change
-
+# --- Bot Name Parsing Functions ---
 
 def get_bot_type(bot_name):
-    """Extract the bot type from its name"""
-    if "Negamax P" in bot_name or bot_name.startswith("Negamax "):
-        return "Negamax"
-    elif "Negamax2" in bot_name:
-        return "Negamax2"
-    elif "Negamax3" in bot_name:
-        return "Negamax3"
-    elif "Negamax4" in bot_name:
-        return "Negamax4"
-    elif "Negamax5B" in bot_name:
-        return "Negamax5B"
-    elif "Negamax5" in bot_name and "B" not in bot_name:
-        return "Negamax5"
-    elif "Neural Bot" in bot_name:
-        return "NeuralBot"
-    elif "Random Bot" in bot_name:
-        return "RandomBot"
-    elif "Default Bot" in bot_name:
-        return "DefaultBot"
-    elif "gpt4o" in bot_name:
-        return "gpt4o"
-    elif "o3-mini-high-search" in bot_name:
-        return "o3-mini-high-search"
-    elif "o3-mini-high" in bot_name:
-        return "o3-mini-high"
-    elif "claude3.7-sonnet-thinking" in bot_name:
-        return "claude3.7-sonnet-thinking"
-    elif "claude3.7-sonnet" in bot_name:
-        return "claude3.7-sonnet"
-    elif "r1" in bot_name:
-        return "r1"
-    elif "gemini-pro-2.0" in bot_name:
-        return "gemini-pro-2.0"
-    elif "gemini-flash-2.0-thinking" in bot_name:
-        return "gemini-flash-2.0-thinking"
-    elif "gemini-flash-2.0" in bot_name:
-        return "gemini-flash-2.0"
-    elif "Gemma3" in bot_name:
-        return "Gemma3"
-    elif "o1" in bot_name:
-        return "o1"
-    elif "LeChat" in bot_name:
-        return "LeChat"
-    elif "QwQ" in bot_name:
-        return "QwQ"
-    elif "same.dev" in bot_name:
-        return "same.dev"
-    else:
-        return "Other"
+    """Extract the bot type from its name, updated for new bots."""
+    name_lower = bot_name.lower()
+
+    # More specific names first to avoid premature matching
+    if "negamax5b" in name_lower: return "Negamax5B"
+    if "negamax5" in name_lower and "b" not in name_lower: return "Negamax5"
+    if "negamax4" in name_lower: return "Negamax4"
+    if "negamax3" in name_lower: return "Negamax3"
+    if "negamax2" in name_lower: return "Negamax2"
+    if "negamax " in name_lower or bot_name.startswith("Negamax P"): return "Negamax"
+
+    if "o3-mini-high-search" in name_lower: return "o3-mini-high-search"
+    if "o3-mini-high" in name_lower: return "o3-mini-high"  # Before plain "o3"
+
+    if "claude3.7-sonnet-thinking" in name_lower: return "claude3.7-sonnet-thinking"
+    if "claude3.7-sonnet" in name_lower: return "claude3.7-sonnet"
+
+    if "gemini-flash-2.0-thinking" in name_lower: return "gemini-flash-2.0-thinking"
+    if "gemini-flash-2.0" in name_lower: return "gemini-flash-2.0"
+
+    if "gemini2.5 flash thinking" in name_lower: return "Gemini2.5 Flash Thinking"
+    if "gemini2.5 pro" in name_lower: return "Gemini2.5 Pro"
+
+    if "gemini-pro-2.0" in name_lower: return "gemini-pro-2.0"
+
+    if "gpt4o" in name_lower: return "gpt4o"
+    if "gemma2" in name_lower: return "Gemma2"  # From "Gemma2 P1"
+    if "qwen3" in name_lower: return "Qwen3"
+    if "o4-mini-high" in name_lower: return "o4-mini-high"
+    if "o3 " in name_lower or bot_name.startswith("o3 P"): return "o3"
+    if "o1 " in name_lower or bot_name.startswith("o1 P"): return "o1"
+
+    if "lechat" in name_lower: return "LeChat"
+    if "qwq" in name_lower: return "QwQ"
+    if "same.dev" in name_lower: return "same.dev"
+    if "r1 " in name_lower or bot_name.startswith("r1 T"): return "r1"
+
+    if "neural bot" in name_lower: return "NeuralBot"  # Legacy
+    if "random bot" in name_lower: return "RandomBot"
+    if "default bot" in name_lower: return "DefaultBot"
+
+    print(f"Warning: Bot name '{bot_name}' mapped to 'Other'. Update get_bot_type if needed.")
+    return "Other"
 
 
 def get_bot_depth(bot_name):
-    """Extract the depth parameter from the bot name if it exists"""
-    if "P" in bot_name and "T" not in bot_name:
+    """Extract the depth parameter (e.g., 'P6')."""
+    match = re.search(r"P(\d+)", bot_name)
+    if match:
         try:
-            depth = int(bot_name.split("P")[1].strip().split(" ")[0])
-            return depth
-        except:
-            return None
-    elif "P" in bot_name and "T" in bot_name:
-        try:
-            depth = int(bot_name.split("P")[1].strip().split(" ")[0])
-            return depth
-        except:
+            return int(match.group(1))
+        except ValueError:
             return None
     return None
 
 
 def get_bot_time(bot_name):
-    """Extract the time parameter from the bot name if it exists"""
-    if "T" in bot_name:
+    """Extract the time limit parameter (e.g., 'T0.1')."""
+    match = re.search(r"T(\d+\.?\d*)", bot_name)
+    if match:
         try:
-            time_val = float(bot_name.split("T")[1].strip())
-            return time_val
-        except:
+            return float(match.group(1))
+        except ValueError:
             return None
     return None
 
 
 def get_neural_generation(bot_name):
-    """Extract the generation number from neural bot name if it exists"""
+    """Extract neural net generation (e.g., 'gen1')."""
     if "gen" in bot_name.lower():
         try:
-            gen = int(''.join(filter(str.isdigit, bot_name.split("gen")[1].split(".")[0])))
-            return gen
-        except:
+            # More robust extraction for "gen" followed by numbers
+            gen_part = bot_name.lower().split("gen")[1]
+            return int(re.match(r"(\d+)", gen_part).group(1))
+        except (IndexError, AttributeError, ValueError):
             return None
     return None
 
 
-def run_tournament(participants, num_games_per_match=2, max_workers=None):
-    """Run a full tournament between all bots"""
-    # Create a results directory
+def get_mcts_iterations(bot_name):
+    """Extract MCTS iterations (e.g., 'I1000')."""
+    match = re.search(r"I(\d+)", bot_name, re.IGNORECASE)
+    if match:
+        try:
+            return int(match.group(1))
+        except ValueError:
+            return None
+    return None
+
+
+# --- Elo Calculation Logic ---
+def calculate_elo_change(rating_a, rating_b, result_for_a, k_factor):
+    """
+    Calculate Elo change for player A.
+    result_for_a: "win", "loss", "draw"
+    """
+    expected_a = 1 / (1 + 10 ** ((rating_b - rating_a) / 400))
+
+    if result_for_a == "win":
+        actual_a = 1.0
+    elif result_for_a == "draw":
+        actual_a = 0.5
+    else:  # loss
+        actual_a = 0.0
+
+    change = k_factor * (actual_a - expected_a)
+    return change
+
+
+def run_elo_calculation_passes(games_data, all_bot_names):
+    """
+    Performs multiple passes of Elo calculation.
+    Returns final Elo ratings and a history of Elo ratings per pass.
+    """
+    elo_ratings = {bot_name: INITIAL_ELO for bot_name in all_bot_names}
+    elo_history_per_pass = []  # To store Elo ratings after each pass
+
+    # Sort games by global ID for chronological processing
+    games_data_sorted = sorted(games_data, key=lambda x: x["game_global_id"])
+
+    print(f"Starting Elo calculation with {NUM_ELO_PASSES} passes...")
+    for pass_num in tqdm(range(NUM_ELO_PASSES), desc="Elo Passes"):
+        # Determine K-factor for this pass (linear decay)
+        if NUM_ELO_PASSES == 1:
+            current_k_factor = K_FACTOR_START
+        else:
+            current_k_factor = K_FACTOR_START - (K_FACTOR_START - K_FACTOR_END) * (pass_num / (NUM_ELO_PASSES - 1))
+
+        # Work on a copy of elo_ratings for this pass
+        current_pass_elos = elo_ratings.copy()
+
+        for game in games_data_sorted:
+            bot_o_name = game["player_O"]
+            bot_x_name = game["player_X"]
+            winner = game["winner"]
+
+            # Ensure bots are in the Elo dictionary (should be, due to all_bot_names initialization)
+            if bot_o_name not in current_pass_elos: current_pass_elos[bot_o_name] = INITIAL_ELO
+            if bot_x_name not in current_pass_elos: current_pass_elos[bot_x_name] = INITIAL_ELO
+
+            elo_o = current_pass_elos[bot_o_name]
+            elo_x = current_pass_elos[bot_x_name]
+
+            result_for_o = "draw"
+            if winner == bot_o_name:
+                result_for_o = "win"
+            elif winner == bot_x_name:
+                result_for_o = "loss"
+
+            delta_o = calculate_elo_change(elo_o, elo_x, result_for_o, current_k_factor)
+
+            current_pass_elos[bot_o_name] += delta_o
+            current_pass_elos[bot_x_name] -= delta_o  # Elo is zero-sum for a game
+
+        # Update main elo_ratings with the results of this pass
+        elo_ratings = current_pass_elos
+        elo_history_per_pass.append(elo_ratings.copy())  # Store snapshot
+
+    print("Elo calculation finished.")
+    return elo_ratings, elo_history_per_pass
+
+
+# --- Statistics Aggregation ---
+def aggregate_bot_statistics(games_data, all_bot_names):
+    """
+    Aggregates statistics for each bot from all game results.
+    """
+    bot_stats = {
+        bot_name: {
+            "wins": 0, "losses": 0, "draws": 0,
+            "games_played": 0,
+            "total_moves_in_games": 0,  # Sum of moves in games this bot played
+            "total_time_in_games": 0.0,  # Sum of time of games this bot played
+            "type": get_bot_type(bot_name),
+            "depth": get_bot_depth(bot_name),
+            "time_limit": get_bot_time(bot_name),
+            "neural_gen": get_neural_generation(bot_name),
+            "mcts_iter": get_mcts_iterations(bot_name),
+        } for bot_name in all_bot_names
+    }
+
+    for game in games_data:
+        bot_o = game["player_O"]
+        bot_x = game["player_X"]
+        winner = game["winner"]
+        moves = game["moves"]
+        game_time = game["time_seconds"]
+
+        # Update stats for Player O
+        if bot_o in bot_stats:
+            bot_stats[bot_o]["games_played"] += 1
+            bot_stats[bot_o]["total_moves_in_games"] += moves
+            bot_stats[bot_o]["total_time_in_games"] += game_time
+            if winner == bot_o:
+                bot_stats[bot_o]["wins"] += 1
+            elif winner == bot_x:
+                bot_stats[bot_o]["losses"] += 1
+            else:  # Draw
+                bot_stats[bot_o]["draws"] += 1
+
+        # Update stats for Player X
+        if bot_x in bot_stats:
+            bot_stats[bot_x]["games_played"] += 1
+            bot_stats[bot_x]["total_moves_in_games"] += moves
+            bot_stats[bot_x]["total_time_in_games"] += game_time
+            if winner == bot_x:
+                bot_stats[bot_x]["wins"] += 1
+            elif winner == bot_o:
+                bot_stats[bot_x]["losses"] += 1
+            else:  # Draw
+                bot_stats[bot_x]["draws"] += 1
+
+    return bot_stats
+
+
+def create_match_summary_df(games_data):
+    """ Creates a DataFrame summarizing head-to-head match results. """
+    match_outcomes = defaultdict(lambda: {"p1_wins": 0, "p2_wins": 0, "draws": 0, "games": 0,
+                                          "total_moves": 0, "total_time": 0.0})
+
+    for game in games_data:
+        # Use the canonical match participants from the JSON
+        p1_name = game["match_participant_1"]
+        p2_name = game["match_participant_2"]
+
+        # Key for the match pair (order doesn't matter here as it's canonical from JSON)
+        match_key = tuple(sorted((p1_name, p2_name)))
+
+        match_outcomes[match_key]["games"] += 1
+        match_outcomes[match_key]["total_moves"] += game["moves"]
+        match_outcomes[match_key]["total_time"] += game["time_seconds"]
+
+        winner = game["winner"]
+        if winner == p1_name:
+            match_outcomes[match_key]["p1_wins"] += 1
+        elif winner == p2_name:
+            match_outcomes[match_key]["p2_wins"] += 1
+        elif winner == "draw":
+            match_outcomes[match_key]["draws"] += 1
+
+    match_summary_list = []
+    for (bot1, bot2), data in match_outcomes.items():
+        match_summary_list.append({
+            "bot1": bot1, "bot2": bot2,
+            "bot1_wins": data["p1_wins"], "bot2_wins": data["p2_wins"],
+            "draws": data["draws"], "total_games_in_match": data["games"],
+            "total_moves": data["total_moves"], "total_time": data["total_time"],
+            "bot1_type": get_bot_type(bot1), "bot2_type": get_bot_type(bot2)
+        })
+    return pd.DataFrame(match_summary_list)
+
+
+# --- Saving Results and Visualizations (Adapted from original) ---
+def save_results_and_visualize(output_dir_base, elo_ratings, bot_stats_dict, games_data, elo_history):
+    """Saves all results and creates visualizations."""
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    results_dir = f"tournament_results_{timestamp}"
+    results_dir = f"{output_dir_base}_analysis_{timestamp}"
     os.makedirs(results_dir, exist_ok=True)
+    print(f"\nSaving analysis results to: {results_dir}")
 
-    # Initialize ratings and records
-    elo_ratings = {bot.nom: 1000 for bot in participants}
-    match_results = []
-    bot_stats = {bot.nom: {
-        "wins": 0,
-        "losses": 0,
-        "draws": 0,
-        "type": get_bot_type(bot.nom),
-        "depth": get_bot_depth(bot.nom),
-        "time_limit": get_bot_time(bot.nom),
-        "neural_gen": get_neural_generation(bot.nom),
-        "total_moves": 0,
-        "total_time": 0,
-        "matches_played": 0
-    } for bot in participants}
+    # --- Prepare DataFrames ---
+    elo_df_list = []
+    for bot_name, elo in elo_ratings.items():
+        stats = bot_stats_dict.get(bot_name, {})  # Get stats, or empty if somehow missing
+        elo_df_list.append({
+            'Bot': bot_name,
+            'Elo': elo,
+            'Bot_Type': stats.get('type', get_bot_type(bot_name)),  # Fallback if type wasn't pre-filled
+            'Depth': stats.get('depth'),
+            'Time_Limit': stats.get('time_limit'),
+            'Neural_Gen': stats.get('neural_gen'),
+            'MCTS_Iter': stats.get('mcts_iter')
+        })
+    elo_df = pd.DataFrame(elo_df_list)
+    elo_df = elo_df.sort_values('Elo', ascending=False).reset_index(drop=True)
+    elo_df['Rank'] = elo_df.index + 1
 
-    # Create all possible pairings
-    pairings = list(itertools.combinations(participants, 2))
-    random.shuffle(pairings)  # Randomize order for better progress estimation
-
-    print(f"Starting tournament with {len(participants)} bots ({len(pairings)} matches)")
-
-    # Run matches in parallel
-    with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
-        future_to_match = {
-            executor.submit(jouer_match, bot1, bot2, num_games=num_games_per_match): (bot1, bot2)
-            for bot1, bot2 in pairings
-        }
-
-        for i, future in enumerate(tqdm(concurrent.futures.as_completed(future_to_match), total=len(pairings))):
-            bot1, bot2 = future_to_match[future]
-            result = future.result()
-
-            # Extract match data
-            bot1_name = bot1.nom
-            bot2_name = bot2.nom
-            bot1_wins = result["bot1_wins"]
-            bot2_wins = result["bot2_wins"]
-            draws = result["draws"]
-            total_moves = result["total_moves"]
-            total_time = result["total_time"]
-
-            # Update stats
-            bot_stats[bot1_name]["matches_played"] += 1
-            bot_stats[bot2_name]["matches_played"] += 1
-            bot_stats[bot1_name]["wins"] += bot1_wins
-            bot_stats[bot2_name]["wins"] += bot2_wins
-            bot_stats[bot1_name]["losses"] += bot2_wins
-            bot_stats[bot2_name]["losses"] += bot1_wins
-            bot_stats[bot1_name]["draws"] += draws
-            bot_stats[bot2_name]["draws"] += draws
-            bot_stats[bot1_name]["total_moves"] += total_moves
-            bot_stats[bot2_name]["total_moves"] += total_moves
-            bot_stats[bot1_name]["total_time"] += total_time
-            bot_stats[bot2_name]["total_time"] += total_time
-
-            # Store match result
-            match_result = {
-                "bot1": bot1_name,
-                "bot2": bot2_name,
-                "bot1_wins": bot1_wins,
-                "bot2_wins": bot2_wins,
-                "draws": draws,
-                "total_moves": total_moves,
-                "total_time": total_time,
-                "bot1_type": bot_stats[bot1_name]["type"],
-                "bot2_type": bot_stats[bot2_name]["type"],
-            }
-            match_results.append(match_result)
-
-            # Calculate Elo changes
-            old_elo_1 = elo_ratings[bot1_name]
-            old_elo_2 = elo_ratings[bot2_name]
-
-            # Each game contributes to Elo
-            for j in range(bot1_wins):
-                elo_change = calculate_elo_change(old_elo_1, old_elo_2, "win")
-                elo_ratings[bot1_name] += elo_change
-                elo_ratings[bot2_name] -= elo_change
-
-            for j in range(bot2_wins):
-                elo_change = calculate_elo_change(old_elo_1, old_elo_2, "loss")
-                elo_ratings[bot1_name] += elo_change
-                elo_ratings[bot2_name] -= elo_change
-
-            for j in range(draws):
-                elo_change = calculate_elo_change(old_elo_1, old_elo_2, "draw")
-                elo_ratings[bot1_name] += elo_change
-                elo_ratings[bot2_name] -= elo_change
-
-            # Save intermediate results periodically
-            if i % 50 == 0 or i == len(pairings) - 1:
-                save_intermediate_results(results_dir, elo_ratings, match_results, bot_stats)
-
-    # Save final results
-    save_final_results(results_dir, elo_ratings, match_results, bot_stats)
-
-    return elo_ratings, match_results, bot_stats
-
-
-def save_intermediate_results(results_dir, elo_ratings, match_results, bot_stats):
-    """Save intermediate results during tournament"""
-    data = {
-        'elo_ratings': elo_ratings,
-        'match_results': match_results,
-        'bot_stats': bot_stats
-    }
-    with open(f"{results_dir}/intermediate_results.pkl", 'wb') as f:
-        pickle.dump(data, f)
-
-
-def save_final_results(results_dir, elo_ratings, match_results, bot_stats):
-    """Save all final results and create visualizations"""
-    # Save raw data
-    data = {
-        'elo_ratings': elo_ratings,
-        'match_results': match_results,
-        'bot_stats': bot_stats
-    }
-    with open(f"{results_dir}/final_results.pkl", 'wb') as f:
-        pickle.dump(data, f)
-
-    # Create DataFrames for easier analysis
-    elo_df = pd.DataFrame(list(elo_ratings.items()), columns=['Bot', 'Elo'])
-    elo_df['Bot_Type'] = elo_df['Bot'].map(lambda x: get_bot_type(x))
-    elo_df['Depth'] = elo_df['Bot'].map(lambda x: get_bot_depth(x))
-    elo_df['Time_Limit'] = elo_df['Bot'].map(lambda x: get_bot_time(x))
-    elo_df['Neural_Gen'] = elo_df['Bot'].map(lambda x: get_neural_generation(x))
-
-    stats_df = pd.DataFrame.from_dict(bot_stats, orient='index').reset_index()
+    stats_df = pd.DataFrame.from_dict(bot_stats_dict, orient='index').reset_index()
     stats_df.rename(columns={'index': 'Bot'}, inplace=True)
+    # Calculate rates for stats_df
+    stats_df['win_rate'] = np.where(stats_df['games_played'] > 0, stats_df['wins'] / stats_df['games_played'], 0)
+    stats_df['loss_rate'] = np.where(stats_df['games_played'] > 0, stats_df['losses'] / stats_df['games_played'], 0)
+    stats_df['draw_rate'] = np.where(stats_df['games_played'] > 0, stats_df['draws'] / stats_df['games_played'], 0)
+    stats_df['avg_moves_per_game'] = np.where(stats_df['games_played'] > 0,
+                                              stats_df['total_moves_in_games'] / stats_df['games_played'], 0)
+    stats_df['avg_time_per_game'] = np.where(stats_df['games_played'] > 0,
+                                             stats_df['total_time_in_games'] / stats_df['games_played'], 0)
 
-    matches_df = pd.DataFrame(match_results)
+    # Raw games data can be saved as CSV too, though it's already in JSON
+    games_df = pd.DataFrame(games_data)
 
-    # Save DataFrames as CSV
-    elo_df.to_csv(f"{results_dir}/elo_ratings.csv", index=False)
-    stats_df.to_csv(f"{results_dir}/bot_stats.csv", index=False)
-    matches_df.to_csv(f"{results_dir}/match_results.csv", index=False)
+    # Match summary DataFrame
+    matches_df = create_match_summary_df(games_data)
 
-    # Generate all visualizations
-    generate_visualizations(results_dir, elo_df, stats_df, matches_df)
+    # --- Save DataFrames as CSV ---
+    elo_df.to_csv(os.path.join(results_dir, "elo_ratings.csv"), index=False)
+    stats_df.to_csv(os.path.join(results_dir, "bot_statistics.csv"), index=False)
+    games_df.to_csv(os.path.join(results_dir, "all_games_detailed.csv"), index=False)
+    matches_df.to_csv(os.path.join(results_dir, "match_summary.csv"), index=False)
 
+    # Save Elo history (list of dicts)
+    with open(os.path.join(results_dir, "elo_history_per_pass.pkl"), 'wb') as f:
+        pickle.dump(elo_history, f)
+    print("CSVs and Elo history saved.")
 
-def generate_visualizations(results_dir, elo_df, stats_df, matches_df):
-    """Generate all visualizations and save them"""
-    plt.figure(figsize=(12, 10))
+    # --- Generate Visualizations ---
+    print("Generating visualizations...")
+    plt.style.use('seaborn-v0_8-whitegrid')  # Using a seaborn style
 
-    # 1. Overall ELO Rankings
-    elo_df_sorted = elo_df.sort_values('Elo', ascending=False).copy()
-    elo_df_sorted['Rank'] = range(1, len(elo_df_sorted) + 1)
-
-    plt.figure(figsize=(14, 10))
-    ax = sns.barplot(x='Elo', y='Bot', data=elo_df_sorted.head(30), hue='Bot_Type', dodge=False)
-    plt.title('Top 30 Bots by ELO Rating')
+    # 1. Overall ELO Rankings (Top 30)
+    plt.figure(figsize=(16, 12))
+    sns.barplot(x='Elo', y='Bot', data=elo_df.head(30), hue='Bot_Type', dodge=False, palette="viridis")
+    plt.title('Top 30 Bots by ELO Rating', fontsize=16)
+    plt.xlabel('ELO Rating', fontsize=12)
+    plt.ylabel('Bot', fontsize=12)
     plt.tight_layout()
-    plt.savefig(f"{results_dir}/top30_elo_ratings.png", dpi=300)
+    plt.savefig(os.path.join(results_dir, "top30_elo_ratings.png"), dpi=300)
     plt.close()
 
     # 2. ELO by Bot Type (Boxplot)
-    plt.figure(figsize=(12, 8))
-    sns.boxplot(x='Bot_Type', y='Elo', data=elo_df)
-    plt.title('ELO Distribution by Bot Type')
-    plt.xticks(rotation=45)
+    plt.figure(figsize=(14, 9))
+    sns.boxplot(x='Elo', y='Bot_Type', data=elo_df, palette="coolwarm",
+                order=elo_df.groupby('Bot_Type')['Elo'].median().sort_values(ascending=False).index)
+    plt.title('ELO Distribution by Bot Type', fontsize=16)
+    plt.xlabel('ELO Rating', fontsize=12)
+    plt.ylabel('Bot Type', fontsize=12)
+    plt.xticks(rotation=45, ha="right")
     plt.tight_layout()
-    plt.savefig(f"{results_dir}/elo_by_bot_type_boxplot.png", dpi=300)
+    plt.savefig(os.path.join(results_dir, "elo_by_bot_type_boxplot.png"), dpi=300)
     plt.close()
 
-    # 3. Win Rate by Bot Type (Heatmap)
-    bot_type_winrates = defaultdict(lambda: defaultdict(lambda: {"wins": 0, "total": 0}))
+    # 3. Win Rate by Bot Type (Heatmap - using match_summary_df)
+    # This requires careful aggregation of win rates between types
+    bot_types = sorted(matches_df['bot1_type'].dropna().unique())
+    winrate_matrix_data = defaultdict(lambda: defaultdict(lambda: {"wins_row": 0, "games_total": 0}))
 
-    for _, match in matches_df.iterrows():
-        bot1_type = match['bot1_type']
-        bot2_type = match['bot2_type']
+    for _, match_row in matches_df.iterrows():
+        type1, type2 = match_row['bot1_type'], match_row['bot2_type']
+        if pd.isna(type1) or pd.isna(type2): continue
 
-        bot_type_winrates[bot1_type][bot2_type]["wins"] += match['bot1_wins']
-        bot_type_winrates[bot1_type][bot2_type]["total"] += match['bot1_wins'] + match['bot2_wins'] + match['draws']
+        # Games where type1 is bot1
+        winrate_matrix_data[type1][type2]["wins_row"] += match_row['bot1_wins']
+        winrate_matrix_data[type1][type2]["games_total"] += match_row['total_games_in_match']
+        # Games where type1 is bot2 (so type2 is bot1)
+        winrate_matrix_data[type2][type1]["wins_row"] += match_row['bot2_wins']
+        winrate_matrix_data[type2][type1]["games_total"] += match_row['total_games_in_match']
 
-        bot_type_winrates[bot2_type][bot1_type]["wins"] += match['bot2_wins']
-        bot_type_winrates[bot2_type][bot1_type]["total"] += match['bot1_wins'] + match['bot2_wins'] + match['draws']
-
-    # Convert to win rates
-    winrate_matrix = {}
-    bot_types = sorted(set(elo_df['Bot_Type']))
-
-    for type1 in bot_types:
-        winrate_matrix[type1] = {}
-        for type2 in bot_types:
-            if type1 == type2:
-                winrate_matrix[type1][type2] = 0.5  # Draw against same type
-            elif bot_type_winrates[type1][type2]["total"] > 0:
-                winrate_matrix[type1][type2] = bot_type_winrates[type1][type2]["wins"] / \
-                                               bot_type_winrates[type1][type2]["total"]
+    winrate_df_data = []
+    for r_type in bot_types:
+        row = []
+        for c_type in bot_types:
+            if r_type == c_type:
+                # For diagonal, could show average win rate or 0.5 if many self-plays
+                # Or calculate from actual self-type matches if they exist and make sense
+                # For now, let's use overall win rate of this type if available, or NaN
+                # This part is tricky for a heatmap of A vs B.
+                # Let's make it win rate of RowType vs ColType.
+                # If RowType == ColType, it's ambiguous. Let's put NaN or 0.5.
+                num = winrate_matrix_data[r_type][c_type]["wins_row"]
+                den = winrate_matrix_data[r_type][c_type]["games_total"]
+                # This counts games where r_type played c_type, and r_type was listed as bot1 or bot2.
+                # The logic above for winrate_matrix_data needs to be symmetric for total games.
+                # Let's simplify: iterate through matches_df, for each (typeA, typeB) pair, sum wins of A vs B and total games.
+                row.append(0.5 if r_type == c_type else np.nan)  # Placeholder for diagonal
             else:
-                winrate_matrix[type1][type2] = np.nan
+                wins = winrate_matrix_data[r_type][c_type]["wins_row"]
+                total = winrate_matrix_data[r_type][c_type]["games_total"]
+                row.append(wins / total if total > 0 else np.nan)
+        winrate_df_data.append(row)
 
-    winrate_df = pd.DataFrame(winrate_matrix)
+    # Rebuilding heatmap logic more directly from matches_df
+    # This heatmap shows win rate of ROW player against COLUMN player
+    type_pairs = defaultdict(lambda: {'wins_A': 0, 'games': 0})
+    for _, row in matches_df.iterrows():
+        t1, t2 = row['bot1_type'], row['bot2_type']
+        if pd.isna(t1) or pd.isna(t2): continue
 
-    plt.figure(figsize=(12, 10))
-    sns.heatmap(winrate_df, annot=True, cmap="YlGnBu", vmin=0, vmax=1,
-                cbar_kws={'label': 'Win Rate (row vs column)'})
-    plt.title('Win Rates Between Bot Types')
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}/bot_type_winrate_heatmap.png", dpi=300)
-    plt.close()
+        # t1 vs t2
+        key1 = tuple(sorted((t1, t2)))  # Canonical key
+        type_pairs[key1]['games'] += row['total_games_in_match']
+        if t1 == key1[0]:  # t1 is the first in sorted tuple
+            type_pairs[key1]['wins_A'] += row['bot1_wins']
+        else:  # t1 is the second in sorted tuple
+            type_pairs[key1]['wins_A'] += row['bot2_wins']  # this is wins for key1[0]
 
-    # 4. Depth vs ELO (for bots with depth parameter)
+    # Create the matrix for heatmap
+    unique_bot_types = sorted(
+        list(set(matches_df['bot1_type'].dropna().tolist() + matches_df['bot2_type'].dropna().tolist())))
+    heatmap_matrix = pd.DataFrame(index=unique_bot_types, columns=unique_bot_types, dtype=float)
+
+    for r_type in unique_bot_types:
+        for c_type in unique_bot_types:
+            if r_type == c_type:
+                heatmap_matrix.loc[r_type, c_type] = 0.5  # Or NaN
+                continue
+
+            key = tuple(sorted((r_type, c_type)))
+            data = type_pairs[key]
+            if data['games'] > 0:
+                if r_type == key[0]:  # r_type is the 'A' bot in (A,B)
+                    heatmap_matrix.loc[r_type, c_type] = data['wins_A'] / data['games']
+                else:  # r_type is the 'B' bot, so we want 1 - win_rate_of_A
+                    heatmap_matrix.loc[r_type, c_type] = (data['games'] - data['wins_A'] - matches_df[
+                        (matches_df['bot1_type'] == c_type) & (matches_df['bot2_type'] == r_type) | (
+                                    matches_df['bot1_type'] == r_type) & (matches_df['bot2_type'] == c_type)][
+                        'draws'].sum()) / data['games']
+            else:
+                heatmap_matrix.loc[r_type, c_type] = np.nan
+
+    # The above heatmap logic is getting complex. A simpler approach:
+    # For each cell (TypeA, TypeB), find all games where TypeA played TypeB.
+    # Calculate win rate of TypeA in those games.
+    # This requires iterating `games_df`.
+
+    # Simpler heatmap: Aggregate wins of row_type vs col_type
+    pivot_data = []
+    for game in games_data:
+        p_o, p_x = game['player_O'], game['player_X']
+        t_o, t_x = get_bot_type(p_o), get_bot_type(p_x)
+        winner = game['winner']
+
+        # O vs X
+        outcome_o = 0.5 if winner == "draw" else (1.0 if winner == p_o else 0.0)
+        pivot_data.append({'row_type': t_o, 'col_type': t_x, 'outcome': outcome_o})
+        # X vs O (for symmetry in data, though pivot_table handles it)
+        outcome_x = 0.5 if winner == "draw" else (1.0 if winner == p_x else 0.0)
+        pivot_data.append({'row_type': t_x, 'col_type': t_o, 'outcome': outcome_x})
+
+    if pivot_data:
+        heatmap_df_raw = pd.DataFrame(pivot_data)
+        heatmap_pivot = heatmap_df_raw.pivot_table(index='row_type', columns='col_type', values='outcome',
+                                                   aggfunc='mean')
+
+        plt.figure(figsize=(15, 12))
+        sns.heatmap(heatmap_pivot, annot=True, cmap="YlGnBu", fmt=".2f", vmin=0, vmax=1,
+                    cbar_kws={'label': 'Win Rate (Row Type vs Column Type)'})
+        plt.title('Win Rates Between Bot Types', fontsize=16)
+        plt.xlabel('Opponent Bot Type (Column)', fontsize=12)
+        plt.ylabel('Bot Type (Row)', fontsize=12)
+        plt.xticks(rotation=45, ha="right")
+        plt.yticks(rotation=0)
+        plt.tight_layout()
+        plt.savefig(os.path.join(results_dir, "bot_type_winrate_heatmap.png"), dpi=300)
+        plt.close()
+    else:
+        print("Skipping bot_type_winrate_heatmap due to no pivot data.")
+
+    # 4. Depth vs ELO
     depth_elo_df = elo_df[elo_df['Depth'].notna()].copy()
-    depth_elo_df['Bot_Type'] = depth_elo_df['Bot_Type'].astype('category')
-
     if not depth_elo_df.empty:
         plt.figure(figsize=(12, 8))
-        sns.scatterplot(x='Depth', y='Elo', hue='Bot_Type', size='Time_Limit',
-                        sizes=(50, 200), data=depth_elo_df, alpha=0.7)
-        plt.title('Depth vs ELO Rating for Different Bot Types')
+        sns.scatterplot(x='Depth', y='Elo', hue='Bot_Type', size='Time_Limit', data=depth_elo_df, sizes=(50, 250),
+                        alpha=0.7, palette="tab10")
+        plt.title('Depth vs ELO Rating', fontsize=16)
+        plt.xlabel('Depth', fontsize=12)
+        plt.ylabel('ELO Rating', fontsize=12)
+        plt.legend(title='Bot Type / Time Limit', bbox_to_anchor=(1.05, 1), loc='upper left')
         plt.tight_layout()
-        plt.savefig(f"{results_dir}/depth_vs_elo.png", dpi=300)
+        plt.savefig(os.path.join(results_dir, "depth_vs_elo.png"), dpi=300)
         plt.close()
 
-    # 5. Time Limit vs ELO (for bots with time limit parameter)
+    # 5. Time Limit vs ELO
     time_elo_df = elo_df[elo_df['Time_Limit'].notna()].copy()
     if not time_elo_df.empty:
         plt.figure(figsize=(12, 8))
-        sns.scatterplot(x='Time_Limit', y='Elo', hue='Bot_Type', size='Depth',
-                        sizes=(50, 200), data=time_elo_df, alpha=0.7)
+        sns.scatterplot(x='Time_Limit', y='Elo', hue='Bot_Type', size='Depth', data=time_elo_df, sizes=(50, 250),
+                        alpha=0.7, palette="tab10")
         plt.xscale('log')
-        plt.title('Time Limit vs ELO Rating (Log Scale)')
+        plt.title('Time Limit (log scale) vs ELO Rating', fontsize=16)
+        plt.xlabel('Time Limit (seconds, log scale)', fontsize=12)
+        plt.ylabel('ELO Rating', fontsize=12)
+        plt.legend(title='Bot Type / Depth', bbox_to_anchor=(1.05, 1), loc='upper left')
         plt.tight_layout()
-        plt.savefig(f"{results_dir}/time_vs_elo.png", dpi=300)
+        plt.savefig(os.path.join(results_dir, "time_vs_elo.png"), dpi=300)
         plt.close()
 
-    # 6. Neural Bot Generation vs ELO
-    neural_gen_df = elo_df[elo_df['Neural_Gen'].notna()].copy()
-    if not neural_gen_df.empty:
+    # 6. MCTS Iterations vs ELO
+    mcts_elo_df = elo_df[elo_df['MCTS_Iter'].notna()].copy()
+    if not mcts_elo_df.empty:
         plt.figure(figsize=(12, 8))
-        sns.scatterplot(x='Neural_Gen', y='Elo', data=neural_gen_df, alpha=0.7)
-        plt.title('Neural Bot Generation vs ELO Rating')
+        sns.scatterplot(x='MCTS_Iter', y='Elo', hue='Bot_Type', data=mcts_elo_df, alpha=0.7, s=100, palette="tab10")
+        plt.xscale('log')
+        plt.title('MCTS Iterations (log scale) vs ELO Rating', fontsize=16)
+        plt.xlabel('MCTS Iterations (log scale)', fontsize=12)
+        plt.ylabel('ELO Rating', fontsize=12)
+        plt.legend(title='Bot Type', bbox_to_anchor=(1.05, 1), loc='upper left')
         plt.tight_layout()
-        plt.savefig(f"{results_dir}/neural_gen_vs_elo.png", dpi=300)
+        plt.savefig(os.path.join(results_dir, "mcts_iter_vs_elo.png"), dpi=300)
         plt.close()
 
-    # 7. Win/Draw/Loss Distribution
-    stats_df['total_games'] = stats_df['wins'] + stats_df['losses'] + stats_df['draws']
-    stats_df['win_rate'] = stats_df['wins'] / stats_df['total_games']
-    stats_df['draw_rate'] = stats_df['draws'] / stats_df['total_games']
-    stats_df['loss_rate'] = stats_df['losses'] / stats_df['total_games']
+    # 7. Win/Draw/Loss Distribution (Top 20 by Win Rate)
+    # Ensure 'win_rate' is in stats_df from earlier calculation
+    top_bots_stats = stats_df.sort_values('win_rate', ascending=False).head(20)
+    if not top_bots_stats.empty:
+        plt.figure(figsize=(16, 10))
+        top_bots_stats.set_index('Bot')[['win_rate', 'draw_rate', 'loss_rate']].plot(
+            kind='bar', stacked=True, figsize=(16, 10), colormap="Spectral"
+        )
+        plt.title('Win/Draw/Loss Distribution for Top 20 Bots (by Win Rate)', fontsize=16)
+        plt.xlabel('Bot', fontsize=12)
+        plt.ylabel('Proportion of Games', fontsize=12)
+        plt.xticks(rotation=75, ha="right")
+        plt.legend(['Wins', 'Draws', 'Losses'], title='Outcome')
+        plt.tight_layout()
+        plt.savefig(os.path.join(results_dir, "top20_wdl_distribution.png"), dpi=300)
+        plt.close()
 
-    top_bots = stats_df.sort_values('win_rate', ascending=False).head(20)
+    # 8. Elo History Plot (Top N bots)
+    if elo_history:
+        num_bots_to_plot = 10
+        top_n_bots_final_elo = elo_df.head(num_bots_to_plot)['Bot'].tolist()
 
-    plt.figure(figsize=(14, 10))
-    top_bots_stacked = top_bots[['Bot', 'win_rate', 'draw_rate', 'loss_rate']].set_index('Bot')
-    ax = top_bots_stacked.plot(kind='bar', stacked=True, figsize=(14, 10),
-                               color=['green', 'gray', 'red'])
-    plt.title('Win/Draw/Loss Distribution for Top 20 Bots')
-    plt.xlabel('Bot')
-    plt.ylabel('Proportion')
-    plt.legend(['Wins', 'Draws', 'Losses'])
-    plt.xticks(rotation=90)
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}/top20_wdl_distribution.png", dpi=300)
-    plt.close()
+        history_df_data = []
+        for pass_idx, pass_elos in enumerate(elo_history):
+            for bot_name in top_n_bots_final_elo:
+                if bot_name in pass_elos:
+                    history_df_data.append({'Pass': pass_idx + 1, 'Bot': bot_name, 'Elo': pass_elos[bot_name]})
 
-    # 8. Average Moves per Match by Bot Type
-    stats_df['avg_moves'] = stats_df['total_moves'] / stats_df[
-        'matches_played'] / 2  # Divide by 2 as moves are counted twice
+        if history_df_data:
+            elo_history_df_plot = pd.DataFrame(history_df_data)
+            plt.figure(figsize=(14, 8))
+            sns.lineplot(data=elo_history_df_plot, x='Pass', y='Elo', hue='Bot', marker='o', palette="tab10")
+            plt.title(f'Elo Evolution for Top {num_bots_to_plot} Bots Over Passes', fontsize=16)
+            plt.xlabel('Elo Calculation Pass Number', fontsize=12)
+            plt.ylabel('Elo Rating', fontsize=12)
+            plt.legend(title='Bot', bbox_to_anchor=(1.05, 1), loc='upper left')
+            plt.grid(True, which="both", ls="-", alpha=0.5)
+            plt.tight_layout()
+            plt.savefig(os.path.join(results_dir, "elo_history_top_bots.png"), dpi=300)
+            plt.close()
 
-    plt.figure(figsize=(12, 8))
-    sns.boxplot(x='type', y='avg_moves', data=stats_df)
-    plt.title('Average Moves per Match by Bot Type')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}/avg_moves_by_bot_type.png", dpi=300)
-    plt.close()
+    # 9. First Player Advantage by Bot Type (using games_df)
+    first_player_advantage_data = []
+    for _, game_row in games_df.iterrows():
+        player_o_type = get_bot_type(game_row['player_O'])
+        if game_row['winner'] == game_row['player_O']:
+            first_player_advantage_data.append({'Bot_Type': player_o_type, 'Outcome': 1})  # Win
+        elif game_row['winner'] == 'draw':
+            first_player_advantage_data.append({'Bot_Type': player_o_type, 'Outcome': 0.5})  # Draw
+        else:
+            first_player_advantage_data.append({'Bot_Type': player_o_type, 'Outcome': 0})  # Loss
 
-    # 9. Find interesting records
-    records = {}
+    if first_player_advantage_data:
+        fpa_df = pd.DataFrame(first_player_advantage_data)
+        fpa_summary = fpa_df.groupby('Bot_Type')['Outcome'].mean().reset_index(name='First_Player_Win_Rate_Equivalent')
+        fpa_summary = fpa_summary.sort_values('First_Player_Win_Rate_Equivalent', ascending=False)
 
-    # Strongest bot
-    strongest_bot = elo_df_sorted.iloc[0]['Bot']
-    records['strongest_bot'] = strongest_bot
-    records['strongest_bot_elo'] = elo_df_sorted.iloc[0]['Elo']
+        plt.figure(figsize=(14, 8))
+        sns.barplot(x='First_Player_Win_Rate_Equivalent', y='Bot_Type', data=fpa_summary, palette="coolwarm_r")
+        plt.axvline(x=0.5, color='black', linestyle='--', label='No Advantage (0.5)')
+        plt.title('First Player Advantage (Win+0.5*Draw Rate) by Bot Type', fontsize=16)
+        plt.xlabel('First Player Score Rate (Win=1, Draw=0.5, Loss=0)', fontsize=12)
+        plt.ylabel('Bot Type (of First Player)', fontsize=12)
+        plt.legend()
+        plt.tight_layout()
+        plt.savefig(os.path.join(results_dir, "first_player_advantage.png"), dpi=300)
+        plt.close()
 
-    # Strongest bot by type
-    strongest_by_type = {}
-    for bot_type in elo_df['Bot_Type'].unique():
-        type_df = elo_df[elo_df['Bot_Type'] == bot_type].sort_values('Elo', ascending=False)
-        if not type_df.empty:
-            strongest = type_df.iloc[0]['Bot']
-            elo = type_df.iloc[0]['Elo']
-            strongest_by_type[bot_type] = {'bot': strongest, 'elo': elo}
-    records['strongest_by_type'] = strongest_by_type
-
-    # Most draws
-    most_draws_bot = stats_df.loc[stats_df['draws'].idxmax()]
-    records['most_draws_bot'] = most_draws_bot['Bot']
-    records['most_draws_count'] = most_draws_bot['draws']
-
-    # Most decisive (fewest draws)
-    stats_df['draw_ratio'] = stats_df['draws'] / stats_df['total_games']
-    most_decisive = stats_df.loc[stats_df[stats_df['matches_played'] > 10]['draw_ratio'].idxmin()]
-    records['most_decisive_bot'] = most_decisive['Bot']
-    records['most_decisive_draw_ratio'] = most_decisive['draw_ratio']
-
-    # Save records
-    with open(f"{results_dir}/interesting_records.txt", 'w') as f:
+    # --- Generate Interesting Records Text File ---
+    print("Generating interesting records...")
+    with open(os.path.join(results_dir, "interesting_records.txt"), 'w') as f:
         f.write("INTERESTING TOURNAMENT RECORDS\n")
         f.write("============================\n\n")
+        f.write(f"Elo Calculation Parameters:\n")
+        f.write(f"  Initial Elo: {INITIAL_ELO}\n")
+        f.write(f"  Number of Passes: {NUM_ELO_PASSES}\n")
+        f.write(f"  K-Factor Range: {K_FACTOR_START} (start) to {K_FACTOR_END} (end)\n\n")
 
-        f.write(f"Strongest Bot: {records['strongest_bot']} (ELO: {records['strongest_bot_elo']:.1f})\n\n")
+        strongest_bot = elo_df.iloc[0]
+        f.write(
+            f"Strongest Bot: {strongest_bot['Bot']} (ELO: {strongest_bot['Elo']:.1f}, Type: {strongest_bot['Bot_Type']})\n\n")
 
         f.write("Strongest Bot by Type:\n")
-        for bot_type, data in records['strongest_by_type'].items():
-            f.write(f"  {bot_type}: {data['bot']} (ELO: {data['elo']:.1f})\n")
+        for bot_type in elo_df['Bot_Type'].unique():
+            type_df = elo_df[elo_df['Bot_Type'] == bot_type].sort_values('Elo', ascending=False)
+            if not type_df.empty:
+                s_bot = type_df.iloc[0]
+                f.write(f"  {bot_type}: {s_bot['Bot']} (ELO: {s_bot['Elo']:.1f}, Overall Rank: {s_bot['Rank']})\n")
         f.write("\n")
 
-        f.write(f"Most Draws: {records['most_draws_bot']} ({records['most_draws_count']} draws)\n")
+        # Most draws (bot)
+        most_draws_bot_series = stats_df.loc[stats_df['draws'].idxmax()]
         f.write(
-            f"Most Decisive Bot: {records['most_decisive_bot']} (Draw ratio: {records['most_decisive_draw_ratio']:.2f})\n")
+            f"Bot with Most Draws: {most_draws_bot_series['Bot']} ({most_draws_bot_series['draws']} draws, Draw Rate: {most_draws_bot_series['draw_rate']:.2%})\n")
 
-        # Find biggest upset (match where weaker bot beat stronger bot by largest Elo gap)
-        biggest_upset = None
-        biggest_upset_gap = 0
-
-        for _, match in matches_df.iterrows():
-            bot1_elo = elo_df[elo_df['Bot'] == match['bot1']]['Elo'].values[0]
-            bot2_elo = elo_df[elo_df['Bot'] == match['bot2']]['Elo'].values[0]
-
-            # Check if bot2 (weaker) beat bot1 (stronger)
-            if bot1_elo > bot2_elo and match['bot2_wins'] > match['bot1_wins']:
-                gap = bot1_elo - bot2_elo
-                if gap > biggest_upset_gap:
-                    biggest_upset_gap = gap
-                    biggest_upset = {
-                        'stronger_bot': match['bot1'],
-                        'stronger_elo': bot1_elo,
-                        'weaker_bot': match['bot2'],
-                        'weaker_elo': bot2_elo,
-                        'stronger_wins': match['bot1_wins'],
-                        'weaker_wins': match['bot2_wins'],
-                        'draws': match['draws']
-                    }
-
-            # Check if bot1 (weaker) beat bot2 (stronger)
-            if bot2_elo > bot1_elo and match['bot1_wins'] > match['bot2_wins']:
-                gap = bot2_elo - bot1_elo
-                if gap > biggest_upset_gap:
-                    biggest_upset_gap = gap
-                    biggest_upset = {
-                        'stronger_bot': match['bot2'],
-                        'stronger_elo': bot2_elo,
-                        'weaker_bot': match['bot1'],
-                        'weaker_elo': bot1_elo,
-                        'stronger_wins': match['bot2_wins'],
-                        'weaker_wins': match['bot1_wins'],
-                        'draws': match['draws']
-                    }
-
-        if biggest_upset:
-            f.write("\nBiggest Upset:\n")
-            f.write(f"  {biggest_upset['weaker_bot']} (ELO: {biggest_upset['weaker_elo']:.1f}) defeated ")
-            f.write(f"{biggest_upset['stronger_bot']} (ELO: {biggest_upset['stronger_elo']:.1f})\n")
+        # Most decisive (fewest draws relative to games played, min 20 games)
+        decisive_candidates = stats_df[stats_df['games_played'] >= 20].copy()
+        if not decisive_candidates.empty:
+            most_decisive_bot_series = decisive_candidates.loc[decisive_candidates['draw_rate'].idxmin()]
             f.write(
-                f"  Score: {biggest_upset['weaker_wins']}-{biggest_upset['stronger_wins']}-{biggest_upset['draws']} (W-L-D)\n")
-            f.write(f"  ELO Gap: {biggest_upset_gap:.1f} points\n")
+                f"Most Decisive Bot (min 20 games): {most_decisive_bot_series['Bot']} (Draw Rate: {most_decisive_bot_series['draw_rate']:.2%})\n\n")
 
-            # Find closest rivalry (most balanced matches)
-        closest_rivalry = None
-        smallest_win_diff = float('inf')
+        # Biggest Upset (single game)
+        biggest_upset_game = None
+        max_elo_diff_upset = -1
 
-        for _, match in matches_df.iterrows():
-            if match['bot1_wins'] + match['bot2_wins'] > 0:  # Ensure there were some decisive games
-                win_diff = abs(match['bot1_wins'] - match['bot2_wins'])
-                if win_diff < smallest_win_diff:
-                    smallest_win_diff = win_diff
-                    closest_rivalry = {
-                        'bot1': match['bot1'],
-                        'bot2': match['bot2'],
-                        'bot1_wins': match['bot1_wins'],
-                        'bot2_wins': match['bot2_wins'],
-                        'draws': match['draws']
+        for _, game_row in games_df.iterrows():
+            p_o, p_x = game_row['player_O'], game_row['player_X']
+            winner = game_row['winner']
+
+            elo_p_o = elo_df.loc[elo_df['Bot'] == p_o, 'Elo'].iloc[0]
+            elo_p_x = elo_df.loc[elo_df['Bot'] == p_x, 'Elo'].iloc[0]
+
+            if winner == p_o and elo_p_o < elo_p_x:  # Player O won despite lower Elo
+                elo_diff = elo_p_x - elo_p_o
+                if elo_diff > max_elo_diff_upset:
+                    max_elo_diff_upset = elo_diff
+                    biggest_upset_game = {
+                        'winner': p_o, 'winner_elo': elo_p_o,
+                        'loser': p_x, 'loser_elo': elo_p_x,
+                        'diff': elo_diff, 'game_id': game_row['game_global_id']
+                    }
+            elif winner == p_x and elo_p_x < elo_p_o:  # Player X won despite lower Elo
+                elo_diff = elo_p_o - elo_p_x
+                if elo_diff > max_elo_diff_upset:
+                    max_elo_diff_upset = elo_diff
+                    biggest_upset_game = {
+                        'winner': p_x, 'winner_elo': elo_p_x,
+                        'loser': p_o, 'loser_elo': elo_p_o,
+                        'diff': elo_diff, 'game_id': game_row['game_global_id']
                     }
 
-        if closest_rivalry:
-            f.write("\nClosest Rivalry:\n")
-            f.write(f"  {closest_rivalry['bot1']} vs {closest_rivalry['bot2']}\n")
-            f.write(
-                f"  Score: {closest_rivalry['bot1_wins']}-{closest_rivalry['bot2_wins']}-{closest_rivalry['draws']} (W-L-D)\n")
+        if biggest_upset_game:
+            f.write("Biggest Upset (Single Game):\n")
+            f.write(f"  Game ID: {biggest_upset_game['game_id']}\n")
+            f.write(f"  Winner: {biggest_upset_game['winner']} (Elo: {biggest_upset_game['winner_elo']:.1f})\n")
+            f.write(f"  Loser: {biggest_upset_game['loser']} (Elo: {biggest_upset_game['loser_elo']:.1f})\n")
+            f.write(f"  Elo Difference Overcome: {biggest_upset_game['diff']:.1f} points\n\n")
 
-        # Largest Elo gap between consecutive ranks
-        largest_gap = 0
-        largest_gap_bots = None
+        # Closest Rivalry (Pair of bots with most balanced win/loss over many games)
+        # Using matches_df for this
+        if not matches_df.empty:
+            matches_df_min_games = matches_df[
+                matches_df['total_games_in_match'] >= 10].copy()  # Min 10 games for a rivalry
+            if not matches_df_min_games.empty:
+                matches_df_min_games['score_diff_abs'] = abs(
+                    matches_df_min_games['bot1_wins'] - matches_df_min_games['bot2_wins'])
+                matches_df_min_games['balance_metric'] = matches_df_min_games['score_diff_abs'] / matches_df_min_games[
+                    'total_games_in_match']
 
-        for i in range(len(elo_df_sorted) - 1):
-            gap = elo_df_sorted.iloc[i]['Elo'] - elo_df_sorted.iloc[i + 1]['Elo']
-            if gap > largest_gap:
-                largest_gap = gap
-                largest_gap_bots = {
-                    'higher_bot': elo_df_sorted.iloc[i]['Bot'],
-                    'higher_elo': elo_df_sorted.iloc[i]['Elo'],
-                    'lower_bot': elo_df_sorted.iloc[i + 1]['Bot'],
-                    'lower_elo': elo_df_sorted.iloc[i + 1]['Elo'],
-                    'ranks': f"{i + 1}-{i + 2}"
-                }
+                closest_rivalry_series = matches_df_min_games.sort_values(by=['balance_metric', 'total_games_in_match'],
+                                                                          ascending=[True, False]).iloc[0]
+                f.write("Closest Rivalry (min 10 games, most balanced W/L ratio):\n")
+                f.write(f"  Bots: {closest_rivalry_series['bot1']} vs {closest_rivalry_series['bot2']}\n")
+                f.write(
+                    f"  Score: {closest_rivalry_series['bot1_wins']} (Bot1) - {closest_rivalry_series['bot2_wins']} (Bot2) - {closest_rivalry_series['draws']} (Draws)\n")
+                f.write(f"  Total Games: {closest_rivalry_series['total_games_in_match']}\n")
+                f.write(
+                    f"  Balance Metric (abs_score_diff/total_games): {closest_rivalry_series['balance_metric']:.3f}\n\n")
 
-        if largest_gap_bots:
-            f.write("\nLargest ELO Gap Between Consecutive Ranks:\n")
-            f.write(f"  Ranks {largest_gap_bots['ranks']}: {largest_gap:.1f} ELO points\n")
-            f.write(f"  {largest_gap_bots['higher_bot']} ({largest_gap_bots['higher_elo']:.1f}) vs ")
-            f.write(f"{largest_gap_bots['lower_bot']} ({largest_gap_bots['lower_elo']:.1f})\n")
-
-        # 10. ELO distribution by bot family and parameters
-    for bot_type in elo_df['Bot_Type'].unique():
-        type_df = elo_df[elo_df['Bot_Type'] == bot_type].sort_values('Elo', ascending=False)
-        if len(type_df) > 1:  # Only create graph if multiple bots of this type
-            plt.figure(figsize=(14, 10))
-            ax = sns.barplot(x='Elo', y='Bot', data=type_df)
-            plt.title(f'ELO Ratings for {bot_type} Bots')
-            plt.tight_layout()
-            plt.savefig(f"{results_dir}/elo_{bot_type}.png", dpi=300)
-            plt.close()
-
-        # 11. Depth vs ELO per bot type
-    for bot_type in depth_elo_df['Bot_Type'].unique():
-        type_df = depth_elo_df[depth_elo_df['Bot_Type'] == bot_type]
-        if len(type_df) > 1:  # Only create graph if multiple bots of this type
-            plt.figure(figsize=(12, 8))
-            # If time limit exists, use it for coloring
-            if 'Time_Limit' in type_df.columns and not type_df['Time_Limit'].isna().all():
-                sns.scatterplot(x='Depth', y='Elo', hue='Time_Limit', size='Elo',
-                                sizes=(50, 200), data=type_df, alpha=0.7)
-                plt.title(f'Depth vs ELO for {bot_type} Bots')
-            else:
-                sns.scatterplot(x='Depth', y='Elo', size='Elo',
-                                sizes=(50, 200), data=type_df, alpha=0.7)
-                plt.title(f'Depth vs ELO for {bot_type} Bots')
-            plt.tight_layout()
-            plt.savefig(f"{results_dir}/depth_vs_elo_{bot_type}.png", dpi=300)
-            plt.close()
-
-        # 12. Performance tiers
-    elo_df_sorted['Tier'] = pd.qcut(elo_df_sorted['Elo'], q=5, labels=['E', 'D', 'C', 'B', 'A'])
-
-    tier_counts = elo_df_sorted.groupby(['Bot_Type', 'Tier']).size().unstack(fill_value=0)
-
-    plt.figure(figsize=(14, 10))
-    tier_counts.plot(kind='bar', stacked=True, colormap='viridis')
-    plt.title('Bot Types by Performance Tier')
-    plt.xlabel('Bot Type')
-    plt.ylabel('Count')
-    plt.legend(title='Tier')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}/bot_types_by_tier.png", dpi=300)
-    plt.close()
-
-    # 13. Create an aggregate performance summary
-    summary_stats = stats_df.groupby('type').agg({
-        'wins': 'sum',
-        'losses': 'sum',
-        'draws': 'sum',
-        'total_moves': 'sum',
-        'total_time': 'sum',
-        'matches_played': 'sum',
-        'Bot': 'count'
-    }).reset_index()
-
-    summary_stats['win_rate'] = summary_stats['wins'] / (
-                summary_stats['wins'] + summary_stats['losses'] + summary_stats['draws'])
-    summary_stats['avg_moves_per_game'] = summary_stats['total_moves'] / (summary_stats['matches_played'] * 2)
-    summary_stats['avg_time_per_move'] = summary_stats['total_time'] / summary_stats['total_moves']
-
-    summary_stats = summary_stats.rename(columns={'Bot': 'count', 'type': 'Bot_Type'})
-
-    summary_stats.to_csv(f"{results_dir}/bot_type_summary.csv", index=False)
-
-    # 14. First player advantage analysis
-    first_player_stats = {}
-
-    for _, match in matches_df.iterrows():
-        # We don't know directly which bot went first in each individual game,
-        # but we know they alternated and played an equal number of games as first player
-        total_games = match['bot1_wins'] + match['bot2_wins'] + match['draws']
-        first_player_wins = (match['bot1_wins'] + match['bot2_wins']) / 2  # Estimate
-
-        # Update stats
-        for bot_type in [match['bot1_type'], match['bot2_type']]:
-            if bot_type not in first_player_stats:
-                first_player_stats[bot_type] = {'games': 0, 'first_player_wins': 0}
-
-            first_player_stats[bot_type]['games'] += total_games / 2  # Each bot went first in half the games
-            first_player_stats[bot_type]['first_player_wins'] += first_player_wins / 2  # Half for each bot type
-
-    # Calculate first player advantage rate
-    for bot_type in first_player_stats:
-        first_player_stats[bot_type]['advantage_rate'] = (
-                first_player_stats[bot_type]['first_player_wins'] /
-                first_player_stats[bot_type]['games']
-        )
-
-    # Create DataFrame and plot
-    fpa_df = pd.DataFrame.from_dict(first_player_stats, orient='index').reset_index()
-    fpa_df.rename(columns={'index': 'Bot_Type'}, inplace=True)
-
-    plt.figure(figsize=(12, 8))
-    sns.barplot(x='Bot_Type', y='advantage_rate', data=fpa_df)
-    plt.axhline(y=0.5, color='r', linestyle='--')  # 0.5 line indicating no advantage
-    plt.title('First Player Advantage by Bot Type')
-    plt.xlabel('Bot Type')
-    plt.ylabel('First Player Win Rate')
-    plt.xticks(rotation=45)
-    plt.tight_layout()
-    plt.savefig(f"{results_dir}/first_player_advantage.png", dpi=300)
-    plt.close()
-
-    # Return analysis complete message
-    return "Analysis complete. Results saved to " + results_dir
+    print("Analysis complete. Results saved to " + results_dir)
+    return results_dir
 
 
+# --- Main Execution ---
 def main():
-    # Import participants list from the main script
-    # participants declared in the main script
+    parser = argparse.ArgumentParser(
+        description="Analyze tournament game results, calculate Elo, and generate stats/visualizations.")
+    parser.add_argument("--output_base", type=str, default="tournament_analysis",
+                        help="Base name for the output directory.")
+    json_file_path = r'C:\Dev\Python\Puissance4-L1ST\tournament_raw_games_20250509_215643\all_games_results_20250509_215643.json'
+    args = parser.parse_args()
 
-    print("Starting connect four bot tournament")
-    print(f"Number of bots: {len(participants)}")
+    if not os.path.exists(json_file_path):
+        print(f"Error: JSON file not found at {json_file_path}")
+        return
 
-    start_time = time.time()
-    elo_ratings, match_results, bot_stats = run_tournament(participants, num_games_per_match=2, max_workers=None)
-    end_time = time.time()
+    print(f"Loading game data from: {json_file_path}")
+    with open(json_file_path, 'r') as f:
+        all_games_data = json.load(f)
 
-    print(f"Tournament completed in {end_time - start_time:.2f} seconds")
-    print(f"Results saved in tournament_results_{datetime.now().strftime('%Y%m%d_%H%M%S')}")
+    if not all_games_data:
+        print("Error: No game data loaded from the JSON file.")
+        return
+    print(f"Loaded {len(all_games_data)} game records.")
 
-    # Print top 10 bots
-    top_bots = sorted(elo_ratings.items(), key=lambda x: x[1], reverse=True)[:10]
-    print("\nTop 10 Bots:")
-    for i, (bot_name, elo) in enumerate(top_bots, 1):
-        print(f"{i}. {bot_name}: {elo:.1f}")
+    # Extract all unique bot names from the game data
+    all_bot_names = set()
+    for game in all_games_data:
+        all_bot_names.add(game["player_O"])
+        all_bot_names.add(game["player_X"])
+    all_bot_names = sorted(list(all_bot_names))
+    print(f"Found {len(all_bot_names)} unique bot participants in the games.")
+
+    # 1. Calculate Elo Ratings
+    final_elo_ratings, elo_history = run_elo_calculation_passes(all_games_data, all_bot_names)
+
+    # 2. Aggregate Bot Statistics
+    print("Aggregating bot statistics...")
+    bot_stats_aggregated = aggregate_bot_statistics(all_games_data, all_bot_names)
+    print("Statistics aggregation finished.")
+
+    # 3. Save results and generate visualizations
+    save_results_and_visualize(args.output_base, final_elo_ratings, bot_stats_aggregated, all_games_data, elo_history)
 
 
 if __name__ == "__main__":
+    start_time = time.time()
     main()
+    end_time = time.time()
+    print(f"Total analysis script execution time: {end_time - start_time:.2f} seconds.")

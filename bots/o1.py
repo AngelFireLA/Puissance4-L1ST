@@ -1,5 +1,4 @@
 import math
-import random
 import time
 from bots.bot import Bot
 
@@ -78,7 +77,7 @@ class GrandMasterBot(Bot):
 
         if not best_cols:
             # In theory, should never happen, but fallback
-            return random.choice(list(plateau.colonnes_jouables))
+            return list(plateau.colonnes_jouables)[0]
 
         # --------------------------------------------------------------
         # 3) Final choice among best moves
@@ -88,7 +87,7 @@ class GrandMasterBot(Bot):
         # We want columns near the center to have higher weight
         # so the bot doesn't always pick leftmost from the best set.
         weights = [1 + (3 - abs(c - center_col)) for c in best_cols]
-        return random.choices(best_cols, weights=weights, k=1)[0]
+        return sorted(zip(best_cols, weights), key=lambda x: x[1], reverse=True)[0][0]
 
     # ----------------------------------------------------------------------
     #  INTERNAL FUNCTIONS

@@ -6,6 +6,7 @@ class Partie:
         self.plateau = plateau.Plateau(colonnes, lignes)
         self.joueur1 = None
         self.joueur2 = None
+        self.joueurs = []
         self.tour = 0
         self.historique_des_coups = []
         self.tour_joueur = 1
@@ -13,8 +14,10 @@ class Partie:
     def ajouter_joueur(self, joueur):
         if not self.joueur1:
             self.joueur1 = joueur
+            self.joueurs = [joueur]
         elif not self.joueur2:
             self.joueur2 = joueur
+            self.joueurs.append(joueur)
         else:
             raise ValueError("La partie est déjà pleine")
 

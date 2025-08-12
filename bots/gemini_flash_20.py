@@ -1,4 +1,3 @@
-import random
 import time
 
 from moteur.joueur import Joueur
@@ -81,7 +80,7 @@ class AlphaConnect(Joueur):
                 break # Stop if we ran out of time
 
         if best_move is None:
-            best_move = random.choice(list(board.colonnes_jouables))
+            best_move = list(board.colonnes_jouables)[0]
 
         return best_move
 

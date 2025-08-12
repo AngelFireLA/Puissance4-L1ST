@@ -1,4 +1,3 @@
-import random
 import time
 
 from bots.bot import Bot

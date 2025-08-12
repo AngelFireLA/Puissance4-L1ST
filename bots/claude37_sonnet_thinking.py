@@ -1,4 +1,3 @@
-import random
 import time
 from bots.bot import Bot
 
@@ -64,7 +63,7 @@ class QuantumConnect4(Bot):
                 return col
 
         # Iterative deepening
-        best_move = random.choice(list(plateau.colonnes_jouables))  # Fallback
+        best_move = list(plateau.colonnes_jouables)  # Fallback
         best_score = float('-inf')
 
         # Start with lower depth and increase as time allows

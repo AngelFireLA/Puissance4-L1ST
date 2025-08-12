@@ -1,5 +1,3 @@
-import random
-
 from bots.bot import Bot
 
 class Negamax2(Bot):
@@ -30,7 +28,6 @@ class Negamax2(Bot):
                 meilleur_coups = [col]
             elif score == meilleur_score:
                 meilleur_coups.append(col)
-                random.shuffle(meilleur_coups)
 
         # print()
         return meilleur_coups[0] if meilleur_coups is not None else 0

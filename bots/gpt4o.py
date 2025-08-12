@@ -1,4 +1,3 @@
-import random
 import time
 
 from bots.bot import Bot
@@ -19,7 +18,7 @@ class AlphaConnectX(Bot):
     def trouver_coup(self, plateau, joueur2) -> int:
         debut = time.time()
         meilleur_score = -float('inf')
-        meilleur_coup = random.choice(list(plateau.colonnes_jouables))
+        meilleur_coup = list(plateau.colonnes_jouables)[0]
         self.table_transposition = {}
         profondeur = self.profondeur
 

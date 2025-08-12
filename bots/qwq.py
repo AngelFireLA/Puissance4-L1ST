@@ -1,4 +1,3 @@
-import random
 from moteur.joueur import Joueur
 
 class AdvancedNegamaxBot(Joueur):
@@ -31,7 +30,7 @@ class AdvancedNegamaxBot(Joueur):
             if score > best_score:
                 best_score = score
                 best_move = col
-        return best_move if best_move is not None else random.choice(list(plateau.colonnes_jouables))
+        return best_move if best_move is not None else list(plateau.colonnes_jouables)[0]
 
     def negamax(self, plateau, profondeur, symbole, alpha, beta):
         key = self._state_key(plateau, profondeur, symbole)

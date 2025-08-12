@@ -1,0 +1,57 @@
+Bot,Elo,Bot_Type,Depth,Time_Limit,Neural_Gen,MCTS_Iter,Rank
+claude3.7-sonnet-thinking P8,1377.0953486601834,claude3.7-sonnet-thinking,8.0,,,,1
+QwQ P6,1376.0863330641153,QwQ,6.0,,,,2
+gemini-pro-2.0 P8,1306.1637080836117,gemini-pro-2.0,8.0,,,,3
+gpt4o P8,1301.943461193639,gpt4o,8.0,,,,4
+o3-mini-high P6,1291.4579914138562,o3-mini-high,6.0,,,,5
+Gemini2.5 Pro P6,1273.5689814096947,Gemini2.5 Pro,6.0,,,2.0,6
+gpt4o P6,1257.5380028155444,gpt4o,6.0,,,,7
+gpt4o P10,1240.2458789414484,gpt4o,10.0,,,,8
+gemini-flash-2.0-thinking P8,1222.0960208028189,gemini-flash-2.0-thinking,8.0,,,,9
+Negamax4 P8,1199.407828306578,Negamax4,8.0,,,,10
+Negamax5 P6,1199.1879585770648,Negamax5,6.0,,,,11
+o4-mini-high P12,1195.9202625897324,o4-mini-high,12.0,,,,12
+Negamax4 P6,1191.2583200619201,Negamax4,6.0,,,,13
+o4-mini-high P10,1188.8674302983186,o4-mini-high,10.0,,,,14
+Negamax5 P10,1184.3902058160045,Negamax5,10.0,,,,15
+Negamax5B P10,1184.2898135068594,Negamax5B,10.0,,,,16
+LeChat P6,1184.120335715669,LeChat,6.0,,,,17
+Negamax5B P6,1183.0031862717642,Negamax5B,6.0,,,,18
+o4-mini-high P8,1176.742624194882,o4-mini-high,8.0,,,,19
+Negamax4 P10,1171.339074757612,Negamax4,10.0,,,,20
+o4-mini-high P6,1148.6139546042698,o4-mini-high,6.0,,,,21
+Negamax5B P8,1147.1852798953016,Negamax5B,8.0,,,,22
+Negamax4 P4 T0.25,1139.009789633473,Negamax4,4.0,0.25,,,23
+claude3.7-sonnet-thinking P6,1136.7897589267739,claude3.7-sonnet-thinking,6.0,,,,24
+Gemini2.5 Pro P6 T0.25,1131.1573503244279,Gemini2.5 Pro,6.0,0.25,,2.0,25
+gemini-pro-2.0 P6,1129.821522588984,gemini-pro-2.0,6.0,,,,26
+Negamax5 P8,1128.33323357816,Negamax5,8.0,,,,27
+Gemini2.5 Pro P4 T0.25,1120.804527710612,Gemini2.5 Pro,4.0,0.25,,2.0,28
+o1 P8,1099.9608949387864,o1,8.0,,,,29
+claude3.7-sonnet P10,1099.210966273377,claude3.7-sonnet,10.0,,,,30
+gemini-flash-2.0-thinking P6,1092.3845247874485,gemini-flash-2.0-thinking,6.0,,,,31
+claude3.7-sonnet P8,1059.0502203330632,claude3.7-sonnet,8.0,,,,32
+claude3.7-sonnet P6,1049.9643352516805,claude3.7-sonnet,6.0,,,,33
+LeChat P8,1023.099019058276,LeChat,8.0,,,,34
+LeChat P10,1000.3587264195455,LeChat,10.0,,,,35
+same.dev P6,970.1971366337203,same.dev,6.0,,,,36
+o1 P6,953.251782616975,o1,6.0,,,,37
+Negamax2 P6,828.7035443816261,Negamax2,6.0,,,,38
+o3 P10,816.8512859824699,o3,10.0,,,,39
+Negamax P6,812.6043360258798,Negamax,6.0,,,,40
+Negamax2 P8,804.8666599197281,Negamax2,8.0,,,,41
+Negamax3 P6,799.2147505949348,Negamax3,6.0,,,,42
+Qwen3 P6,793.8855013201776,Qwen3,6.0,,,,43
+o3 P6,785.5731091679808,o3,6.0,,,,44
+Negamax3 P8,776.5323179555165,Negamax3,8.0,,,,45
+Gemini2.5 Flash Thinking P8,753.1827861135791,Gemini2.5 Flash Thinking,8.0,,,2.0,46
+Gemma2 P8,743.3742457664605,Gemma2,8.0,,,,47
+o3 P8,719.1554689808876,o3,8.0,,,,48
+gemini-flash-2.0 P6,708.8278706981743,gemini-flash-2.0,6.0,,,,49
+Gemma2 P6,708.6810297444533,Gemma2,6.0,,,,50
+gemini-flash-2.0 P8,614.6242093085456,gemini-flash-2.0,8.0,,,,51
+r1 T0.25,596.8545469595384,r1,,0.25,,,52
+r1 T0.5,583.0796936613244,r1,,0.5,,,53
+Gemini2.5 Flash Thinking P6,532.5609450806738,Gemini2.5 Flash Thinking,6.0,,,2.0,54
+Default Bot,435.80287466578807,DefaultBot,,,,,55
+Random Bot,51.70903361605193,RandomBot,,,,,56

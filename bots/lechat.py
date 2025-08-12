@@ -1,4 +1,3 @@
-import random
 import time
 import math
 
@@ -42,13 +41,13 @@ class AdvancedConnect4Bot(Bot):
                 break
 
         if not meilleur_coups:
-            return random.choice(list(plateau.colonnes_jouables))
+            return list(plateau.colonnes_jouables)[0]
 
         # Choose the best move considering the center heuristic.
         centre = plateau.colonnes // 2
         max_distance = max(abs(col - centre) for col in plateau.colonnes_jouables) if plateau.colonnes_jouables else 1
         weights = [(max_distance - abs(col - centre) + 1) for col in meilleur_coups]
-        selected_move = random.choices(meilleur_coups, weights=weights, k=1)[0]
+        selected_move = sorted(zip(meilleur_coups, weights), key=lambda x: x[1], reverse=True)[0][0]
         return selected_move
 
     def grille_à_tuple(self, plateau):

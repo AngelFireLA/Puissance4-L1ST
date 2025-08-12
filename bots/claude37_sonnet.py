@@ -1,4 +1,3 @@
-import random
 import time
 import math
 from collections import defaultdict
@@ -103,7 +102,7 @@ class AlphaBetaMCTSHybrid(Bot):
         # Choose the best child
         if not root.children:
             # Fallback if no simulations completed
-            return random.choice(list(plateau.colonnes_jouables))
+            return list(plateau.colonnes_jouables)[0]
 
         best_child = max(root.children.values(), key=lambda n: n.visits)
         return best_child.move
@@ -131,8 +130,7 @@ class AlphaBetaMCTSHybrid(Bot):
         if not unexpanded_moves:
             return node
 
-        # Choose a random unexpanded move
-        move = random.choice(unexpanded_moves)
+        move = unexpanded_moves[0]
 
         # Create a new plateau for the child node
         child_plateau = node.plateau.copier_grille()
@@ -154,7 +152,6 @@ class AlphaBetaMCTSHybrid(Bot):
         return child
 
     def rollout(self, plateau):
-        """Perform a random rollout from a plateau state."""
         sim_plateau = plateau.copier_grille()
         current_player_is_me = True
 
@@ -163,8 +160,7 @@ class AlphaBetaMCTSHybrid(Bot):
             if not sim_plateau.colonnes_jouables:
                 return 0  # Draw
 
-            # Choose a random move
-            move = random.choice(list(sim_plateau.colonnes_jouables))
+            move = list(sim_plateau.colonnes_jouables)[0]
 
             # Apply the move
             symbole = self.symbole if current_player_is_me else self.joueur2.symbole
@@ -190,7 +186,7 @@ class AlphaBetaMCTSHybrid(Bot):
 
     def iterative_deepening_search(self, plateau):
         """Perform iterative deepening alpha-beta search."""
-        best_move = random.choice(list(plateau.colonnes_jouables))
+        best_move = list(plateau.colonnes_jouables)
         best_score = float('-inf')
 
         depth = 1

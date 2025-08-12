@@ -1,4 +1,3 @@
-import random
 import time
 
 from bots.bot import Bot
@@ -138,7 +137,7 @@ class StrategosPrime(Bot):  # Inherit from BaseBot or the tournament's Bot class
         if best_move_overall not in plateau.colonnes_jouables:
             print("fallback")
             playable_fallback = list(plateau.colonnes_jouables)
-            return random.choice(playable_fallback) if playable_fallback else (
+            return playable_fallback[0] if playable_fallback else (
                 initial_ordered_cols[0] if initial_ordered_cols else 0)
 
         return best_move_overall

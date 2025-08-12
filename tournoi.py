@@ -1,9 +1,9 @@
 import time
 import concurrent.futures
 from moteur.partie import Partie
-from bots import negamaxv5, gpt4o, same, o3_mini_high, o3_mini_high_search, negamaxv5_b, claude37_sonnet, \
+from bots import negamaxv5, gpt4o, same, o3_mini_high, negamaxv5_b, claude37_sonnet, \
     claude37_sonnet_thinking, gemini_flash_20, r1, gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, \
-    qwen3, gemini25_pro, gemini25_flash_thinking, o4_mini_high, o3
+    qwen3, gemini25_pro, gemini25_flash_thinking, o4_mini_high, o3, negamaxv4, claude41_opus
 
 temps_total = 0
 def une_partie(bot1, bot2, i):
@@ -63,12 +63,10 @@ def tournoi(bot1, bot2, parties: int, max_workers=None):
 if __name__ == '__main__':
 
     # Instantiate bots
-    bot1 = negamaxv5.Negamax5("Joueur 1", "X", profondeur=8)
-    #bot1 = qwq.AdvancedNegamaxBot("Joueur 1", "O", profondeur=6)
-    #{'bot1': 311, 'bot2': 570, 'nul': 119} in 38.638548851013184 seconds
+    bot1 = negamaxv5_b.Negamax5B("Joueur 1", "X", profondeur=4)
 
-    bot2 = o3.StellarStorm("Joueur 2", "O", profondeur=2)
+    bot2 = claude41_opus.Thunderstrike("P2", "O", profondeur=6)
 
     start_time = time.time()
-    resultats = tournoi(bot1, bot2, 1000)
+    resultats = tournoi(bot1, bot2, 10)
     print(resultats, "in", time.time() - start_time, "seconds")

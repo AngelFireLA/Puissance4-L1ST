@@ -1,0 +1,48 @@
+INTERESTING TOURNAMENT RECORDS
+============================
+
+Elo Calculation Parameters:
+  Initial Elo: 1000.0
+  Number of Passes: 100
+  K-Factor Range: 80 (start) to 20 (end)
+
+Strongest Bot: QwQ P6 (ELO: 1547.8, Type: QwQ)
+
+Strongest Bot by Type:
+  QwQ: QwQ P6 (ELO: 1547.8, Overall Rank: 1)
+  gpt4o: gpt4o P4 (ELO: 1430.4, Overall Rank: 3)
+  claude3.7-sonnet-thinking: claude3.7-sonnet-thinking P8 (ELO: 1426.6, Overall Rank: 4)
+  o3-mini-high: o3-mini-high P6 (ELO: 1422.2, Overall Rank: 5)
+  Gemini2.5 Pro: Gemini2.5 Pro P6 (ELO: 1380.2, Overall Rank: 7)
+  o4-mini-high: o4-mini-high P10 (ELO: 1380.1, Overall Rank: 8)
+  Negamax5B: Negamax5B P10 T0.025 (ELO: 1370.2, Overall Rank: 11)
+  gemini-pro-2.0: gemini-pro-2.0 P8 (ELO: 1364.2, Overall Rank: 13)
+  gemini-flash-2.0-thinking: gemini-flash-2.0-thinking P8 (ELO: 1303.9, Overall Rank: 33)
+  claude3.7-sonnet: claude3.7-sonnet P8 (ELO: 1234.1, Overall Rank: 55)
+  same.dev: same.dev P6 (ELO: 1169.4, Overall Rank: 66)
+  Negamax5: Negamax5 P10 (ELO: 1161.2, Overall Rank: 69)
+  Negamax4: Negamax4 P10 (ELO: 1129.3, Overall Rank: 72)
+  gemini-flash-2.0: gemini-flash-2.0 P2 (ELO: 1104.4, Overall Rank: 78)
+  Negamax2: Negamax2 P8 (ELO: 1064.3, Overall Rank: 82)
+  o1: o1 P4 (ELO: 1056.0, Overall Rank: 85)
+  Negamax3: Negamax3 P8 (ELO: 1045.1, Overall Rank: 88)
+  LeChat: LeChat P8 (ELO: 1006.9, Overall Rank: 101)
+  Negamax: Negamax P6 (ELO: 1004.7, Overall Rank: 103)
+  o3: o3 P10 (ELO: 1002.9, Overall Rank: 104)
+  Qwen3: Qwen3 P2 (ELO: 938.6, Overall Rank: 115)
+  Gemini2.5 Flash Thinking: Gemini2.5 Flash Thinking P8 (ELO: 856.0, Overall Rank: 138)
+  r1: r1 T0.5 (ELO: 728.5, Overall Rank: 155)
+  Gemma2: Gemma2 P8 (ELO: 664.3, Overall Rank: 162)
+  DefaultBot: Default Bot (ELO: 459.2, Overall Rank: 177)
+  o3-mini-high-search: o3-mini-high-search I4000 (ELO: 417.2, Overall Rank: 178)
+  RandomBot: Random Bot (ELO: 215.9, Overall Rank: 187)
+
+Bot with Most Draws: Gemini2.5 Flash Thinking P1 (93 draws, Draw Rate: 24.87%)
+Most Decisive Bot (min 20 games): Negamax P1 (Draw Rate: 0.00%)
+
+Biggest Upset (Single Game):
+  Game ID: 11438
+  Winner: o3-mini-high-search I4000 (Elo: 417.2)
+  Loser: Gemini2.5 Pro P6 T0.01 (Elo: 1303.0)
+  Elo Difference Overcome: 885.8 points
+
