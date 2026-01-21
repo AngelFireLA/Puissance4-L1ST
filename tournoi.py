@@ -1,5 +1,7 @@
 import time
 import concurrent.futures
+
+from bots.claude_opus_45_thinking_32k import Graviton
 from moteur.partie import Partie
 from bots import negamaxv5, gpt4o, same, o3_mini_high, negamaxv5_b, claude37_sonnet, \
     claude37_sonnet_thinking, gemini_flash_20, r1, gemini_pro_20, gemini_flash_20_thinking, gemma3, o1, lechat, qwq, \
@@ -39,7 +41,7 @@ def une_partie(bot1, bot2, i):
 
 
 
-def tournoi(bot1, bot2, parties: int, max_workers=None):
+def tournoi(bot1, bot2, parties: int, max_workers=20):
     resultats = {"bot1": 0, "bot2": 0, "nul": 0}
     with concurrent.futures.ProcessPoolExecutor(max_workers=max_workers) as executor:
         # Notice we're NOT directly passing 'bot1' and 'bot2' here, but you can
@@ -63,9 +65,9 @@ def tournoi(bot1, bot2, parties: int, max_workers=None):
 if __name__ == '__main__':
 
     # Instantiate bots
-    bot1 = negamaxv5_b.Negamax5B("Joueur 1", "X", profondeur=4)
+    bot1 = negamaxv5_b.Negamax5B("Joueur 1", "X", profondeur=8, temps_max=0.25)
 
-    bot2 = claude41_opus.Thunderstrike("P2", "O", profondeur=6)
+    bot2 = Graviton("P2", "O", profondeur=8, temps_max=0.25)
 
     start_time = time.time()
     resultats = tournoi(bot1, bot2, 10)

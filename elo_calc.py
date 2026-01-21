@@ -63,6 +63,14 @@ def get_bot_type(bot_name):
     if "random bot" in name_lower: return "RandomBot"
     if "default bot" in name_lower: return "DefaultBot"
 
+    if "gpt5.2-high" in name_lower: return "gpt5.2-high"
+    if "gpt5.1-codex-max" in name_lower: return "gpt5.1-codex-max"
+    if "gpt5" in name_lower: return "gpt5"
+    if "claude-opus-4.5-thinking-32k" in name_lower: return "claude-opus-4.5-thinking-32k"
+    if "gemini-3-flash" in name_lower: return "gemini-3-flash"
+    if "gemini-3-pro" in name_lower: return "gemini-3-pro"
+
+
     print(f"Warning: Bot name '{bot_name}' mapped to 'Other'. Update get_bot_type if needed.")
     return "Other"
 
@@ -682,7 +690,7 @@ def main():
         description="Analyze tournament game results, calculate Elo, and generate stats/visualizations.")
     parser.add_argument("--output_base", type=str, default="tournament_analysis",
                         help="Base name for the output directory.")
-    json_file_path = r'C:\Dev\Python\Puissance4-L1ST\tournament_raw_games_20250509_215643\all_games_results_20250509_215643.json'
+    json_file_path = r'C:\Dev\Python\Puissance4-L1ST\tournament_raw_games_20260102_190139\all_games_results_20260102_190139.json'
     args = parser.parse_args()
 
     if not os.path.exists(json_file_path):

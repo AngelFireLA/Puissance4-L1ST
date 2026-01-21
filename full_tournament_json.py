@@ -18,7 +18,6 @@ from moteur.partie import Partie
 
 # Import all bot classes that might be in `participants`
 # Ensure all bot classes used in 'participants' are imported here.
-from bots import bot, random_bot, negamax, negamaxv2, neuralbot, negamaxv4, negamaxv5, negamaxv3, negamaxv5_b
 
 
 # Add any other custom bot classes if they are part of `participants`
@@ -153,7 +152,7 @@ def jouer_match(bot1_template, bot2_template, num_games_per_match=2):
     return match_game_results
 
 
-def run_tournament_and_save_results(participants_templates_list, num_games_per_match=2, max_workers=None):
+def run_tournament_and_save_results(participants_templates_list, num_games_per_match=2, max_workers=20):
     """
     Runs a round-robin tournament: each unique pair of bots plays a match.
     All individual game results are collected and saved to a single JSON file.
@@ -246,7 +245,7 @@ def main():
     results_file, collected_games = run_tournament_and_save_results(
         participants_templates_list=participants,
         num_games_per_match=2,
-        max_workers=None
+        max_workers=20
     )
 
     tournament_end_time = time.time()

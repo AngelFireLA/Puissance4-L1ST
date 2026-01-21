@@ -1,6 +1,7 @@
 from moteur.partie import Partie
-from bots import bot, random_bot, negamax, negamaxv2, negamaxv4, negamaxv5, negamaxv3, negamaxv5_b
-from bots import gpt4o, gemini_flash_20, gemini_flash_20_thinking, gemini_pro_20, gemma3, claude37_sonnet_thinking, claude37_sonnet, qwq, o3_mini_high, lechat, same, r1, o1, gemini25_pro, gemini25_flash_thinking, qwen3, o4_mini_high, o3, gpt5
+from bots import bot, random_bot, negamax, negamaxv2, negamaxv4, negamaxv5, negamaxv3, negamaxv5_b, gemini3_flash, \
+    gemini3_pro
+from bots import gpt4o, gemini_flash_20, gemini_flash_20_thinking, gemini_pro_20, gemma3, claude37_sonnet_thinking, claude37_sonnet, qwq, o3_mini_high, lechat, same, r1, o1, gemini25_pro, gemini25_flash_thinking, qwen3, o4_mini_high, o3, gpt51_codex_max, gpt52_high, claude_opus_45_thinking_32k, gpt5_thinking
 
 
 def une_partie(bot1, bot2):
@@ -53,7 +54,12 @@ gemini25_flash_thinking_bot5 = gemini25_flash_thinking.BetaBot("Gemini2.5 Flash 
 qwen3_bot4 = qwen3.ThreatHunterBot("Qwen3 P6", "?", profondeur=6)
 o4_mini_high_bot7 = o4_mini_high.QuantumNexus("o4-mini-high P12", "?", profondeur=12)
 o3_bot6 = o3.StellarStorm("o3 P10", "?", profondeur=10)
-gpt5_thinking_bot1 = gpt5.Aetherion("gpt5 P8", "?", profondeur=8, temps_max=0.5)
+gpt5_thinking_bot1 = gpt5_thinking.Aetherion("gpt5 P8", "?", profondeur=8, temps_max=0.5)
+gpt51_codex_max_bot1 = gpt51_codex_max.HeliosMonarch("gpt5.1-codex-max P6", "?", profondeur=6, temps_max=0.5)
+gpt52_high_bot1 = gpt52_high.OrionBlade("gpt5.2-high P8", "?", profondeur=8, temps_max=0.5)
+claude_opus_45_thinking_32k_bot1 = claude_opus_45_thinking_32k.Graviton("claude-opus-4.5-thinking-32k P10", "?", profondeur=10, temps_max=0.5)
+gemini3_flash_bot_1 = gemini3_flash.Zenith("gemini-3-flash P12", "?", profondeur=12, temps_max=0.5)
+gemini3_pro_bot_1 = gemini3_pro.ChronosBot("gemini-3-pro P10", "?", profondeur=10, temps_max=0.5)
 participants = [
     original_negamax_4,
     negamaxv2_5,
@@ -81,4 +87,10 @@ participants = [
     qwen3_bot4,
     o4_mini_high_bot7,
     o3_bot6,
+    gpt5_thinking_bot1,
+    gpt51_codex_max_bot1,
+    gpt52_high_bot1,
+    claude_opus_45_thinking_32k_bot1,
+    gemini3_flash_bot_1,
+    gemini3_pro_bot_1
 ]
